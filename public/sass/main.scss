@@ -1,0 +1,367 @@
+@import "variables";
+
+@mixin flex-space-between {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+@mixin flex-center {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+}
+@mixin margining {
+    margin-top: 7rem;
+    margin-bottom: 7rem;
+}
+
+body{
+    color: $primary-color;
+    background-color: $background  !important;
+    overflow-y: scroll !important;
+}
+h3{
+    text-align: center !important ;
+    font-weight: 800;
+}
+.login{
+    border: none;
+    border: 2px solid $primary-color;
+    color: $primary-color;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+.signup{
+    border: none;
+    background-color: $primary-color;
+    border: 2px solid $primary-color;
+    color: white;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+.header{
+    background-color: white !important;
+    padding: 3rem 4rem;
+    border-bottom: 1px solid $primary-color;
+        .social{
+            @include flex-space-between;
+            button:focus{
+                outline: 0;
+            }
+            img{
+                width: 2rem;
+                height: 2rem;
+            }
+        }
+        .links{
+            @include flex-space-between;
+            padding-left: 10%;
+            padding-right: 10%;
+            a{
+                text-decoration: none;
+                padding-top:3px;
+            }
+        }
+        .brand-name{
+            img{
+                width: 70%;
+            }
+        }
+}
+.footer{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    .upper{
+        background-color: $primary-color;
+        color: whitesmoke;
+        padding: 4rem;
+
+    }
+    .lower{
+        text-align: center;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        background-color: $silver-sand ;
+    }
+}
+.landing-wrapper{
+    background-color: white;
+}
+.landing{
+    position: relative;
+    margin-bottom: 5rem;
+
+    .right{
+        padding: 13% 0%;
+        text-align: start;
+        h1{
+            font-size: 7rem;
+            font-weight: 900;
+            margin-bottom: 4rem;
+        }
+        strong{
+            font-size: 4rem;
+            font-weight: 900;
+        }
+        p{
+            color: $silver-sand;
+        }
+    }
+    .col-md-5{
+        img{
+            width: 100%;
+        }
+    }
+    .search-bar{
+        @include flex-space-between;
+        width: 100%;
+        padding: 4rem;
+        position: absolute;
+        bottom: 0.6rem;
+        background-color: $primary-color;
+        opacity: 0.8;
+        .search-box,.industry,.location{
+            width: 20%;
+            select,input{
+                border: none;
+                width: 100%;
+                font-size: 2rem;
+            }
+        }
+
+        .search-button{
+            width: 20%;
+            background-color: $orange;
+            padding: 1rem 2rem;
+            text-align: center;
+            height: fit-content !important;
+            width: fit-content !important;
+        }
+    
+    }
+
+}
+.post-banners{
+    @include margining;
+    @include flex-center;
+    flex-direction: column;
+    h3{
+        margin-bottom: 4rem;
+    }
+    .banner{
+        position: relative;
+        padding:  2rem;
+        margin: 1rem;
+        background-color: white !important;
+        border:1px solid $silver-sand;
+        ul{
+            margin-top: 2rem;
+            list-style: none;
+            margin-bottom: 0px !important;
+            padding-inline-start: 0px !important;
+            @include flex-space-between;
+            justify-content: flex-start;
+            li{
+                margin-bottom: 0px !important;
+                margin-right: 2rem;
+                @include flex-center;
+                img{
+                    width: 1.3rem;
+                    height: 1.3rem;
+                    margin-right: 1rem;
+                }
+        }
+
+        }
+        .sm-wrapper{
+            // @include flex-space-between;
+            // flex-direction: column;
+            p{
+                float: right;
+                width: fit-content;
+                background-color: $key-lime;
+                padding: 0.5rem 1rem ;
+                border-radius: 20px;
+            }
+        }
+        small{
+            font-size: smaller;
+            position: absolute;
+            bottom: 1rem;
+            right:1rem;
+            color: $silver-sand;
+        }
+        
+    }
+    .cta-post{
+        margin: 3rem;
+        margin-top: 4rem;
+        background-color: $orange;
+        padding: 1rem 2rem;
+        text-align: center;
+        width: fit-content;
+    }
+}
+
+.triangle{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 0;
+    height: 0;
+    border-top: 30px solid $primary-color;
+    border-right: 30px solid transparent;
+}
+
+.blog-post{
+    @include margining;
+    .image{
+        position: relative;
+        width: 100%;
+        img{
+            width: inherit;
+            height: 300px;
+            object-fit: cover;
+
+        }
+        p{
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            color: white;
+            padding: 0.6rem 1.7rem;
+            text-align: center;
+            width: fit-content;
+            border-radius: 20px;
+            background-color: $primary-color;
+        }
+    }
+    .col-md-4{
+        display: flex;
+        flex-direction: column;
+    }
+    b{
+        margin-top: 2rem;
+    }
+    p{
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+    .blog-post-footer{
+        border-top: 1px solid gray;
+        @include flex-space-between;
+        padding: 2rem 0rem;
+        .left{
+        background-color: $key-lime;
+        padding: 1rem 2rem;
+        text-align: center;
+        width: fit-content;
+        }
+
+    }
+
+}
+
+.about{
+    @include margining;
+
+    h3{
+        text-align: center;
+    }
+    .cards{
+        margin-top: 4rem;
+        display: flex;
+        flex-direction: row;
+
+        div{
+            width: 33.33% !important;
+            height: 450px;
+            overflow: hidden;
+        }
+
+    }
+ 
+    .left{
+        overflow: hidden;
+        img{
+            height: inherit;
+            object-fit: cover;
+        }
+    }
+    .mid{
+        background-color: white;
+    }
+    .right{
+        background-color: $silver-sand;
+    }
+    .mid,.right{
+        @include flex-center;
+        padding: 3rem;
+        flex-direction: column;
+        text-align: center;
+        img{
+            width: 35% ;
+            margin-bottom: 2rem;
+        }
+        .orange-box{
+            margin-top: 6rem;
+            background-color: $orange;
+            padding: 1rem 2rem;
+            text-align: center;
+            height: fit-content !important;
+            width: fit-content !important;
+        }
+    }
+
+
+
+}
+
+.services{
+    @include margining;
+    .carousel{
+        margin-top: 4rem;
+    }
+    .carousel-item{
+        display: flex;
+        flex-direction: row;
+
+        width: 100%;
+        height: 450px;
+        img{
+            width: 50% !important;
+
+        }
+        .content{
+        background-color: white;
+        display: flex;
+        flex-direction: row;
+        text-align: start;
+        width: 50%;
+        padding: 3rem;
+        padding-right: 15% !important;
+        padding-left: 5% !important;
+        flex-direction: column;
+        img{
+            width: 30% !important;
+            margin-bottom: 2rem;
+        }
+        h3{text-align: start !important;}
+        .orange-box{
+            margin-top: 2rem;
+            background-color: $orange;
+            padding: 1rem 2rem;
+            text-align: center;
+            height: fit-content !important;
+            width: fit-content !important;
+        }
+        }
+    }
+}
+

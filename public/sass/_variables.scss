@@ -1,0 +1,45 @@
+// Body
+$body-bg: #f8fafc;
+
+// Typography
+$font-family-sans-serif: 'Nunito', sans-serif;
+$font-size-base: 0.9rem;
+$line-height-base: 1.6;
+$avenir : 'AvenirLTStd-Book.otf';
+
+// Colors
+$blue: #3490dc;
+$indigo: #6574cd;
+$purple: #9561e2;
+$pink: #f66d9b;
+$red: #e3342f;
+$orange: #f6993f;
+$yellow: #ffed4a;
+$green: #38c172;
+$teal: #4dc0b5;
+$cyan: #6cb2eb;
+
+
+
+
+
+/* SCSS HEX */
+$key-lime: #E1EF9Bff;
+$coffee: #815B48ff;
+$silver-sand: #B9C1CCff;
+$background:#F1F1F1;
+$primary-color: #153055ff;
+$hookers-green: #507871ff;
+
+
+
+/* SCSS Gradient */
+$gradient-top: linear-gradient(0deg, #E1EF9Bff, #815B48ff, #B9C1CCff, #153055ff, #507871ff);
+$gradient-right: linear-gradient(90deg, #E1EF9Bff, #815B48ff, #B9C1CCff, #153055ff, #507871ff);
+$gradient-bottom: linear-gradient(180deg, #E1EF9Bff, #815B48ff, #B9C1CCff, #153055ff, #507871ff);
+$gradient-left: linear-gradient(270deg, #E1EF9Bff, #815B48ff, #B9C1CCff, #153055ff, #507871ff);
+$gradient-top-right: linear-gradient(45deg, #E1EF9Bff, #815B48ff, #B9C1CCff, #153055ff, #507871ff);
+$gradient-bottom-right: linear-gradient(135deg, #E1EF9Bff, #815B48ff, #B9C1CCff, #153055ff, #507871ff);
+$gradient-top-left: linear-gradient(225deg, #E1EF9Bff, #815B48ff, #B9C1CCff, #153055ff, #507871ff);
+$gradient-bottom-left: linear-gradient(315deg, #E1EF9Bff, #815B48ff, #B9C1CCff, #153055ff, #507871ff);
+$gradient-radial: radial-gradient(#E1EF9Bff, #815B48ff, #B9C1CCff, #153055ff, #507871ff);
