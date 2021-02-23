@@ -184,7 +184,7 @@ h3{
         h1{
             font-size: 7rem;
             font-weight: 900;
-            margin-bottom: 4rem;
+            margin-bottom: 30%;
             color: white;
         }
         strong{
@@ -246,6 +246,7 @@ h3{
     width: 18%;
     background-color: $orange !important;
     padding: 1rem 2rem;
+    font-weight: bold;
     text-align: center;
     height: fit-content !important;
 }

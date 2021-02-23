@@ -1,12 +1,12 @@
 @extends('layouts.app')
 @section('body')
-    <div class="landing-wrapper container-fluid" style="background-image: url('{{asset('images/background-info.png')}}');">
+    <div class="landing-wrapper container-fluid" style="background-image: url('{{asset('images/Herobanner.jpg')}}');">
         <div class="container">
             <div class="landing">
                 <div class="row">
                     <div class="col-md-6 right">
                         <h1>Find your ideal role</h1>
-                        <div class="row">
+                        {{-- <div class="row">
                             <div class="col-md-4">
                                 <strong>1,0000</strong>
                                 <p>JOB SEEKERS</p>
@@ -20,7 +20,7 @@
                         <div class="col">
                             <strong>200</strong>
                             <p>REGISTERED EMPLOYERS</p>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="col-md-5 offset-md 1">
                     </div>
@@ -47,7 +47,7 @@
                         </select>
                     </div>
                     <div class="search-button">
-                            SEARCH
+                            Search
                     </div>
                             
                             
