@@ -5,7 +5,7 @@
             <p>Sometimes you may not have terminal access of server-hosted Laravel application. You may not much </p>
         </div>
         <div class="right">
-            {{-- <a class="banner" href="/add-job-post"><span>+</span> Add new job</a> --}}
+            <img src="{{asset('images/icons/settings.svg')}}" alt="">
         </div>
 @endsection
 @section('body')
@@ -39,4 +39,5 @@
     <a class="add-post-button" href="/add-job-post">
         <img  src="{{asset('images/icons/plus.svg')}}" alt="">
     </a>
+    
 @endsection

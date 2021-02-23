@@ -24,7 +24,7 @@ class ApplicationController extends Controller
 
     public function searchApplication(Request $request )
     {
-        $application = Application::where('status','LIKE','%'. $request->q.'%')->take(20)->get();
+        $application = Application::with('user')->where('status','LIKE','%'. $request->q.'%')->take(20)->get();
         
 		echo \json_encode($application);
 

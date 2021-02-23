@@ -21,9 +21,10 @@
               <div class="form-group col-md-3">
                 <label for="inputState">category</label>
                 <select id="inputState" name="category" class="form-control">
-                  <option selected>Choose...</option>
-                  <option value="1">Medical Doctor</option>
-                  <option value="2">Web - Developer</option>
+                  @foreach ($job_categories as $category)
+                  <option value="{{$category->id}}">{{$category->name}}</option>
+                  @endforeach
+
                 </select>
               </div>             
                <div class="form-group col-md-3">

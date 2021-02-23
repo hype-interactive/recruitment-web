@@ -1,0 +1,28 @@
+@import 'variables';
+
+.jobs-header{
+    background-color: $primary-color;
+    .search-bar{
+        padding: 1rem;
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        div{
+            width: 20% !important;
+            background-color: white;
+            padding: 1rem;
+            border-radius: 5px;
+        }
+        .search-box{
+            width: 20% !important;
+        }
+        .search-button{
+            width: 15% !important;
+            background-color: $orange;
+        }
+        
+    }
+
+}

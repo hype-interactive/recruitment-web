@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
 // Variables
-@import 'variables';
+@import '../variables';
 
 // Bootstrap
 //shared style
@@ -251,3 +251,8 @@ hr{
 .red{color: red;}
 .green{ color:green;}
 .gray{color: $silver-sand;}
+
+//bootstrap corrections
+.fade{
+    opacity: 0.8 !important;
+}

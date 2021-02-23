@@ -35,7 +35,7 @@ class JobPostController extends Controller
     {
         $regions = Region::all();
 
-        return view('admin/add_job_post',["regions"=>$regions]);
+        return view('admin/add_job_post',["regions"=>$regions,'job_categories'=>$this->getJobCategories()]);
     }
 
     public function editJobPost(Request $request)
@@ -43,7 +43,7 @@ class JobPostController extends Controller
         // $validator= Validator::make($request->all(),[ ]);
 
         $job_post= JobPost::find($request->job_post_id);
-        // var_dump($job_post); exit();
+        // var_dump($request->job_category_id); exit();
         $job_post->title= $request->title;
         $job_post->deadline = $request->deadline;
         $job_post->type= $request->type;

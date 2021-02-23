@@ -1,0 +1,15 @@
+/* SCSS HEX */
+/* SCSS Gradient */
+.applicant {
+  padding: 0.5rem 4rem 2rem 4rem;
+}
+
+.applicant thead {
+  background-color: #153055ff !important;
+  color: whitesmoke;
+}
+
+.applicant table {
+  background-color: rgba(223, 223, 223, 0.801);
+}
+/*# sourceMappingURL=post.css.map */

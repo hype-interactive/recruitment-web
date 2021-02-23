@@ -1,4 +1,4 @@
-@import 'variables';
+@import '../variables';
 .post-list{
     position: relative;
  margin-left: 3rem;
@@ -32,6 +32,15 @@
         }
   
  }
+
+}
+.summary{
+    .right{
+        img{
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+    }
 
 }
 

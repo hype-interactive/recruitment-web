@@ -1,0 +1,14 @@
+{
+	"version": 3,
+	"file": "jobs.css",
+	"sources": [
+		"../sass/jobs.scss",
+		"../sass/_variables.scss"
+	],
+	"sourcesContent": [
+		"@import 'variables';\n\n.jobs-header{\n    background-color: $primary-color;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    div{\n        background-color: white;\n        padding: 1rem;\n        border-radius: 5px;\n    }\n}\n",
+		"// Body\n$body-bg: #f8fafc;\n\n// Typography\n$font-family-sans-serif: 'Nunito', sans-serif;\n$font-size-base: 0.9rem;\n$line-height-base: 1.6;\n$avenir : 'AvenirLTStd-Book.otf';\n\n// Colors\n$blue: #3490dc;\n$indigo: #6574cd;\n$purple: #9561e2;\n$pink: #f66d9b;\n$red: #e3342f;\n$orange: #f6993f;\n$yellow: #ffed4a;\n$green: #38c172;\n$teal: #4dc0b5;\n$cyan: #6cb2eb;\n\n\n\n\n\n/* SCSS HEX */\n$key-lime: #E1EF9Bff;\n$coffee: #815B48ff;\n$silver-sand: #B9C1CCff;\n$background:#F1F1F1;\n$primary-color: #153055ff;\n$hookers-green: #507871ff;\n\n\n\n/* SCSS Gradient */\n$gradient-top: linear-gradient(0deg, #E1EF9Bff, #815B48ff, #B9C1CCff, #153055ff, #507871ff);\n$gradient-right: linear-gradient(90deg, #E1EF9Bff, #815B48ff, #B9C1CCff, #153055ff, #507871ff);\n$gradient-bottom: linear-gradient(180deg, #E1EF9Bff, #815B48ff, #B9C1CCff, #153055ff, #507871ff);\n$gradient-left: linear-gradient(270deg, #E1EF9Bff, #815B48ff, #B9C1CCff, #153055ff, #507871ff);\n$gradient-top-right: linear-gradient(45deg, #E1EF9Bff, #815B48ff, #B9C1CCff, #153055ff, #507871ff);\n$gradient-bottom-right: linear-gradient(135deg, #E1EF9Bff, #815B48ff, #B9C1CCff, #153055ff, #507871ff);\n$gradient-top-left: linear-gradient(225deg, #E1EF9Bff, #815B48ff, #B9C1CCff, #153055ff, #507871ff);\n$gradient-bottom-left: linear-gradient(315deg, #E1EF9Bff, #815B48ff, #B9C1CCff, #153055ff, #507871ff);\n$gradient-radial: radial-gradient(#E1EF9Bff, #815B48ff, #B9C1CCff, #153055ff, #507871ff);\n"
+	],
+	"names": [],
+	"mappings": "ACyBA,cAAc;AAUd,mBAAmB;;ADjCnB,AAAA,YAAY,CAAA;EACR,gBAAgB,EC2BJ,SAAS;ED1BrB,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,GAAG;EACnB,eAAe,EAAE,aAAa;CAMjC;;;AAVD,AAKI,YALQ,CAKR,GAAG,CAAA;EACC,gBAAgB,EAAE,KAAK;EACvB,OAAO,EAAE,IAAI;EACb,aAAa,EAAE,GAAG;CACrB"
+}

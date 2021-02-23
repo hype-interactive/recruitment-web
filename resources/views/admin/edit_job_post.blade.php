@@ -21,7 +21,7 @@
                       </div>
                       <div class="form-group col-md-3">
                         <label for="inputState">category</label>
-                        <select id="inputState" name="category" class="form-control">
+                        <select id="inputState" name="job_category_id" class="form-control">
                           @foreach ($job_categories as $job_category)
                               <option value="{{$job_category->id}}" {{$post->job_category_id == $job_category->id ? "selected":""  }}>{{$job_category->name}}</option>
                           @endforeach

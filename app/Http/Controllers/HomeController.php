@@ -22,7 +22,8 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    {
-        return view('home');
+    {   
+        $job_posts=app('App\Http\Controllers\JobPostController')->getPostsData(8);
+        return view('home',['posts'=>$job_posts]);
     }
 }
