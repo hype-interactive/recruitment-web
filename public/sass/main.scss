@@ -171,7 +171,6 @@ h3{
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    -webkit-background-origin:border;
 
 }
 .landing{
@@ -245,7 +244,7 @@ h3{
 
 .search-button{
     width: 18%;
-    background-color: $orange;
+    background-color: $orange !important;
     padding: 1rem 2rem;
     text-align: center;
     height: fit-content !important;

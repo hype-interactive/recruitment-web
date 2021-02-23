@@ -11,10 +11,11 @@ class JobPostController extends Controller
 {
     public function getJopPosts()
     {
-        $regions= Region::all();
-        $industies=JobCategory::all();
-        $job_posts=$this->getPostsData(20);
-        return view('jobs',['regions'=>$regions,'industies'=>$industies,'job_posts'=>$job_posts]);
+        // $regions= Region::all();
+        // $industies=JobCategory::all();
+        // $job_posts=$this->getPostsData(20);
+        // return view('jobs',['regions'=>$regions,'industies'=>$industies,'job_posts'=>$job_posts]);
+        return view('jobs');
     }
 
     public function getPostsData($limit)
