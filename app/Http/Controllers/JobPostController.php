@@ -20,7 +20,7 @@ class JobPostController extends Controller
 
     public function getPostsData($limit)
     {
-        $job_posts=JobPost::latest()->take($limit)->get();
-        return $job_posts;
+        // $job_posts=JobPost::latest()->take($limit)->get();
+        return "";
     }
 }
