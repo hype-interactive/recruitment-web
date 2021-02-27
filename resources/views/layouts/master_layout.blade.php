@@ -26,7 +26,7 @@
                 </div>
                 <div class="nav-bar">
                     <ul>
-                        <li><a href="">Dashboard</a></li>
+                        <li><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
                         <li><a href="{{route('admin.job_posts')}}">Job Posts</a></li>
                         <li><a href="">Blog Post</a></li>
                         <li><a href="">Services</a></li>

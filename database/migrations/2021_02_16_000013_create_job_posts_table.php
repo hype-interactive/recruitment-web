@@ -26,7 +26,7 @@ class CreateJobPostsTable extends Migration
             $table->string('title')->nullable();
             $table->dateTime('deadline')->nullable();
             $table->enum('type', ["Full time", "Part time"])->nullable();
-            $table->string('description')->nullable();
+            $table->longText('description')->nullable();
             $table->unsignedBigInteger('job_category_id');
             $table->unsignedBigInteger('region_id');
 

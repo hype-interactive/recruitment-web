@@ -6,19 +6,44 @@
         <div class="link-col links">
             <ul class="nav-link-wrapper">
                 <li class="nav-link"> <a href="{{route('home')}}">Home</a></li>
-                <li class="nav-link"> <a href="">Jobs</a></li>
-                {{-- <li class="nav-link"> <a href="{{route('job_posts')}}">Jobs</a></li> --}}
-                <li class="nav-link"> <a href="">Services</a></li>
-                <li class="nav-link"> <a href="">About us</a></li>
+                <li class="nav-link"> <a href="{{route('job_posts')}}">Jobs</a></li>
+                <li class="nav-link"> <a href="{{'services'}}">Services</a></li>
+                <li class="nav-link"> <a href="{{route('about_us')}}">About us</a></li>
             </ul>
-
         </div>
         <div class="social-col social">
             <img class="ma-r-3" src="{{asset('images/icons/instagram.svg')}}" alt="">
             <img class="ma-r-3" src="{{asset('images/icons/linkedin.svg')}}" alt="">
-            <button type="button" class="btn login  btn-lg ma-r-3">Login</button>
-            <button type="button" class="btn signup btn-lg">Signup</button>
+        @guest
+        @if (Route::has('login'))
+            <a class="nav-link" href="{{ route('login') }}"><button type="button" class="btn login  btn-lg ma-r-3">Login</button></a>
+        @endif
+        @if (Route::has('register'))
+            <a class="nav-link" href="{{ route('register') }}"><button type="button" class="btn signup btn-lg">Signup</button></a>
+        @endif 
+        @else
+        <div class="dropdown">
+            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+               <div class="dp"><img src="{{asset('images/icons/man-user.svg')}}" alt=""></div> 
+            </a>
+            <div class="dropdown-menu dropdown-menu-right dp-restyle" aria-labelledby="navbarDropdown">
+                <span>User : <b>{{ Auth::user()->fname }}</b></span>
+                <div class="ma-t-2"></div>
+                <a class="dropdown-item" href="{{ route('logout') }}"
+                   onclick="event.preventDefault();
+                                 document.getElementById('logout-form').submit();">
+                   Logout
+                </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
+            </div>
+        </div>
+            @endguest
         </div>
     </div>
 
 </div>
+
+

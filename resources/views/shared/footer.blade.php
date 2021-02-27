@@ -23,10 +23,10 @@
                 <div class="col-md-4 links">
                     <h4>Helpful links</h4>
                     <ul>
-                        <li><a href="">Home</a></li>
-                        <li><a href="">Jobs</a></li>
-                        <li><a href="">Services</a></li>
-                        <li><a href="">About Us</a></li>
+                        <li><a href="{{route('home')}}">Home</a></li>
+                        <li><a href="{{route('job_posts')}}">Jobs</a></li>
+                        <li><a href="{{route('services')}}">Services</a></li>
+                        <li><a href="{{route('about_us')}}">About Us</a></li>
                     </ul>
                 </div>
                 <div class="col-md-2 social">

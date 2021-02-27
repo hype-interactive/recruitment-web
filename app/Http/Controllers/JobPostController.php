@@ -9,18 +9,29 @@ use App\Models\JobCategory;
 use Illuminate\Validation\Validator;
 class JobPostController extends Controller
 {
-    public function getJopPosts()
+    public function getJobPosts()
     {
-        // $regions= Region::all();
-        // $industies=JobCategory::all();
-        // $job_posts=$this->getPostsData(20);
-        // return view('jobs',['regions'=>$regions,'industies'=>$industies,'job_posts'=>$job_posts]);
-        return view('jobs');
+        $regions= Region::all();
+        $industries=JobCategory::all();
+        $job_posts=$this->getPostsData(20);
+        return view('jobs',['regions'=>$regions,'industries'=>$industries,'job_posts'=>$job_posts]);
+    }
+    public function getJobPost($job_post_id)
+    {
+        $post=JobPost::with('region','jobCategory')->find($job_post_id);
+        return view('job',['post'=>$post]);
     }
 
     public function getPostsData($limit)
     {
-        // $job_posts=JobPost::latest()->take($limit)->get();
-        return "";
+        $job_posts=JobPost::latest()->take($limit)->get();
+        return $job_posts;
+    }
+
+    public function searchJobs(Request $request)
+    {
+        $jobs=JobPost::with('region','jobCategory')->where('title','LIKE','%'. $request->q.'%')->get();
+
+        echo \json_encode($jobs);
     }
 }

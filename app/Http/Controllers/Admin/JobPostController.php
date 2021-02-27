@@ -12,7 +12,10 @@ use App\Models\JobCategory;
 class JobPostController extends Controller
 {
      
-    
+    public function show()
+    {
+        return view('admin/dashboard');
+    }
     public function addJobPost(Request $request)
     {
         // var_dump($request->all()); exit();

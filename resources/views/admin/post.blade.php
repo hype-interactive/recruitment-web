@@ -86,13 +86,25 @@
         var table_rows='';
         console.log(resp[0]);
         for(let index = 0; index <resp.length; index++){
-          table_rows+='<tr><th scope="row">'+[index+1] +'</th><td>'+resp[index].user.fname + resp[index].user.sname+'</td><td >'+resp[index].user.email+'</td><td>'+resp[index].user.phone+'</td><td>'+resp[index].status+'</td><td>View</td></tr>'
+          table_rows+='<tr><th scope="row">'+[index+1] +'</th><td>'+resp[index].user.fname + resp[index].user.sname+'</td><td >'+resp[index].user.email+'</td><td>'+resp[index].user.phone+'</td><td class="'+setClass(resp[index].status)+'">'+resp[index].status+'</td><td><a href="appliaction/'+resp[index].id+'">View</a></td></tr>'
         }
         document.getElementById("livesearch").innerHTML=table_rows;
       }
     }
     xmlhttp.open("GET","/admin/application_search/?q="+str,true);
     xmlhttp.send();
+  }
+
+  function setClass(status) {
+    if(status == "rejected"){
+      return "red";
+    }
+    if( status == "selected"){
+      return "green";
+    }else{
+      return "";
+    }
+    
   }
   </script>
 @endsection

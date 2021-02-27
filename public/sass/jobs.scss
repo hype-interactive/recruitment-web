@@ -2,6 +2,9 @@
 
 .jobs-header{
     background-color: $primary-color;
+    margin-bottom: 2rem;
+    margin-right: 1rem;
+    width: 100%;
     .search-bar{
         padding: 1rem;
         margin-top: 3rem;
@@ -23,6 +26,51 @@
             background-color: $orange;
         }
         
+    }
+
+}
+.filter{
+    background-color: white;
+    margin-top: 1rem;
+    h4{
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    h5{
+        margin-top: 1.5rem;
+    }
+    ul{
+        list-style: none;
+        li{
+            position: relative;
+            background-color: #eee;
+            padding:0.5rem 2rem;
+            margin-bottom: 1rem;
+            border-radius: 3px;
+            span{
+                position: absolute;
+                bottom: 1rem;
+                font-size: small;
+            }
+        }
+    }
+    .check-box{
+        width: 1.8rem !important;
+        height: 1.8rem !important;
+        margin-right: 2rem;
+
+    }
+
+}
+.job-list{
+    .banner{
+        margin-bottom: 2rem;
+    }
+    a{
+        color: $primary-color;
+    }
+    a:hover{
+        color: #1DA1F2;
     }
 
 }

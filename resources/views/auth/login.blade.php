@@ -1,73 +1,178 @@
-@extends('layouts.app')
-
+@extends('layouts.frame')
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+    <div class="auth-wrapper">
+        <div class="auth" id="signup">
+            <img src="{{asset('images/logo.jpg')}}" alt="">
+            <div class="google-btn">
+                <a href="">
+                    <img src="{{asset('images/icons/google.svg')}}" alt="">
+                    Sign up with Google
+                </a>
+            </div>
+            <div class="or">
+                <div class="hr"></div> OR <div class="hr"></div>
+            </div>
+            <form method="POST" action="{{ route('register') }}">
+                @csrf
+                <div>
+                    <input id="fname" type="text" class=" @error('fname') is-invalid @enderror" name="fname" value="{{ old('fname') }}" required autocomplete="fname" autofocus placeholder="First Name">
+                    @error('fname')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+                <div>
+                    <input id="lname" type="text" class=" @error('lname') is-invalid @enderror" name="lname" value="{{ old('lname') }}" required autocomplete="lname" autofocus placeholder="Last Name">
+                    @error('lname')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+                <div>
+                    <input id="phone" type="tell" class="@error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone" autofocus placeholder="Phone">
+                    @error('phone')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+                <div>
+                    <input id="email" type="email" class=" @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email">
+                    @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+                <div>
+                    <input id="password" type="password" class=" @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Enter Password">
+                    @error('password')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+                <div>
+                    <input id="password-confirm" type="password"  name="password_confirmation" required autocomplete="new-password" placeholder="Confirm Password">
+                </div>
+        
+                <button class="btn" type="submit"> Register</button>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    </form>
+            </form>
+            <p class="ma-t-2">Have already an account <a onclick="setnew('login')">Login here</a></p>
+        </div>
+        <div class="auth" id="login" style="display: none">
+            <img src="{{asset('images/logo.jpg')}}" alt="">
+            <div class="google-btn">
+                <a href="">
+                    <img src="{{asset('images/icons/google.svg')}}" alt="">
+                    Sign in with Google
+                </a>
+            </div>
+            <div class="or">
+                <div class="hr"></div> OR <div class="hr"></div>
+            </div>
+            <form method="POST" action="{{ route('login') }}">
+                @csrf
+                <div>
+                    <input id="email" type="email" class="@error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Email(Name@gmail.com)">
+                    @error('email')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+                </div>
+                <div>
+                    <input id="password" type="password" class="@error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Enter password">
+                    @error('password')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+                </div>
+                <div class="check">
+                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
+                </div>
+                <button class="btn"> Login</button>
+            </form>
+            <div class="row ma-t-2">
+                <div class="col-md-6">
+                    <p >I don't have account ! <a onclick="setnew('signup')">Sign up</a></p>
+                </div>
+                <div class="col-md-6">
+                            @if(Route::has('password.request'))
+                                <a onclick="setnew('reset')" >
+                                    {{ __('Forgot Your Password?') }}
+                                </a>
+                            @endif
                 </div>
             </div>
+
+        </div>
+        <div class="auth" id="reset" style="display: none">
+            <img src="{{asset('images/logo.jpg')}}" alt="">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Reset Password</h4>
+                </div>
+
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
+                    <form method="POST" action="{{ route('password.email') }}">
+                        @csrf
+
+                        <div>
+                            <input id="email" type="email" class=" @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Enter Email">
+                            @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                <button class="btn"> Send Password Reset Link </button>
+            </form>
+            <p class="ma-t-2">Go back to <a onclick="setnew('login')">Login</a></p>
+
         </div>
     </div>
 </div>
+<script>
+    function hide(id) {
+        // alert("hides"+id);
+       var element = document.getElementById(id).style.display="none";
+    }
+
+    function show(id) {
+        // alert("show"+id);
+        document.getElementById(id).style.display="block";
+    }
+
+    function setnew(id){
+
+        if(id == "login" ){
+            // alert("to open login");
+            hide("signup");
+            hide("reset")
+            show("login");
+        }else if(id == "reset"){
+            hide("signup");
+            hide("login");
+            show("reset");
+        }else{
+            hide("login");
+            hide("reset");
+            show("signup");
+        }
+        
+    }
+</script>
 @endsection
+

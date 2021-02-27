@@ -14,15 +14,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('/home');
+    return view('home');
 });
 
+Route::get('application_panel/{id}','App\Http\Controllers\ApplicationController@showPanel')->name('application_panel');
+Route::get('/about_us',function (){ return view('about_us');})->name('about_us');
+Route::get('/services',function (){ return view('services');})->name('services');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-Route::get('jobs','App\Http\Controllers\JobPostController@getJopPosts')->name('job_posts');
+Route::get('jobs','App\Http\Controllers\JobPostController@getJobPosts')->name('job_posts');
+Route::get('job/{id}','App\Http\Controllers\JobPostController@getJobPost')->name('job_post');
+Route::get('search_jobs/{str?}','App\Http\Controllers\JobPostController@searchJobs');
+
 
 // admin routes
 
@@ -35,4 +41,5 @@ Route::get('application/{id}','App\Http\Controllers\Admin\ApplicationController@
 Route::get('edit_post_panel/{id}','App\Http\Controllers\Admin\JobPostController@showEditPostPanel')->name('admin.edit_post_panel');
 Route::post('edit_post','App\Http\Controllers\Admin\JobPostController@editJobPost')->name('admin.edit_job_post');
 Route::get('/admin/application_search/{str?}','App\Http\Controllers\Admin\ApplicationController@searchApplication' );
+Route::get('/admin/dashboard','App\Http\Controllers\Admin\JobPostController@show')->name('admin.dashboard');
 

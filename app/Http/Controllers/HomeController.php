@@ -13,7 +13,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        // $this->middleware('auth');
+        $this->middleware('auth');
     }
 
     /**
@@ -23,7 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {   
-        // $job_posts=app('App\Http\Controllers\JobPostController')->getPostsData(8);
-        return view('home');
+        $job_posts=app('App\Http\Controllers\JobPostController')->getPostsData(8);
+        return view('home',['posts'=>$job_posts]);
     }
 }
