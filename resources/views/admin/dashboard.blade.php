@@ -14,7 +14,7 @@
                     <div class="image">
                         <img src="{{asset('images/icons/trend.svg')}}" alt="">
                     </div>
-                        70000
+                        {{$applications}}
                     </div>
                     <small>Total Application</small>
                 </div>
@@ -25,7 +25,7 @@
                     <div class="image">
                         <img src="{{asset('images/icons/users.svg')}}" alt="">
                     </div>
-                        70000
+                        {{$signups}}
                     </div>
                     <small>Total Sign-ups</small>
                 </div>
@@ -36,7 +36,7 @@
                     <div class="image">
                         <img src="{{asset('images/icons/paper.svg')}}" alt="">
                     </div>
-                        70000
+                        {{$job_seekers}}
                     </div>
                     <small>Total Job Seeker</small>
                 </div>
@@ -47,9 +47,9 @@
                     <div class="image">
                         <img src="{{asset('images/icons/tower-block.svg')}}" alt="">
                     </div>
-                        70000
+                        {{$mposts}}
                     </div>
-                    <small>Total Employers</small>
+                    <small>This Month Job Posts</small>
                 </div>
             </div>
             <div class="col-md-4">
@@ -58,9 +58,9 @@
                     <div class="image">
                         <img src="{{asset('images/icons/bulb-blue.svg')}}" alt="">
                     </div>
-                        70000
+                        {{$msignups}}
                     </div>
-                    <small>Total New Post</small>
+                    <small>This Month Sign-ups</small>
                 </div>
             </div>
             <div class="col-md-4">
@@ -69,9 +69,9 @@
                     <div class="image">
                         <img src="{{asset('images/icons/trend.svg')}}" alt="">
                     </div>
-                        70000
+                        {{$mseekers}}
                     </div>
-                    <small>Total Application</small>
+                    <small>This Month Job Seekers</small>
                 </div>
             </div>
             

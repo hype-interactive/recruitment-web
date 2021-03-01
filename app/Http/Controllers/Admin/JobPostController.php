@@ -8,13 +8,44 @@ use App\Models\JobPost;
 use Illuminate\Validation\Validator;
 use App\Models\Region;
 use App\Models\JobCategory;
+use App\Http\Controllers\Admin\ApplicationController;
+use App\Http\Controllers\Admin\UserController;
 
 class JobPostController extends Controller
 {
-     
+   
+
+      protected $applications;
+      protected $users;
+
+     public function __construct(ApplicationController $applications,UserController $users)
+     {
+        $this->middleware('admin');
+         $this->applications = $applications;
+         $this->users = $users;
+
+     }
+
     public function show()
     {
-        return view('admin/dashboard');
+        $this_month=date('Y-m');
+
+        //total application
+        $total_applications=$this->applications->countApplications();
+        //total signup
+        $total_signups=$this->users->countUsers();
+        //mothly_signups
+        $monthly_signups=$this->users->countSignUpsMonthly($this_month);
+        // $date = new date();
+        //newpost monthly
+        $monthly_posts=$this->countPostMonthly($this_month);
+        //this month job seeker
+        $monthly_job_seekers=$this->users->countNewApplicants($this_month);
+        // var_dump($employers); exit();
+        //total job seeker(applicant);
+        $job_seekers=$this->users->countUserGroup('applicant');
+
+        return view('admin/dashboard',['applications'=>$total_applications,'signups'=>$total_signups,'msignups'=>$monthly_signups,'mposts'=>$monthly_posts,'job_seekers'=>$job_seekers,'mseekers'=>$monthly_job_seekers]);
     }
     public function addJobPost(Request $request)
     {
@@ -91,5 +122,10 @@ class JobPostController extends Controller
     public function getJobCategories()
     {
         return JobCategory::all();
+    }
+    
+    public function countPostMonthly($month){
+        $post=JobPost::where('created_at','like', $month.'%')->get();
+        return count($post);
     }
 }

@@ -9,11 +9,11 @@
         <img src="{{asset('images/icons/loupe.svg')}}" alt="">
     </div>
     <div class="col-md-2 filter">
-        <select name="filter" id=""  class="custom-select">
-        <option value="">selected</option>
-        <option value="">reserved</option>
-        <option value="">oldest</option>
-        <option value="">latest</option>
+        <select name="filter" id="admin_filter"  class="custom-select" onchange="showResult(this.value)">
+        <option value="_all" >All</option>  
+        <option value="_selected">Selected</option>
+        <option value="_rejected">Rejected</option>
+        <option value="_reserved">Reserved</option>
     </select>
     </div>
   </form>
@@ -35,9 +35,9 @@
           </tr>
         </thead>
         <tbody id="livesearch">
-            @for ($i = 0; $i < count($applications); $i++)
+            @for ($i =0 ; $i < count($applications); $i++)
             <tr>
-                <th scope="row">{{$i}}</th>
+                <th scope="row">{{$i + 1}}</th>
                 <td >{{$applications[$i]->user->fname}} {{$applications[$i]->user->lname}}</td>
                 <td>{{$applications[$i]->user->email}}</td>
                 <td>{{$applications[$i]->user->phone}}</td>
@@ -106,5 +106,7 @@
     }
     
   }
+
+ 
   </script>
 @endsection
