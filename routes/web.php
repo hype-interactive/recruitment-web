@@ -13,20 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+
 
 Route::get('application_panel/{id}','App\Http\Controllers\ApplicationController@showPanel')->name('application_panel');
 Route::get('/about_us',function (){ return view('about_us');})->name('about_us');
 Route::get('/services',function (){ return view('services');})->name('services');
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
 Route::get('jobs','App\Http\Controllers\JobPostController@getJobPosts')->name('job_posts');
-Route::get('search_job','App\Http\Controller\JobPostController@getJobPost')->name('search_job');
+Route::post('/site/search_job','App\Http\Controller\JobPostController@getJobPost')->name('search');
 Route::get('job/{id}','App\Http\Controllers\JobPostController@getJobPost')->name('job_post');
 Route::get('search_jobs/{str?}','App\Http\Controllers\JobPostController@searchJobs');
 

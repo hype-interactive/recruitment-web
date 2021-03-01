@@ -13,6 +13,9 @@ class JobPostController extends Controller
 {
     public function getJobPosts(Request $request=NULL)
     {
+        if($request !=NULL){
+            var_dump("here"); exit();
+        }
         $regions= Region::all();
         $industries=JobCategory::all();
         $job_posts=$this->getPostsData(20);
