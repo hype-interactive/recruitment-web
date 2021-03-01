@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Region;
+use App\Models\JobCategory;
 
 class HomeController extends Controller
 {
@@ -20,7 +22,10 @@ class HomeController extends Controller
      */
     public function index()
     {   
+        $regions=Region::all();
+        $categories= JobCategory::all();
+
         $job_posts=app('App\Http\Controllers\JobPostController')->getPostsData(8);
-        return view('home',['posts'=>$job_posts]);
+        return view('home',['posts'=>$job_posts,'regions'=>$regions,'categories'=>$categories]);
     }
 }

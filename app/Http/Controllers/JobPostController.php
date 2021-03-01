@@ -7,9 +7,11 @@ use App\Models\JobPost;
 use App\Models\Region;
 use App\Models\JobCategory;
 use Illuminate\Validation\Validator;
+use phpDocumentor\Reflection\Types\Null_;
+
 class JobPostController extends Controller
 {
-    public function getJobPosts()
+    public function getJobPosts(Request $request=NULL)
     {
         $regions= Region::all();
         $industries=JobCategory::all();
@@ -21,6 +23,7 @@ class JobPostController extends Controller
         $post=JobPost::with('region','jobCategory')->find($job_post_id);
         return view('job',['post'=>$post]);
     }
+
 
     public function getPostsData($limit)
     {

@@ -1,7 +1,9 @@
 <div class="header">
     <div class="header-row">
         <div class="brand-col brand-name">
-            <img src="{{asset('images/logo.jpg')}}" alt="">
+            <a href="{{route('home')}}">
+                <img src="{{asset('images/logo.jpg')}}" alt="">
+            </a>
         </div>
         <div class="link-col links">
             <ul class="nav-link-wrapper">

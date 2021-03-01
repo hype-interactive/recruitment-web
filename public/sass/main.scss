@@ -35,6 +35,14 @@ body{
     overflow-y: scroll !important;
      font-family: 'Poppins', sans-serif;
 }
+a{
+    color: $primary-color !important;
+}
+a:hover{
+    color: #1DA1F2 !important;
+    text-decoration: none !important;
+
+}
 h3{
     text-align: center !important ;
     font-weight: 800;
@@ -172,6 +180,9 @@ h3{
         background-color: #0f203a;
         color: white;
     }
+    a{
+        color: $silver-sand !important;
+    }
 }
 .landing-wrapper{
     background-color: white;
@@ -251,12 +262,17 @@ h3{
 }
 
 .search-button{
-    width: 18%;
+    width: 100%;
     background-color: $orange !important;
     padding: 1rem 2rem;
     font-weight: bold;
     text-align: center;
     height: fit-content !important;
+}
+
+button:focus{
+    outline: 0 !important;
+    border: none;
 }
 .search-box{
     display: flex;
@@ -290,6 +306,14 @@ h3{
             text-decoration: none;
             color: $primary-color;
         }
+    }
+
+    a{
+        color: $primary-color;
+    }
+    a:hover{
+        color: #1DA1F2;
+
     }
 }
 .banner{
@@ -351,6 +375,7 @@ h3{
             z-index: 10;
         }
     }
+
     
 }
 .triangle{
@@ -871,3 +896,4 @@ button:focus{
       
     }
 }
+

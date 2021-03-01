@@ -26,6 +26,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 Route::get('jobs','App\Http\Controllers\JobPostController@getJobPosts')->name('job_posts');
+Route::get('search_job','App\Http\Controller\JobPostController@getJobPost')->name('search_job');
 Route::get('job/{id}','App\Http\Controllers\JobPostController@getJobPost')->name('job_post');
 Route::get('search_jobs/{str?}','App\Http\Controllers\JobPostController@searchJobs');
 
