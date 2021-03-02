@@ -20,8 +20,8 @@
         @if (Route::has('login'))
             <a class="nav-link" href="{{ route('login') }}"><button type="button" class="btn login  btn-lg ma-r-3">Login</button></a>
         @endif
-        @if (Route::has('register'))
-            <a class="nav-link" href="{{ route('register') }}"><button type="button" class="btn signup btn-lg">Signup</button></a>
+        @if (Route::has('login'))
+            <a class="nav-link" href="{{ route('login') }}"><button type="button" class="btn signup btn-lg">Signup</button></a>
         @endif 
         @else
         <div class="dropdown">
