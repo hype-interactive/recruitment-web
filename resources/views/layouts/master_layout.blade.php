@@ -28,8 +28,7 @@
                     <ul>
                         <li><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
                         <li><a href="{{route('admin.job_posts')}}">Job Posts</a></li>
-                        <li><a href="">Blog Post</a></li>
-                        <li><a href="">Services</a></li>
+                        <li><a href="{{route('admin.blog_posts')}}">Blog Post</a></li>
                     </ul>
                     <br>
                     <hr style="margin-top: 5px ; margin-bottom:5px">

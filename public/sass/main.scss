@@ -35,14 +35,14 @@ body{
     overflow-y: scroll !important;
      font-family: 'Poppins', sans-serif;
 }
-a{
-    color: $primary-color !important;
-}
-a:hover{
-    color: #1DA1F2 !important;
-    text-decoration: none !important;
+// a{
+//     color: $primary-color !important;
+// }
+// a:hover{
+//     color: #1DA1F2 !important;
+//     text-decoration: none !important;
 
-}
+// }
 h3{
     text-align: center !important ;
     font-weight: 800;
@@ -262,7 +262,7 @@ h3{
 }
 
 .search-button{
-    width: 100%;
+    width: 18%;
     background-color: $orange !important;
     padding: 1rem 2rem;
     font-weight: bold;
@@ -416,6 +416,7 @@ button:focus{
             display: flex;
             flex-direction: column;
             .body{
+                height: 198px ;
                 padding: 15px;
                 color: black;
                 background-color: #fafafa;
@@ -513,11 +514,12 @@ button:focus{
         .orange-box{
             margin-top: 6rem;
             background-color: $orange;
-            padding: 1rem 2rem;
             text-align: center;
+            align-items: center;
             height: fit-content !important;
             width: fit-content !important;
             border-radius: 3px;
+            a{height: fit-content;}
         }
     }
 
@@ -558,7 +560,6 @@ button:focus{
         .orange-box{
             margin-top: 2rem;
             background-color: $orange;
-            padding: 1rem 2rem;
             text-align: center;
             height: fit-content !important;
             width: fit-content !important;
@@ -897,3 +898,27 @@ button:focus{
     }
 }
 
+.fade{
+
+    opacity: 0.9 !important;
+
+    .modal-dialog{
+    top:30%;
+    opacity: none;
+    }
+}
+
+.employer{
+    input{
+        border: none ;
+        border-bottom: 2px solid $primary-color !important;
+        height: 4rem !important;
+        margin-bottom: 3rem;
+        background-color: rgb(238, 249, 253);
+    }
+
+    label{
+        font-weight: 400;
+    }
+
+}

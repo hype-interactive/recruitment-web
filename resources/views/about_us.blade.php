@@ -69,7 +69,7 @@
         <h2>From our expert blog</h2>
         <p>Consequat anim ullamco quis ea ad aute.</p>
         </div>
-        <div class="row">
+        {{-- <div class="row">
             <div class="col-md-4">
                 <div class="tcard">
                     <div class="image">
@@ -130,6 +130,30 @@
                     </div>
                 </div>
             </div>
+        </div> --}}
+        <div class="row">
+            @foreach ($blog_posts as $bpost)
+            <div class="col-md-4">
+                <div class="tcard">
+                    <div class="image">
+                        <img src="{{asset('storage/'.$bpost->image)}}" alt="">
+                        <p>Advice</p>
+                    </div>
+                    <div class="body">
+                        <b class="blog-card-title">{{Str::limit($bpost->link,50)}}</b>
+                        <p>{{Str::limit($bpost->caption,90)}}</p>
+                        <div class="blog-post-footer">
+                            <div class="right">
+                                <b>By Top Talented Recruiters</b>
+                            </div>
+                            <div class="left">
+                                <b>Read More</b>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            @endforeach
         </div>
     </div>
 </div>

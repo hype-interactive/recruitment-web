@@ -16,7 +16,7 @@
         
                       <div class="form-group col-md-3">
                         <label for="inputState">Dead line</label>
-                        <input type="date"  class="form-control" name="deadline" value="{{$post->deadline}}">
+                        <input type="date"  class="form-control" name="deadline" value="<?php  echo date('Y-m-d',strtotime($post->deadline)); ?>">
                         </select>
                       </div>
                       <div class="form-group col-md-3">
@@ -48,7 +48,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <label for="exampleFormControlTextarea1">Enter job description</label>
-                            <textarea class="form-control" name="description" id="exampleFormControlTextarea1" value="{{$post->description}}"></textarea>
+                            <textarea style="height: fit-content" class="form-control" name="description" id="exampleFormControlTextarea1" >{{$post->description}}</textarea>
                           </div>
                     </div>
                     <input type="hidden" name="job_post_id" value="{{$post->id}}">

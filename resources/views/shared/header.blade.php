@@ -18,10 +18,10 @@
             <img class="ma-r-3" src="{{asset('images/icons/linkedin.svg')}}" alt="">
         @guest
         @if (Route::has('login'))
-            <a class="nav-link" href="{{ route('login') }}"><button type="button" class="btn login  btn-lg ma-r-3">Login</button></a>
+            <a class="nav-link" ><button type="button" class="btn login  btn-lg ma-r-3" onclick="login()">Login</button></a>
         @endif
         @if (Route::has('login'))
-            <a class="nav-link" href="{{ route('login') }}"><button type="button" class="btn signup btn-lg">Signup</button></a>
+            <a class="nav-link" href="{{ route('login') }}"><button type="button" class="btn signup btn-lg" >Signup</button></a>
         @endif 
         @else
         <div class="dropdown">

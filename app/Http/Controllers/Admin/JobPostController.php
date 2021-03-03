@@ -20,7 +20,8 @@ class JobPostController extends Controller
 
      public function __construct(ApplicationController $applications,UserController $users)
      {
-        $this->middleware('admin');
+         $this->middleware('auth');
+         $this->middleware('admin');
          $this->applications = $applications;
          $this->users = $users;
 
@@ -61,7 +62,7 @@ class JobPostController extends Controller
         $job_post->job_category_id = $request->category;
         $job_post->region_id = $request->region;
 
-        if($job_post->save()) return redirect()->back()->with("msg","job post added successfully");
+        if($job_post->save()) return redirect('/admin/job-posts')->with("msg","job post added successfully");
 
     }
 

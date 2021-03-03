@@ -10,37 +10,32 @@
                     <div class="col-md-5 offset-md 1">
                     </div>
                 </div>
-                {{-- <form action="get" method="{{route('search_job')}}"> --}}
-
-                <div class="search-bar">
-                        <div class="search-box">
-                            <img src="{{asset('images/icons/loupe.svg')}}" alt="">
-                            <input type="text" name="search">
-                        </div>
-                        <div class="industry">
-                            <select class="custom-select" name="category">
-                                <option selected>Categories</option>
-                                @foreach ($categories as $category)
-                                    <option value="{{$category->id}}">{{$category->name}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="location">
-                            <select class="custom-select" name="location">
-                            <option selected>Location</option>
-                                @foreach ($regions as $region)
-                                    <option value="{{$region->id}}">{{$region->name}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        {{ csrf_field() }}
-                        <a style="width:18%" href="{{route('job_posts')}}">
-                        <button class="btn btn-orange search-button" type="submit">Search</button>
-                        </a>
-                        
-                </div>
-            {{-- </form>   --}}
-
+                <form method="POST" action="{{route('search')}}">
+                    <div class="search-bar">
+                            <div class="search-box">
+                                <img src="{{asset('images/icons/loupe.svg')}}" alt="">
+                                <input type="text" name="search">
+                            </div>
+                            <div class="industry">
+                                <select class="custom-select" name="category" >
+                                    <option selected>Categories</option>
+                                    @foreach ($categories as $category)
+                                        <option value="{{$category->id}}">{{$category->name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="location">
+                                <select class="custom-select" name="location" >
+                                <option selected>Location</option>
+                                    @foreach ($regions as $region)
+                                        <option value="{{$region->id}}">{{$region->name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            {{ csrf_field() }}
+                            <button class="btn btn-orange search-button" type="submit">Search</button>
+                    </div>
+                </form>  
             </div>
         </div>
     </div>
@@ -97,15 +92,17 @@
                     <img src="{{asset('images/icons/handshake.svg')}}" alt="">
                     <h3>Find great talent</h3>
                     <p>Be sure to have your pages set up with the latest design and development standards.  </p>
-                    <div class="orange-box">Register as employer</div>
+                    <a class="orange-box">
+                        <button class="btn btn-orange" data-toggle="modal" data-target="#employer-form">Register as employer </button>
+                    </a>
                 </div>
                 <div class="right">
                     <img src="{{asset('images/icons/briefcase-frontal-view.svg')}}" alt="">
                     <h3>Find great talent</h3>
                     <p>Be sure to have your pages set up with the latest design and development standards.  </p>
-                    <a href="{{route('login')}}"> 
-                        <div class="orange-box">Register as job seeker</div>
-                    </a>
+                        <a class="orange-box" href="{{route('login')}}">
+                            <button class="btn btn-orange">Register as job seeker</button>
+                        </a>
                 </div>
             </div>
         </div>
@@ -125,16 +122,12 @@
                     <h3>Find great talent</h3>
                     <p>of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining 
                         essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-                         </p>
-                    <div class="orange-box">Register as employer</div>
+                    </p>
+                    <a class="orange-box">
+                        <button class="btn btn-orange" data-toggle="modal" data-target="#employer-form">Register as employer </button>
+                    </a>
                 </div>
               </div>
-              {{-- <div class="carousel-item">
-                <img src="..." class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="..." class="d-block w-100" alt="...">
-              </div> --}}
             </div>
             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -153,76 +146,31 @@
             <p>Consequat anim ullamco quis ea ad aute.</p>
             </div>
             <div class="row">
-                <div class="col-md-4">
-                    <div class="tcard">
-                        <div class="image">
-                            <img src="{{asset('images/mac.jpg')}}" alt="">
-                            <p>Advice</p>
-                        </div>
-                        <div class="body">
-                            <b class="blog-card-title">Working from home in Tanzania</b>
-                            <p>Do you remember that endless summer back in '84? Cruising down the ocean-highway with the top down, the wind in our hair and heads buzzing with neon dreams</p>
-                            <div class="blog-post-footer">
-                                <div class="right">
-                                    <b>By Top Talented Recruiters</b>
+                @foreach ($blog_posts as $bpost)
+                        <div class="col-md-4">
+                            <div class="tcard">
+                                <div class="image">
+                                    <img src="{{asset('storage/'.$bpost->image)}}" alt="">
+                                    <p>Advice</p>
                                 </div>
-                                <div class="left">
-                                    <b>Read More</b>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="tcard">
-                        <div class="image">
-                            <img src="{{asset('images/skycrapper.jpg')}}" alt="">
-                            <p>Advice</p>
-                        </div>
-                        <div class="body">
-                            <b class="blog-card-title">Working from home in Tanzania</b>
-                            <p>Do you remember that endless summer back in '84? Cruising down the ocean-highway with the top down, the wind in our hair and heads buzzing with neon dreams</p>
-                            <div class="blog-post-footer">
-                                <div class="right">
-                                    <b>By Top Talented Recruiters</b>
-                                </div>
-                                <div class="left">
-                                    <b>Read More</b>
+                                <div class="body">
+                                    <b class="blog-card-title">{{Str::limit($bpost->link,50)}}</b>
+                                    <p>{{Str::limit($bpost->caption,90)}}</p>
+                                    <div class="blog-post-footer">
+                                        <div class="right">
+                                            <b>By Top Talented Recruiters</b>
+                                        </div>
+                                        <div class="left">
+                                            <b>Read More</b>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="tcard">
-                        <div class="image">
-                            <img src="{{asset('images/advice.jpg')}}" alt="">
-                            <p>Advice</p>
-                        </div>
-                        <div class="body">
-                            <b class="blog-card-title">By Top Talented Recruiters</b>
-                            <p>Do you remember that endless summer back in '84? Cruising down the ocean-highway with the top down, the wind in our hair and heads buzzing with neon dreams</p>
-                            <div class="blog-post-footer">
-                                <div class="right">
-                                    <b>By Top Talented Recruiters</b>
-                                </div>
-                                <div class="left">
-                                    <b>Read More</b>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                        </div> 
+                @endforeach
             </div>
         </div>
     </div>
 
-    <!-- Button trigger modal -->
-{{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#yudaModal">
-    Launch demo modal
-  </button> --}}
-  
   <!-- Modal -->
-  
-   
 @endsection

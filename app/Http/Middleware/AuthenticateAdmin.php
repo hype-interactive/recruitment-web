@@ -16,8 +16,8 @@ class AuthenticateAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        $admin=Auth::user()->type;
-        if($admin != "admin"){
+        
+        if(Auth::user()->type != "admin"){
             return redirect('login')->with('msg','You are not an admin !');
         }
         return $next($request);

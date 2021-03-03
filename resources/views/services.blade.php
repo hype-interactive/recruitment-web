@@ -16,7 +16,9 @@
                 <p>of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining 
                     essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
                      </p>
-                <div class="orange-box">Register as employer</div>
+                <div class="orange-box">
+                  <button class="btn btn-orange" data-toggle="modal" data-target="#employer-form">Register as employer </button>
+                </div>
             </div>
           </div>
           {{-- <div class="carousel-item">

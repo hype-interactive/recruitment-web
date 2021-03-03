@@ -1,9 +1,6 @@
 @extends('layouts.master_layout')
 @section('page-summary')
-    <div>
         <h2>Hello , John</h2>
-        <p>Mollit nulla eu labore do mollit commodo culpa culpa adipisicing.</p>
-    </div>
 @endsection
 @section('body')
     <div class="container">

@@ -6,12 +6,15 @@ use Illuminate\Http\Request;
 
 class ApplicationController extends Controller
 {
-    public function _contruct(){
+    public function __construct()
+    {
         $this->middleware('auth');
+
     }
 
     public function showPanel($post_id)
     {
+
         return view('application_form');
     }
 }

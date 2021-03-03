@@ -1,12 +1,9 @@
 @extends('layouts.master_layout')
 @section('page-summary')
-        <div class="left">
-            <h2>Jop Post</h2>
-            <p>Sometimes you may not have terminal access of server-hosted Laravel application. You may not much </p>
-        </div>
-        <div class="right">
+            <b>Jop Post</b>
+        {{-- <div class="right">
             <img src="{{asset('images/icons/settings.svg')}}" alt="">
-        </div>
+        </div> --}}
 @endsection
 @section('body')
     <div class=" row post-list">
@@ -28,7 +25,7 @@
                     <hr>
                     <div class="card-footer">
                         <div>{{$post->region->name}}</div>
-                        <div><a href="{{route('admin.post',$post->id)}}"> View </a> <span class="gray">|</span> <a href="{{route('admin.edit_post_panel',$post->id)}}">Edit</a></div>
+                        <div><a href="{{route('admin.post',$post->id)}}"> Applications </a> <span class="gray">|</span> <a href="{{route('admin.edit_post_panel',$post->id)}}">Edit</a></div>
                     </div>
                     <div class="triangle"></div>
                 </div>

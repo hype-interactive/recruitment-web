@@ -86,7 +86,7 @@
                     @enderror
                 </div>
                 <div>
-                    <input id="password" type="password" class="@error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Enter password">
+                    <input type="password" class="@error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Enter password">
                     @error('password')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -144,35 +144,5 @@
         </div>
     </div>
 </div>
-<script>
-    function hide(id) {
-        // alert("hides"+id);
-       var element = document.getElementById(id).style.display="none";
-    }
-
-    function show(id) {
-        // alert("show"+id);
-        document.getElementById(id).style.display="block";
-    }
-
-    function setnew(id){
-
-        if(id == "login" ){
-            // alert("to open login");
-            hide("signup");
-            hide("reset")
-            show("login");
-        }else if(id == "reset"){
-            hide("signup");
-            hide("login");
-            show("reset");
-        }else{
-            hide("login");
-            hide("reset");
-            show("signup");
-        }
-        
-    }
-</script>
 @endsection
 
