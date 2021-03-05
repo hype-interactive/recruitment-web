@@ -14,78 +14,94 @@ class JobPostController extends Controller
 {
     public function getJobPosts(Request $request )
     {
-        // var_dump($request->all()); exit();
 
-        if($request->all() != null){
-            // var_dump("here"); exit();
-            $job_posts=$this->getPostsData(20,$request->region_id, $request->category_id);
+        if($request->region_id != "null" || $request->category_id != "null" || $request->keyword != null){
+
+            $job_posts=$this->getPostsData(20,$request->region_id, $request->category_id, $request->keyword);
         }else {
+
             $job_posts=$this->getPostsData(20);
         
         }
+        //get regions tagged from post only
+        
         $regions= Region::all();
+
         $industries=JobCategory::all();
         return view('jobs',['regions'=>$regions,'industries'=>$industries,'job_posts'=>$job_posts]);
     }
     public function getJobPost($job_post_id)
     {
         $post=JobPost::with('region','jobCategory')->find($job_post_id);
+        // var_dump($job_post_id); exit();
         return view('job',['post'=>$post]);
     }
 
 
-    public function getPostsData($limit , $region_id = null , $category_id = null)
+    public function getPostsData($limit , $region_id = null , $category_id = null , $keyword = null)
     {
-        // $query=DB::table('job_posts');
-        // if($region_id){
-        //     $query->where('region_id','=',$region_id);
-        // }
-        // if($category_id ){
-        //     $query->where('job_category_id','=',$category_id);
-        // }
-        
-        // $results = $query
-        //         ->select('job_posts.*','regions.name','job_categories.name')
-        //         ->join('regions','job_posts.region_id','=','regions.id')
-        //         ->join('job_categories','job_posts.job_category_id','=','job_categories.id')
-        //         ->take($limit)->get();
 
-        // var_dump($results[0]); exit();
-        $results=JobPost::latest()->take($limit)->get();
+        $query=JobPost::query();
+        if($region_id != "null" && $region_id != null){
+            $query->where('region_id','=',$region_id);
+        }
+        if($category_id != "null" && $category_id != null){
+            $query->where('job_category_id','=',$category_id);
+        }
+        if($keyword != null){
+            $query->where('title','like','%'.$keyword.'%');
+        }
+        $results = $query->take($limit)->get();
+
         return $results;
     }
 
     public function searchJobs(Request $request)
     {
-        // if($request->q[0] == 0){
-        //     $without_identifire=substr($request->q,4);
-        //     // $filter_array= explode(",",$without_identifire);
-        //     // $jobs=[$without_identifire];
-        //     $jobs=DB::table('job_posts')
-        //             ->join('regions','job_posts.region_id','=','regions.id')
-        //             ->join('job_categories','job_categories.id','=','job_posts.job_category_id')
-        //             ->select('job_posts.*','regions.name','job_categories.name')
-        //             ->whereIn('region_id',[$without_identifire])->get();
 
-        //     echo \json_encode($jobs);
+        if(strlen($request->q) >4){
 
-        // }
+            // $query=JobPost::query();
 
-        $jobs=JobPost::with('region','jobCategory')->where('title','LIKE','%'. $request->q.'%')->get();
+            if(str_starts_with($request->q,'000')){
 
-        echo \json_encode($jobs);
+                $jobs=JobPost::with('region','jobCategory')->whereIn('region_id',$this->makeArray($request->q))->latest()->get();
+                // $query->whereIn('region_id',$this->makeArray($request->q));
+            }
+            if(str_starts_with($request->q,'111')){
+
+                $jobs=JobPost::with('region','jobCategory')->whereIn('job_category_id',$this->makeArray($request->q))->latest()->get();
+                // $query->whereIn('job_category_id',$this->makeArray($request->q));
+            }
+            if(str_starts_with($request->q,'222')){
+                $single=substr($request->q,4);
+                if(strlen($single) < 2 ){
+
+                    $jobs=JobPost::with('region','jobCategory')->where('type','like','%'.$single.'%')->latest()->get();
+                }else {
+
+                    $jobs=JobPost::with('region','jobCategory')->where('type','Part time')->orWhere('type','Full time')->latest()->get();
+
+                }
+
+            }
+            echo \json_encode($jobs);   
+
+            // $query->with('region','jobCategory')->latest()->get();
+
+            // echo \json_encode($query);   
+        }else {
+            $jobs=JobPost::with('region','jobCategory')->where('title','like','%'.$request->q.'%')->latest()->get();
+            echo \json_encode($jobs);
+        }
+
+
+
     }
 
-
+    public function makeArray($str)
+    {
+                $filter_str=substr($str,4);
+                return explode(",",$filter_str);
+    }
 }
-// $jobs = Job::select()
-//         ->where(‘id’, ‘>’, 0);
-// If($request->region_1){
-//      $jobs = $cart->orWhere(‘region’,$request->region_1)
-// }
-
-// If($request->region_2){
-//      $jobs = $cart->orWhere(‘region’,$request->region_2)
-// }
-
-// $jobs = $jobs->get();

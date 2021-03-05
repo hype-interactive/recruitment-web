@@ -1,7 +1,7 @@
 @extends('../layouts.master_layout')
 @section('page-summary')
 
-<b>Add New Blog Post</b>
+    <b>Add New Blog Post</b>
     
 @endsection
 @section('body')

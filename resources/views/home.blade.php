@@ -14,19 +14,19 @@
                     <div class="search-bar">
                             <div class="search-box">
                                 <img src="{{asset('images/icons/loupe.svg')}}" alt="">
-                                <input type="text" name="search">
+                                <input type="text" name="keyword" placeholder="search by keyword">
                             </div>
                             <div class="industry">
-                                <select class="custom-select" name="category" >
-                                    <option selected>Categories</option>
+                                <select class="custom-select" name="category_id" >
+                                    <option value="null">Categories</option>
                                     @foreach ($categories as $category)
                                         <option value="{{$category->id}}">{{$category->name}}</option>
                                     @endforeach
                                 </select>
                             </div>
                             <div class="location">
-                                <select class="custom-select" name="location" >
-                                <option selected>Location</option>
+                                <select class="custom-select" name="region_id" aria-placeholder="hello">
+                                <option value="null">Location</option>
                                     @foreach ($regions as $region)
                                         <option value="{{$region->id}}">{{$region->name}}</option>
                                     @endforeach
@@ -161,7 +161,9 @@
                                             <b>By Top Talented Recruiters</b>
                                         </div>
                                         <div class="left">
+                                            <a href="{{route('blog_post',$bpost->id)}}">
                                             <b>Read More</b>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>

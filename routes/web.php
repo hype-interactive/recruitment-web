@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,22 +13,28 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Auth::routes();
 
 
 Route::get('application_panel/{id}','App\Http\Controllers\ApplicationController@showPanel')->name('application_panel');
 Route::get('/about_us','App\Http\Controllers\BlogPostController@displayPost')->name('about_us');
 Route::get('/services',function (){ return view('services');})->name('services');
 Route::post('register_employer','App\Http\Controllers\EmployerController@create')->name('register_employer');
-Auth::routes();
+Route::post('add_document','App\Http\Controllers\ApplicationController@add')->name('add_document');
+Route::get('download/{id}','App\Http\Controllers\ApplicationDocumentController@download')->name('download');
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
 Route::get('jobs','App\Http\Controllers\JobPostController@getJobPosts')->name('job_posts');
-Route::post('/site/search_job','App\Http\Controllers\JobPostController@getJobPosts')->name('search');
+Route::post('search_job','App\Http\Controllers\JobPostController@getJobPosts')->name('search');
 Route::get('job/{id}','App\Http\Controllers\JobPostController@getJobPost')->name('job_post');
 Route::get('search_jobs/{str?}','App\Http\Controllers\JobPostController@searchJobs');
+Route::get('blog_post/{id}','App\Http\Controllers\BlogPostController@getPost')->name('blog_post');
+Route::post('update_user','App\Http\Controllers\UserController@update')->name('update_user');
+
+
 
 
 // admin routes
@@ -39,7 +45,7 @@ Route::get('admin/job-posts','App\Http\Controllers\Admin\JobPostController@getJo
 Route::post('add-job-post','App\Http\Controllers\Admin\JobPostController@addJobPost')->name('admin.add_job_post');
 Route::get('add-job-post','App\Http\Controllers\Admin\JobPostController@createJobPost')->name('admin.create_job_post');
 Route::get('post/{id}','App\Http\Controllers\Admin\JobPostController@getJobPost')->name('admin.post');
-Route::get('application/{id}','App\Http\Controllers\Admin\ApplicationController@getApplication')->name('admin.application');
+Route::get('/admin/application/{id}','App\Http\Controllers\Admin\ApplicationController@getApplication')->name('admin.application');
 Route::get('edit_post_panel/{id}','App\Http\Controllers\Admin\JobPostController@showEditPostPanel')->name('admin.edit_post_panel');
 Route::post('edit_post','App\Http\Controllers\Admin\JobPostController@editJobPost')->name('admin.edit_job_post');
 Route::get('/admin/application_search/{str?}','App\Http\Controllers\Admin\ApplicationController@searchApplication' );
@@ -49,5 +55,13 @@ Route::get('/admin/add_blog_post_panel','App\Http\Controllers\Admin\BlogPostCont
 Route::post('/admin/add_blog_post','App\Http\Controllers\Admin\BlogPostController@addPost')->name('admin.add_blog_post');
 Route::get('/admin/edit_blog_post_panel/{id}','App\Http\Controllers\Admin\BlogPostController@displayEditPostPanel')->name('admin.edit_blog_post_panel');
 Route::post('/admin/edit_blog_post','App\Http\Controllers\Admin\BlogPostController@editPost')->name('admin.edit_blog_post');
+
+Route::get('/admin/accept/{id}','App\Http\Controllers\Admin\ApplicationController@accept')->name('admin.accept');
+Route::get('/admin/reject/{id}','App\Http\Controllers\Admin\ApplicationController@reject')->name('admin.reject');
+Route::get('/admin/reserve/{id}','App\Http\Controllers\Admin\ApplicationController@reserve')->name('admin.reserve');
+Route::get('/admin/manage_users','App\Http\Controllers\Admin\UserController@manage')->name('admin.manage_users');
+Route::post('/admin/add_admin','App\Http\Controllers\Admin\UserController@addAdmin')->name('admin.add_admin');
+
+
 
 

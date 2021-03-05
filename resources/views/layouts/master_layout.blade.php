@@ -15,12 +15,16 @@
         <div class="main-header">
             <div class="container">
                 <div class="tool-bar">
-                    <div class="name">Top Talented Recruits</div>
+                    <div class="name">
+                        <a href="{{route('home')}}">
+                        <img src="{{asset('images/logo.jpg')}}" alt="">
+                        </a>
+                    </div>
                     <ul>
                         <li></li>
                         <li></li>
                         <li>
-                            <div class="banner"><span>JK</span>JOHN KILLO</div>
+                            <div class="banner"><span>{{substr(Auth::user()->fname,0,1).substr(Auth::user()->lname,0,1)}}</span>{{Auth::user()->fname}}</div>
                         </li>
                     </ul>
                 </div>
@@ -29,6 +33,9 @@
                         <li><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
                         <li><a href="{{route('admin.job_posts')}}">Job Posts</a></li>
                         <li><a href="{{route('admin.blog_posts')}}">Blog Post</a></li>
+                        @if (Auth::user()->type == "admin")
+                            <li><a href="{{route('admin.manage_users')}}">User Management</a></li>    
+                        @endif
                     </ul>
                     <br>
                     <hr style="margin-top: 5px ; margin-bottom:5px">

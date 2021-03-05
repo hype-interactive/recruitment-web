@@ -19,6 +19,7 @@ class ApplicationController extends Controller
     {
         $application=Application::find($application_id);
 
+        // var_dump($application->applicationDocument->type); exit();
         return view('admin/application',['application'=> $application]);
     }
 
@@ -48,6 +49,27 @@ class ApplicationController extends Controller
         
 		echo \json_encode($application);
 
+    }
+
+    public function accept($application_id)
+    {
+        $application= Application::find($application_id);
+        $application->status="selected";
+        if($application->update()) return back();
+    }
+
+    public function reject($application_id)
+    {
+        $application= Application::find($application_id);
+        $application->status="rejected";
+        if($application->update()) return back();
+    }
+
+    public function reserve($application_id)
+    {
+        $application= Application::find($application_id);
+        $application->status="reserved";
+        if($application->update()) return back();
     }
 
 }

@@ -35,7 +35,6 @@
     }
 
     function setnew(id){
-        alert('habari')
         if(id == "login" ){
             // alert("to open login");
             hide("signup");
@@ -55,9 +54,10 @@
 
     function login() {
         console.log("Clicked lohin");
+
         var x = window.location.href='/login'
         
-        $(x).reday(setnew('login'));
+        $(x).reday(setnew('login')); 
         // if(window.location.href='/login'){
         //         setnew('login')
         //         this.document.
@@ -66,5 +66,14 @@
         // }
     }
 
+ $(document).ready(function () {
+     <?php 
+     if(Auth::user()&&Auth::user()->type == "admin"){
+         echo '$("#navlinks ul").append(\'<li class="nav-link"> <a href="admin/dashboard">Admin</a></li>\');';
+     }
+     ?>
+     
+ });
 </script>
 </html>
+

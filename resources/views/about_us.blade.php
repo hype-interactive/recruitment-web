@@ -147,8 +147,11 @@
                                 <b>By Top Talented Recruiters</b>
                             </div>
                             <div class="left">
-                                <b>Read More</b>
+                                <a href="{{route('blog_post',$bpost->id)}}">
+                                    <b>Read More</b>
+                                </a>
                             </div>
+                            
                         </div>
                     </div>
                 </div>

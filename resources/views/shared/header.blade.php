@@ -6,7 +6,7 @@
             </a>
         </div>
         <div class="link-col links">
-            <ul class="nav-link-wrapper">
+            <ul id="navlinks" class="nav-link-wrapper">
                 <li class="nav-link"> <a href="{{route('home')}}">Home</a></li>
                 <li class="nav-link"> <a href="{{route('job_posts')}}">Jobs</a></li>
                 <li class="nav-link"> <a href="{{'services'}}">Services</a></li>

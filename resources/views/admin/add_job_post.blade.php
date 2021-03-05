@@ -1,6 +1,6 @@
 @extends('layouts.master_layout')
 @section('page-summary')
-    {{-- <h4>Add Job Post;</h4> --}}
+    <b>Add Job Post;</b>
 @endsection
 @section('body')
     <div class="add-job-post-form">

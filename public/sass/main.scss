@@ -22,9 +22,9 @@
 }
 
 @mixin box-shadow{
-    -webkit-box-shadow: 0px 0px 4px 0px rgba(22,48,84,1);
-    -moz-box-shadow: 0px 0px 4px 0px rgba(22,48,84,1);
-    box-shadow: 0px 0px 4px 0px rgba(22,48,84,1);
+    -webkit-box-shadow: 0px 0px 42px -16px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 42px -16px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 42px -16px rgba(0,0,0,0.75);
     background-color: white;
 }
 
@@ -597,13 +597,10 @@ button:focus{
     .auth{
         color: $primary-color;
         width: 50rem;
-        background:white;
         padding:4rem;
         text-align:center;
-        -webkit-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.75);
-        -moz-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.75);
-        box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.75);
         border-radius: 20px;
+        @include box-shadow;
 
         img{
             width: 20rem;
@@ -921,4 +918,54 @@ button:focus{
         font-weight: 400;
     }
 
+}
+.blog_post_wrapper{
+    padding: 6rem 4rem;
+    min-height:90rem;
+
+    .blog-post-card{
+        position: relative;
+        width:100% ;
+        @include flex-center;
+        img{
+            width: 90rem;
+            height: 50rem;
+            object-fit: cover;
+        }
+  
+    .card-body{
+        width: 80rem;
+        min-height: 40rem;
+        position: absolute;
+        margin-left: 8rem !important;
+        margin-right: 8rem !important;
+        top:30rem;
+        padding: 4rem;
+        border-radius: 4px;
+        font-weight: 500;
+        font-size: 1.7rem;
+
+        background: rgba(255, 255, 255, 0.747);
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+        backdrop-filter: blur( 4px );
+        opacity: 1;
+        -webkit-backdrop-filter: blur( 4px );
+
+    }
+}
+}
+.warning{
+    margin: 7.6rem;
+    padding: 4rem;
+    font-size: 4rem;
+    font-weight: 800;
+    border-radius: 20px;
+    text-align: center;
+
+    background: rgba(255, 144, 53, 0.404);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    opacity: 1;
+    -webkit-backdrop-filter: blur( 4px );
+    
 }

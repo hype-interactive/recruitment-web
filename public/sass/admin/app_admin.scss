@@ -32,9 +32,9 @@
 
 
 @mixin box-shadow{
-    -webkit-box-shadow: -5px -17px 38px -6px rgba(0,0,0,0.22);
--moz-box-shadow: -5px -17px 38px -6px rgba(0,0,0,0.22);
-box-shadow: -5px -17px 38px -6px rgba(0,0,0,0.22);
+    -webkit-box-shadow: 0px 0px 25px -16px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 25px -16px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 25px -16px rgba(0,0,0,0.75);
     background-color: white;
 }
 body{
@@ -49,14 +49,15 @@ hr{
 
 //static_layout
 .main-header{
-    background-color: whitesmoke;
-    padding-top: 0.5rem;
+    background-color: white;
+    padding-top: 1rem;
     .tool-bar{
         @include flex-space-between;
         .name{
-            font-weight: 700;
-            font-size: 1.9rem;
-            color: $primary-color;
+            margin-left: -13rem;
+            img{
+                width: 20rem;
+            }
         }
         ul{
             list-style: none;
@@ -85,38 +86,35 @@ hr{
         }
     }
     .summary{
-        @include flex-space-between;
-        margin-bottom: 2rem;
+        padding: 1.5rem 0rem 0.5 0rem;
         color: $primary-color;
         float: left;
         width: 100%;
         text-align: start;
         h2{
-            font-weight: 700;
+            font-weight: 600;
         }
-        .left{
-            width: 60%;
-        }
-        .right{
-            display:flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 1rem;
-        }
-        .banner{
-            background-color: $primary-color;
-            color: whitesmoke;
-            span{
-                background-color: $silver-sand;
-                color: $primary-color;
-                font-size: 2rem;
-                font-weight: 700;
-            }
-        }
+       
         b{
             font-size: 2rem;
             font-weight: 300 !important;
         }
+
+        .right{
+            float: right;
+        }
+        // .banner{
+        //     background-color: $primary-color;
+        //     color: whitesmoke;
+        //     span{
+        //         background-color: $silver-sand;
+        //         color: $primary-color;
+        //         font-size: 2rem;
+        //         font-weight: 700;
+        //     }
+        // }
+
+ 
         input,select{
             height: 2rem !important;
             border-bottom: none !important;
@@ -131,6 +129,7 @@ hr{
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     padding: 4px;
+    padding-right: 2rem;
     font-size: small;
     font-weight: 500;
     min-width: max-content;
@@ -352,6 +351,7 @@ input ,select{
         img{
             width: inherit;
             height: 140px;
+            object-fit: cover;
         }
         p{
             font-size: small;
@@ -502,6 +502,7 @@ button:focus{
         overflow: hidden;
         padding-top: 3rem;
         margin-bottom: 2rem;
+        margin-top: 3rem;
         img{
             width: 12rem ;
             height: 9rem;
@@ -510,14 +511,49 @@ button:focus{
 }
 
 .application-wrapper{
+    span{
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: $primary-color;
+        margin-right: 1rem;
+    }
     .personal-info,.documents,.actions{
         @include box-shadow;
         margin-bottom: 4rem;
         padding: 2rem;
         border-radius: 5px;
 
-        .row{
-            @include flex-space-between;
+    }
+    .cell{
+        @include flex-center;
+        justify-content: start;
+        padding-left: 2rem;
+        margin: 2rem;
+        height: 5rem;
+        background-color: rgb(237, 237, 248);
+        border-radius: 5px;
+        width: 100%;
+        border-bottom: 0.5rem solid $primary-color;
+    }
+    .icon{
+        width: 100%;
+        padding-left: 2.5rem;
+        img{
+            width: 7rem;
+            height: 7rem;
         }
     }
+    .documents-btn{
+        @include flex-space-between;
+    }
+    .document-box{
+        padding-left: 4rem;
+    }
+    .action-btn{
+        margin-top: 2rem;
+        margin-left: 0.5rem;
+    }
 }
+
+
+
