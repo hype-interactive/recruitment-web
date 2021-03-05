@@ -4,7 +4,7 @@
 @endsection
 @section('body')
     <div class="add-job-post-form">
-        <form action="{{route('admin.add_job_post')}}" method="POST">
+        <form action="{{route('admin.add_job_post')}}" method="POST" novalidate>
             <div class="form-row">
                 <div class="form-group col-md-12">
                     <label for="inputAddress">Job post title</label>
