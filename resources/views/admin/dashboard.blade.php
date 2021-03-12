@@ -1,6 +1,6 @@
 @extends('layouts.master_layout')
 @section('page-summary')
-        <h2>Hello , {{Auth::user()->fname}} !</h2>
+        <h2 style="text-transform: capitalize">Hello , {{Auth::user()->fname}} !</h2>
         <smal>Wellcome <strong>Top Talented Recruitment</strong>  Admin's Dashboard </p>
 @endsection
 @section('body')

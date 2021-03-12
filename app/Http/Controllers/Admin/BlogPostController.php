@@ -28,7 +28,7 @@ class BlogPostController extends Controller
     public function addPost(Request $request )
     {
         $post = new BlogPost();
-        $post->link = $request->title;
+        $post->title = $request->title;
         $post->caption = $request->caption;
         if($request->hasFile('image')){
             $path=$request->image->store('/public/uploaded');
@@ -36,7 +36,7 @@ class BlogPostController extends Controller
             $post->image=$path_to_upload;
         }
 
-        if($post->save()) return redirect('admin/blog_posts');
+        if($post->save()) return redirect('admin/blog_posts')->with('msg','Post created successfully!');
     }
 
     public function editPost(Request $request)
@@ -44,7 +44,7 @@ class BlogPostController extends Controller
         // delete previous image from storage
         if($request->post_id  != Null){
             $post= BlogPost::find($request->post_id);
-            $post->link = $request->title;
+            $post->title = $request->title;
             $post->caption = $request->caption;
             if($request->hasFile('image')){
                 $path=$request->image->store('/public/uploaded');
@@ -53,7 +53,15 @@ class BlogPostController extends Controller
             }
         }
 
-        if($post->update()) return redirect('admin/blog_posts');
+        if($post->update()) return redirect('admin/blog_posts')->with('msg','Post updated successfully!');
+
+    }
+
+    public function deletePost(Request $request)
+    {
+        // var_dump($request->post_id); exit();
+        $post=BlogPost::find($request->post_id);
+        if($post->delete()) return back()->with('msg','Post deleted successfully');
 
     }
 }

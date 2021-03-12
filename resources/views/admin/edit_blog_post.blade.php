@@ -12,15 +12,15 @@
                     @csrf
                     <div class="form-group">
                         <label for="exampleInputPassword1">Post Title</label>
-                        <input type="text" name="title" class="form-control form-control-lg"   id="title" onkeyup="displayText('title','blog-title')" required>
+                        <input type="text" name="title" value="{{$post->title}}" class="form-control form-control-lg"   id="title" onkeyup="displayText('title','blog-title')" required>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Post Content</label>
-                        <textarea name="caption" class="form-control form-control-lg"  id="caption" onkeyup="displayText('caption','post-content')" required></textarea>
+                        <textarea name="caption"  class="form-control form-control-lg"  id="caption" onkeyup="displayText('caption','post-content')" required>{!!$post->caption!!}</textarea>
                     </div>
                     <input type='file' name="image" accept="image/jpg" onchange="readURL(this);" required />
                     <input type="hidden" value="{{$post->id}}" name="post_id">
-                    <button type="submit" class="btn btn-orange"> Save Changes</button>
+                    <button type="submit" class="btn btn-orange bp-btn"> Save Changes</button>
                 </form>
             </div>
         </div>
@@ -32,7 +32,7 @@
                 </div>
                 <div class="body">
                     <b class="blog-card-title" id="blog-title">{{$post->link}}</b>
-                    <p id="post-content">{{$post->caption}}</p>
+                    <p id="post-content">{!!$post->caption!!}</p>
                     <div class="blog-post-footer">
                         <div class="right">
                             <b>By Top Talented Recruiters</b>
@@ -71,4 +71,23 @@
             return content_display.textContent = textarea.value;
         }
     </script>
+         <script type="text/javascript" src="{{asset('tinymce/tinymce.min.js')}}"></script>
+         <script type="text/javascript">
+          tinymce.init({
+              selector: "#caption",
+              init_instance_callback: function(editor) {
+                editor.on('keyup', function(e) {
+                    var content_display = document.getElementById('post-content');
+                     return content_display.innerHTML = editor.getContent();
+                });
+            },
+              plugins: [
+                  "advlist autolink lists link image charmap print preview anchor",
+                  "searchreplace visualblocks code fullscreen",
+                  "insertdatetime media table contextmenu paste"
+              ],
+              branding:false
+          });
+        </script>
+
 @endsection

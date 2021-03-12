@@ -18,11 +18,11 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Post Content</label>
-                        <textarea name="caption" class="form-control form-control-lg"   id="caption" onkeyup="displayText('caption','post-content')" required></textarea>
+                        <textarea  name="caption" class="form-control form-control-lg"   id="caption" onkeyup="displayText('caption','post-content')" nonvalidate></textarea>
                     </div>
                     <input type='file' name="image" accept="image/jpg" onchange="readURL(this);" required/>
 
-                    <button type="submit" class="btn btn-orange"> Add Post</button>
+                    <button type="submit" class="btn btn-orange bp-btn"> Add Post</button>
                 </form>
             </div>
         </div>
@@ -66,11 +66,34 @@
             }
         }
 
+
         function displayText(id_one,id_two) {
+            
             var textarea = document.getElementById(id_one);
             var content_display=document.getElementById(id_two);
-
             return content_display.textContent = textarea.value;
         }
+
+
+    </script>
+     <script type="text/javascript" src="{{asset('tinymce/tinymce.min.js')}}"></script>
+     <script type="text/javascript">
+      tinymce.init({
+          selector: "#caption",
+          init_instance_callback: function(editor) {
+                editor.on('keyup', function(e) {
+                    var content_display = document.getElementById('post-content');
+                     return content_display.innerHTML = editor.getContent();
+                });
+            },
+          plugins: [
+              "advlist autolink lists link image charmap print preview anchor",
+              "searchreplace visualblocks code fullscreen",
+              "insertdatetime media table contextmenu paste"
+          ],
+          
+          branding:false
+
+      });
     </script>
 @endsection

@@ -51,6 +51,7 @@ hr{
 .main-header{
     background-color: white;
     padding-top: 1rem;
+    position: relative;
     .tool-bar{
         @include flex-space-between;
         .name{
@@ -67,8 +68,10 @@ hr{
         }
         .banner{
             background-color: $silver-sand ;
+            text-transform: capitalize;
             span{
                 background-color: $key-lime;
+                text-transform: uppercase;
             }
 
         }
@@ -120,8 +123,26 @@ hr{
             border-bottom: none !important;
         }
     }
+    .pop-feedback{
+        @include box-shadow();
+        position: absolute;
+        bottom: -2rem;
+        right: 0rem;
+        width: fit-content;
+        padding: 1rem 3rem;
+        font-weight: 700;
+        border: 1px solid white;
+        background-color: $orange;
+        border-top-left-radius: 25px;
+        border-bottom-left-radius: 25px;
+    }
 }
-
+.small-icon{
+    width: 13px !important;
+    height: 13px !important;
+    margin-right: 5px;
+    margin-left: 5px;
+}
 .banner{
     @include flex-center;
     border-bottom-left-radius: 20px;
@@ -220,7 +241,7 @@ input ,select{
  
       
 
-       button{
+       .br-btn{
            position: absolute;
            bottom: 8rem;
            right: 8rem;
@@ -364,8 +385,8 @@ input ,select{
             small{
                 position: absolute;
                 right:0rem;
-                padding: 0.4rem 2rem 0.4rem 1.5rem;
-                background-color: $orange;
+                padding: 0.4rem 1rem 0.4rem 1rem;
+                background-color: #f6993f47;
                 bottom: 0.5rem;
                 float: right;
                 border-top-left-radius: 20px;
@@ -411,9 +432,9 @@ input ,select{
             padding: 1rem 6rem;
             height: 500px;
 
-            button{
+            .bp-btn{
                 position: absolute;
-                bottom: 0rem;
+                bottom: -3rem;
                 right: 6rem;
             }
         }

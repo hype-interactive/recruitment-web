@@ -1,8 +1,28 @@
 @extends('layouts.app')
 @section('body')
-    <div class="landing-wrapper container-fluid" style="background-image: url('{{asset('images/Herobanner.jpg')}}');">
-        <div class="container">
-            <div class="landing">
+    {{-- <div class="landing-wrapper container-fluid" style="background-image: url('{{asset('images/Herobanner.jpg')}}');"> --}}
+    <div class="landing-wrapper" >
+        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="{{asset('images/carousel1.jpg')}}" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="{{asset('images/carousel4.jpeg')}}" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="{{asset('images/carousel2.jpeg')}}" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="{{asset('images/carousel3.jpeg')}}" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="{{asset('images/carousel6.jpeg')}}" class="d-block w-100" alt="...">
+              </div>
+            </div>
+          </div> 
+
+        <div class="landing container">
                 <div class="row">
                     <div class="col-md-6 right">
                         <h1>Find your ideal role</h1>
@@ -10,34 +30,36 @@
                     <div class="col-md-5 offset-md 1">
                     </div>
                 </div>
-                <form method="POST" action="{{route('search')}}">
-                    <div class="search-bar">
-                            <div class="search-box">
-                                <img src="{{asset('images/icons/loupe.svg')}}" alt="">
-                                <input type="text" name="keyword" placeholder="search by keyword">
-                            </div>
-                            <div class="industry">
-                                <select class="custom-select" name="category_id" >
-                                    <option value="null">Categories</option>
-                                    @foreach ($categories as $category)
-                                        <option value="{{$category->id}}">{{$category->name}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div class="location">
-                                <select class="custom-select" name="region_id" aria-placeholder="hello">
-                                <option value="null">Location</option>
-                                    @foreach ($regions as $region)
-                                        <option value="{{$region->id}}">{{$region->name}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            {{ csrf_field() }}
-                            <button class="btn btn-orange search-button" type="submit">Search</button>
-                    </div>
-                </form>  
-            </div>
+                <div class="row">
+                    <form method="POST" action="{{route('search')}}">
+                        <div class="search-bar">
+                                <div class="search-box">
+                                    <img src="{{asset('images/icons/loupe.svg')}}" alt="">
+                                    <input type="text" name="keyword" placeholder="search by keyword">
+                                </div>
+                                <div class="industry">
+                                    <select class="custom-select" name="category_id" >
+                                        <option value="null">Categories</option>
+                                        @foreach ($categories as $category)
+                                            <option value="{{$category->id}}">{{$category->name}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="location">
+                                    <select class="custom-select" name="region_id" aria-placeholder="hello">
+                                    <option value="null">Location</option>
+                                        @foreach ($regions as $region)
+                                            <option value="{{$region->id}}">{{$region->name}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                {{ csrf_field() }}
+                                <button class="btn btn-orange search-button" type="submit">Search</button>
+                        </div>
+                    </form> 
+                </div>
         </div>
+        <div class="blur"></div>
     </div>
     <div class="container">
         <div class="post-banners">
@@ -100,7 +122,7 @@
                     <img src="{{asset('images/icons/briefcase-frontal-view.svg')}}" alt="">
                     <h3>Find great talent</h3>
                     <p>Be sure to have your pages set up with the latest design and development standards.  </p>
-                        <a class="orange-box" href="{{route('login')}}">
+                        <a class="orange-box" href="{{route('register')}}">
                             <button class="btn btn-orange">Register as job seeker</button>
                         </a>
                 </div>
@@ -154,8 +176,8 @@
                                     <p>Advice</p>
                                 </div>
                                 <div class="body">
-                                    <b class="blog-card-title">{{Str::limit($bpost->link,50)}}</b>
-                                    <p>{{Str::limit($bpost->caption,90)}}</p>
+                                    <b class="blog-card-title">{{Str::limit($bpost->title,80)}}</b>
+                                    <p>{!!Str::limit($bpost->caption,100)!!}</p>
                                     <div class="blog-post-footer">
                                         <div class="right">
                                             <b>By Top Talented Recruiters</b>

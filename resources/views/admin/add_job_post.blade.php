@@ -47,7 +47,6 @@
                   <option selected>Choose...</option>
                   <option value="Full time">Full time</option>
                   <option value="Part time">Part time</option>
-                  <option ><a href=""> Add new</a></option>
                 </select>
                 
               </div>
@@ -55,11 +54,11 @@
             <div class="form-row">
                 <div class="form-group col-md-12">
                     <label for="exampleFormControlTextarea1">Enter job description</label>
-                    <textarea class="form-control" name="description" id="exampleFormControlTextarea1" required></textarea>
+                    <textarea rows="8" class="form-control" name="description" id="exampleFormControlTextarea1" required></textarea>
                   </div>
             </div>
             {{ csrf_field() }}
-            <button type="submit" class="btn btn-primary">Add Post</button>
+            <button type="submit" class="btn  br-btn btn-primary">Add Post</button>
           </form>
     </div>
 
@@ -88,16 +87,16 @@
   </div>
 </div>
 
-    <!DOCTYPE html>
-  <script src="https://cdn.tiny.cloud/1/0c2huj8v490azntzlod6qqyv41rpgsna2ep41exubhgn627b/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-  <script>
-    tinymce.init({
-      selector: 'textarea',
-      plugins: 'a11ychecker advcode casechange formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker',
-      toolbar: 'a11ycheck addcomment showcomments casechange checklist code formatpainter pageembed permanentpen table',
-      toolbar_mode: 'floating',
-      tinycomments_mode: 'embedded',
-      tinycomments_author: 'Author name'
-    });
-  </script>
+ <script type="text/javascript" src="{{asset('tinymce/tinymce.min.js')}}"></script>
+ <script type="text/javascript">
+  tinymce.init({
+      selector: "textarea",
+      plugins: [
+          "advlist autolink lists link image charmap print preview anchor",
+          "searchreplace visualblocks code fullscreen",
+          "insertdatetime media table contextmenu paste"
+      ],
+      branding:false
+  });
+</script>
 @endsection

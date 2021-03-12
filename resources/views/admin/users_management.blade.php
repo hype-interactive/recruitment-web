@@ -14,6 +14,7 @@
                 <th scope="col">Name</th>
                 <th scope="col">Email</th>
                 <th scope="col">Phone</th>
+                <th scope="col">Action</th>
               </tr>
             </thead>
             <tbody>
@@ -23,17 +24,18 @@
                     <td>{{$users[$i]->fname}} {{$users[$i]->lname}}</td>
                     <td>{{$users[$i]->email}}</td>
                     <td>{{$users[$i]->phone}}</td>
+                    <td><a class="modal_btn" data-id="{{$users[$i]->id}}" data-toggle="modal" data-target="#revoke_admin">Revoke</a></td>
                   </tr> 
                 @endfor
             </tbody>
           </table>
     </div>
 </div>
-<a class="add-post-button" href="" data-toggle="modal" data-target="#add_admin">
+<a class="add-post-button"  data-toggle="modal" data-target="#add_admin">
     <img  src="{{asset('images/icons/plus.svg')}}" alt="">
 </a>
   
-  <!-- Modal -->
+  <!--Add Modal -->
   <div class="modal fade" id="add_admin" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
@@ -58,4 +60,29 @@
       </div>
     </div>
   </div>
+
+    <!--Revoke Modal -->
+    <div class="modal fade" id="revoke_admin" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title text-center text-danger" id="exampleModalCenterTitle">Are you sure ,You want to remove this user</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+              <div class="modal-footer">
+                <form action="{{route('admin.revoke_admin')}}" method="post">
+                  @csrf
+                  <input type="hidden" name="post_id" id="data_id">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                  <button type="submit" class="btn btn-primary">Confirm</button>
+              </form>
+              </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
 @endsection

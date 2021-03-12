@@ -11,47 +11,7 @@
 
     </head>
     <body>
-        <div class="wrapper"></div>
-        <div class="main-header">
-            <div class="container">
-                <div class="tool-bar">
-                    <div class="name">
-                        <a href="{{route('home')}}">
-                        <img src="{{asset('images/logo.jpg')}}" alt="">
-                        </a>
-                    </div>
-                    <ul>
-                        <li></li>
-                        <li></li>
-                        <li>
-                            <div class="banner"><span>{{substr(Auth::user()->fname,0,1).substr(Auth::user()->lname,0,1)}}</span>{{Auth::user()->fname}}</div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="nav-bar">
-                    <ul>
-                        <li><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
-                        <li><a href="{{route('admin.job_posts')}}">Job Posts</a></li>
-                        <li><a href="{{route('admin.blog_posts')}}">Blog Post</a></li>
-                        @if (Auth::user()->type == "admin")
-                            <li><a href="{{route('admin.manage_users')}}">User Management</a></li>    
-                        @endif
-                    </ul>
-                    <br>
-                    <hr style="margin-top: 5px ; margin-bottom:5px">
-                    
-                </div>
-                <div class="summary">
-                    @yield('page-summary')
-                </div>
-                @if (session('msg'))
-                    <div class="feedback-msg">
-                        <h2>{{session('msg')}}</h2>
-                    </div>
-                    
-                @endif
-            </div>
-        </div>
+       @include('../shared.header_admin')
         <div class="main-body">
                 @yield('body')
         </div>
@@ -67,5 +27,17 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> 
+    <script>
+        $(document).ready(function () {
+            setTimeout(function()
+            {$('#pop-feedback').hide();
+            },5000);
+            
+            // set id to modal button 
 
+            $('.modal_btn').click(function(){
+                $('#data_id').val($(this).data('id'));
+            });
+        });
+    </script>
 </html>

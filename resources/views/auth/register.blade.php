@@ -1,4 +1,4 @@
-@extends('layouts.app')
+{{-- @extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -100,4 +100,71 @@
         </div>
     </div>
 </div>
+@endsection --}}
+
+
+@extends('../auth/layout')
+@section('body')
+    <div class="auth" id="signup">
+        <img src="{{asset('images/logo.jpg')}}" alt="">
+        <div class="google-btn">
+            <a href="">
+                <img src="{{asset('images/icons/google.svg')}}" alt="">
+                Sign up with Google
+            </a>
+        </div>
+        <div class="or">
+            <div class="hr"></div> OR <div class="hr"></div>
+        </div>
+        <form method="POST" action="{{ route('register') }}">
+            @csrf
+            <div>
+                <input id="fname" type="text" class=" @error('fname') is-invalid @enderror" name="fname" value="{{ old('fname') }}" required autocomplete="fname" autofocus placeholder="First Name">
+                @error('fname')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+            <div>
+                <input id="lname" type="text" class=" @error('lname') is-invalid @enderror" name="lname" value="{{ old('lname') }}" required autocomplete="lname" autofocus placeholder="Last Name">
+                @error('lname')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+            <div>
+                <input id="phone" type="tell" class="@error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone" autofocus placeholder="Phone">
+                @error('phone')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+            <div>
+                <input id="email" type="email" class=" @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email">
+                @error('email')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+            <div>
+                <input id="password" type="password" class=" @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Enter Password">
+                @error('password')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+            <div>
+                <input id="password-confirm" type="password"  name="password_confirmation" required autocomplete="new-password" placeholder="Confirm Password">
+            </div>
+
+            <button class="btn" type="submit"> Register</button>
+
+        </form>
+        <p class="ma-t-2">Have already an account <a href="{{route('login')}}">Login here</a></p>
+    </div> 
 @endsection

@@ -10,6 +10,7 @@ use App\Models\Region;
 use App\Models\JobCategory;
 use App\Http\Controllers\Admin\ApplicationController;
 use App\Http\Controllers\Admin\UserController;
+use Illuminate\Database\QueryException;
 
 class JobPostController extends Controller
 {
@@ -66,19 +67,16 @@ class JobPostController extends Controller
 
     }
 
-    public function createJobPost()
+    public function createJobPostPanel()
     {
         $regions = Region::all();
-
         return view('admin/add_job_post',["regions"=>$regions,'job_categories'=>$this->getJobCategories()]);
     }
 
     public function editJobPost(Request $request)
     {
-        // $validator= Validator::make($request->all(),[ ]);
 
         $job_post= JobPost::find($request->job_post_id);
-        // var_dump($request->job_category_id); exit();
         $job_post->title= $request->title;
         $job_post->deadline = $request->deadline;
         $job_post->type= $request->type;
@@ -86,14 +84,27 @@ class JobPostController extends Controller
         $job_post->job_category_id = $request->job_category_id == "" ? $job_post->job_category_id : $request->job_category_id;
         $job_post->region_id = $request->region; 
 
-        if($job_post->update()) return redirect(route('admin.job_posts'));
+        if($job_post->update()) return redirect(route('admin.job_posts'))->with('msg','Post updated successfully!');
+
+    }
+
+    public function deleteJobPost(Request $request)
+    {
+        $post=JobPost::find($request->post_id);
+
+        try {
+            $post->delete();
+        } catch (QueryException $e) {
+            
+            return back()->with('msg','This post can not be deleted');
+        }
+        return back()->with('msg','Post deleted successful');
 
     }
 
     public function getJobPosts()
     {
         $job_posts= JobPost::with('jobCategory','region')->latest()->get();
-        // var_dump($job_posts[0]->title); exit();
         return view('admin/job_posts',['posts' => $job_posts]);
     }
 
@@ -113,11 +124,6 @@ class JobPostController extends Controller
         $regions = Region::all();
         $job_post=JobPost::find($job_post_id);
         return view('admin/edit_job_post',['post'=>$job_post,'regions'=>$regions,'job_categories'=>$this->getJobCategories()]);
-    }
-
-    public function deleteJobPost($job_post_id)
-    {
-        # code...
     }
 
     public function getJobCategories()

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Application;
 use Illuminate\Http\Request;
 use App\Models\JobPost;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
@@ -31,12 +32,16 @@ class ApplicationController extends Controller
 
         $document= app('App\Http\Controllers\ApplicationDocumentController')->add($request);
         if($document){
+
+            $user=User::find(Auth::user()->id);
+            $user->type="applicant";
+
             $application= new Application();
             $application->user_id=$request->user_id;
             $application->job_post_id=$request->post_id;
             $application->application_document_id=$document->id;
 
-            if($application->save()) return back()->with('msg','You have successively submitted application');
+            if($application->save() && $user->update()) return back()->with('msg','You have successively submitted application');
         }
 
         return back()->with('msg','failed to submit application');

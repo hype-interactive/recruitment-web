@@ -17,14 +17,20 @@
     
 }
 @mixin margining {
-    margin-top: 7rem;
-    margin-bottom: 7rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+ul{
+    list-style: none !important;
 }
 
 @mixin box-shadow{
-    -webkit-box-shadow: 0px 0px 42px -16px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 42px -16px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 42px -16px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 0px 18px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 18px -8px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 18px -8px rgba(0,0,0,0.75);
+    // -webkit-box-shadow: 0px 0px 42px -16px rgba(0,0,0,0.75);
+    // -moz-box-shadow: 0px 0px 42px -16px rgba(0,0,0,0.75);
+    // box-shadow: 0px 0px 42px -16px rgba(0,0,0,0.75);
     background-color: white;
 }
 
@@ -67,6 +73,7 @@ h3{
     color: white;
 }
 .header{
+    position: relative;
     background-color: white !important;
     padding: 2rem 4rem;
     align-items: center;
@@ -103,9 +110,32 @@ h3{
                 width: 250px;
             }
         }
+        .pop-feedback{
+            @include box-shadow();
+            position: absolute;
+            bottom: -2rem;
+            right: 0rem;
+            width: fit-content;
+            padding: 1rem 3rem;
+            font-weight: 700;
+            border: 1px solid white;
+            background-color: $orange;
+            border-top-left-radius: 25px;
+            border-bottom-left-radius: 25px;
+        }
+
              
 }
 
+#pop-feedback{
+    // animation: moveRL 5s 1;
+    // width: 50%;
+    // height: fit-content;
+    // animation-direction: reverse;
+}
+@keyframes moveRL{
+
+}
 .header-row{
     display: flex;
     flex-direction: row;
@@ -189,13 +219,25 @@ h3{
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    margin-bottom: 7rem;
+    margin-bottom: 5rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
 
+    .blur {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        height: 100%;
+        width: 100%;
+        background: -webkit-linear-gradient(bottom, rgba(46, 68, 107, 0.9) 0%, rgba(46, 68, 107, 0.7) 50%, rgba(0, 0, 0, 0) 100%);
+    }
 }
 .landing{
-    position: relative;
-    margin-bottom: 5rem;
-
+    position: absolute;
+    z-index: 10;
+    top: 2rem;
+    
     .right{
         padding: 13% 0%;
         padding-left: 1.5rem;
@@ -242,8 +284,6 @@ h3{
 
     
     }
-
-
 
 }
 .search-box,.industry,.location{
@@ -314,6 +354,11 @@ button:focus{
     a:hover{
         color: #1DA1F2;
 
+    }
+    .row{
+        .col-md-6{
+            padding: 10px !important;
+        }
     }
 }
 .banner{
@@ -416,7 +461,9 @@ button:focus{
             display: flex;
             flex-direction: column;
             .body{
-                height: 198px ;
+                height: 180px;
+                position: relative;
+
                 padding: 15px;
                 color: black;
                 background-color: #fafafa;
@@ -439,6 +486,9 @@ button:focus{
         margin-bottom: 1rem;
     }
     .blog-post-footer{
+        position: absolute;
+        width: 92%;
+        bottom: 0px;
         border-top: 1px solid #d1d1d1;
         margin-top:5rem;
         @include flex-space-between;
@@ -569,7 +619,11 @@ button:focus{
     }
 }
 
-
+.container-fit{
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    overflow: hidden;
+}
 // utilites
 
 .ma-r-3{
@@ -585,18 +639,34 @@ button:focus{
 .ma-t-5{
     margin-top: 5rem;
 }
+.ma-t-7{
+    margin-top: 7rem;
+}
 
+.w-100{
+    width: 100%;
+}
+.carousel-item{
+    display: none;
+    img{
+        height: 700px;
+        vertical-align: middle;
+        object-fit: cover !important;
 
+    }
+}
 //auth page
 
 .auth-wrapper{
-    margin-top:4rem;
     display: flex;
     justify-content: center;
     font-size: small;
+    align-items: center;
+    height: 100%;
     .auth{
         color: $primary-color;
         width: 50rem;
+        height: fit-content;
         padding:4rem;
         text-align:center;
         border-radius: 20px;
@@ -883,7 +953,7 @@ button:focus{
     .dp-restyle{
         @include box-shadow;
         padding: 2rem;
-        text-align: center;
+        text-align: startuser;
         border-radius: 10px;
         font-size: small;
 
@@ -908,7 +978,7 @@ button:focus{
 .employer{
     input{
         border: none ;
-        border-bottom: 2px solid $primary-color !important;
+        border-bottom: 1px solid $primary-color !important;
         height: 4rem !important;
         margin-bottom: 3rem;
         background-color: rgb(238, 249, 253);
@@ -968,4 +1038,124 @@ button:focus{
     opacity: 1;
     -webkit-backdrop-filter: blur( 4px );
     
+}
+
+
+// user styling
+.user-profile-wrapper{
+    margin: 6rem;
+    .avatar{
+        @include box-shadow();
+        @include flex-center();
+        flex-direction: column;
+        padding: 4rem 3rem;
+        border-radius: 5px;
+        img{
+            background-color: $primary-color;
+            padding: 0.7rem;
+            border-radius: 50%;
+            width: 15rem;
+            height: 15rem;
+        }
+        b{
+            margin-top: 2rem;
+            text-transform: capitalize;
+        }
+    }
+
+    .user-info{
+        @include box-shadow();
+        padding: 4rem 3rem;
+        border-radius: 5px;
+        li{
+            border-bottom: 1px solid $silver-sand;
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 2rem;
+            b{width: 20%;}
+
+        }
+        .mv-collapse{
+            margin: 0rem !important;
+            width: 100%;
+            .card-header{
+                border-bottom: none;
+                margin-bottom: 1rem;
+                img{
+                    width: 10px;
+                }
+                
+            }
+            .card-body{
+                @include flex-center();
+                flex-direction: column;
+                div{
+                    width: 100%;
+                }
+                input{
+                    width: 100%;
+                    border: none ;
+                    border-bottom: 1px solid $primary-color !important;
+                    border-radius: 5px;
+                    padding-left: 1rem;
+                    height: 4rem !important;
+                    margin-bottom: 3rem;
+                    background-color: rgb(238, 249, 253);
+                }
+                input:focus{
+                    outline: none;
+                }
+            
+                label{
+                    font-weight: 400;
+                }
+            }
+            button{
+                float: right !important;
+                margin-bottom: 1rem;
+                margin-right: 1rem;
+            }
+        }
+    }
+
+    .profile-card{
+        @include box-shadow();
+        text-transform: capitalize;
+        border-radius: 3px;
+        padding: 1rem;
+        a{
+            color: $primary-color;
+        }
+        a:hover{
+            color: #1DA1F2;
+            text-decoration: none;
+        }
+        hr{
+            margin-top: 10px !important;
+            margin-bottom: 10px !important;
+        }
+        img{
+            background-color: $silver-sand;
+            padding: 1rem;
+            width: 5rem;
+            height: 5rem;
+            border-radius: 50%;
+            margin-bottom: 2rem;
+
+        }
+        .col-md-3{
+            @include flex-space-between();
+            flex-direction: column;
+        }
+    }
+}
+
+.selected{
+    background-color: #4caf50 !important;
+}
+.rejected{
+    background-color: #f44336 !important;
+}
+.reserved{
+    background-color: #2196f3 !important;
 }

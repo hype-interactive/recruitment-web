@@ -22,7 +22,8 @@ class UserController extends Controller
         return count($users);
     }
     public function countNewApplicants($month){
-        $applicants=User::where(array(['type','applicant'],['created_at','like',$month.'%']))->get();
+        $applicants=User::where('type','=','applicant')->where('updated_at','like','%'.$month.'%')->get();
+
         return count($applicants);
     }
      public function manage()
@@ -32,13 +33,18 @@ class UserController extends Controller
      }
      public function addAdmin(Request $request)
      {
-
-         $user=User::where('email','=',$request->email)->get();
-        // $user=User::find(1);
+         $user=User::where('email','=',$request->email)->first();
          $user->type="admin";
-        // var_dump($user); exit();
-         
-         
          if($user->update()) return back()->with('msg','admin created successful');
+     }
+
+     public function revoke(Request $request)
+     {
+
+         $user=User::find($request->post_id);
+         $user->type ="other";
+         
+         if($user->update()) return back()->with('msg','Admin Revoked !');
+
      }
 }

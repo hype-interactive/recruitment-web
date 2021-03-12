@@ -5,8 +5,8 @@
             <div class="card blog-post-card">
                 <img src="{{asset('storage/'.$post->image)}}" class="card-img-top" alt="..." >
                 <div class="card-body">
-                  <h2 class="card-title">{{$post->link}}</h2>
-                  <p class="card-text">{{$post->caption}}</p>
+                  <h2 class="card-title">{{$post->title}}</h2>
+                  <p class="card-text">{!!$post->caption!!}</p>
                 </div>
               </div>
         </div>

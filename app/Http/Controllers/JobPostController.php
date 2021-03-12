@@ -51,7 +51,7 @@ class JobPostController extends Controller
         if($keyword != null){
             $query->where('title','like','%'.$keyword.'%');
         }
-        $results = $query->take($limit)->get();
+        $results = $query->whereDate('deadline','>=',date('Y-m-d'))->take($limit)->get();
 
         return $results;
     }

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+{{-- @extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -46,4 +46,40 @@
         </div>
     </div>
 </div>
+@endsection --}}
+
+
+
+
+@extends('../auth/layout')
+@section('body')
+    <div class="auth">
+        <img src="{{asset('images/logo.jpg')}}" alt="">
+        <div class="card-header">
+            <h4>Confirm Password</h4>
+        </div>
+        <hr>
+        <div class="card-body">
+            <small class="text-danger">Please confirm your password before continuing.</small>
+            <form method="POST" action="{{ route('password.confirm') }}">
+                @csrf
+                <div >
+                    <input id="password" type="password" class="@error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Password">
+                    @error('password')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+                <button type="submit" class="btn">Confirm Password</button>
+                <div class="ma-t-2">
+                    @if (Route::has('password.request'))
+                        <a  href="{{ route('password.request') }}">
+                            {{ __('Forgot Your Password?') }}
+                        </a>
+                    @endif
+                </div>
+            </form>
+        </div>
+    </div>
 @endsection

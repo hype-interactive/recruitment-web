@@ -6,7 +6,7 @@
             </a>
         </div>
         <div class="link-col links">
-            <ul id="navlinks" class="nav-link-wrapper">
+            <ul id="thelinks" class="nav-link-wrapper">
                 <li class="nav-link"> <a href="{{route('home')}}">Home</a></li>
                 <li class="nav-link"> <a href="{{route('job_posts')}}">Jobs</a></li>
                 <li class="nav-link"> <a href="{{'services'}}">Services</a></li>
@@ -18,10 +18,10 @@
             <img class="ma-r-3" src="{{asset('images/icons/linkedin.svg')}}" alt="">
         @guest
         @if (Route::has('login'))
-            <a class="nav-link" ><button type="button" class="btn login  btn-lg ma-r-3" onclick="login()">Login</button></a>
+            <a href="{{ route('login') }}" class="nav-link" ><button type="button" class="btn login  btn-lg ma-r-3" >Login</button></a>
         @endif
         @if (Route::has('login'))
-            <a class="nav-link" href="{{ route('login') }}"><button type="button" class="btn signup btn-lg" >Signup</button></a>
+            <a class="nav-link" href="{{ route('register') }}"><button type="button" class="btn signup btn-lg" >Signup</button></a>
         @endif 
         @else
         <div class="dropdown">
@@ -30,6 +30,13 @@
             </a>
             <div class="dropdown-menu dropdown-menu-right dp-restyle" aria-labelledby="navbarDropdown">
                 <span>User : <b>{{ Auth::user()->fname }}</b></span>
+                <div class="ma-t-2"></div>
+                <a href="{{route('user_profile',Auth::user()->id)}}">My Profile</a>
+                @if (Auth::user()->type == "admin")
+                <div class="ma-t-2"></div>
+
+                    <a href="{{route('admin.dashboard')}}">Dashboard</a>
+                @endif
                 <div class="ma-t-2"></div>
                 <a class="dropdown-item" href="{{ route('logout') }}"
                    onclick="event.preventDefault();
@@ -45,7 +52,11 @@
             @endguest
         </div>
     </div>
-
+    @if (session('msg'))
+        <div class="pop-feedback" id="pop-feedback">
+            <div class="inner-commponent">
+                <div>{{session('msg')}}</div>
+            </div>
+        </div>
+    @endif
 </div>
-
-

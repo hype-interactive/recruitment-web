@@ -140,8 +140,8 @@
                         <p>Advice</p>
                     </div>
                     <div class="body">
-                        <b class="blog-card-title">{{Str::limit($bpost->link,50)}}</b>
-                        <p>{{Str::limit($bpost->caption,90)}}</p>
+                        <b class="blog-card-title">{{Str::limit($bpost->title,50)}}</b>
+                        <p>{!!Str::limit($bpost->caption,90)!!}</p>
                         <div class="blog-post-footer">
                             <div class="right">
                                 <b>By Top Talented Recruiters</b>
