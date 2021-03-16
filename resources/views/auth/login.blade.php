@@ -151,7 +151,7 @@
     <div class="auth " id="login" >
         <img src="{{asset('images/logo.jpg')}}" alt="">
         <div class="google-btn">
-            <a href="">
+            <a href="{{url('/redirect')}}">
                 <img src="{{asset('images/icons/google.svg')}}" alt="">
                 Sign in with Google
             </a>
