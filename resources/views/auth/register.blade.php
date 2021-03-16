@@ -108,7 +108,7 @@
     <div class="auth" id="signup">
         <img src="{{asset('images/logo.jpg')}}" alt="">
         <div class="google-btn">
-            <a href="">
+            <a href="{{route('auth.google_authenticate')}}">
                 <img src="{{asset('images/icons/google.svg')}}" alt="">
                 Sign up with Google
             </a>

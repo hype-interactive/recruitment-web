@@ -78,5 +78,5 @@ Route::post('revoke_admin','App\Http\Controllers\Admin\UserController@revoke')->
 
 
 
-Route::get('/redirect', 'App\Http\Controllers\SocialAuthGoogleController@redirect');
-Route::get('/callback', 'App\Http\Controllers\SocialAuthGoogleController@callback');
+Route::get('/auth/redirect', 'App\Http\Controllers\SocialAuthGoogleController@redirect')->name('auth.google_authenticate');
+Route::get('/auth/callback', 'App\Http\Controllers\SocialAuthGoogleController@callback');
