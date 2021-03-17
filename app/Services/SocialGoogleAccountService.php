@@ -9,29 +9,32 @@ class SocialGoogleAccountService{
     public function createOrGetUser(ProviderUser $providerUser)
     {
 
-        $account = SocialGoogleAccount::whereProvider('google')
-            ->whereProviderUserId($providerUser->getId())
+        $account = SocialGoogleAccount::where('provider','=','google')
+            ->where('provider_user_id','=',$providerUser->getId())
             ->first();
-    var_dump("here"); exit();
             
-if ($account) {
+        if ($account) {
             return $account->user;
         } else {
-$account = new SocialGoogleAccount([
-                'provider_user_id' => $providerUser->getId(),
-                'provider' => 'google'
+
+            $account = new SocialGoogleAccount([
+                            'provider_user_id' => $providerUser->getId(),
+                            'provider' => 'google'
             ]);
-$user = User::whereEmail($providerUser->getEmail())->first();
-if (!$user) {
-$user = User::create([
-                    'email' => $providerUser->getEmail(),
-                    'fname' => $providerUser->getName(),
-                    'password' => md5(rand(1,10000)),
-                ]);
-            }
-$account->user()->associate($user);
-            $account->save();
-return $user;
+
+            $user = User::whereEmail($providerUser->getEmail())->first();
+            if (!$user) {
+                $names=explode(" ",$providerUser->getName());
+                $user = User::create([
+                                'email' => $providerUser->getEmail(),
+                                'fname' =>$names[0] ,
+                                'lname' => $names[1],
+                                'type'=>'other',
+                            ]);
+                        }
+            $account->user()->associate($user);
+                        $account->save();
+            return $user;
         }
     }
 }
