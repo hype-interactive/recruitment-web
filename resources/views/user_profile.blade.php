@@ -23,13 +23,13 @@
                             <div class="card">
                               <div class="card-header" id="headingTwo">
                                 <b class="mb-0">
-                                  <a class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" >
+                                  <a class="collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" >
                                     Reset Password
                                      <img src="{{asset('images/icons/arrow-down.svg')}}" alt="">
                                   </a>
                                 </b>
                               </div>
-                              <div id="collapseTwo" class="collapse"  aria-labelledby="headingTwo" data-parent="#accordion" >
+                              <div id="collapseTwo" class="collapse"  aria-labelledby="headingTwo" data-bs-parent="#accordion" >
                                   <form action="{{route('reset_password')}}" method="post">
                                     @csrf
                                     <div class="card-body">

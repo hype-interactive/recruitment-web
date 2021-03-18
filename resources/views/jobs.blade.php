@@ -15,8 +15,6 @@
         <div class="row">
             <div class="col-md-4 filter col-offset-md-8">
                 <form action="">
-
-                    <h5>Advanced Filter</h5>
                     <h6>Work Category :</h6>
                     <ul>
                             @foreach ($industries as $industry)

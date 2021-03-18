@@ -64,7 +64,7 @@
     </div>
     <div class="container">
         <div class="post-banners">
-            <div class="section-title-wrapper">
+            <div class="ttr-section-header">
                 <h2>Latest job opening</h2>
                 <p>Ad magna labore sunt laborum eu irure fugiat adipisicing fugiat sit quis ea labore incididunt.</p>
                 </div>
@@ -93,14 +93,16 @@
                     </div>
                 @endforeach 
             </div>
-            <div class="cta-post">
-                <a href="{{route('job_posts')}}">Browse more jobs</a>
+            <div class="ttr-section-footer">
+                <a href="{{route('job_posts')}}">
+                    <button class="btn btn-orange">Browser more jobs</button>
+                </a>
             </div>
         </div>
     </div>
     <div class="container">
         <div class="about">
-            <div class="section-title-wrapper">
+            <div class="ttr-section-header">
                 <h2>Value proposition</h2>
                 <p>Our recruitment service creates a pleasant hiring experience for both  job seekers and employers</p>
                 </div>
@@ -127,35 +129,80 @@
             </div>
         </div>
     </div>
-    <div class="services">
-        <div class="section-title-wrapper">
-            <h2>Our services</h2>
-            <p>Our recruitment service creates a pleasant hiring experience for both  job seekers and employers</p>
-            </div>
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
+    <div class="container">
 
-                <img src="{{asset('images/carousel_one.jpg')}}" class="d-block w-100" alt="...">
-                <div class="content">
-                    <img src="{{asset('images/icons/recruitment.svg')}}" alt="">
-                    <h3>Find great talent</h3>
-                    <p>of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining 
-                        essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-                    </p>
-                    <a class="orange-box">
-                        <button class="btn btn-orange" data-bs-toggle="modal" data-bs-target="#employerForm">Register as employer </button>
-                    </a>
-                </div>
-              </div>
+        <div class="services-wrapper">
+            <div class="ttr-section-header">
+                <h2>Our services</h2>
+                <p>Our recruitment service creates a pleasant hiring experience for both  job seekers and employers</p>
             </div>
-          </div>
+            <div class="row">
+                <div class="col-md-6 services-tile">
+                    <div class="row">
+                        <div class="col-md-2 tile-icon">
+                            <img src="{{asset('images/icons/recruitment.svg')}}" alt="">
+                        </div>
+                        <div class="col-md-10 tile-content">
+                            <b>Recruitment Services</b>
+                            <small>Dolor ullamco ex veniam est.Et in ipsum pariatur aliquip dolore ex elit.
+                                 Mollit anim non ea nostrud esse quis commodo. Cupidatat et qui laboris
+                                  cillum. Irure Lorem eiusmod commodo magna dolor enim amet non mollit.</small>
+                            <a href="">read more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 services-tile">
+                    <div class="row">
+                        <div class="col-md-2 tile-icon">
+                            <img src="{{asset('images/icons/passport.svg')}}" alt="">
+                        </div>
+                        <div class="col-md-10 tile-content">
+                            <b>Permit Consultancy</b>
+                            <small>Dolor ullamco ex veniam est.Et in ipsum pariatur aliquip dolore ex elit.
+                                 Mollit anim non ea nostrud esse quis commodo. Cupidatat et qui laboris
+                                  cillum. Irure Lorem eiusmod commodo magna dolor enim amet non mollit.</small>
+                            <a href="">read more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 services-tile">
+                    <div class="row">
+                        <div class="col-md-2 tile-icon">
+                            <img src="{{asset('images/icons/presentation.svg')}}" alt="">
+                        </div>
+                        <div class="col-md-10 tile-content">
+                            <b>Training Services</b>
+                            <small>Dolor ullamco ex veniam est.Et in ipsum pariatur aliquip dolore ex elit.
+                                 Mollit anim non ea nostrud esse quis commodo. Cupidatat et qui laboris
+                                  cillum. Irure Lorem eiusmod commodo magna dolor enim amet non mollit.</small>
+                            <a href="">read more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 services-tile">
+                    <div class="row">
+                        <div class="col-md-2 tile-icon">
+                            <img src="{{asset('images/icons/consult.svg')}}" alt="">
+                        </div>
+                        <div class="col-md-10 tile-content">
+                            <b>Consultancy Services</b>
+                            <small>Dolor ullamco ex veniam est.Et in ipsum pariatur aliquip dolore ex elit.
+                                 Mollit anim non ea nostrud esse quis commodo. Cupidatat et qui laboris
+                                  cillum. Irure Lorem eiusmod commodo magna dolor enim amet non mollit.</small>
+                            <a href="">read more</a>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
     </div>
     <div class="container">
         <div class="blog-post">
-            <div class="section-title-wrapper">
-            <h2>From our expert blog</h2>
-            <p>Consequat anim ullamco quis ea ad aute.</p>
+            <div class="ttr-section-header">
+                <h2>From our expert blog</h2>
+                <p>Consequat anim ullamco quis ea ad aute.</p>
             </div>
             <div class="row">
                 @foreach ($blog_posts as $bpost)
