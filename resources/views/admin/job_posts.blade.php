@@ -2,16 +2,13 @@
 @section('page-summary')
             <b>Jop Post</b>
 
-        {{-- <div class="right">
-            <img src="{{asset('images/icons/settings.svg')}}" alt="">
-        </div> --}}
 @endsection
 @section('body')
     <div class=" row post-list">
         @foreach ($posts as $post)
             <div class="col-md-3">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="admin-card-header">
                         <div class="category-icon">
                             <img src="{{asset('images/icons/bag.svg')}}" alt="">
                         </div>

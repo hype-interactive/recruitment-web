@@ -11,11 +11,12 @@
     <div class="about-top">
         <div class="row">
             <div class="col-md-8">
-                <p>     In deserunt ut velit anim consequat sunt elit qui dolore officia tempor. Anim pariatur proident sit dolore ad eu magna mollit. Nulla ex velit elit sint minim sint tempor. Sit ullamco occaecat enim tempor culpa ullamco deserunt elit. Ex sunt aliquip cillum esse do in ea excepteur fugiat. Aute proident sint dolore eiusmod non amet dolor. Ad tempor excepteur eu Lorem sunt elit nisi.
+                <p>     In deserunt ut velit anim consequat sunt elit qui dolore officia tempor.
+                     Anim pariatur proident sit dolore ad eu magna mollit. Nulla ex velit elit sint 
+                     minim sint tempor. Sit ullamco occaecat enim tempor culpa ullamco deserunt elit.
+                      Ex sunt aliquip cillum esse do in ea excepteur fugiat. Aute proident sint dolore 
+                      eiusmod non amet dolor. Ad tempor excepteur eu Lorem sunt elit nisi.
 
-                Cillum consectetur ullamco in cillum magna. Elit proident culpa amet do dolor commodo dolore ipsum excepteur id culpa sint elit id. Culpa culpa proident irure adipisicing laborum quis tempor.
-
-                Ut adipisicing consectetur voluptate consequat cupidatat non consequat minim. Ipsum voluptate esse minim irure cupidatat nisi reprehenderit quis laboris aute enim non non laborum. Culpa proident laborum nulla sint consectetur. Reprehenderit nostrud proident minim aliqua pariatur do cillum sint dolor. Exercitation sint do non id enim. Laboris ipsum culpa eu adipisicing quis occaecat veniam laborum eiusmod eu ullamco.</p>
             </div>
             <div class="col-md-4">
                 <img src="{{asset('images/mac.jpg')}}" alt="">
@@ -32,8 +33,11 @@
          <div class="col-md-6 offset-md-1">
                  <h4>Chief Excutive Officer</h4>
                  <hr>
-                 <p>Ad ut irure non irure id aute. Id proident ea velit laborum aliquip eiusmod aute nulla culpa eu. Et esse aliqua sit veniam ipsum dolore sint nostrud laborum qui anim. In eiusmod sunt aute Lorem tempor mollit minim.
-                     Nulla elit ut ut id enim fugiat deserunt consequat cupidatat deserunt adipisicing reprehenderit sunt officia. Do culpa nostrud duis Lorem officia incididunt mollit consectetur esse velit nostrud. Magna sunt nisi eiusmod eiusmod esse velit laborum est consectetur exercitation culpa. Ipsum officia officia ullamco veniam sunt occaecat non elit. Labore duis qui consequat ut.</p>
+                 <p>Ad ut irure non irure id aute. Id proident ea velit laborum aliquip eiusmod aute nulla
+                      culpa eu. Et esse aliqua sit veniam ipsum dolore sint nostrud laborum qui anim. In 
+                      eiusmod sunt aute Lorem tempor mollit minim.Nulla elit ut ut id enim fugiat deserunt 
+                      consequat cupidatat deserunt adipisicing reprehenderit sunt officia. Do culpa nostrud 
+                      officia ullamco veniam sunt occaecat non elit. Labore duis qui consequat ut.</p>
                  <small>Jimmy Mc Methew</small>
          </div>
     </div>
@@ -41,8 +45,11 @@
         <div class="col-md-offset-1 col-md-6">
             <h4>Marketing Manager</h4>
             <hr>
-            <p>Ad ut irure non irure id aute. Id proident ea velit laborum aliquip eiusmod aute nulla culpa eu. Et esse aliqua sit veniam ipsum dolore sint nostrud laborum qui anim. In eiusmod sunt aute Lorem tempor mollit minim.
-                Nulla elit ut ut id enim fugiat deserunt consequat cupidatat deserunt adipisicing reprehenderit sunt officia. Do culpa nostrud duis Lorem officia incididunt mollit consectetur esse velit nostrud. Magna sunt nisi eiusmod eiusmod esse velit laborum est consectetur exercitation culpa. Ipsum officia officia ullamco veniam sunt occaecat non elit. Labore duis qui consequat ut.</p>
+            <p>Ad ut irure non irure id aute. Id proident ea velit laborum aliquip eiusmod aute nulla culpa eu.
+                 Et esse aliqua sit veniam ipsum dolore sint nostrud laborum qui anim. In eiusmod sunt aute 
+                 Lorem tempor mollit minim.Nulla elit ut ut id enim fugiat deserunt consequat cupidatat deserunt
+                adipisicing reprehenderit sunt officia. Do culpa nostrud duis Lorem officia incididunt mollit
+                exercitation culpa. Ipsum officia officia ullamco veniam sunt occaecat non elit. Labore duis qui consequat ut.</p>
             <small>Jimmy Mc Methew</small>
         </div>
         <div class="col-md-4">

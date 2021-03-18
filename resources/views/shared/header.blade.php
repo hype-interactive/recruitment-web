@@ -14,42 +14,42 @@
             </ul>
         </div>
         <div class="social-col social">
-            <img class="ma-r-3" src="{{asset('images/icons/instagram.svg')}}" alt="">
-            <img class="ma-r-3" src="{{asset('images/icons/linkedin.svg')}}" alt="">
-        @guest
-        @if (Route::has('login'))
-            <a href="{{ route('login') }}" class="nav-link" ><button type="button" class="btn login  btn-lg ma-r-3" >Login</button></a>
-        @endif
-        @if (Route::has('login'))
-            <a class="nav-link" href="{{ route('register') }}"><button type="button" class="btn signup btn-lg" >Signup</button></a>
-        @endif 
-        @else
-        <div class="dropdown">
-            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-               <div class="dp"><img src="{{asset('images/icons/man-user.svg')}}" alt=""></div> 
-            </a>
-            <div class="dropdown-menu dropdown-menu-right dp-restyle" aria-labelledby="navbarDropdown">
-                <span>User : <b>{{ Auth::user()->fname }}</b></span>
-                <div class="ma-t-2"></div>
-                <a href="{{route('user_profile',Auth::user()->id)}}">My Profile</a>
-                @if (Auth::user()->type == "admin")
-                <div class="ma-t-2"></div>
-
-                    <a href="{{route('admin.dashboard')}}">Dashboard</a>
-                @endif
-                <div class="ma-t-2"></div>
-                <a class="dropdown-item" href="{{ route('logout') }}"
-                   onclick="event.preventDefault();
-                                 document.getElementById('logout-form').submit();">
-                   Logout
+            <img class="ma-r-2" src="{{asset('images/icons/instagram.svg')}}" alt="">
+            <img class="ma-r-2" src="{{asset('images/icons/linkedin.svg')}}" alt="">
+            @guest
+            @if (Route::has('login'))
+                <a href="{{ route('login') }}" class="nav-link" ><button type="button" class="btn login   " >Login</button></a>
+            @endif
+            @if (Route::has('login'))
+                <a class="nav-link" href="{{ route('register') }}"><button type="button" class="btn signup " >Signup</button></a>
+            @endif 
+            @else
+            <div class="dropdown">
+                <a class="navbarDropdown " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <div class="dp"><img src="{{asset('images/icons/man-user.svg')}}" alt=""></div> 
                 </a>
+                <div class="dropdown-menu dropdown-menu-right dp-restyle" aria-labelledby="navbarDropdown">
+                    <span>User : <b>{{ Auth::user()->fname }}</b></span>
+                        <a class="dropdown-item" href="{{route('user_profile',Auth::user()->id)}}">
+                            My Profile
+                        </a>
+                    @if (Auth::user()->type == "admin")
+                        <a class="dropdown-item" href="{{route('admin.dashboard')}}">
+                            Dashboard
+                        </a>
+                    @endif
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                                Logout
+                        </a>
 
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                    @csrf
-                </form>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+                </div>
             </div>
-        </div>
-            @endguest
+                @endguest
         </div>
     </div>
     @if (session('msg'))

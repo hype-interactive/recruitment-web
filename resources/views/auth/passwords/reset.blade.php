@@ -72,7 +72,6 @@
         <div class="card-header">
             <h4>Reset Password</h4>
         </div>
-        <hr>
 
         <div class="card-body">
             <form method="POST" action="{{ route('password.update') }}">

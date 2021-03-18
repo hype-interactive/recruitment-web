@@ -12,7 +12,7 @@
                             <input type="text" name="title" class="form-control"  id="inputAddress" value="{{$post->title}}">
                         </div>
                     </div>
-                    <div class="form-row">
+                    <div class="form-row row">
         
                       <div class="form-group col-md-3">
                         <label for="inputState">Dead line</label>
@@ -45,7 +45,7 @@
                         </select>
                       </div>
                     </div>
-                    <div class="form-row">
+                    <div class="form-row ">
                         <div class="form-group col-md-12">
                             <label for="exampleFormControlTextarea1">Enter job description</label>
                             <textarea style="height: fit-content" class="form-control" name="description" id="exampleFormControlTextarea1" >{{$post->description}}</textarea>

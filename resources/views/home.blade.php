@@ -1,64 +1,65 @@
 @extends('layouts.app')
 @section('body')
-    {{-- <div class="landing-wrapper container-fluid" style="background-image: url('{{asset('images/Herobanner.jpg')}}');"> --}}
     <div class="landing-wrapper" >
-        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+          <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            </div>
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <img src="{{asset('images/carousel1.jpg')}}" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h3>Recruitment Services</h3>
+                  <p>Hiring the right person in the right place at the right time can save your business</p>
+                  <a href="{{route('services')}}">
+                    <button class="btn btn-orange">Read More</button>
+                 </a>
+                </div>
               </div>
               <div class="carousel-item">
                 <img src="{{asset('images/carousel4.jpeg')}}" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h3>Permit Consultancy</h3>
+                  <p>Foreigners are required to have work and residence permits to invest and work in Tanzania </p>
+                    <a href="{{route('services')}}">
+                        <button class="btn btn-orange">Read More</button>
+                    </a>
+                </div>
               </div>
               <div class="carousel-item">
                 <img src="{{asset('images/carousel2.jpeg')}}" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="{{asset('images/carousel3.jpeg')}}" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h3>Training Services</h3>
+                  <p>An organization’s ability to learn and convert that learning into action, is the ultimate competitive advantage </p>
+                  <a href="{{route('services')}}">
+                    <button class="btn btn-orange">Read More</button>
+                  </a>
+                </div>
               </div>
               <div class="carousel-item">
                 <img src="{{asset('images/carousel6.jpeg')}}" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h3>Outsourcing and Consulting services</h3>
+                  <p>Master your strengths and outsource your weaknesses</p>
+                  <a href="{{route('services')}}">
+                    <button class="btn btn-orange">Read More</button>
+                  </a>
+                </div>
               </div>
             </div>
-          </div> 
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"  data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"  data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
 
-        <div class="landing container">
-                <div class="row">
-                    <div class="col-md-6 right">
-                        <h1>Find your ideal role</h1>
-                    </div>
-                    <div class="col-md-5 offset-md 1">
-                    </div>
-                </div>
-                <div class="row">
-                    <form method="POST" action="{{route('search')}}">
-                        <div class="search-bar">
-                                <div class="search-box">
-                                    <img src="{{asset('images/icons/loupe.svg')}}" alt="">
-                                    <input type="text" name="keyword" placeholder="search by keyword">
-                                </div>
-                                <div class="industry">
-                                    <select class="custom-select" name="category_id" >
-                                        <option value="null">Categories</option>
-                                        @foreach ($categories as $category)
-                                            <option value="{{$category->id}}">{{$category->name}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="location">
-                                    <select class="custom-select" name="region_id" aria-placeholder="hello">
-                                    <option value="null">Location</option>
-                                        @foreach ($regions as $region)
-                                            <option value="{{$region->id}}">{{$region->name}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                {{ csrf_field() }}
-                                <button class="btn btn-orange search-button" type="submit">Search</button>
-                        </div>
-                    </form> 
-                </div>
-        </div>
         <div class="blur"></div>
     </div>
     <div class="container">
@@ -70,21 +71,19 @@
             <div class="row">
                 @foreach ($posts as $post)
                     
-                <a href="{{route('job_post',$post->id)}}">
+                
                     <div class="col-md-6">
                         <div class="banner">
-                            <div class="row">
-                                <div class="col-md-9">
-                                    <b>{{$post->jobCategory->name}}</b>
+                                <div class="col">
+                                    <b><a href="{{route('job_post',$post->id)}}">{{$post->jobCategory->name}}</a></b>
                                     <ul>
                                         <li class="location"><img src="{{asset('images/icons/location.svg')}}" alt="">{{$post->region->name}}</li> 
                                         <li class="location"><img src="{{asset('images/icons/lightbulb.svg')}}" alt=""> Deadline; {{date_format(date_create($post->deadline),"d-M-Y")}}</li>
                                     </ul>
                                 </div>
-                                <div class="col-md-3 sm-wrapper">
+                                <div class=" sm-wrapper">
                                     <p>{{$post->type}}</p>
                                 </div>
-                            </div>
                             <div class="triangle"></div>
                             <small>{{timeElapsed($post->created_at)}}</small>
                             <div class="snowflake">
@@ -92,7 +91,6 @@
                             </div>
                         </div>
                     </div>
-                </a> 
                 @endforeach 
             </div>
             <div class="cta-post">
@@ -112,15 +110,15 @@
                 </div>
                 <div class="mid">
                     <img src="{{asset('images/icons/handshake.svg')}}" alt="">
-                    <h3>Find great talent</h3>
+                    <h4>Find great talent</h4>
                     <p>Be sure to have your pages set up with the latest design and development standards.  </p>
                     <a class="orange-box">
-                        <button class="btn btn-orange" data-toggle="modal" data-target="#employer-form">Register as employer </button>
-                    </a>
+                        <button type="button" class="btn btn-orange" data-bs-toggle="modal" data-bs-target="#employerForm">Register as employer </button>
+                    </a> 
                 </div>
                 <div class="right">
                     <img src="{{asset('images/icons/briefcase-frontal-view.svg')}}" alt="">
-                    <h3>Find great talent</h3>
+                    <h4>Find great talent</h4>
                     <p>Be sure to have your pages set up with the latest design and development standards.  </p>
                         <a class="orange-box" href="{{route('register')}}">
                             <button class="btn btn-orange">Register as job seeker</button>
@@ -146,19 +144,11 @@
                         essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
                     </p>
                     <a class="orange-box">
-                        <button class="btn btn-orange" data-toggle="modal" data-target="#employer-form">Register as employer </button>
+                        <button class="btn btn-orange" data-bs-toggle="modal" data-bs-target="#employerForm">Register as employer </button>
                     </a>
                 </div>
               </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
           </div>
     </div>
     <div class="container">
@@ -196,5 +186,4 @@
         </div>
     </div>
 
-  <!-- Modal -->
 @endsection

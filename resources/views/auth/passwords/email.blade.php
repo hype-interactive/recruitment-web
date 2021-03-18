@@ -52,9 +52,8 @@
         <img src="{{asset('images/logo.jpg')}}" alt="">
         <div class="card">
             <div class="card-header">
-                <h4>Reset Password</h4>
+                <h5>Reset Password</h5>
             </div>
-            <hr>
 
             <div class="card-body">
                 @if (session('status'))

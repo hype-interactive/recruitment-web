@@ -1,6 +1,6 @@
 @extends('layouts.master_layout')
 @section('page-summary')
-    <b>Add Job Post;</b>
+    <b>Add Job Post</b>
 @endsection
 @section('body')
     <div class="add-job-post-form">
@@ -11,14 +11,14 @@
                     <input type="text" name="title" class="form-control"  id="inputAddress" placeholder="1234 Main St" required>
                 </div>
             </div>
-            <div class="form-row">
+            <div class="form-row row">
 
               <div class="form-group col-md-3">
                 <label for="inputState">Dead line</label>
                 <input type="date"  class="form-control" name="deadline" id="" required>
                 </select>
               </div>
-              <div class="form-group col-md-3">
+              <div class="form-group col-md-3 category-modal">
                 <label for="inputState">category</label>
                 <select id="inputState" name="category" class="form-control" required>
                   <option selected>Choose...</option>
