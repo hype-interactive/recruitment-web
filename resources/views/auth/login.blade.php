@@ -178,21 +178,18 @@
                 @enderror
             </div>
             <div class="check">
-                <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
+                <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}> 
+                <span>Remember Me</span>  
             </div>
             <button class="btn"> Login</button>
         </form>
-        <div class="row ma-t-2">
-            <div class="col-md-6">
+        <div class="ma-t-2">
                 <p >I don't have account ! <a href="{{route('register')}}">Sign up</a></p>
-            </div>
-            <div class="col-md-6">
-                        @if(Route::has('password.request'))
-                            <a href="{{route('password.request')}}" >
-                                {{ __('Forgot Your Password?') }}
-                            </a>
-                        @endif
-            </div>
+            @if(Route::has('password.request'))
+                <a href="{{route('password.request')}}" >
+                    {{ __('Forgot Your Password?') }}
+                </a>
+            @endif
         </div>
 
     </div>

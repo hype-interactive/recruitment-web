@@ -61,14 +61,17 @@
                                 <div><span>{{$application->applicationDocument->type}}:</span>  <small>{{$application->applicationDocument->name}}</small></div>
                                 <hr>
                                 <div class="documents-btn">
-                                    <button class="btn btn-success" onclick="downloadFile()">Download</button>
-                                    <button class="btn btn-orange">view</button>
+                                    <a href={{url('storage/'.$application->applicationDocument->path)}} target="_blank" download>
+                                        <button class="btn btn-success btn-sm"   >Download</button>
+                                    </a>
+                                    <a href={{url('storage/'.$application->applicationDocument->path)}} target="_blank" >
+                                        <button class="btn btn-orange btn-sm">view</button>
+                                    </a>
                                 </div>
                             </div>
                     </div>
                 </div>
             </div>
-{{-- <a href="{{route('download',$application->application_document_id)}}"> hapa</a> --}}
         </div>
         <div class="row actions">
             <div class="col-md-2">
@@ -78,17 +81,17 @@
                 <div class="row action-btn">
                     <div class="col-md-4">
                         <a href="{{route('admin.accept',$application->id)}}">
-                            <button class="btn btn-success">Accept</button>
+                            <button class="btn btn-success btn-sm">Accept</button>
                         </a>
                     </div>
                     <div class="col-md-4">
                         <a href="{{route('admin.reject',$application->id)}}">
-                            <button class="btn btn-danger">Reject</button>
+                            <button class="btn btn-danger btn-sm">Reject</button>
                         </a>
                     </div>
                     <div class="col-md-4">
                         <a href="{{route('admin.reserve',$application->id)}}">
-                            <button class="btn btn-orange">Reserve</button>
+                            <button class="btn btn-orange btn-sm">Reserve</button>
                         </a>
                     </div>
                 </div>

@@ -7,7 +7,7 @@
     <div class="blog-posts row">
         @foreach ($posts as $post)
             <div class="col-md-3">
-                <div class="card " style="width: 25rem;">
+                <div class="card " >
                     <img src="{{asset('storage/'.$post->image)}}" class="card-img-top" alt="...">
                     <div class="card-body">
                     <p class="card-text">{!!Str::limit($post->caption,50)!!}</p>
@@ -16,7 +16,7 @@
                             <img src="{{asset('images/icons/edit.svg')}}" alt="" class="small-icon">
                         </a>
                             <span class="gray">|</span> 
-                        <a class="modal_btn" data-id="{{$post->id}}" data-toggle="modal" data-target="#delete_post">
+                        <a class="modal_btn" data-bs-id="{{$post->id}}" data-bs-toggle="modal" data-bs-target="#delete_post">
                             <img src="{{asset('images/icons/bin.svg')}}" alt="" class="small-icon">
                         </a>
                     </small>
@@ -31,26 +31,23 @@
         <img  src="{{asset('images/icons/plus.svg')}}" alt="">
     </a>
 
-    <!-- Delete Modal -->
-    <div class="modal fade" id="delete_post" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title text-center text-danger" id="exampleModalCenterTitle">Are you sure ,You want to DELETE this post</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+  
+  <!--Delete Modal -->
+  <div class="modal fade" id="delete_post" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Are you sure ,You want to DELETE this post</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-                <div class="modal-footer">
-                    <form action="{{route('admin.delete_blog_post')}}" method="post">
-                        @csrf
-                        <input type="hidden" name="post_id" id="data_id">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-primary">Confirm</button>
-                    </form>
-                </div>
-            </form>
-          </div>
+        <div class="modal-footer">
+        <form action="{{route('admin.delete_blog_post')}}" method="post">
+            @csrf
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="Submit" class="btn btn-primary">Confirm</button>
+        </form>
         </div>
+      </div>
     </div>
+  </div>
 @endsection

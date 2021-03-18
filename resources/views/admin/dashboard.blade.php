@@ -6,7 +6,7 @@
 @section('body')
     <div class="container">
         <div class="row dashboard">
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="d-card">
                     <div class="d-card-header">
                     <div class="image">
@@ -17,7 +17,7 @@
                     <small>Total Application</small>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="d-card">
                     <div class="d-card-header">
                     <div class="image">
@@ -28,7 +28,7 @@
                     <small>Total Sign-ups</small>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="d-card">
                     <div class="d-card-header">
                     <div class="image">
@@ -39,7 +39,7 @@
                     <small>Total Job Seeker</small>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="d-card">
                     <div class="d-card-header">
                     <div class="image">
@@ -50,7 +50,7 @@
                     <small>This Month Job Posts</small>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="d-card">
                     <div class="d-card-header">
                     <div class="image">
@@ -61,7 +61,7 @@
                     <small>This Month Sign-ups</small>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="d-card">
                     <div class="d-card-header">
                     <div class="image">

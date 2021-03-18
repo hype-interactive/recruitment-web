@@ -1,11 +1,9 @@
 @extends('layouts.master_layout')
 @section('page-summary')
 <div class="row search-bar">
-    <div class=" col-md-2 title"> Application </div>
-    <form action="">
-
+    <div class=" col-md-2 title"> Post Application List</div>
     <div class=" col-md-7 search-box">
-          <input style="width: 95%" type="text" onkeyup="showResult(this.value)">
+        <input  type="text" onkeyup="showResult(this.value)">
         <img src="{{asset('images/icons/loupe.svg')}}" alt="">
     </div>
     <div class="col-md-2 filter">
