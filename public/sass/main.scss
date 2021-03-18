@@ -17,8 +17,7 @@
     
 }
 @mixin margining {
-    margin-top: 4rem;
-    margin-bottom: 4rem;
+    margin-bottom: 6rem;
 }
 ul{
     list-style: none !important;
@@ -48,6 +47,13 @@ h4{
     text-align: center !important ;
     font-weight: 700;
 }
+
+button:focus{
+    outline: 0 !important;
+    border: none;
+}
+
+// auth pages
 .login{
     border: none;
     color: $primary-color;
@@ -67,6 +73,8 @@ h4{
 .signup:focus{
     color: white;
 }
+
+//header page
 .header{
     position: relative;
     background-color: white !important;
@@ -124,10 +132,10 @@ h4{
     .pop-feedback{
         @include box-shadow();
         position: absolute;
-        bottom: -2rem;
+        bottom: -3.5rem;
         right: 0rem;
         width: fit-content;
-        padding: 1rem 3rem;
+        padding: 0.5rem 1rem;
         font-weight: 700;
         border: 1px solid white;
         background-color: $orange;
@@ -138,7 +146,7 @@ h4{
              
 }
 
-
+// footer page
 .footer{
     width: 100%;
     position: relative;
@@ -201,16 +209,16 @@ h4{
         color: $silver-sand !important;
     }
 }
+// landing section
 .landing-wrapper{
+    @include margining();
     background-color: white;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    margin-bottom: 5rem;
     position: relative;
     display: flex;
     justify-content: center;
-
     .blur {
         position: absolute;
         top: 0px;
@@ -249,56 +257,13 @@ h4{
     }
 }
 
-.search-box,.industry,.location{
-    width: 25%;
-    select,input{
-        border: none;
-        width: 100%;
-
-    }
-    select:focus{
-        outline: 0;
-    }
-    input:focus{
-        outline: 0;
-    }
-}
-
-.search-button{
-    width: 18%;
-    background-color: $orange !important;
-    padding: 1rem 2rem;
-    font-weight: bold;
-    text-align: center;
-    height: fit-content !important;
-}
-
-button:focus{
-    outline: 0 !important;
-    border: none;
-}
-
+// job post section
 .post-banners{
-    @include margining;
+    @include margining();
     @include flex-center;
     flex-direction: column;
     h3{
         margin-bottom: 4rem;
-    }
-
-    .cta-post{
-        margin: 3rem;
-        background-color: $orange;
-        padding: 0.7rem 1.7rem;
-        text-align: center;
-        width: fit-content;
-        border-radius:3px;
-        font-weight: 700;
-        text-transform: capitalize;
-        a{
-            text-decoration: none;
-            color: $primary-color;
-        }
     }
 
     a{
@@ -395,9 +360,105 @@ button:focus{
     border-right: 37px solid transparent;
 }
 
+//about section
+.about{
+    @include margining;
+    h3{
+        text-align: center;
+    }
+    .cards{
+        display: flex;
+        flex-direction: row;
+
+        div{
+            width: 33.333% !important;
+            height: 450px;
+            overflow: hidden;
+        }
+
+    }
+ 
+    .left{
+        overflow: hidden;
+        img{
+            height: inherit;
+            object-fit: cover;
+            float: right;
+        }
+    }
+    .mid{
+        background-color: white;
+    }
+    .right{
+        background-color: $silver-sand;
+    }
+    .mid,.right{
+        @include flex-center;
+        padding: 3rem;
+        flex-direction: column;
+        text-align: center;
+        img{
+            width: 35% ;
+            margin-bottom: 2rem;
+        }
+        .orange-box{
+            margin-top: 4rem;
+            background-color: $orange;
+            text-align: center;
+            align-items: center;
+            height: fit-content !important;
+            width: fit-content !important;
+            border-radius: 3px;
+            a{height: fit-content;}
+        }
+    }
+
+
+
+}
+
+
+
+// services section
+.services-wrapper{
+    @include margining();
+    .services-header{
+    text-align: center;
+
+    }
+    .services-tile{
+        margin-top: 1rem;
+        padding: 1rem;
+        color: white !important;
+        background-color: $primary-color;
+        .tile-icon{
+            padding: 1rem;
+            @include flex-center();
+            img{
+                width: 3rem;
+                vertical-align: middle;
+                border-style: none;
+            }
+        }
+        .tile-content{
+            small{ 
+                display: block;
+                margin-top: 5px;
+            }
+            a{
+                font-size: small;
+                font-weight: 500;
+                color:$orange ;
+                float:right;}
+            }
+            a:hover{
+                color: #2196f3;
+            }
+    }
+}
+
+//blog post section
 .blog-post{
-    padding-top: 4rem;
-    padding-bottom: 2rem;
     @include margining;
     .image{
         position: relative;
@@ -471,9 +532,9 @@ button:focus{
 
 }
 
-
-.section-title-wrapper{
-    margin-bottom:3rem;
+//shared
+.ttr-section-header{
+    margin-bottom:2rem;
     text-align:center;
     h2{
         letter-spacing:1px;
@@ -483,105 +544,11 @@ button:focus{
         color: #1c1c1c;
     }
 }
-
-.about{
-    @include margining;
-
-    h3{
-        text-align: center;
-    }
-    .cards{
-        margin-top: 4rem;
-        display: flex;
-        flex-direction: row;
-
-        div{
-            width: 33.333% !important;
-            height: 450px;
-            overflow: hidden;
-        }
-
-    }
- 
-    .left{
-        overflow: hidden;
-        img{
-            height: inherit;
-            object-fit: cover;
-            float: right;
-        }
-    }
-    .mid{
-        background-color: white;
-    }
-    .right{
-        background-color: $silver-sand;
-    }
-    .mid,.right{
-        @include flex-center;
-        padding: 3rem;
-        flex-direction: column;
-        text-align: center;
-        img{
-            width: 35% ;
-            margin-bottom: 2rem;
-        }
-        .orange-box{
-            margin-top: 4rem;
-            background-color: $orange;
-            text-align: center;
-            align-items: center;
-            height: fit-content !important;
-            width: fit-content !important;
-            border-radius: 3px;
-            a{height: fit-content;}
-        }
-    }
-
-
-
+.ttr-section-footer{
+    margin-top: 2rem;
+    text-align: center;
 }
 
-.services{
-    @include margining;
-    .carousel{
-        margin-top: 4rem;
-    }
-    .carousel-item{
-        display: flex;
-        flex-direction: row;
-
-        width: 100%;
-        height: 450px;
-        img{
-            width: 50% !important;
-
-        }
-        .content{
-        background-color: white;
-        display: flex;
-        flex-direction: row;
-        text-align: start;
-        width: 50%;
-        padding: 3rem;
-        padding-right: 15% !important;
-        padding-left: 5% !important;
-        flex-direction: column;
-        img{
-            width: 30% !important;
-            margin-bottom: 2rem;
-        }
-        h3{text-align: start !important;}
-        .orange-box{
-            background-color: $orange;
-            text-align: center;
-            height: fit-content !important;
-            width: fit-content !important;
-            border-radius: 3px;
-        }
-        }
-    }
-}
 
 .container-fit{
     position: absolute;
@@ -783,10 +750,10 @@ input:-internal-autofill-selected {
 }
 
 .mv-collapse{
-margin-top: 1rem;
-margin-bottom: 7rem;
+margin-top: 0.5rem;
+margin-bottom: 3rem;
     .card-header{
-        border-bottom: 1px solid $silver-sand;
+        margin-bottom: unset !important;
     }
     
     a{
@@ -809,10 +776,16 @@ margin-bottom: 7rem;
         
     }
 }
-
-.personal-info{
-    margin: 5rem 20rem;
+.form-header-wrapper{
+    background-color: $silver-sand;
+    padding: 1rem;
+    text-align: center;
+}
+.application-form-wrapper{
+    margin: 2% 15%;
     font-size: small;
+}
+.personal-info{
     @include flex-center;
     @include box-shadow;
     flex-direction: column;
@@ -879,16 +852,16 @@ button:focus{
 .documents{
     @include box-shadow;
     background-color: white;
-    margin: 5rem 20rem;
-    padding: 4rem 6rem;
+    margin-top: 2rem;
+    padding: 1rem 2rem;
     position: relative;
     border-radius: 10px;
     .document{
         margin-top: 3rem;
+        text-align: start;
         input{
             border: none;
             border-bottom:1px solid $silver-sand;
-            width: 70%;
         }
         input:focus{
             outline: 0;
@@ -991,10 +964,10 @@ button:focus{
 }
 }
 .warning{
-    margin: 7.6rem;
-    padding: 4rem;
-    font-size: 4rem;
-    font-weight: 800;
+    margin: 10%;
+    padding: 3rem;
+    font-size: 2.5rem;
+    font-weight: 600;
     border-radius: 20px;
     text-align: center;
 
@@ -1009,19 +982,19 @@ button:focus{
 
 // user styling
 .user-profile-wrapper{
-    margin: 6rem;
+    padding: 5% 10%;
     .avatar{
         @include box-shadow();
         @include flex-center();
         flex-direction: column;
-        padding: 4rem 3rem;
+        padding: 3.5rem 1.5rem;
         border-radius: 5px;
         img{
             background-color: $primary-color;
             padding: 0.7rem;
             border-radius: 50%;
-            width: 15rem;
-            height: 15rem;
+            width: 7rem;
+            height: 7rem;
         }
         b{
             margin-top: 2rem;
@@ -1031,13 +1004,13 @@ button:focus{
 
     .user-info{
         @include box-shadow();
-        padding: 4rem 3rem;
+        padding: 2rem 1.5rem;
         border-radius: 5px;
         li{
             border-bottom: 1px solid $silver-sand;
             display: flex;
             flex-direction: row;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
             b{width: 20%;}
 
         }
@@ -1055,6 +1028,7 @@ button:focus{
             .card-body{
                 @include flex-center();
                 flex-direction: column;
+                padding-bottom: 1rem;
                 div{
                     width: 100%;
                 }
@@ -1064,8 +1038,8 @@ button:focus{
                     border-bottom: 1px solid $primary-color !important;
                     border-radius: 5px;
                     padding-left: 1rem;
-                    height: 4rem !important;
-                    margin-bottom: 3rem;
+                    height: 2.5rem !important;
+                    margin-bottom: 1.5rem;
                     background-color: rgb(238, 249, 253);
                 }
                 input:focus{
@@ -1073,7 +1047,7 @@ button:focus{
                 }
             
                 label{
-                    font-weight: 400;
+                    font-weight: 300;
                 }
             }
             button{
@@ -1088,7 +1062,7 @@ button:focus{
         @include box-shadow();
         text-transform: capitalize;
         border-radius: 3px;
-        padding: 1rem;
+        padding: 0.5rem;
         a{
             color: $primary-color;
         }
@@ -1102,11 +1076,11 @@ button:focus{
         }
         img{
             background-color: $silver-sand;
-            padding: 1rem;
-            width: 5rem;
-            height: 5rem;
+            padding: 0.5rem;
+            width: 3rem;
+            height: 3rem;
             border-radius: 50%;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
 
         }
         .col-md-3{
@@ -1124,4 +1098,86 @@ button:focus{
 }
 .reserved{
     background-color: #2196f3 !important;
+}
+
+
+
+// jobs
+.search-box,.industry,.location{
+    width: 25%;
+    select,input{
+        border: none;
+        width: 100%;
+
+    }
+    select:focus{
+        outline: 0;
+    }
+    input:focus{
+        outline: 0;
+    }
+}
+
+.search-button{
+    width: 18%;
+    background-color: $orange !important;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    text-align: center;
+    height: fit-content !important;
+}
+
+//services page
+.services-page-header{
+    margin-top: 2rem;
+    text-align: center;
+    @include margining();
+}
+.service-cards-wrapper{
+    @include margining();
+    .service-card{
+        @include box-shadow();
+        display: flex;
+        flex-direction: column;
+        color: white !important;
+        background-color: $primary-color;
+        border-radius: 10px;
+        margin: 10px;
+        padding: 1rem;
+        text-align: start;
+        small{display: block;}
+        img{
+            width: 4rem;
+            margin: 1rem;
+        }
+        a{
+            width: fit-content !important;
+            display: block;
+            margin-top: 1rem;
+            float: left;
+            background-color:$silver-sand;
+            border-radius: 50%;
+            img{
+                width: 1rem;
+            }
+        }
+        a:hover{
+            background-color: #2196f3 ;
+        }
+        
+    }
+    .service-content{
+        @include box-shadow();
+        margin: 10px;
+        margin-top: 2rem;
+        border-radius: 5px;
+        p,b{
+        padding: 2rem;
+
+        }
+        
+    }
+ 
+    
+    
 }

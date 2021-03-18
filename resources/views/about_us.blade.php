@@ -72,7 +72,7 @@
 </div>
 <div class="container">
     <div class="blog-post">
-        <div class="section-title-wrapper">
+        <div class="ttr-section-header">
         <h2>From our expert blog</h2>
         <p>Consequat anim ullamco quis ea ad aute.</p>
         </div>

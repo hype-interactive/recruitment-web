@@ -7,9 +7,11 @@
         </div>
     </div>
 @else
+<div class="form-header-wrapper">
+    <h3>{{$post->title}}</h3>
+</div>
     <div class="container">
-        <h2>{{$post->title}}</h2>
-        
+        <div class="application-form-wrapper">
             <div class="personal-info">
                 <div class="panel-header">
                     <img src="{{asset('images/icons/man-user.svg')}}" alt="">
@@ -40,53 +42,48 @@
                     <button class="btn btn-orange ft-br" type="submit">Save Changes</button>
                 </form>
             </div>
+            <form action="{{route('add_document')}}" method="post" enctype="multipart/form-data">
+                <div class="documents">
+                        @csrf
+                        <div class="document">
+                            <div class="row">
+                                <div class="col-md-1">CV</div>
+                                <div class="col-md-2">
+                                    <input style="width: 5.7rem" type="file" class="custom-file-input" id="customFile" name="file" accept="application/pdf" required>
+                                </div>
+                                <div class="col-md-9">
+                                    <input class="w-75" type="tex"  src="" alt="" placeholder="file name" name="file_name" value="{{($application ?? '' )? ($application[0]->applicationDocument->name):""}}">
+                                    <img src="{{asset('images/icons/attachment.svg')}}" alt="">
+                                </div>
+                            </div> 
+                        </div>
+                    <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
+                    <input type="hidden" name="post_id" value="{{$post->id}}">
+                    <h5 class="hd-tl ">CV & Documents:</h5>
+                    <button class="btn btn-orange ft-br" type="button" data-bs-toggle="modal" data-bs-target="#apply">Submit</button>
+                </div>
+                <!-- Modal -->
+                  
+                    <div class="modal fade" id="apply" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="staticBackdropLabel">Confirm Application Submission</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              <button type="submit" class="btn btn-primary">Confirm</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+            </form> 
+        </div>
     </div>
 
     <div class="container">
-        
-
-        <form action="{{route('add_document')}}" method="post" enctype="multipart/form-data">
-            <div class="documents">
-                    @csrf
-                    <div class="document">
-                        <div class="form-row">
-                            <div class="col-md-1">CV</div>
-                            <div class="col-md-3">
-                                <input type="file" class="custom-file-input" id="customFile" name="file" accept="application/pdf" required>
-                            </div>
-                            <div class="col-md-8">
-                                <input type="tex" src="" alt="" placeholder="file name" name="file_name" value="{{($application ?? '' )? ($application[0]->applicationDocument->name):""}}">
-                                <img src="{{asset('images/icons/attachment.svg')}}" alt="">
-                            </div>
-                        </div> 
-                    </div>
-            <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
-            <input type="hidden" name="post_id" value="{{$post->id}}">
-            <h4 class="hd-tl ">CV & Documents:</h4>
-            <button class="btn btn-orange ft-br" type="button" data-toggle="modal" data-target="#apply">Submit</button>
-            </div>
-
     </div>
-      
-      <!-- Modal -->
-      <div class="modal fade" id="apply" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title text-danger" id="exampleModalCenterTitle">Confirm Application Submission</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancle</button>
-              <button type="submit" class="btn btn-primary">Confirm</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </form> 
 
     @endif
 

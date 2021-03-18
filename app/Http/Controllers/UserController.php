@@ -20,7 +20,7 @@ class UserController extends Controller
         $user->lname=$request->lname;
         $user->phone=$request->phone;
 
-        if($user->save()) return back();
+        if($user->save()) return back()->with('msg','Successful updated information');
     }
 
     public function getUser()
