@@ -293,6 +293,7 @@ button:focus{
     ul{
         margin-top: 1rem;
         list-style: none;
+        min-width: 450px;
         margin-bottom: 0px !important;
         padding-inline-start: 0px !important;
         @include flex-space-between;
@@ -428,7 +429,7 @@ button:focus{
     }
     .services-tile{
         margin-top: 1rem;
-        padding: 1rem;
+        padding: 1.5rem;
         color: white !important;
         background-color: $primary-color;
         .tile-icon{

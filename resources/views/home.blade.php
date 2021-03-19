@@ -147,7 +147,7 @@
                             <small>Dolor ullamco ex veniam est.Et in ipsum pariatur aliquip dolore ex elit.
                                  Mollit anim non ea nostrud esse quis commodo. Cupidatat et qui laboris
                                   cillum. Irure Lorem eiusmod commodo magna dolor enim amet non mollit.</small>
-                            <a href="">read more</a>
+                            
                         </div>
                     </div>
                 </div>
@@ -161,7 +161,7 @@
                             <small>Dolor ullamco ex veniam est.Et in ipsum pariatur aliquip dolore ex elit.
                                  Mollit anim non ea nostrud esse quis commodo. Cupidatat et qui laboris
                                   cillum. Irure Lorem eiusmod commodo magna dolor enim amet non mollit.</small>
-                            <a href="">read more</a>
+                            
                         </div>
                     </div>
                 </div>
@@ -175,7 +175,7 @@
                             <small>Dolor ullamco ex veniam est.Et in ipsum pariatur aliquip dolore ex elit.
                                  Mollit anim non ea nostrud esse quis commodo. Cupidatat et qui laboris
                                   cillum. Irure Lorem eiusmod commodo magna dolor enim amet non mollit.</small>
-                            <a href="">read more</a>
+                            
                         </div>
                     </div>
                 </div>
@@ -189,7 +189,7 @@
                             <small>Dolor ullamco ex veniam est.Et in ipsum pariatur aliquip dolore ex elit.
                                  Mollit anim non ea nostrud esse quis commodo. Cupidatat et qui laboris
                                   cillum. Irure Lorem eiusmod commodo magna dolor enim amet non mollit.</small>
-                            <a href="">read more</a>
+                            
                         </div>
                     </div>
                 </div>
