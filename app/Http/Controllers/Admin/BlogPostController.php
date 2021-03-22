@@ -34,6 +34,8 @@ class BlogPostController extends Controller
             $path=$request->image->store('/public/uploaded');
             $path_to_upload=substr($path,7);
             $post->image=$path_to_upload;
+        }else{
+            return redirect('admin/blog_posts')->with('msg','Failed to upload photo');
         }
 
         if($post->save()) return redirect('admin/blog_posts')->with('msg','Post created successfully!');
@@ -50,6 +52,8 @@ class BlogPostController extends Controller
                 $path=$request->image->store('/public/uploaded');
                 $path_to_upload=substr($path,7);
                 $post->image=$path_to_upload;
+            }else{
+                return redirect('admin/blog_posts')->with('msg','Failed to upload photo');
             }
         }
 

@@ -5,6 +5,7 @@
 @section('body')
     <div class="add-job-post-form">
         <form action="{{route('admin.add_job_post')}}" method="POST" novalidate>
+        @csrf
             <div class="form-row">
                 <div class="form-group col-md-12">
                     <label for="inputAddress">Job post title</label>
@@ -27,7 +28,7 @@
                   @endforeach
                 </select>
                 <div class="add-category">
-                  <a  data-toggle="modal" data-target="#exampleModalCenter">
+                  <a  data-bs-toggle="modal" data-bs-target="#add_category">
                     <img src="{{asset('images/icons/plus.svg')}}" alt="">
                   </a>
                 </div>
@@ -54,38 +55,36 @@
             <div class="form-row">
                 <div class="form-group col-md-12">
                     <label for="exampleFormControlTextarea1">Enter job description</label>
-                    <textarea rows="8" class="form-control" name="description" id="exampleFormControlTextarea1" required></textarea>
+                    <textarea rows="7" class="form-control" name="description" id="exampleFormControlTextarea1" required></textarea>
                   </div>
             </div>
-            {{ csrf_field() }}
             <button type="submit" class="btn  br-btn btn-primary">Add Post</button>
           </form>
     </div>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal fade" id="add_category" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle">Add New Job Category</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <h5 class="modal-title" id="exampleModalLabel">Add Category</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <form action="{{route('admin.add_category')}}" method="post">
         @csrf
-        <div class="modal-body">
-          <input type="text" name="category" class="form-control"  aria-describedby="emailHelp" placeholder="Example : Accountant">
-        </div>
-        <div class="modal-footer">
-          {{-- {{ csrf_field() }} --}}
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">Save changes</button>
-        </div>
-      </form>
+      <div class="modal-body">
+        <input type="text" name="category" class="form-control"  aria-describedby="emailHelp" placeholder="Example : Accountant">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Confirm</button>
+      </div>
+    </form>
     </div>
   </div>
 </div>
+
+
 
  <script type="text/javascript" src="{{asset('tinymce/tinymce.min.js')}}"></script>
  <script type="text/javascript">

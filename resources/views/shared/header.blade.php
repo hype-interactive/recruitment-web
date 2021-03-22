@@ -9,7 +9,7 @@
             <ul id="thelinks" class="nav-link-wrapper">
                 <li class="nav-link"> <a href="{{route('home')}}">Home</a></li>
                 <li class="nav-link"> <a href="{{route('job_posts')}}">Jobs</a></li>
-                <li class="nav-link"> <a href="{{'services'}}">Services</a></li>
+                <li class="nav-link"> <a href="{{route('services')}}">Services</a></li>
                 <li class="nav-link"> <a href="{{route('about_us')}}">About us</a></li>
             </ul>
         </div>

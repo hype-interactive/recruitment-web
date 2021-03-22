@@ -138,12 +138,13 @@ hr{
     .pop-feedback{
         @include box-shadow();
         position: absolute;
-        bottom: -2rem;
+        bottom: -1rem;
         right: 0rem;
-        width: fit-content;
-        padding: 1rem 3rem;
-        font-weight: 700;
         border: 1px solid white;
+        border-right: none ;
+        width: fit-content;
+        padding: 0.5rem 1.5rem;
+        font-weight: 700;
         background-color: $orange;
         border-top-left-radius: 25px;
         border-bottom-left-radius: 25px;
@@ -188,7 +189,7 @@ hr{
 .main-footer{
     
     width: 100%;
-    padding: 1.5rem 1rem 2rem 1rem;
+    padding: 1.5rem 1rem 1rem 1rem;
     background-color: $primary-color;
     color: whitesmoke;
     position: absolute;
@@ -252,7 +253,7 @@ input ,select{
             font-weight: 400 !important;
         }
  
-      
+      .form-row{margin-bottom: 0.8rem;}
 
        .br-btn{
            position: absolute;
@@ -368,9 +369,7 @@ input ,select{
     }
 }
 
-.modal-dialog{
-    top:20rem;
-}
+
 .blog-posts{
     .card{
         border-radius: 5px !important;
@@ -413,6 +412,11 @@ input ,select{
                 }
 
             }
+        .card-text{
+            margin: 5px;
+            p{margin-bottom: 0px;}
+        }
+            
         }
     }
 }

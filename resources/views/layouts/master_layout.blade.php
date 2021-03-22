@@ -35,7 +35,7 @@
             
 
             $('.modal_btn').click(function(){
-                $('#data_id').val($(this).data('id'));
+                $('#data_id').val($(this).data('bs-id'));
             });
         });
     </script>

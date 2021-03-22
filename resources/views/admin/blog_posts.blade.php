@@ -10,7 +10,7 @@
                 <div class="card " >
                     <img src="{{asset('storage/'.$post->image)}}" class="card-img-top" alt="...">
                     <div class="card-body">
-                    <p class="card-text">{!!Str::limit($post->caption,50)!!}</p>
+                    <div class="card-text">{!!Str::limit($post->caption,50)!!}</div>
                     <small>
                         <a href="{{route('admin.edit_blog_post_panel',$post->id)}}">
                             <img src="{{asset('images/icons/edit.svg')}}" alt="" class="small-icon">
@@ -33,21 +33,23 @@
 
   
   <!--Delete Modal -->
-  <div class="modal fade" id="delete_post" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel">Are you sure ,You want to DELETE this post</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-footer">
+
+<div class="modal fade" id="delete_post" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h6 class="modal-title text-danger" id="exampleModalLabel">Are you sure ,You want to DELETE this post</h6>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-footer">
         <form action="{{route('admin.delete_blog_post')}}" method="post">
-            @csrf
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="Submit" class="btn btn-primary">Confirm</button>
+              @csrf
+            <input type="hidden" name="post_id" id="data_id">
+            <button type="button" class="btn btn-secondary btn-sm " data-bs-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-primary btn-sm btn-danger">Delete</button>
         </form>
-        </div>
       </div>
     </div>
   </div>
+</div>
 @endsection
