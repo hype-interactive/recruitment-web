@@ -206,20 +206,26 @@ hr{
 }
 
 .post-list{
+    
     .card{
         position: relative;
         margin: 0.5rem;
         padding: 0.5rem;
+        border: none;
         // height: 120px !important;
         color: $primary-color;
         text-align: start;
         background-color: white;
+
         p{
             margin-top: 5px;
             margin-bottom: 5px;
             height: 40px !important;
             align-items: baseline ;
             font-size: small !important;
+        }
+        .admin-card-header{
+        font-size: small ;
         }
         .card-footer{
             @include flex-space-between;
@@ -237,6 +243,17 @@ hr{
             height: 0;
             border-top: 10px solid $primary-color;
             border-right: 10px solid transparent;
+        }
+        .closed{
+            color: white;
+            font-weight: 700;
+            font-size: 0.5rem;
+            background-color:#ef5350;
+            border-bottom: 1px solid $primary-color;
+            top:0;
+            right: 0;
+            padding: 3px 5px;
+            position: absolute;
         }
     }
 }

@@ -1,0 +1,44 @@
+/* SCSS HEX */
+/* SCSS Gradient */
+.job-card {
+  margin-top: 4rem;
+  margin-bottom: 3rem;
+  background-color: white;
+  padding: 3rem;
+}
+
+.job-card .job-header {
+  border-bottom: 1px solid #B9C1CCff;
+}
+
+.job-card .job-header .title {
+  border-bottom: 1px solid #B9C1CCff;
+  margin-bottom: 3rem;
+}
+
+.job-card .job-header .col-md-4 {
+  margin-bottom: 2rem;
+}
+
+.job-card .body {
+  padding: 2rem 2rem 4rem 2rem;
+  position: relative;
+}
+
+.job-card .body button {
+  position: absolute;
+  right: 0rem;
+  bottom: 0rem;
+}
+
+.job-card .body .description-panel {
+  padding: 2rem;
+  color: black;
+}
+
+.small-icon {
+  width: 1.3rem;
+  height: 1.3rem;
+  margin-right: 1rem;
+}
+/*# sourceMappingURL=job.css.map */

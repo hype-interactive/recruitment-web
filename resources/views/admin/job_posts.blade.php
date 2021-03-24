@@ -13,6 +13,7 @@
                             <img src="{{asset('images/icons/bag.svg')}}" alt="">
                         </div>
                         {{$post->jobCategory->name}}
+
                     </div>
                     @if (strlen($post->title)>75)
                         <?php $title = substr($post->title, 0,75) . " .....  ...." ?>
@@ -32,6 +33,9 @@
                         </div>
                     </div>
                     <div class="triangle"></div>
+                    @if ($post->deadline < date('Y-m-d'))
+                        <div class="closed">CLOSED</div>
+                    @endif
                 </div>
             </div>
         @endforeach
