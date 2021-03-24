@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use App\Models\JobPost;
 use App\Models\Region;
 use App\Models\JobCategory;
@@ -59,46 +60,69 @@ class JobPostController extends Controller
     public function searchJobs(Request $request)
     {
 
-        if(strlen($request->q) >4){
+        if(Str::startsWith($request->q,'000')){
+            $str=substr($request->q,3);
+            $jobs=JobPost::with('region','jobCategory')->where('title','like','%'.$str.'%')->whereDate('deadline','>=',date('Y-m-d'))->latest()->get();
+            echo \json_encode($jobs);
+        }else{
 
-            // $query=JobPost::query();
+            $regions = array();
+            $job_categories = array();
+            $working_hours = array();
+            foreach (explode(",",$request->q) as $item) {
 
-            if(str_starts_with($request->q,'000')){
-
-                $jobs=JobPost::with('region','jobCategory')->whereIn('region_id',$this->makeArray($request->q))->latest()->get();
-                // $query->whereIn('region_id',$this->makeArray($request->q));
-            }
-            if(str_starts_with($request->q,'111')){
-
-                $jobs=JobPost::with('region','jobCategory')->whereIn('job_category_id',$this->makeArray($request->q))->latest()->get();
-                // $query->whereIn('job_category_id',$this->makeArray($request->q));
-            }
-            if(str_starts_with($request->q,'222')){
-                $single=substr($request->q,4);
-                if(strlen($single) < 2 ){
-
-                    $jobs=JobPost::with('region','jobCategory')->where('type','like','%'.$single.'%')->latest()->get();
-                }else {
-
-                    $jobs=JobPost::with('region','jobCategory')->where('type','Part time')->orWhere('type','Full time')->latest()->get();
+                if($this->lastChar($item)== 'T'){
+                    array_push($working_hours, $this->getId($item));
 
                 }
-
+                if($this->lastChar($item)== 'C'){
+                    array_push($job_categories, $this->getId($item));
+                }
+                if($this->lastChar($item)== 'R'){
+                    array_push($regions, $this->getId($item));
+                }
+                
             }
-            echo \json_encode($jobs);   
 
-            // $query->with('region','jobCategory')->latest()->get();
+            $query = JobPost::query(); 
 
-            // echo \json_encode($query);   
-        }else {
-            $jobs=JobPost::with('region','jobCategory')->where('title','like','%'.$request->q.'%')->latest()->get();
+            if(count($regions)!=0){
+                $query->whereIn('region_id',$regions);
+            }
+            if(count($job_categories)!=0 ){
+                $query->whereIn('job_category_id',$job_categories);
+            }
+            if(count($working_hours) != 0 && count($working_hours) < 2){
+                if($working_hours[0] == "1"){
+                    $query->where('type','Full time');
+                }else{
+                    $query->where('type','Part time');
+                }
+            }
+
+            $jobs = $query->with('region','jobCategory')
+                    ->whereDate('deadline','>=',date('Y-m-d'))
+                    ->get();
+
             echo \json_encode($jobs);
         }
 
-
-
     }
 
+    public function destroyArray($array)
+    {
+        global $array;
+        unset($array);
+    }
+
+    public function lastChar($str)
+    {
+        return substr($str,-1);
+    }
+    public function getId($str)
+    {
+        return substr($str,0,-1);
+    }
     public function makeArray($str)
     {
                 $filter_str=substr($str,4);

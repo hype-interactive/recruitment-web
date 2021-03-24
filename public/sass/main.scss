@@ -1182,3 +1182,24 @@ button:focus{
     
     
 }
+
+
+// search results
+.nodata{
+    @include box-shadow();
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem;
+    padding: 1rem;
+    img{
+        width: 5rem;
+        margin-right: 2rem;
+    }
+}
+
+//job fillter listing
+#regions_list{
+    height: 493px;
+    overflow: hidden;
+}

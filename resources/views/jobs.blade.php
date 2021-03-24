@@ -4,7 +4,7 @@
         <div class="jobs-header">
             <div class="search-bar">
                 <div class="search-box">
-                    <input type="text" onkeyup="showResults(this.value)" placeholder="Search By Job  Keyword ,or Job key word">
+                    <input type="text" onkeyup="fromSearch(this.value)" placeholder="Search By Job  Keyword ,or Job key word">
                     <img src="{{asset('images/icons/loupe.svg')}}" alt="">
                 </div> 
                 <div class="search-button">
@@ -18,24 +18,24 @@
                     <h6>Work Category :</h6>
                     <ul>
                             @foreach ($industries as $industry)
-                                <li> <input type="checkbox" class="custom-control-input check-box" id="{{$industry->id}}C" onchange="checkAction(this.id,'C')"> <span>{{$industry->name}}</span></li>
+                                <li> <input type="checkbox" class="custom-control-input check-box" id="{{$industry->id}}C" onchange="checkAction(this.id)"> <span>{{$industry->name}}</span></li>
                             @endforeach
                     </ul>
                     <h6>Working hours :</h6>
                     <ul>
-                        <li> <input type="checkbox" class="custom-control-input check-box" id="Full" onchange="checkAction(this.id,'T')"> <span>Full time</span></li>
-                        <li> <input type="checkbox" class="custom-control-input check-box" id="Part" onchange="checkAction(this.id,'T')"> <span>Part time</span></li>
+                        {{-- <li> <input type="checkbox" class="custom-control-input check-box" id="Full" onchange="checkAction(this.id,'T')"> <span>Full time</span></li> --}}
+                        <li> <input type="checkbox" class="custom-control-input check-box" id="1T" onchange="checkAction(this.id)"> <span>Full time</span></li>
+                        {{-- <li> <input type="checkbox" class="custom-control-input check-box" id="Part" onchange="checkAction(this.id,'T')"> <span>Part time</span></li> --}}
+                        <li> <input type="checkbox" class="custom-control-input check-box" id="2T" onchange="checkAction(this.id)"> <span>Part time</span></li>
                     </ul>
                     <h6>Location :</h6>
-                    <ul class="visible-regions">
-                        <li> <input type="checkbox" class="custom-control-input check-box" id="7R" onchange="checkAction(this.id,'R')"> <span>Dar es Salaam</span></li>
-                        <li> <input type="checkbox" class="custom-control-input check-box" id="19R" onchange="checkAction(this.id,'R')"> <span>Mwanza</span></li>
-                        <li> <input type="checkbox" class="custom-control-input check-box" id="2R" onchange="checkAction(this.id,'R')"> <span>Arusha</span></li>
-                        <li> <input type="checkbox" class="custom-control-input check-box" id="1R" onchange="checkAction(this.id,'R')"> <span>Dodoma</span></li>
-                        <li> <input type="checkbox" class="custom-control-input check-box" id="12R" onchange="checkAction(this.id,'R')"> <span>Mbeya</span></li>
-                        <li> <input type="checkbox" class="custom-control-input check-box" id="3R" onchange="checkAction(this.id,'R')"> <span>Kilimanjaro</span></li>
-                        <li> <input type="checkbox" class="custom-control-input check-box" id="5R" onchange="checkAction(this.id,'R')"> <span>Morogoro</span></li>
+                    <ul id="regions_list">
+                        @foreach ($regions as $region)
+                            <li> <input type="checkbox" class="custom-control-input check-box" id="{{$region->id}}R" onchange="checkAction(this.id)"> <span>{{$region->name}}</span></li>
+                        @endforeach
                     </ul>
+                    <button type="button" id="show_more" class="btn btn-orange btn-sm float-end mb-2" onclick="showMore('regions_list')">Show more</button>
+                    <button type="button" id="show_less" style="display: none" class="btn btn-orange btn-sm float-end mb-2" onclick="showLess('regions_list')">Show less</button>
                 </form>
             </div>
             <div class="col-md-8  job-list">
@@ -72,21 +72,22 @@
     // 
     function showResults(str) {
         // check input
-        // if(str.length = 0){
-        //     document.getElementById('post_list').innerHTML="@foreach ($job_posts as $post)<a href='{{route('job_post',$post->id)}}'><div class='banner'><div class='row'><div class='col-md-9'><b>{{$post->jobCategory->name}}</b><p class='title'>{{Str::limit($post->title,75)}}</p><ul><li class='location'><img src='{{asset('images/icons/location.svg')}}' >{{$post->region->name}}</li><li class='location'><img src='{{asset('images/icons/lightbulb.svg')}}' > Deadline; {{date_format(date_create($post->deadline),'d-M-Y')}}</li></ul>'</div><div class='col-md-3 sm-wrapper'><p>{{$post->type}}</p></div></div><div class='triangle'></div><small>{{timeElapsed($post->created_at)}}</small><div class='snowflake'><img src='{{asset('images/icons/star.svg')}}'></div></div></a>@endforeach";
-        // }
-        reFill(str)
+        if(str.length = 0){
+            document.getElementById('post_list').innerHTML="@foreach ($job_posts as $post)<a href='{{route('job_post',$post->id)}}'><div class='banner'><div class='row'><div class='col-md-9'><b>{{$post->jobCategory->name}}</b><p class='title'>{{Str::limit($post->title,75)}}</p><ul><li class='location'><img src='{{asset('images/icons/location.svg')}}' >{{$post->region->name}}</li><li class='location'><img src='{{asset('images/icons/lightbulb.svg')}}' > Deadline; {{date_format(date_create($post->deadline),'d-M-Y')}}</li></ul>'</div><div class='col-md-3 sm-wrapper'><p>{{$post->type}}</p></div></div><div class='triangle'></div><small>{{timeElapsed($post->created_at)}}</small><div class='snowflake'><img src='{{asset('images/icons/star.svg')}}'></div></div></a>@endforeach";
+        }
         // ajax xmlhttp request
         var xmlhttp = new  XMLHttpRequest();
         xmlhttp.onreadystatechange= function () {
             //check successful results
             if(this.readyState == 4 && this.status == 200){
                 resp=JSON.parse(this.responseText);
+                // console.log(this.responseText);
                 if(resp.length == 0){
-                    // document.getElementById('post_lidt').innerHTML="<h1 class='text-information'>No Results</h1>";
+                    var noresult_str='<div class=" nodata"><img src="/images/nodata.jpeg" alt=""><h3 class="text-danger">No result found !</h3></div>';
+                    document.getElementById('post_list').innerHTML=noresult_str;
+
                 }else{
                 var post_container='';
-                console.log(resp)
                 for (let index = 0; index < resp.length; index++) {
                     post_container+="<a href='job/"+resp[index].id+" '><div class='banner'><div class='col'><b>"+ resp[index].job_category.name +"</b><p class='title'>"+resp[index].title +"</p><ul><li class='location'><img src='{{asset('images/icons/location.svg')}}' >"+ resp[index].region.name+"</li><li class='location'><img src='{{asset('images/icons/lightbulb.svg')}}' > Deadline; "+ strToDate( resp[index].deadline)+"</li></ul></div><div class='sm-wrapper'><p>"+resp[index].type+"</p></div><div class='triangle'></div><small>today</small><div class='snowflake'><img src='{{asset('images/icons/star.svg')}}'></div></div></a>"                
 
@@ -117,9 +118,11 @@
 
     var filter_array = [];
 
+
     function addFilter(value) {
         filter_array.push(value);
     }
+
     function reductFilter(value) {
         var index = filter_array.indexOf(value);
 
@@ -127,29 +130,44 @@
             filter_array.splice(index, 1);
         }
     }
-    function filter(type) {
-        var filter_str=filter_array.join();
-        if(type == 'R'){identifire="000,"}
-        if(type == 'C'){identifire="111,"}
-        if(type == 'T'){identifire="222,"}
 
-        var  filter_raw = identifire.concat(filter_str);
- 
-        showResults(filter_raw); 
+    function fromSearch(str) {
+        var code = "000";
+        showResults(code.concat(str));
     }
 
-    function checkAction(id,type) {
-        id.length = 2 ? value = id[0]: value= id.substr(0,2)
+    function checkAction(id) {
        var checkbox = document.getElementById(id);
        if (checkbox.checked == true ){
-           addFilter(value);
-            filter(type);
+           addFilter(id);
+           showResults(filter_array.join())
        }
        if (checkbox.checked != true){
-            reductFilter(value);
-            filter(type);
+            reductFilter(id);
+            showResults(filter_array.join())
        }
     }
+
+function showMore(id) {
+    var target=document.getElementById(id).style;
+    target.height="unset";
+    target.overflow="visible"
+
+    document.getElementById('show_more').style.display="none";
+    document.getElementById('show_less').style.display="block";
+
+}
+
+function showLess(id) {
+
+    var target=document.getElementById(id).style;
+    target.height="493px";
+    target.overflow="hidden"
+
+    document.getElementById('show_more').style.display="block";
+    document.getElementById('show_less').style.display="none";
+    
+}
     </script>
 
     

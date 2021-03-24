@@ -100,11 +100,11 @@
                     <div class="modal-body employer">
                         <div class="form-group">
                             <label for="exampleInputPassword1">Company Name</label>
-                            <input type="text" name="name" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                            <input type="text" name="name" class="form-control"  placeholder="Password">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Company's Email</label>
-                            <input type="email" name="email" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                            <input type="email" name="email" class="form-control"  placeholder="Password">
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -129,11 +129,11 @@
       <div class="modal-body employer">
             <div class="form-group">
                 <label for="exampleInputPassword1">Company Name</label>
-                <input type="text" name="name" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                <input type="text" name="name" class="form-control"  placeholder="Password">
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Company's Email</label>
-                <input type="email" name="email" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                <input type="email" name="email" class="form-control"  placeholder="Password">
             </div>
       </div>
       <div class="modal-footer">
