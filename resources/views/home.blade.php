@@ -214,7 +214,11 @@
                                 </div>
                                 <div class="body">
                                     <b class="blog-card-title">{{Str::limit($bpost->title,80)}}</b>
-                                    <p>{!!Str::limit($bpost->caption,100)!!}</p>
+                                    <div class="caption">
+                                        <p>
+                                            {!! Str::limit($bpost->caption,90)!!}
+                                        </p>
+                                    </div>
                                     <div class="blog-post-footer">
                                         <div class="right">
                                             <b>By Top Talented Recruiters</b>

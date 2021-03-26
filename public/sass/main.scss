@@ -487,9 +487,8 @@ button:focus{
             display: flex;
             flex-direction: column;
             .body{
-                height: 180px;
                 position: relative;
-
+                height:18 p0px;
                 padding: 15px;
                 color: black;
                 background-color: #fafafa;
@@ -498,7 +497,10 @@ button:focus{
                 .blog-card-title{
                     color:$primary-color !important;
                 }
-    
+                b{margin-bottom: 3rem;}
+                .caption{
+                    width: 90% !important;
+                }
             }
         }
         
@@ -708,7 +710,6 @@ input:-internal-autofill-selected {
     img{
         width: 18rem;
         height: 18rem;
-        // height: 25rem;
         border-radius: 50%;
         object-fit: cover;
         -webkit-box-shadow: 1px 0px 14px 0px rgba(22,48,84,1);
@@ -934,6 +935,8 @@ button:focus{
 .blog_post_wrapper{
     padding: 5% 10%;
     min-height:60rem;
+    overflow-y:scroll;
+    margin-bottom:2rem;
 
     .blog-post-card{
         position: relative;

@@ -216,7 +216,7 @@ hr{
         color: $primary-color;
         text-align: start;
         background-color: white;
-
+        
         p{
             margin-top: 5px;
             margin-bottom: 5px;
@@ -431,7 +431,12 @@ input ,select{
             }
         .card-text{
             margin: 5px;
-            p{margin-bottom: 0px;}
+            width:230px;
+            overflow:hidden;
+            p{margin-bottom: 0px;
+            }
+            
+            
         }
             
         }

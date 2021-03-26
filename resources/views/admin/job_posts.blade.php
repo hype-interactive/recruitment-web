@@ -1,7 +1,6 @@
 @extends('layouts.master_layout')
 @section('page-summary')
             <b>Jop Post</b>
-
 @endsection
 @section('body')
     <div class=" row post-list">
