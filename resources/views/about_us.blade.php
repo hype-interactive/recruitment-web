@@ -1,80 +1,67 @@
 @extends('layouts.app')
 @section('body')
-<div class="container">
-    <div class="about-header">
-        <h4><b>WE HELP YOU FIND THE RIGHT PERSON FOR THE JOB</b></h4>
-        <h1>SKILLS YOU NEED.THE PEOPLE YOU WANT</h1>
-        <hr>
+<div class="page-intro">
+    <div class="page-intro-header">
+        <h1 class="bolded">About us</h1>
     </div>
-</div>
-<div class="container">
-    <div class="about-top">
+ </div>
+
+ <div class="about-intro-section">
+    <div class="container">
         <div class="row">
-            <div class="col-md-8">
-                <p>     In deserunt ut velit anim consequat sunt elit qui dolore officia tempor.
-                     Anim pariatur proident sit dolore ad eu magna mollit. Nulla ex velit elit sint 
-                     minim sint tempor. Sit ullamco occaecat enim tempor culpa ullamco deserunt elit.
-                      Ex sunt aliquip cillum esse do in ea excepteur fugiat. Aute proident sint dolore 
-                      eiusmod non amet dolor. Ad tempor excepteur eu Lorem sunt elit nisi.
+            <div class="col-md-12">
+                <div class="intro-label">
+                    <h1 class="bolded">Introduction</h1>
+                </div>
+                <p class="about-content-text">
+                    Top Talented Recruits is a private company which is
+                    wholly locally owned Tanzanian firm. We are a
+                    Human Resources Management practice that
+                    provides a comprehensive range of Human
+                    Resources Solutions with a business focus
+                </p>
+                <p class="about-content-text">
+                    At Top Talented Recruit, we fully understand
+                    the Tanzanian market and have developed a
+                    portfolio of relevant and value-adding products
+                    that make Human Resources simple, quick and
+                    effective.
 
-            </div>
-            <div class="col-md-4">
-                <img src="{{asset('images/mac.jpg')}}" alt="">
+                    We imply an integrated team approach and
+our full-service /one stop" source philosophy is
+what makes us unique.
+                </p>
             </div>
         </div>
     </div>
 </div>
-<div class="container">
-    <h2>Meet Our Team :</h2>
-    <div class="row about-card">
-         <div class="col-md-offset-1 col-md-4">
-             <img src="{{asset('images/profile-1.jpg')}}" alt="">
-         </div>
-         <div class="col-md-6 offset-md-1">
-                 <h4>Chief Excutive Officer</h4>
-                 <hr>
-                 <p>Ad ut irure non irure id aute. Id proident ea velit laborum aliquip eiusmod aute nulla
-                      culpa eu. Et esse aliqua sit veniam ipsum dolore sint nostrud laborum qui anim. In 
-                      eiusmod sunt aute Lorem tempor mollit minim.Nulla elit ut ut id enim fugiat deserunt 
-                      consequat cupidatat deserunt adipisicing reprehenderit sunt officia. Do culpa nostrud 
-                      officia ullamco veniam sunt occaecat non elit. Labore duis qui consequat ut.</p>
-                 <small>Jimmy Mc Methew</small>
-         </div>
-    </div>
-    <div class="row about-card">
-        <div class="col-md-offset-1 col-md-6">
-            <h4>Marketing Manager</h4>
-            <hr>
-            <p>Ad ut irure non irure id aute. Id proident ea velit laborum aliquip eiusmod aute nulla culpa eu.
-                 Et esse aliqua sit veniam ipsum dolore sint nostrud laborum qui anim. In eiusmod sunt aute 
-                 Lorem tempor mollit minim.Nulla elit ut ut id enim fugiat deserunt consequat cupidatat deserunt
-                adipisicing reprehenderit sunt officia. Do culpa nostrud duis Lorem officia incididunt mollit
-                exercitation culpa. Ipsum officia officia ullamco veniam sunt occaecat non elit. Labore duis qui consequat ut.</p>
-            <small>Jimmy Mc Methew</small>
-        </div>
-        <div class="col-md-4">
-            <img src="{{asset('images/profile-2.jpg')}}" alt="">
-        </div>
 
-   </div>
-   <div class="row about-card">
-    <div class="col-md-offset-1 col-md-4">
-        <img src="{{asset('images/profile-3.jpg')}}" alt="">
-    </div>
-    <div class="col-md-6 offset-md-1">
-            <h4>Photographer</h4>
-            <hr>
-            <p>Ad ut irure non irure id aute. Id proident ea velit laborum aliquip eiusmod aute nulla culpa eu. Et esse aliqua sit veniam ipsum dolore sint nostrud laborum qui anim. In eiusmod sunt aute Lorem tempor mollit minim.
-                Nulla elit ut ut id enim fugiat deserunt consequat cupidatat deserunt adipisicing reprehenderit sunt officia. Do culpa nostrud duis Lorem officia incididunt mollit consectetur esse velit nostrud. Magna sunt nisi eiusmod eiusmod esse velit laborum est consectetur exercitation culpa. Ipsum officia officia ullamco veniam sunt occaecat non elit. Labore duis qui consequat ut.</p>
-            <small>Jimmy Mc Methew</small>
+<div class="vision-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <h5 class="bolded">OUR VISION</h5>
+                To set standard of excellence among
+                human resources company in Tanzania.
+            </div>
+            <div class="col-md-6 mb-3">
+                <h5 class="bolded">OUR MISSION</h5>
+                Operating innovative huma resources cosulting
+                firm which will ofefer better human resources
+                proudcts that are corectly priced to meet our
+                customers needs and deliver profitability to our
+                clients.
+            </div>
+        </div>
     </div>
 </div>
-</div>
+
+<div class="about-blog-wrapper">
 <div class="container">
     <div class="blog-post">
         <div class="ttr-section-header">
-        <h2>From our expert blog</h2>
-        <p>Consequat anim ullamco quis ea ad aute.</p>
+        <h2 class="bolded">From our expert blog</h2>
+        <p>Curated list of articles written by our experts</p>
         </div>
         {{-- <div class="row">
             <div class="col-md-4">
@@ -166,5 +153,6 @@
             @endforeach
         </div>
     </div>
+</div>
 </div>
 @endsection

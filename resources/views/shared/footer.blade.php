@@ -7,7 +7,7 @@
                     <ul>
                         <li>
                             <img src="{{asset('images/icons/phone-white.svg')}}" alt="">
-                            +255 677 000 011/ +255 752 111 225
+                            +255 677 000 011 / +255 752 111 225
                         </li>
                         <li>
                             <img src="{{asset('images/icons/location-white.svg')}}" alt="">
@@ -33,21 +33,21 @@
                     <h4>Follow Us</h4>
                     <ul>
                         <li>
-                            <img src="{{asset('images/icons/instagram-white.svg')}}" alt="">
-                            instagram
+                            <a href="https://www.instagram.com/toptalentedrecruits/"><img src="{{asset('images/icons/instagram-white.svg')}}" alt="">   instagram</a>
+                         
                         </li>
                         <li>
-                            <img src="{{asset('images/icons/linkedin-white.svg')}}" alt="">
-                            linkedin
+                            <a href="https://tz.linkedin.com/company/top-talented-recruits-ltd?trk=public_profile_experience-item_result-card_subtitle-click"><img src="{{asset('images/icons/linkedin-white.svg')}}" alt="">  linkedin</a>
+
                         </li>
-                        <li>
+                        {{-- <li>
                             <img src="{{asset('images/icons/twitter-white.svg')}}" alt="">
                             twitter
-                        </li>
-                        <li>
+                        </li> --}}
+                        {{-- <li>
                             <img src="{{asset('images/icons/globe-white.svg')}}" alt="">
                             blog
-                        </li>
+                        </li> --}}
                         <li></li>
                     </ul>
                 </div>
