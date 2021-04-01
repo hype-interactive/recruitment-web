@@ -2,8 +2,8 @@
 @section('body')
 <div class="container">
   <div class="services-page-header">
-    <h1>What we do ?</h1>
-    <p>Labore laboris proident esse aute sunt magna ipsum dolor anim labore proident est.</p>
+    <h1>What we do</h1>
+    <p>Our services provides you with a comprehensive range of Human Resources Solutions with a business focus</p>
   </div>
 </div>
 <div class="container">
@@ -14,57 +14,48 @@
     <div class="col-md-3 ">
       <div class="service-card">
         <img src="{{asset('images/icons/recruitment.svg')}}" alt="">
-        <h5>Recruit Services</h5>
-        <small>
-            Ipsum excepteur pariatur consectetur adipisicing mollit minim reprehenderit. 
-            Velit sunt reprehenderit labore fugiat fugiat sit do. Ipsum sunt commodo 
-            quis commodo. Consequat reprehenderit magna et dolor nostrud ad.
-        </small>
-        <a onclick="showContent('recruitment')">
+        <h5>Recruitment Services</h5>
+        <small>We match candidates to job vacancies,working with companies directly to help fill their roles. Their consultants' source new opportunities,edit and optimise CVs,and even provide pointers to help candidates prepare for interviews.</small>
+    
+        {{-- <a onclick="showContent('recruitment')">
           <img src="{{asset('images/icons/right-arrow.svg')}}" alt="">
-        </a>
+        </a> --}}
       </div>
     </div>
     <div class="col-md-3 ">
       <div class="service-card">
         <img src="{{asset('images/icons/passport.svg')}}" alt="">
-        <h5>Permit Consultancy</h5>
+        <h5>Work Permits</h5>
         <small>
-            Ipsum excepteur pariatur consectetur adipisicing mollit minim reprehenderit. 
-            Velit sunt reprehenderit labore fugiat fugiat sit do. Ipsum sunt commodo 
-            quis commodo. Consequat reprehenderit magna et dolor nostrud ad.
-        </small>
-        <a onclick="showContent('permit')">
+          We help you in getting official documents giving a foreigner permision to take a job and live in a country.
+          </small>
+      
+        {{-- <a onclick="showContent('permit')">
           <img src="{{asset('images/icons/right-arrow.svg')}}" alt="">
-        </a>
+        </a> --}}
       </div>
     </div>
     <div class="col-md-3 ">
       <div class="service-card">
         <img src="{{asset('images/icons/presentation.svg')}}" alt="">
-        <h5>Training Services</h5>
-        <small>
-            Ipsum excepteur pariatur consectetur adipisicing mollit minim reprehenderit. 
-            Velit sunt reprehenderit labore fugiat fugiat sit do. Ipsum sunt commodo 
-            quis commodo. Consequat reprehenderit magna et dolor nostrud ad.
+        <h5>Training & Team Building</h5>
+        <small>The purpose of team building activities is to motivate your people to work together,to develop their strengths,and to address any weakneses.
         </small>
-        <a onclick="showContent('training')">
+
+        {{-- <a onclick="showContent('training')">
           <img src="{{asset('images/icons/right-arrow.svg')}}" alt="">
-        </a>
+        </a> --}}
       </div>
     </div>
     <div class="col-md-3 ">
       <div class="service-card">
         <img src="{{asset('images/icons/consult.svg')}}" alt="">
-        <h5>Consultancy Services</h5>
-        <small>
-            Ipsum excepteur pariatur consectetur adipisicing mollit minim reprehenderit. 
-            Velit sunt reprehenderit labore fugiat fugiat sit do. Ipsum sunt commodo 
-            quis commodo. Consequat reprehenderit magna et dolor nostrud ad.
-        </small>
-        <a onclick="showContent('consultancy')">
+        <h5>Manpower outsourcing and management</h5>
+        <small>Along with this, if your company requires a specific kind of employee for a specific project, a manpower service provider allow you to find the employees as per your business requirements</small>
+                            
+        {{-- <a onclick="showContent('consultancy')">
           <img src="{{asset('images/icons/right-arrow.svg')}}" alt="">
-        </a>
+        </a> --}}
       </div>
     </div>
   </div>
