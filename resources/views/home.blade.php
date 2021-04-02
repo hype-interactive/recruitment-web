@@ -40,7 +40,7 @@
                 </div>
               </div>
               <div class="carousel-item">
-                <img src="{{asset('images/outsourcing.jpgg')}}" class="d-block w-100" alt="...">
+                <img src="{{asset('images/outsourcing.jpg')}}" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                   <h3>Outsourcing and Consulting services</h3>
                   <p>Master your strengths and outsource your weaknesses</p>
@@ -192,7 +192,7 @@
                 <div class="col-md-6 services-tile">
                     <div class="row">
                         <div class="col-md-2 tile-icon">
-                            <img src="{{asset('images/icons/consult.svg')}}" alt="">
+                            <img src="{{asset('images/icons/bcheck.svg')}}" alt="">
                         </div>
                         <div class="col-md-10 tile-content">
                             <b>Reference and Background Checks Facilities</b>
@@ -206,7 +206,7 @@
                 <div class="col-md-6 services-tile">
                     <div class="row">
                         <div class="col-md-2 tile-icon">
-                            <img src="{{asset('images/icons/consult.svg')}}" alt="">
+                            <img src="{{asset('images/icons/performance.svg')}}" alt="">
                         </div>
                         <div class="col-md-10 tile-content">
                             <b>Performance Management & Appraisals</b>
@@ -219,7 +219,7 @@
                 <div class="col-md-6 services-tile">
                     <div class="row">
                         <div class="col-md-2 tile-icon">
-                            <img src="{{asset('images/icons/consult.svg')}}" alt="">
+                            <img src="{{asset('images/icons/cv.svg')}}" alt="">
                         </div>
                         <div class="col-md-10 tile-content">
                             <b>CV W riting Services</b>
