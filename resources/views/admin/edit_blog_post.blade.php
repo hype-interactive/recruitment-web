@@ -20,6 +20,7 @@
                     </div>
                     <input type='file' name="image" accept="image/jpg" onchange="readURL(this);" required />
                     <input type="hidden" value="{{$post->id}}" name="post_id">
+                    <input type="hidden" value="{{$post->image}}" name="old_photo">
                     <button type="submit" class="btn btn-orange bp-btn"> Save Changes</button>
                 </form>
             </div>
@@ -28,6 +29,7 @@
             <div class="tcard">
                 <div class="image">
                     <img id="blah" src="{{asset('storage/'.$post->image)}}" alt="">
+                    {{-- <img id="blah" src="{{Storage::get($post->image)}}" alt=""> --}}
                     <p>Advice</p>
                 </div>
                 <div class="body">

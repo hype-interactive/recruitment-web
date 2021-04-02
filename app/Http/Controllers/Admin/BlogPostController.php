@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\BlogPost;
 use App\Models\JobPost;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class BlogPostController extends Controller
 {
@@ -43,7 +44,11 @@ class BlogPostController extends Controller
 
     public function editPost(Request $request)
     {
-        // delete previous image from storage
+        // if($request->old_photo){
+        //     Storage::delete($request->old_photo);
+
+        //     var_dump($request->old_photo); exit();
+        // }
         if($request->post_id  != Null){
             $post= BlogPost::find($request->post_id);
             $post->title = $request->title;
