@@ -189,6 +189,47 @@
                     </div>
                 </div>
 
+                <div class="col-md-6 services-tile">
+                    <div class="row">
+                        <div class="col-md-2 tile-icon">
+                            <img src="{{asset('images/icons/consult.svg')}}" alt="">
+                        </div>
+                        <div class="col-md-10 tile-content">
+                            <b>Reference and Background Checks Facilities</b>
+                           
+                            
+                            <small> We look up criminal, commercial and financial records of a candidate. Whereas, a refresh check looks to find the perfect employee fit, and protect your compnay from a poor performer or bad hire.</small>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 services-tile">
+                    <div class="row">
+                        <div class="col-md-2 tile-icon">
+                            <img src="{{asset('images/icons/consult.svg')}}" alt="">
+                        </div>
+                        <div class="col-md-10 tile-content">
+                            <b>Performance Management & Appraisals</b>
+
+                            <small>Performance management is the proces of identifying,measuring,managing,and developing the performance of the human resources in an organization.</small>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 services-tile">
+                    <div class="row">
+                        <div class="col-md-2 tile-icon">
+                            <img src="{{asset('images/icons/consult.svg')}}" alt="">
+                        </div>
+                        <div class="col-md-10 tile-content">
+                            <b>CV W riting Services</b>
+
+                            <small>We help job-seekers to improve the quality of their resumes so they stand out from other candidates.</small>
+                            
+                        </div>
+                    </div>
+                </div>
+
                 
             </div>
         </div>
