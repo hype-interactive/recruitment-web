@@ -10,7 +10,7 @@
             </div>
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img src="{{asset('images/carousel1.jpg')}}" class="d-block w-100" alt="...">
+                <img src="{{asset('images/recruitment.png')}}" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                   <h3>Recruitment Services</h3>
                   <p>Hiring the right person in the right place at the right time can save your business</p>
@@ -20,7 +20,7 @@
                 </div>
               </div>
               <div class="carousel-item">
-                <img src="{{asset('images/carousel4.jpeg')}}" class="d-block w-100" alt="...">
+                <img src="{{asset('images/permit.jpg')}}" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                   <h3>Permit Consultancy</h3>
                   <p>Foreigners are required to have work and residence permits to invest and work in Tanzania </p>
@@ -30,7 +30,7 @@
                 </div>
               </div>
               <div class="carousel-item">
-                <img src="{{asset('images/carousel2.jpeg')}}" class="d-block w-100" alt="...">
+                <img src="{{asset('images/trainning.png')}}" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                   <h3>Training Services</h3>
                   <p>An organization’s ability to learn and convert that learning into action, is the ultimate competitive advantage </p>
@@ -40,7 +40,7 @@
                 </div>
               </div>
               <div class="carousel-item">
-                <img src="{{asset('images/carousel6.jpeg')}}" class="d-block w-100" alt="...">
+                <img src="{{asset('images/outsourcing.jpgg')}}" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                   <h3>Outsourcing and Consulting services</h3>
                   <p>Master your strengths and outsource your weaknesses</p>
