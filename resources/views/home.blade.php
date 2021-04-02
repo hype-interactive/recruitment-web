@@ -65,8 +65,8 @@
     <div class="container">
         <div class="post-banners">
             <div class="ttr-section-header">
-                <h2>Latest job opening</h2>
-                <p>Ad magna labore sunt laborum eu irure fugiat adipisicing fugiat sit quis ea labore incididunt.</p>
+                <h2>Latest Jobs</h2>
+                <p>Browse latest job vacancies from top companies and recruiters in Tanzania.</p>
                 </div>
             <div class="row">
                 @foreach ($posts as $post)
@@ -113,15 +113,15 @@
                 <div class="mid">
                     <img src="{{asset('images/icons/handshake.svg')}}" alt="">
                     <h4>Find great talent</h4>
-                    <p>Be sure to have your pages set up with the latest design and development standards.  </p>
+                    <p>We can help you to identify your manpower requirements whilst considering the nature of your business, working practices, systems, processes and industry norms.  </p>
                     <a class="orange-box">
                         <button type="button" class="btn btn-orange" data-bs-toggle="modal" data-bs-target="#employerForm">Register as employer </button>
                     </a> 
                 </div>
                 <div class="right">
                     <img src="{{asset('images/icons/briefcase-frontal-view.svg')}}" alt="">
-                    <h4>Find great talent</h4>
-                    <p>Be sure to have your pages set up with the latest design and development standards.  </p>
+                    <h4>Find great employer</h4>
+                    <p>We connect you to the best companies and recruiting agencies and help you to get your dream job that suits your profile.  </p>
                         <a class="orange-box" href="{{route('register')}}">
                             <button class="btn btn-orange">Register as job seeker</button>
                         </a>
@@ -134,7 +134,7 @@
         <div class="services-wrapper">
             <div class="ttr-section-header">
                 <h2>Our services</h2>
-                <p>Our recruitment service creates a pleasant hiring experience for both  job seekers and employers</p>
+                <p>Our services provides you with a comprehensive range of Human Resources Solutions with a business focus.</p>
             </div>
             <div class="row">
                 <div class="col-md-6 services-tile">
@@ -144,9 +144,7 @@
                         </div>
                         <div class="col-md-10 tile-content">
                             <b>Recruitment Services</b>
-                            <small>Dolor ullamco ex veniam est.Et in ipsum pariatur aliquip dolore ex elit.
-                                 Mollit anim non ea nostrud esse quis commodo. Cupidatat et qui laboris
-                                  cillum. Irure Lorem eiusmod commodo magna dolor enim amet non mollit.</small>
+                            <small>We match candidates to job vacancies,working with companies directly to help fill their roles. Their consultants' source new opportunities,edit and optimise CVs,and even provide pointers to help candidates prepare for interviews.</small>
                             
                         </div>
                     </div>
@@ -157,10 +155,10 @@
                             <img src="{{asset('images/icons/passport.svg')}}" alt="">
                         </div>
                         <div class="col-md-10 tile-content">
-                            <b>Permit Consultancy</b>
-                            <small>Dolor ullamco ex veniam est.Et in ipsum pariatur aliquip dolore ex elit.
-                                 Mollit anim non ea nostrud esse quis commodo. Cupidatat et qui laboris
-                                  cillum. Irure Lorem eiusmod commodo magna dolor enim amet non mollit.</small>
+                            <b>Work Permit and Residential Licence Services</b>
+                            <small>
+                                We help you in getting official documents giving a foreigner permision to take a job and live in a country.
+                                </small>
                             
                         </div>
                     </div>
@@ -171,10 +169,36 @@
                             <img src="{{asset('images/icons/presentation.svg')}}" alt="">
                         </div>
                         <div class="col-md-10 tile-content">
-                            <b>Training Services</b>
-                            <small>Dolor ullamco ex veniam est.Et in ipsum pariatur aliquip dolore ex elit.
-                                 Mollit anim non ea nostrud esse quis commodo. Cupidatat et qui laboris
-                                  cillum. Irure Lorem eiusmod commodo magna dolor enim amet non mollit.</small>
+                            <b>Training & Team Building</b>
+                            <small>The purpose of team building activities is to motivate your people to work together,to develop their strengths,and to address any weakneses.
+                                </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 services-tile">
+                    <div class="row">
+                        <div class="col-md-2 tile-icon">
+                            <img src="{{asset('images/icons/consult.svg')}}" alt="">
+                        </div>
+                        <div class="col-md-10 tile-content">
+                            <b>Manpower outsourcing and management</b>
+
+                            <small>Along with this, if your company requires a specific kind of employee for a specific project, a manpower service provider allow you to find the employees as per your business requirements</small>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 services-tile">
+                    <div class="row">
+                        <div class="col-md-2 tile-icon">
+                            <img src="{{asset('images/icons/consult.svg')}}" alt="">
+                        </div>
+                        <div class="col-md-10 tile-content">
+                            <b>Reference and Background Checks Facilities</b>
+                           
+                            
+                            <small> We look up criminal, commercial and financial records of a candidate. Whereas, a refresh check looks to find the perfect employee fit, and protect your compnay from a poor performer or bad hire.</small>
                             
                         </div>
                     </div>
@@ -185,10 +209,22 @@
                             <img src="{{asset('images/icons/consult.svg')}}" alt="">
                         </div>
                         <div class="col-md-10 tile-content">
-                            <b>Consultancy Services</b>
-                            <small>Dolor ullamco ex veniam est.Et in ipsum pariatur aliquip dolore ex elit.
-                                 Mollit anim non ea nostrud esse quis commodo. Cupidatat et qui laboris
-                                  cillum. Irure Lorem eiusmod commodo magna dolor enim amet non mollit.</small>
+                            <b>Performance Management & Appraisals</b>
+
+                            <small>Performance management is the proces of identifying,measuring,managing,and developing the performance of the human resources in an organization.</small>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 services-tile">
+                    <div class="row">
+                        <div class="col-md-2 tile-icon">
+                            <img src="{{asset('images/icons/consult.svg')}}" alt="">
+                        </div>
+                        <div class="col-md-10 tile-content">
+                            <b>CV W riting Services</b>
+
+                            <small>We help job-seekers to improve the quality of their resumes so they stand out from other candidates.</small>
                             
                         </div>
                     </div>
@@ -202,7 +238,7 @@
         <div class="blog-post">
             <div class="ttr-section-header">
                 <h2>From our expert blog</h2>
-                <p>Consequat anim ullamco quis ea ad aute.</p>
+                <p>Improve your knowledge,skills and get the best industry tips.</p>
             </div>
             <div class="row">
                 @foreach ($blog_posts as $bpost)

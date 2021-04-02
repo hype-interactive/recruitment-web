@@ -33,17 +33,19 @@
                     <h4>Follow Us</h4>
                     <ul>
                         <li>
-                            <a href="https://www.instagram.com/toptalentedrecruits/"><img src="{{asset('images/icons/instagram-white.svg')}}" alt="">   instagram</a>
-                         
+                            <a href="https://www.facebook.com/TTRTanzania" target="_blank"><img src="{{asset('images/icons/facebook-white.svg')}}" alt="">
+                            Facebook</a>
                         </li>
                         <li>
-                            <a href="https://tz.linkedin.com/company/top-talented-recruits-ltd?trk=public_profile_experience-item_result-card_subtitle-click"><img src="{{asset('images/icons/linkedin-white.svg')}}" alt="">  linkedin</a>
+                            <a href="https://www.instagram.com/toptalentedrecruits/" target="_blank"><img src="{{asset('images/icons/instagram-white.svg')}}" alt="">   instagram</a>
+                         
+                        </li>
+                      
+                        <li>
+                            <a href="https://tz.linkedin.com/company/top-talented-recruits-ltd?trk=public_profile_experience-item_result-card_subtitle-click" target="_blank"><img src="{{asset('images/icons/linkedin-white.svg')}}" alt="">  linkedin</a>
 
                         </li>
-                        {{-- <li>
-                            <img src="{{asset('images/icons/twitter-white.svg')}}" alt="">
-                            twitter
-                        </li> --}}
+                      
                         {{-- <li>
                             <img src="{{asset('images/icons/globe-white.svg')}}" alt="">
                             blog

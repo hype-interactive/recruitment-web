@@ -61,7 +61,7 @@ what makes us unique.
     <div class="blog-post">
         <div class="ttr-section-header">
         <h2 class="bolded">From our expert blog</h2>
-        <p>Curated list of articles written by our experts</p>
+        <p>Improve your knowledge,skills and get the best industry tips.</p>
         </div>
         {{-- <div class="row">
             <div class="col-md-4">

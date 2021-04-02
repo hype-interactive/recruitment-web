@@ -14,8 +14,8 @@
             </ul>
         </div>
         <div class="social-col social">
-            <a href="https://www.instagram.com/toptalentedrecruits/"><img class="ma-r-2" src="{{asset('images/icons/instagram.svg')}}" alt=""></a>
-            <a href="https://tz.linkedin.com/company/top-talented-recruits-ltd?trk=public_profile_experience-item_result-card_subtitle-click"><img class="ma-r-2" src="{{asset('images/icons/linkedin.svg')}}" alt=""></a>
+            <a href="https://www.instagram.com/toptalentedrecruits/" target="_blank"><img class="ma-r-2" src="{{asset('images/icons/instagram.svg')}}" alt=""></a>
+            <a href="https://tz.linkedin.com/company/top-talented-recruits-ltd?trk=public_profile_experience-item_result-card_subtitle-click" target="_blank"><img class="ma-r-2" src="{{asset('images/icons/linkedin.svg')}}" alt=""></a>
             @guest
             @if (Route::has('login'))
                 <a href="{{ route('login') }}" class="nav-link" ><button type="button" class="btn login   " >Login</button></a>
