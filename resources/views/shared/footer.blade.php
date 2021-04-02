@@ -7,7 +7,7 @@
                     <ul>
                         <li>
                             <img src="{{asset('images/icons/phone-white.svg')}}" alt="">
-                            +255 677 000 011/ +255 752 111 225
+                            +255 677 000 011 / +255 752 111 225
                         </li>
                         <li>
                             <img src="{{asset('images/icons/location-white.svg')}}" alt="">
@@ -33,28 +33,23 @@
                     <h4>Follow Us</h4>
                     <ul>
                         <li>
-                            <a href="https://www.facebook.com/TTRTanzania" target="_blank">
-                                <img src="{{asset('images/icons/facebook-white.svg')}}" alt="">
-                                Facebook
-                            </a>
-                        
+                            <a href="https://www.facebook.com/TTRTanzania" target="_blank"><img src="{{asset('images/icons/facebook-white.svg')}}" alt="">
+                            Facebook</a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/toptalentedrecruits/" target="_blank"><img src="{{asset('images/icons/instagram-white.svg')}}" alt="">   instagram</a>
+                         
                         </li>
                       
                         <li>
-                            <a href="https://www.instagram.com/toptalentedrecruits/" target="_blank">
-                                <img src="{{asset('images/icons/instagram-white.svg')}}" alt="">
-                            Instagram
-                            </a>
-                        
+                            <a href="https://tz.linkedin.com/company/top-talented-recruits-ltd?trk=public_profile_experience-item_result-card_subtitle-click" target="_blank"><img src="{{asset('images/icons/linkedin-white.svg')}}" alt="">  linkedin</a>
+
                         </li>
-                        <li>
-                            <a href="https://www.linkedin.com/company/top-talented-recruits-ltd" target="_blank">
-                                <img src="{{asset('images/icons/linkedin-white.svg')}}" alt="">
-                                Linkedin
-                            </a>
-                       
-                        </li>
-                    
+                      
+                        {{-- <li>
+                            <img src="{{asset('images/icons/globe-white.svg')}}" alt="">
+                            blog
+                        </li> --}}
                         <li></li>
                     </ul>
                 </div>

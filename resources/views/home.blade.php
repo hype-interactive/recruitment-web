@@ -172,7 +172,6 @@
                             <b>Training & Team Building</b>
                             <small>The purpose of team building activities is to motivate your people to work together,to develop their strengths,and to address any weakneses.
                                 </small>
-                            
                         </div>
                     </div>
                 </div>
