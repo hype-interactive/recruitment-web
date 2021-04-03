@@ -78,7 +78,7 @@
                                     <b><a href="{{route('job_post',$post->id)}}">{{$post->jobCategory->name}}</a></b>
                                     <ul>
                                         <li class="location"><img src="{{asset('images/icons/location.svg')}}" alt="">{{$post->region->name}}</li> 
-                                        <li class="location"><img src="{{asset('images/icons/lightbulb.svg')}}" alt=""> Deadline; {{date_format(date_create($post->deadline),"d-M-Y")}}</li>
+                                        <li class="deadline"><img src="{{asset('images/icons/lightbulb.svg')}}" alt=""> Deadline; {{date_format(date_create($post->deadline),"d-M-Y")}}</li>
                                     </ul>
                                 </div>
                                 <div class=" sm-wrapper">
@@ -106,11 +106,11 @@
                 <h2>Value proposition</h2>
                 <p>Our recruitment service creates a pleasant hiring experience for both  job seekers and employers</p>
                 </div>
-            <div class="cards">
-                <div class="left">
-                    <img src="{{asset('images/about_left.jpg')}}" alt="">
+            <div class="cards row">
+                <div class="left col-sm">
+                    <img src="{{asset('images/about_left.jpeg')}}" alt="">
                 </div>
-                <div class="mid">
+                <div class="mid col-sm">
                     <img src="{{asset('images/icons/handshake.svg')}}" alt="">
                     <h4>Find great talent</h4>
                     <p>We can help you to identify your manpower requirements whilst considering the nature of your business, working practices, systems, processes and industry norms.  </p>
@@ -118,7 +118,7 @@
                         <button type="button" class="btn btn-orange" data-bs-toggle="modal" data-bs-target="#employerForm">Register as employer </button>
                     </a> 
                 </div>
-                <div class="right">
+                <div class="right col-sm">
                     <img src="{{asset('images/icons/briefcase-frontal-view.svg')}}" alt="">
                     <h4>Find great employer</h4>
                     <p>We connect you to the best companies and recruiting agencies and help you to get your dream job that suits your profile.  </p>

@@ -1,21 +1,30 @@
-<div class="header">
-    <div class="header-row">
-        <div class="brand-col brand-name">
-            <a href="{{route('home')}}">
-                <img src="{{asset('images/logo.jpg')}}" alt="">
-            </a>
-        </div>
-        <div class="link-col links">
-            <ul id="thelinks" class="nav-link-wrapper">
-                <li class="nav-link"> <a href="{{route('home')}}">Home</a></li>
-                <li class="nav-link"> <a href="{{route('job_posts')}}">Jobs</a></li>
-                <li class="nav-link"> <a href="{{route('services')}}">Services</a></li>
-                <li class="nav-link"> <a href="{{route('about_us')}}">About us</a></li>
-            </ul>
-        </div>
-        <div class="social-col social">
-            <a href="https://www.instagram.com/toptalentedrecruits/" target="_blank"><img class="ma-r-2" src="{{asset('images/icons/instagram.svg')}}" alt=""></a>
-            <a href="https://tz.linkedin.com/company/top-talented-recruits-ltd?trk=public_profile_experience-item_result-card_subtitle-click" target="_blank"><img class="ma-r-2" src="{{asset('images/icons/linkedin.svg')}}" alt=""></a>
+
+<nav class="navbar navbar-expand-lg navbar-light ttr-header">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+            <img src="{{asset('images/logo.jpg')}}" alt="" width="250">
+        </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav  mb-2 mb-lg-0">
+            <li class="nav-item">
+                 <a class="nav-link active" href="{{route('home')}}" aria-current="page">Home</a>
+            </li>
+            <li class="nav-item"> 
+                <a class="nav-link" href="{{route('job_posts')}}">Jobs</a>
+            </li>
+            <li class="nav-item"> 
+                <a class="nav-link" href="{{route('services')}}">Services</a>
+            </li>
+            <li class="nav-item"> 
+                <a class="nav-link" href="{{route('about_us')}}">About</a>
+            </li>
+        </ul>
+        <div class="social d-flex">
+            <a href="https://www.instagram.com/toptalentedrecruits/" target="_blank" class="d-flex justify-content-center"><img class="ma-r-2" src="{{asset('images/icons/instagram.svg')}}" alt=""></a>
+            <a href="https://tz.linkedin.com/company/top-talented-recruits-ltd?trk=public_profile_experience-item_result-card_subtitle-click" target="_blank" class="d-flex justify-content-center"><img class="ma-r-2" src="{{asset('images/icons/linkedin.svg')}}" alt=""></a>
             @guest
             @if (Route::has('login'))
                 <a href="{{ route('login') }}" class="nav-link" ><button type="button" class="btn login   " >Login</button></a>
@@ -24,11 +33,11 @@
                 <a class="nav-link" href="{{ route('register') }}"><button type="button" class="btn signup " >Signup</button></a>
             @endif 
             @else
-            <div class="dropdown">
+            <div class="dropdown dropstart">
                 <a class="navbarDropdown " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                     <div class="dp"><img src="{{asset('images/icons/man-user.svg')}}" alt=""></div> 
                 </a>
-                <div class="dropdown-menu dropdown-menu-right dp-restyle" aria-labelledby="navbarDropdown">
+                <div class="dropdown-menu dropdown-menu-left dp-restyle" aria-labelledby="navbarDropdown">
                     <span>User : <b>{{ Auth::user()->fname }}</b></span>
                         <a class="dropdown-item" href="{{route('user_profile',Auth::user()->id)}}">
                             My Profile
@@ -51,12 +60,7 @@
             </div>
                 @endguest
         </div>
+
+      </div>
     </div>
-    @if (session('msg'))
-        <div class="pop-feedback" id="pop-feedback">
-            <div class="inner-commponent">
-                <div>{{session('msg')}}</div>
-            </div>
-        </div>
-    @endif
-</div>
+  </nav>

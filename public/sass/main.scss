@@ -17,7 +17,7 @@
     
 }
 @mixin margining {
-    margin-bottom: 6rem;
+    margin-bottom: 5rem;
 }
 ul{
     list-style: none !important;
@@ -74,43 +74,22 @@ button:focus{
     color: white;
 }
 
-//header page
-.header{
-    position: relative;
+// header page
+.ttr-header{
     background-color: white !important;
-    text-transform: capitalize;
-    border-bottom: 1px solid #d1d1d1;
-    .header-row{
-        display: flex;
-        padding: 15px 20px;
-        flex-direction: row;
+    .navbar-collapse{
         justify-content: space-between;
-        align-items: center;
-
-        .brand-name{
-            img{
-                width: 250px;
-            }
-        }
-        .links{
-            @include flex-space-between;
-            align-items: center;
-            a{
-                color: $primary-color;
-                text-decoration: none;
-                padding-top:3px;
-            }
-            .nav-link-wrapper{
-                display: inline;
-                display: flex;
-                list-style: none;
-                justify-content: space-between;
-                padding-left:0;
-                margin-bottom: 0;
-                width: 100%;
+        ul{
+            // min-width: 50%; 
+            width: 90%;
+            // max-width: 80%;
+            justify-content: center;
+            li{
+                margin-right: 3rem;
                 .nav-link{
-                    margin-left:3rem;
+                    color: $primary-color;
                 }
+
             }
         }
         .social{
@@ -128,22 +107,7 @@ button:focus{
             }
         }
     }
-    
-    .pop-feedback{
-        @include box-shadow();
-        position: absolute;
-        bottom: -3.5rem;
-        right: 0rem;
-        width: fit-content;
-        padding: 0.5rem 1rem;
-        font-weight: 700;
-        border: 1px solid white;
-        background-color: $orange;
-        border-top-left-radius: 25px;
-        border-bottom-left-radius: 25px;
-    }
 
-             
 }
 
 // footer page
@@ -229,6 +193,7 @@ button:focus{
     }
     .carousel-item{
         img{
+
             height: 550px;
             vertical-align: middle;
             object-fit: cover !important;
@@ -282,7 +247,7 @@ button:focus{
 .banner{
     min-width: fit-content !important;
     position: relative;
-    padding:  1rem 1rem 1rem 2rem;
+    padding:  1rem;
     background-color: white !important;
     border:1px solid $silver-sand;
     display: flex;
@@ -293,7 +258,7 @@ button:focus{
     ul{
         margin-top: 1rem;
         list-style: none;
-        min-width: 450px;
+        max-width: 450px;
         margin-bottom: 0px !important;
         padding-inline-start: 0px !important;
         @include flex-space-between;
@@ -372,19 +337,16 @@ button:focus{
         flex-direction: row;
 
         div{
-            width: 33.333% !important;
             height: 450px;
-            overflow: hidden;
         }
 
     }
  
     .left{
-        overflow: hidden;
+        padding: unset;
         img{
+            width: 100%;
             height: inherit;
-            object-fit: cover;
-            float: right;
         }
     }
     .mid{
@@ -395,7 +357,7 @@ button:focus{
     }
     .mid,.right{
         @include flex-center;
-        padding: 3rem;
+        padding: 2rem;
         flex-direction: column;
         text-align: center;
         img{
@@ -1206,3 +1168,34 @@ button:focus{
     height: 493px;
     overflow: hidden;
 }
+
+
+
+
+/// media queries
+
+// Medium devices (tablets, 768px and below)
+@media (max-width: 768px) { 
+
+.ttr-header{
+    .navbar-brand{
+        img{
+            width: 200px;
+        }
+    }
+}
+.carousel-item{
+    img{
+        height: unset !important;
+
+    }
+}
+.banner{
+    ul{
+        width: unset;
+        .deadline{
+            display: none;
+        }
+    }
+}
+ }

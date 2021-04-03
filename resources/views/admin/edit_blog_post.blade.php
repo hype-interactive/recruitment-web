@@ -28,7 +28,7 @@
         <div class="col-md-4">
             <div class="tcard">
                 <div class="image">
-                    <img id="blah" src="{{asset('storage/'.$post->image)}}" alt="">
+                    <img id="blah" src="{{Storage::url($post->image)}}" alt="">
                     <p>Advice</p>
                 </div>
                 <div class="body">
@@ -44,7 +44,6 @@
                     </div>
                 </div>
             </div>
-            {{-- <img  src="http://placehold.it/180" alt="your image" /> --}}
         </div>
     </div>
 </div>
