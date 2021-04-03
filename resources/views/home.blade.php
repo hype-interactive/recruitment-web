@@ -245,7 +245,7 @@
                         <div class="col-md-4">
                             <div class="tcard">
                                 <div class="image">
-                                    <img src="{{asset('storage/'.$bpost->image)}}" alt="">
+                                    <img src="{{Storage::url($bpost->image)}}" alt="">
                                     <p>Advice</p>
                                 </div>
                                 <div class="body">

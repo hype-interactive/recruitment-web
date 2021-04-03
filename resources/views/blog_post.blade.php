@@ -3,7 +3,7 @@
     <div class="container">
         <div class="blog_post_wrapper">
             <div class="card blog-post-card">
-                <img src="{{asset('storage/'.$post->image)}}" class="card-img-top" alt="..." >
+                <img src="{{Storage::url($post->image)}}" class="card-img-top" alt="..." >
                 <div class="card-body">
                   <h4 class="card-title">{{$post->title}}</h4>
                   <hr>

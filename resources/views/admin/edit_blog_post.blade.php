@@ -29,7 +29,6 @@
             <div class="tcard">
                 <div class="image">
                     <img id="blah" src="{{asset('storage/'.$post->image)}}" alt="">
-                    {{-- <img id="blah" src="{{Storage::get($post->image)}}" alt=""> --}}
                     <p>Advice</p>
                 </div>
                 <div class="body">

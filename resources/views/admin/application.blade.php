@@ -61,10 +61,10 @@
                                 <div><span>{{$application->applicationDocument->type}}:</span>  <small>{{$application->applicationDocument->name}}</small></div>
                                 <hr>
                                 <div class="documents-btn">
-                                    <a href={{url('storage/'.$application->applicationDocument->path)}} target="_blank" download>
+                                    <a href={{Storage::url($application->applicationDocument->path)}} target="_blank" download>
                                         <button class="btn btn-success btn-sm"   >Download</button>
                                     </a>
-                                    <a href={{url('storage/'.$application->applicationDocument->path)}} target="_blank" >
+                                    <a href={{Storage::url($application->applicationDocument->path)}} target="_blank" >
                                         <button class="btn btn-orange btn-sm">view</button>
                                     </a>
                                 </div>

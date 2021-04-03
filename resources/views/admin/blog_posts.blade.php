@@ -8,7 +8,7 @@
         @foreach ($posts as $post)
             <div class="col-md-3">
                 <div class="card " >
-                    <img src="{{asset('storage/'.$post->image)}}" class="card-img-top" alt="...">
+                    <img src="{{Storage::url($post->image)}}" class="card-img-top" alt="...">
                     <div class="card-body">
                     <div class="card-text">{!!Str::limit($post->caption,50)!!}</div>
                     <small>

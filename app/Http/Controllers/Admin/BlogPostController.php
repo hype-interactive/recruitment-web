@@ -32,9 +32,8 @@ class BlogPostController extends Controller
         $post->title = $request->title;
         $post->caption = $request->caption;
         if($request->hasFile('image')){
-            $path=$request->image->store('/public/uploaded');
-            $path_to_upload=substr($path,7);
-            $post->image=$path_to_upload;
+            $path=$request->image->store('public/uploaded');
+            $post->image=$path;
         }else{
             return redirect('admin/blog_posts')->with('msg','Failed to upload photo');
         }
@@ -44,19 +43,15 @@ class BlogPostController extends Controller
 
     public function editPost(Request $request)
     {
-        // if($request->old_photo){
-        //     Storage::delete($request->old_photo);
 
-        //     var_dump($request->old_photo); exit();
-        // }
         if($request->post_id  != Null){
             $post= BlogPost::find($request->post_id);
             $post->title = $request->title;
             $post->caption = $request->caption;
             if($request->hasFile('image')){
-                $path=$request->image->store('/public/uploaded');
-                $path_to_upload=substr($path,7);
-                $post->image=$path_to_upload;
+                $path=$request->image->store('public/uploaded');
+                $post->image=$path;
+                $this->deleteStored($request->old_photo);
             }else{
                 return redirect('admin/blog_posts')->with('msg','Failed to upload photo');
             }
@@ -70,8 +65,15 @@ class BlogPostController extends Controller
     {
         // var_dump($request->post_id); exit();
         $post=BlogPost::find($request->post_id);
+        $this->deleteStored($post->image);
         if($post->delete()) return back()->with('msg','Post deleted successfully');
 
+    }
+
+    public function deleteStored($path)
+    {
+            Storage::delete($path);
+            return true;
     }
 }
 
