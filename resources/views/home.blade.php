@@ -78,7 +78,7 @@
                                     <b><a href="{{route('job_post',$post->id)}}">{{$post->jobCategory->name}}</a></b>
                                     <ul>
                                         <li class="location"><img src="{{asset('images/icons/location.svg')}}" alt="">{{$post->region->name}}</li> 
-                                        <li class="deadline"><img src="{{asset('images/icons/lightbulb.svg')}}" alt=""> Deadline; {{date_format(date_create($post->deadline),"d-M-Y")}}</li>
+                                        <li class="desktop_item"><img src="{{asset('images/icons/lightbulb.svg')}}" alt=""> Deadline; {{date_format(date_create($post->deadline),"d-M-Y")}}</li>
                                     </ul>
                                 </div>
                                 <div class=" sm-wrapper">

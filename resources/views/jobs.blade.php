@@ -4,16 +4,16 @@
         <div class="jobs-header">
             <div class="search-bar">
                 <div class="search-box">
-                    <input type="text" onkeyup="fromSearch(this.value)" placeholder="Search By Job  Keyword ,or Job key word">
+                    <input type="text" onkeyup="fromSearch(this.value)" placeholder="Search By Job  Keyword">
                     <img src="{{asset('images/icons/loupe.svg')}}" alt="">
                 </div> 
-                <div class="search-button">
+                <div class="search-button desktop_item">
                     SEARCH
-            </div> 
+                </div> 
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4 filter col-offset-md-8">
+            <div class="col-md-4 filter desktop_item" >
                 <form action="">
                     <h6>Work Category :</h6>
                     <ul>
@@ -23,9 +23,7 @@
                     </ul>
                     <h6>Working hours :</h6>
                     <ul>
-                        {{-- <li> <input type="checkbox" class="custom-control-input check-box" id="Full" onchange="checkAction(this.id,'T')"> <span>Full time</span></li> --}}
                         <li> <input type="checkbox" class="custom-control-input check-box" id="1T" onchange="checkAction(this.id)"> <span>Full time</span></li>
-                        {{-- <li> <input type="checkbox" class="custom-control-input check-box" id="Part" onchange="checkAction(this.id,'T')"> <span>Part time</span></li> --}}
                         <li> <input type="checkbox" class="custom-control-input check-box" id="2T" onchange="checkAction(this.id)"> <span>Part time</span></li>
                     </ul>
                     <h6>Location :</h6>
@@ -48,7 +46,7 @@
                                     <p class="title">{{Str::limit($post->title,75)}}</p>
                                     <ul>
                                         <li class="location"><img src="{{asset('images/icons/location.svg')}}" alt="">{{$post->region->name}}</li>
-                                        <li class="location"><img src="{{asset('images/icons/lightbulb.svg')}}" alt=""> Deadline; {{date_format(date_create($post->deadline),"d-M-Y")}}</li>
+                                        <li class="desktop_item"><img src="{{asset('images/icons/lightbulb.svg')}}" alt=""> Deadline; {{date_format(date_create($post->deadline),"d-M-Y")}}</li>
                                     </ul>
                                 </div>
                                 <div class="sm-wrapper">
@@ -67,7 +65,7 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript">
+<script type="text/javascript">
     // show resultsn method
     // 
     function showResults(str) {
@@ -148,27 +146,27 @@
        }
     }
 
-function showMore(id) {
-    var target=document.getElementById(id).style;
-    target.height="unset";
-    target.overflow="visible"
+    function showMore(id) {
+        var target=document.getElementById(id).style;
+        target.height="unset";
+        target.overflow="visible"
 
-    document.getElementById('show_more').style.display="none";
-    document.getElementById('show_less').style.display="block";
+        document.getElementById('show_more').style.display="none";
+        document.getElementById('show_less').style.display="block";
 
-}
+    }
 
-function showLess(id) {
+    function showLess(id) {
 
-    var target=document.getElementById(id).style;
-    target.height="493px";
-    target.overflow="hidden"
+        var target=document.getElementById(id).style;
+        target.height="493px";
+        target.overflow="hidden"
 
-    document.getElementById('show_more').style.display="block";
-    document.getElementById('show_less').style.display="none";
-    
-}
-    </script>
+        document.getElementById('show_more').style.display="block";
+        document.getElementById('show_less').style.display="none";
+        
+    }
+</script>
 
     
 @endsection
