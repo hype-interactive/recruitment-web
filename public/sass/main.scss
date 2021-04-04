@@ -258,6 +258,7 @@ button:focus{
     ul{
         margin-top: 1rem;
         list-style: none;
+        min-width: 340px;
         max-width: 450px;
         margin-bottom: 0px !important;
         padding-inline-start: 0px !important;
@@ -381,7 +382,6 @@ button:focus{
 }
 
 
-
 // services section
 .services-wrapper{
     @include margining();
@@ -446,6 +446,7 @@ button:focus{
     }
     .col-md-4{
         .tcard{
+            padding: 0.5rem;
             display: flex;
             flex-direction: column;
             .body{
