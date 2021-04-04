@@ -12,6 +12,7 @@
                 </div> 
             </div>
         </div>
+
         <div class="row">
             <div class="col-md-4 filter desktop_item" >
                 <form action="">
@@ -87,7 +88,7 @@
                 }else{
                 var post_container='';
                 for (let index = 0; index < resp.length; index++) {
-                    post_container+="<a href='job/"+resp[index].id+" '><div class='banner'><div class='col'><b>"+ resp[index].job_category.name +"</b><p class='title'>"+resp[index].title +"</p><ul><li class='location'><img src='{{asset('images/icons/location.svg')}}' >"+ resp[index].region.name+"</li><li class='location'><img src='{{asset('images/icons/lightbulb.svg')}}' > Deadline; "+ strToDate( resp[index].deadline)+"</li></ul></div><div class='sm-wrapper'><p>"+resp[index].type+"</p></div><div class='triangle'></div><small>today</small><div class='snowflake'><img src='{{asset('images/icons/star.svg')}}'></div></div></a>"                
+                    post_container+="<a href='job/"+resp[index].id+" '><div class='banner'><div class='col'><b>"+ resp[index].job_category.name +"</b><p class='title'>"+resp[index].title +"</p><ul><li class='location'><img src='{{asset('images/icons/location.svg')}}' >"+ resp[index].region.name+"</li><li class='desktop_item'><img src='{{asset('images/icons/lightbulb.svg')}}' > Deadline; "+ strToDate( resp[index].deadline)+"</li></ul></div><div class='sm-wrapper'><p>"+resp[index].type+"</p></div><div class='triangle'></div><small>today</small><div class='snowflake'><img src='{{asset('images/icons/star.svg')}}'></div></div></a>"                
 
                 }
                 //populate results into html
@@ -149,10 +150,10 @@
     function showMore(id) {
         var target=document.getElementById(id).style;
         target.height="unset";
-        target.overflow="visible"
+        target.overflow="visible";
 
-        document.getElementById('show_more').style.display="none";
-        document.getElementById('show_less').style.display="block";
+        hide('show_more');
+        show('show_less');
 
     }
 
@@ -162,9 +163,16 @@
         target.height="493px";
         target.overflow="hidden"
 
-        document.getElementById('show_more').style.display="block";
-        document.getElementById('show_less').style.display="none";
+        hide('show_less');
+        show('show_more');
         
+    }
+    function show(id) {
+        document.getElementById(id).style.display="block";
+        
+    }
+    function hide(id) {
+        document.getElementById(id).style.display="none";
     }
 </script>
 

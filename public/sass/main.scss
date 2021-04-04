@@ -896,7 +896,7 @@ button:focus{
 
 }
 .blog_post_wrapper{
-    padding: 5% 10%;
+    padding: 3% 5%;
     min-height:60rem;
     overflow-y:scroll;
     margin-bottom:2rem;
@@ -911,7 +911,7 @@ button:focus{
             object-fit: cover;
         }
   
-    .card-body{
+        .card-body{
         width: 95%;
         min-height: 30rem;
         position: absolute;
@@ -1170,7 +1170,9 @@ button:focus{
     overflow: hidden;
 }
 
-
+.min_screen_item{
+    display: none;
+}
 
 
 /// media queries
@@ -1178,34 +1180,123 @@ button:focus{
 // Medium devices (tablets, 768px and below)
 @media (max-width: 768px) { 
 
-.ttr-header{
-    .navbar-brand{
+    #filter{
+        display: none;
+    }
+    .ttr-header{
+        .navbar-brand{
+            img{
+                width: 200px;
+            }
+        }
+    }
+    .carousel-item{
         img{
-            width: 200px;
+            height: unset !important;
         }
     }
-}
-.carousel-item{
-    img{
-        height: unset !important;
-
-    }
-}
-.banner{
-    ul{
-        max-width: unset;
-        min-width: unset;
-    }
-}
-.desktop_item{
-    display: none !important;
-}
-.jobs-header{
-    .search-bar{
-        .search-box{
-            width: 100% !important;
+    .banner{
+        ul{
+            max-width: unset;
+            min-width: unset;
         }
     }
-}
+    .desktop_item{
+        display: none !important;
+    }
+    .jobs-header{
+        .search-bar{
+            .search-box{
+                width: 100% !important;
+            }
+        }
+    }
+    .min_screen_item{
+        display: block;
+    }
 
+
+    .blog_post_wrapper{
+    padding: 1% 2%;
+    min-height: 600px;
+    .blog-post-card{
+
+       img{
+            height: 200px ;
+        } 
+        .card-body{
+            min-height: 400px;
+            padding: 0.5rem;
+        }
+
+    }
+    }
+    .page-intro{
+        padding-top: 80px;
+        padding-bottom:80px;
+        background-size: cover;
+        background-position: center;
+    }
+    .job-card{
+        margin: unset;
+        padding: 0.5rem;
+        .job-header{
+            .title{
+                margin-bottom: 0.5rem;
+                h4{
+                    font-weight: 600;
+                }
+            }
+            .col-md-4{
+                margin-bottom: 0.5rem;
+                .small-icon{
+                    width: 1rem;
+                    height: 1rem;
+                }
+            }
+            
+        }
+        .body{
+            padding: 0.5rem;
+            .description-panel{
+                padding: 1rem 0.5rem;
+            }
+        }
+    }
+    .form-header-wrapper{
+        padding: 0.5rem;
+    }
+    .application-form-wrapper{
+        margin:2%;
+        .personal-info{
+            padding: 2rem 1rem;
+            .panel-header{
+                margin-bottom: 1rem;
+            }
+        }
+
+        .hd-tl{
+            font-size: 0.8rem;
+        }
+        .document{
+            margin-top: 1.5rem;
+        }
+    }
+    .user-profile-wrapper{
+        padding: 1rem 0.5rem;
+        .avatar{
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .card-body{
+            padding: 1rem;
+        }
+        .ma-t-2{
+            margin-top: 0.5rem;
+        }
+    }
+    .auth-wrapper{
+        margin: 1rem;
+    }
+    //media query end
  }

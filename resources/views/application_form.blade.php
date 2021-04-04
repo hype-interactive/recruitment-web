@@ -53,7 +53,7 @@
                                 </div>
                                 <div class="col-md-9">
                                     <input class="w-75" type="tex"  src="" alt="" placeholder="file name" name="file_name" value="{{($application ?? '' )? ($application[0]->applicationDocument->name):""}}">
-                                    <img src="{{asset('images/icons/attachment.svg')}}" alt="">
+                                    <img class="desktop_item" src="{{asset('images/icons/attachment.svg')}}" alt="">
                                 </div>
                             </div> 
                         </div>

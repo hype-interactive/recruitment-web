@@ -28,8 +28,8 @@
                     effective.
 
                     We imply an integrated team approach and
-our full-service /one stop" source philosophy is
-what makes us unique.
+                    our full-service /one stop" source philosophy is
+                    what makes us unique.
                 </p>
             </div>
         </div>
