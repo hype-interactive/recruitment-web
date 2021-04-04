@@ -100,15 +100,5 @@
         </div>
     </div>
 </div>
-<script>
-    function downloadFile() {
 
-        <?php 
-        $file=$application->applicationDocument->path;
-        Storage::disk('public')->download($file);
-        ?>
-        
-    }
-</script>
-    {{-- {{$application}} --}}
 @endsection

@@ -13,7 +13,7 @@ class ApplicationDocumentController extends Controller
         $document->name=$request->file_name;
         $document->type='cv';
         if($request->hasFile('file')){
-            $path=$request->file->store('uploaded_doc');
+            $path=$request->file->store('public/uploaded_doc');
             $document->path=$path;
         }
         if($document->save())
