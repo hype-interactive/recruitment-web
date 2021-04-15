@@ -175,7 +175,7 @@ button:focus{
 }
 // landing section
 .landing-wrapper{
-    @include margining();
+    
     background-color: white;
     background-position: center;
     background-size: cover;
@@ -183,20 +183,25 @@ button:focus{
     position: relative;
     display: flex;
     justify-content: center;
-    .blur {
+    .blurv {
         position: absolute;
         top: 0px;
         left: 0px;
         height: 100%;
         width: 100%;
-        background: -webkit-linear-gradient(bottom, rgba(46, 68, 107, 0.9) 0%, rgba(46, 68, 107, 0.7) 50%, rgba(0, 0, 0, 0) 100%);
+        background: -webkit-linear-gradient(left, rgba(46, 68, 107, 0.9) 0%, rgba(46, 68, 107, 0.7) 50%, rgba(0, 0, 0, 0) 100%);
+    }
+    .carousel-control-next-icon {
+        background-image: url("/images/icons/previous.svg");
     }
     .carousel-item{
         img{
 
-            height: 550px;
             vertical-align: middle;
-            object-fit: cover !important;
+            float: right;
+            object-fit: contain;
+            margin-right: 5%;
+
     
         }
         .carousel-caption{
@@ -204,7 +209,7 @@ button:focus{
             right: unset !important;
             bottom: 30% !important;
             left: 10% !important;
-            color: #fff !important;
+            color: $primary-color !important;
             text-align: left;
             padding: 30px;
             width: 500px !important;
