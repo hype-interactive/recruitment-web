@@ -192,7 +192,10 @@ button:focus{
         background: -webkit-linear-gradient(left, rgba(46, 68, 107, 0.9) 0%, rgba(46, 68, 107, 0.7) 50%, rgba(0, 0, 0, 0) 100%);
     }
     .carousel-control-next-icon {
-        background-image: url("/images/icons/previous.svg");
+        background-image: url("/images/icons/next.svg");
+    }
+    .carousel-control-prev-icon {
+        background-image: url("/images/icons/previus.svg");
     }
     .carousel-item{
         img{
@@ -200,7 +203,7 @@ button:focus{
             vertical-align: middle;
             float: right;
             object-fit: contain;
-            margin-right: 5%;
+            margin-right: 10%;
 
     
         }
@@ -224,6 +227,10 @@ button:focus{
             }
 
         }
+
+    }
+    .carousel-indicators [data-bs-target] {
+        background-color: $primary-color !important;
     }
 }
 
@@ -231,6 +238,7 @@ button:focus{
 .post-banners{
     @include margining();
     @include flex-center;
+    margin-top: 3rem;
     flex-direction: column;
     h3{
         margin-bottom: 4rem;
@@ -550,6 +558,9 @@ button:focus{
 
 .w-100{
     width: 100%;
+}
+.w-40{
+    width: 40% !important;
 }
 
 //auth page
