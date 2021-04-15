@@ -78,3 +78,8 @@ Route::post('revoke_admin','App\Http\Controllers\Admin\UserController@revoke')->
 
 Route::get('/auth/redirect', 'App\Http\Controllers\SocialAuthGoogleController@redirect')->name('auth.google_authenticate');
 Route::get('/auth/callback', 'App\Http\Controllers\SocialAuthGoogleController@callback');
+
+
+// route to optimize images 
+
+Route::post('/photo','PhotosController@store')->middleware('optimizeImages');

@@ -13,6 +13,10 @@ use phpDocumentor\Reflection\Types\Null_;
 
 class JobPostController extends Controller
 {
+    
+    
+        
+    
     public function getJobPosts(Request $request )
     {
 

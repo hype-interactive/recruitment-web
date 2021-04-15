@@ -1,6 +1,7 @@
 <?php
-if(! function_exists('timeElapsed')){
-    function timeElapsed(DateTime $date)
+
+    if(! function_exists('timeElapsed')){
+        function timeElapsed(DateTime $date)
             {
                 $days_ago= " days ago";
                 $weeks_ago =" weeks ago";
@@ -29,7 +30,14 @@ if(! function_exists('timeElapsed')){
             
                 
             }
-    }
+        }
 
+    if(! function_exists('optimize')){
+
+        function optimize($path){
+            return app(Spatie\ImageOptimizer\OptimizerChain::class)->optimize($path);
+        }
+    }
+    
 
 ?>
