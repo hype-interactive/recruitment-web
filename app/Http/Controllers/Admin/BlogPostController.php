@@ -7,6 +7,8 @@ use App\Models\BlogPost;
 use App\Models\JobPost;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Spatie\ImageOptimizer\OptimizerChainFactory;
+// use Spatie\LaravelImageOptimizer\Facades\ImageOptimizer as FacadesImageOptimizer;
 
 class BlogPostController extends Controller
 {
@@ -34,6 +36,11 @@ class BlogPostController extends Controller
         if($request->hasFile('image')){
             $path=$request->image->store('public/uploaded');
             $post->image=$path;
+            $pathToImage=Storage::path($path);
+            $optimizer=OptimizerChainFactory::create();
+            $optimizer->optimize($pathToImage);
+            $this->convert($pathToImage,$pathToImage);
+            // FacadesImageOptimizer::optimize($pathToImage);
         }else{
             return redirect('admin/blog_posts')->with('msg','Failed to upload photo');
         }
@@ -75,6 +82,7 @@ class BlogPostController extends Controller
             Storage::delete($path);
             return true;
     }
+
 }
 
 

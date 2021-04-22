@@ -1211,6 +1211,13 @@ button:focus{
             height: unset !important;
         }
     }
+
+    .carousel-indicators{
+        display: none;
+    }
+    .carousel-control-prev ,.carousel-control-next{
+        display: none;
+    }
     .banner{
         ul{
             max-width: unset;

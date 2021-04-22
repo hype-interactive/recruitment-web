@@ -1,10 +1,7 @@
 @extends('layouts.app')
 @section('body')
 <div class="container">
-  {{-- <div class="services-page-header">
-    <h1>What we do</h1>
-    <p>Our services provides you with a comprehensive range of Human Resources Solutions with a business focus</p>
-  </div> --}}
+  
 </div>
 @include('shared.services')
 <script>

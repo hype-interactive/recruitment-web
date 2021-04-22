@@ -25,7 +25,7 @@
                 <img src="{{asset('images/workpermit.png')}}" class="d-block w-40" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                   <h3>Permit Consultancy</h3>
-                  <p>Foreigners are required to have work and residence permits to invest and work in Tanzania </p>
+                  <p>We provide a full range of immigration and labour solutions to help get people to their desired job in Tanzania</p>
                     <a href="{{route('services')}}">
                         <button class="btn btn-orange">Read More</button>
                     </a>
@@ -35,7 +35,7 @@
                 <img src="{{asset('images/training.png')}}" class="d-block  w-40" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                   <h3>Training Services</h3>
-                  <p>An organization’s ability to learn and convert that learning into action, is the ultimate competitive advantage </p>
+                  <p>Our experience in developing customized training solutions to meet busines needs and our learner-centered training approach ensures that learned skils become behaviours</p>
                   <a href="{{route('services')}}">
                     <button class="btn btn-orange">Read More</button>
                   </a>
@@ -45,7 +45,7 @@
                 <img src="{{asset('images/man_sourcing.png')}}" class="d-block w-40" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                   <h3>Outsourcing and Consulting services</h3>
-                  <p>Master your strengths and outsource your weaknesses</p>
+                  <p>We offer the ability for our clients to outsource some of their non-core departments enabling  them to concentrate on their core competencies.</p>
                   <a href="{{route('services')}}">
                     <button class="btn btn-orange">Read More</button>
                   </a>
@@ -110,12 +110,12 @@
                 </div>
             <div class="cards row">
                 <div class="left col-sm">
-                    <img src="{{asset('images/about_left.jpeg')}}" alt="">
+                    <img src="{{asset('images/about_left.jpg')}}" alt="">
                 </div>
                 <div class="mid col-sm">
                     <img src="{{asset('images/icons/handshake.svg')}}" alt="">
                     <h4>Find great talent</h4>
-                    <p>We can help you to identify your manpower requirements whilst considering the nature of your business, working practices, systems, processes and industry norms.  </p>
+                    <p>We  help you to identify your manpower requirements whilst considering the nature of your business, working practices, systems, processes and industry norms.  </p>
                     <a class="orange-box">
                         <button type="button" class="btn btn-orange" data-bs-toggle="modal" data-bs-target="#employerForm">Register as employer </button>
                     </a> 
@@ -172,7 +172,7 @@
                         </div>
                         <div class="col-md-10 tile-content">
                             <b>Training & Team Building</b>
-                            <small>The purpose of team building activities is to motivate your people to work together,to develop their strengths,and to address any weakneses.
+                            <small>The purpose of team building activities is to motivate your people to work together,to develop their strengths,and explore new skills.
                                 </small>
                         </div>
                     </div>
@@ -184,8 +184,7 @@
                         </div>
                         <div class="col-md-10 tile-content">
                             <b>Manpower outsourcing and management</b>
-
-                            <small>Along with this, if your company requires a specific kind of employee for a specific project, a manpower service provider allow you to find the employees as per your business requirements</small>
+                            <small>TTR offers the ability for clients to outsource some of their non-core departments enabling  them to concentrate on their core competencies.</small>
                             
                         </div>
                     </div>
@@ -200,7 +199,7 @@
                             <b>Reference and Background Checks Facilities</b>
                            
                             
-                            <small> We look up criminal, commercial and financial records of a candidate. Whereas, a refresh check looks to find the perfect employee fit, and protect your compnay from a poor performer or bad hire.</small>
+                            <small> We look up criminal, commercial and financial records of a candidate. Whereas, a refresh check looks to find the perfect employee fit, and protect your company from a poor performer or bad hire.</small>
                             
                         </div>
                     </div>
@@ -224,7 +223,7 @@
                             <img src="{{asset('images/icons/cv.svg')}}" alt="">
                         </div>
                         <div class="col-md-10 tile-content">
-                            <b>CV W riting Services</b>
+                            <b>CV Writing Services</b>
 
                             <small>We help job-seekers to improve the quality of their resumes so they stand out from other candidates.</small>
                             

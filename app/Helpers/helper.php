@@ -31,13 +31,6 @@
                 
             }
         }
-
-    if(! function_exists('optimize')){
-
-        function optimize($path){
-            return app(Spatie\ImageOptimizer\OptimizerChain::class)->optimize($path);
-        }
-    }
     
 
 ?>

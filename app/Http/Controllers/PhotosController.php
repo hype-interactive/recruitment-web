@@ -9,13 +9,10 @@ class PhotosController extends Controller
 {
     public function store() {
         $this->validate(request(), [
-            'photo' => 'required|image:jpeg '
+            'photo' => 'required|image:jpeg |image:jpg '
         ]);
 
-        request()->photo->storeAs('images', 'optimized.jpg');
-
-        // Session::put('success', 'Your Image Successfully Optimize');
-
-        return redirect()->back();
+        request()->photo->store('uploaded');
+        return response('OK',201) ;
     }
 }
