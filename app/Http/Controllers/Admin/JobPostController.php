@@ -55,15 +55,16 @@ class JobPostController extends Controller
 
         // $validator= Validator::make($request->all(),[ ]);
         // if($validator->fails()) return redirect()->back()->with("msg","Failed !".$validator->errors());
+        
         $job_post= new JobPost();
-        $job_post->title= $request->title;
-        $job_post->deadline = $request->deadline;
-        $job_post->type= $request->type;
+        $job_post->title= $request->title ? $request->title: 'NULL';
+        $job_post->deadline = $request->deadline ? $request->deadline: 'NULL';
+        $job_post->type= $request->type ? $request->type: 'Part time';
         $job_post->description = $request->description;
         $job_post->job_category_id = $request->category;
         $job_post->region_id = $request->region;
 
-        if($job_post->save()) return redirect('/admin/job-posts')->with("msg","job post added successfully");
+        if($job_post->save()) return redirect('/admin/job-posts')->with("msg","Job post added successfully");
 
     }
 

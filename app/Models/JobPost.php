@@ -11,6 +11,15 @@ class JobPost extends Model
 
     public $timestamps = true;
 
+    protected $fillable = [
+        'title',
+        'deadline',
+        'type',
+        'description',
+        'job_category_id',
+        'region_id',
+    ];
+
 
     public function jobCategory()
     {
