@@ -15,12 +15,12 @@
             <div class="form-row row">
 
               <div class="form-group col-md-3">
-                <label for="inputState">Dead line</label>
+                <label for="inputState">Deadline</label>
                 <input type="date"  class="form-control" name="deadline" id="" required>
                 </select>
               </div>
               <div class="form-group col-md-3 category-modal">
-                <label for="inputState">category</label>
+                <label for="inputState">Category</label>
                 <select id="inputState" name="category" class="form-control" required>
                   <option selected>Choose...</option>
                   @foreach ($job_categories as $category)
@@ -95,6 +95,7 @@
           "searchreplace visualblocks code fullscreen",
           "insertdatetime media table contextmenu paste"
       ],
+      // toolbar: 'numlist bullist',
       branding:false
   });
 </script>

@@ -75,9 +75,10 @@
                     
                 
                     <div class="col-md-6">
+                    <a href="{{route('job_post',$post->id)}}">
                         <div class="banner">
                                 <div class="col">
-                                    <b><a href="{{route('job_post',$post->id)}}">{{$post->jobCategory->name}}</a></b>
+                                    <b>{{$post->jobCategory->name}}</b>
                                     <ul>
                                         <li class="location"><img src="{{asset('images/icons/location.svg')}}" alt="">{{$post->region->name}}</li> 
                                         <li class="desktop_item"><img src="{{asset('images/icons/lightbulb.svg')}}" alt=""> Deadline; {{date_format(date_create($post->deadline),"d-M-Y")}}</li>
@@ -92,6 +93,7 @@
                                 <img src="{{asset('images/icons/star.svg')}}" alt="">
                             </div>
                         </div>
+                    </a>
                     </div>
                 @endforeach 
             </div>
