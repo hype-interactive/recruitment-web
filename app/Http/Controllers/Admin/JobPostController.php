@@ -57,6 +57,10 @@ class JobPostController extends Controller
         // $validator= Validator::make($request->all(),[ ]);
         // if($validator->fails()) return redirect()->back()->with("msg","Failed !".$validator->errors());
 
+        $data = $this->setLocalStorage($request->title, $request->deadline);
+
+        // dd($data);
+
         $job_post= new JobPost();
         $job_post->title= $request->title ? $request->title: 'NULL';
         $job_post->deadline = $request->deadline ? $request->deadline: 'NULL';
@@ -100,7 +104,7 @@ class JobPostController extends Controller
             
             return back()->with('msg','This post can not be deleted');
         }
-        return back()->with('msg','Post deleted successful');
+        return back()->with('msg','Post deleted successfully');
 
     }
 
@@ -136,5 +140,14 @@ class JobPostController extends Controller
     public function countPostMonthly($month){
         $post=JobPost::where('created_at','like', $month.'%')->get();
         return count($post);
+    }
+
+    // Helper functions
+    public function setLocalStorage($jobTitle, $jobDeadline)
+    {
+        return "<script>
+                    localStorage.setItem('job_title', {$jobTitle});
+                    localStorage.setItem('job_deadline', {$jobDeadline});
+                </script>";
     }
 }

@@ -4,19 +4,19 @@
 @endsection
 @section('body')
     <div class="add-job-post-form">
-        <form action="{{route('admin.add_job_post')}}" method="POST" novalidate>
+        <form id="addJobPost" action="{{route('admin.add_job_post')}}" method="POST" novalidate>
         @csrf
             <div class="form-row">
                 <div class="form-group col-md-12">
                     <label for="inputAddress">Job post title</label>
-                    <input type="text" name="title" class="form-control"  id="inputAddress" placeholder="1234 Main St" required>
+                    <input type="text" name="title" class="form-control"  id="title" placeholder="1234 Main St" required>
                 </div>
             </div>
             <div class="form-row row">
 
               <div class="form-group col-md-3">
                 <label for="inputState">Deadline</label>
-                <input type="date"  class="form-control" name="deadline" id="" required>
+                <input type="date"  class="form-control" name="deadline" id="deadline" required>
                 </select>
               </div>
               <div class="form-group col-md-3 category-modal">
@@ -28,7 +28,7 @@
                   @endforeach
                 </select>
                 <div class="add-category">
-                  <a  data-bs-toggle="modal" data-bs-target="#add_category">
+                  <a  data-bs-toggle="modal" data-bs-target="#add_category" onclick="setLocalStorage()">
                     <img src="{{asset('images/icons/plus.svg')}}" alt="">
                   </a>
                 </div>
@@ -104,4 +104,41 @@
       branding:false
   });
 </script>
+
+@endsection
+
+@section('scripts')
+
+<script>
+  // $('form').submit(function(e) {
+  //   e.preventDefault();
+  //   var value = $(this).serializeArray();
+  //   console.log(value);
+  // })
+  function setLocalStorage() {
+    var title = $('#title').val();
+    var deadLine = $('#deadline').val();
+
+    localStorage.setItem('job_title', title);
+    localStorage.setItem('job_deadline', deadLine);
+
+    console.log(title, deadLine);
+  }
+
+  $(document).ready(function () {
+    
+    let oldTitle = localStorage.getItem('job_title');
+    let oldDeadline = localStorage.getItem('job_deadline');
+    
+    if ((oldTitle !== null) || (oldDeadline !== null)) {
+      $('#title').val(oldTitle);
+      $('#deadline').val(oldDeadline);
+
+      localStorage.removeItem('job_title');
+      localStorage.removeItem('job_deadline');
+    }
+    console.log(oldTitle, oldDeadline);
+  })
+</script>
+
 @endsection

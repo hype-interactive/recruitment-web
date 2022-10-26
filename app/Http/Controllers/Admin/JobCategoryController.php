@@ -10,7 +10,7 @@ class JobCategoryController extends Controller
 {
     public function addCategory(Request $request)
     {
-        $jobCategory=new JobCategory();
+        $jobCategory = new JobCategory();
         $jobCategory->name= $request->category;
         if($jobCategory->save()) return back()->with('msg','Job category created successfully');
     }
