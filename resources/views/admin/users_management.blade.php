@@ -1,6 +1,6 @@
 @extends('../layouts.master_layout')
 @section('page-summary')
-    <b>Users Menagement</b>
+    <b>Users Management</b>
 @endsection
 @section('body')
 
@@ -64,7 +64,7 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h6 class="modal-title text-danger" id="exampleModalLabel1">Are you sure ,You want to remove this user</h6>
+        <h6 class="modal-title text-danger" id="exampleModalLabel1">Are you sure you want to remove this user?</h6>
       </div>
       <div class="modal-footer">
         <form action="{{route('admin.revoke_admin')}}" method="post">

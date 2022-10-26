@@ -16,7 +16,7 @@ class ApplicationDocumentController extends Controller
             $name = $file->getClientOriginalName();
             $extension = $file->getClientOriginalExtension();
 
-            $path=$request->file('file')->store('public/uploaded_doc');
+            $path=$request->file('file')->storeAs('public/uploaded_doc', $name);
 
             $document= new ApplicationDocument();
             $document->name=$name;
