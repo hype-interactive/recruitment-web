@@ -93,9 +93,14 @@
       plugins: [
           "advlist autolink lists link image charmap print preview anchor",
           "searchreplace visualblocks code fullscreen",
-          "insertdatetime media table contextmenu paste"
+          "insertdatetime media table contextmenu paste code"
       ],
-      // toolbar: 'numlist bullist',
+      // advlist_bullet_styles: [{
+      //   title: 'image bullets',
+      //   styles: {
+      //     listStyleImage: "url({{ asset('images/checkmark.png') }})"
+      //   }
+      // }],
       branding:false
   });
 </script>

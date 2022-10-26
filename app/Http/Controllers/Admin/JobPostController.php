@@ -52,10 +52,11 @@ class JobPostController extends Controller
     public function addJobPost(Request $request)
     {
         // var_dump($request->all()); exit();
+        // dd($request->description);
 
         // $validator= Validator::make($request->all(),[ ]);
         // if($validator->fails()) return redirect()->back()->with("msg","Failed !".$validator->errors());
-        
+
         $job_post= new JobPost();
         $job_post->title= $request->title ? $request->title: 'NULL';
         $job_post->deadline = $request->deadline ? $request->deadline: 'NULL';
