@@ -11,7 +11,7 @@
                         </li>
                         <li>
                             <img src="{{asset('images/icons/location-white.svg')}}" alt="">
-                            5th Floor Wing A,Ohio Street,Golden Jubilee Tower,Dar es Salaam,Tanzania
+                            5th Floor Wing A, Ohio Street, Golden Jubilee Tower, Dar es Salaam, Tanzania
                         </li>
                         <li>
                             <img src="{{asset('images/icons/email-white.svg')}}" alt="">
@@ -37,12 +37,12 @@
                             Facebook</a>
                         </li>
                         <li>
-                            <a href="https://www.instagram.com/toptalentedrecruits/" target="_blank"><img src="{{asset('images/icons/instagram-white.svg')}}" alt="">   instagram</a>
+                            <a href="https://www.instagram.com/toptalentedrecruits/" target="_blank"><img src="{{asset('images/icons/instagram-white.svg')}}" alt="">   Instagram</a>
                          
                         </li>
                       
                         <li>
-                            <a href="https://tz.linkedin.com/company/top-talented-recruits-ltd?trk=public_profile_experience-item_result-card_subtitle-click" target="_blank"><img src="{{asset('images/icons/linkedin-white.svg')}}" alt="">  linkedin</a>
+                            <a href="https://tz.linkedin.com/company/top-talented-recruits-ltd?trk=public_profile_experience-item_result-card_subtitle-click" target="_blank"><img src="{{asset('images/icons/linkedin-white.svg')}}" alt="">  Linkedin</a>
 
                         </li>
                       
@@ -57,6 +57,6 @@
         </div>
     </div>
     <div class="lower">
-        <span>© 2021 - Rights Reserved . Top Talented Recruits</span>
+        <span>© {{date('Y')}} - Rights Reserved . Top Talented Recruits</span>
     </div>
 </div>

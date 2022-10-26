@@ -81,7 +81,7 @@
                                     <b>{{$post->jobCategory->name}}</b>
                                     <ul>
                                         <li class="location"><img src="{{asset('images/icons/location.svg')}}" alt="">{{$post->region->name}}</li> 
-                                        <li class="desktop_item"><img src="{{asset('images/icons/lightbulb.svg')}}" alt=""> Deadline; {{date_format(date_create($post->deadline),"d-M-Y")}}</li>
+                                        <li class="desktop_item"><img src="{{asset('images/icons/lightbulb.svg')}}" alt=""> Deadline: {{date_format(date_create($post->deadline),"d-M-Y")}}</li>
                                     </ul>
                                 </div>
                                 <div class=" sm-wrapper">
@@ -108,7 +108,7 @@
         <div class="about">
             <div class="ttr-section-header">
                 <h2>Value proposition</h2>
-                <p>Our recruitment service creates a pleasant hiring experience for both  job seekers and employers</p>
+                <p>Our recruitment service creates a pleasant hiring experience for both job seekers and employers</p>
                 </div>
             <div class="cards row">
                 <div class="left col-sm">
@@ -148,7 +148,7 @@
                         </div>
                         <div class="col-md-10 tile-content">
                             <b>Recruitment Services</b>
-                            <small>We match candidates to job vacancies,working with companies directly to help fill their roles. Their consultants' source new opportunities,edit and optimise CVs,and even provide pointers to help candidates prepare for interviews.</small>
+                            <small>We match candidates to job vacancies, working with companies directly to help fill their roles. Their consultants' source new opportunities, edit and optimise CVs, and even provide pointers to help candidates prepare for interviews.</small>
                             
                         </div>
                     </div>
@@ -174,7 +174,7 @@
                         </div>
                         <div class="col-md-10 tile-content">
                             <b>Training & Team Building</b>
-                            <small>The purpose of team building activities is to motivate your people to work together,to develop their strengths,and explore new skills.
+                            <small>The purpose of team building activities is to motivate your people to work together, to develop their strengths, and explore new skills.
                                 </small>
                         </div>
                     </div>
@@ -186,7 +186,7 @@
                         </div>
                         <div class="col-md-10 tile-content">
                             <b>Manpower outsourcing and management</b>
-                            <small>TTR offers the ability for clients to outsource some of their non-core departments enabling  them to concentrate on their core competencies.</small>
+                            <small>TTR offers the ability for clients to outsource some of their non-core departments enabling them to concentrate on their core competencies.</small>
                             
                         </div>
                     </div>
@@ -214,7 +214,7 @@
                         <div class="col-md-10 tile-content">
                             <b>Performance Management & Appraisals</b>
 
-                            <small>Performance management is the proces of identifying,measuring,managing,and developing the performance of the human resources in an organization.</small>
+                            <small>Performance management is the proces of identifying, measuring, managing, and developing the performance of the human resources in an organization.</small>
                             
                         </div>
                     </div>
@@ -241,7 +241,7 @@
         <div class="blog-post">
             <div class="ttr-section-header">
                 <h2>From our expert blog</h2>
-                <p>Improve your knowledge,skills and get the best industry tips.</p>
+                <p>Improve your knowledge, skills and get the best industry tips.</p>
             </div>
             <div class="row">
                 @foreach ($blog_posts as $bpost)
