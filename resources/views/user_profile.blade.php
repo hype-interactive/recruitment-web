@@ -25,7 +25,7 @@
                                 <b class="mb-0">
                                   <a class="collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" >
                                     Reset Password
-                                     <img src="{{asset('images/icons/arrow-down.svg')}}" alt="">
+                                     <img src="{{asset('images/icons/arrowdown.svg')}}" alt="">
                                   </a>
                                 </b>
                               </div>

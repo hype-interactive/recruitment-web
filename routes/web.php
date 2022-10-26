@@ -21,7 +21,7 @@ Route::get('about','App\Http\Controllers\BlogPostController@displayPost')->name(
 Route::get('services',function (){ return view('/services');})->name('services');
 Route::post('register_employer','App\Http\Controllers\EmployerController@create')->name('register_employer');
 Route::post('add_application','App\Http\Controllers\ApplicationController@add')->name('add_document');
-Route::get('download/{id}','App\Http\Controllers\ApplicationDocumentController@download')->name('download');
+// Route::get('download/{id}','App\Http\Controllers\ApplicationDocumentController@download')->name('download');
 
 
 

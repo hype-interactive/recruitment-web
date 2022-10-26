@@ -9,15 +9,22 @@ class ApplicationDocumentController extends Controller
 {
     public function add(Request $request)
     {
-        $document= new ApplicationDocument();
-        $document->name=$request->file_name;
-        $document->type='cv';
+        
         if($request->hasFile('file')){
-            $path=$request->file->store('public/uploaded_doc');
+            $file = $request->file('file');
+
+            $name = $file->getClientOriginalName();
+            $extension = $file->getClientOriginalExtension();
+
+            $path=$request->file('file')->store('public/uploaded_doc');
+
+            $document= new ApplicationDocument();
+            $document->name=$name;
+            $document->type='cv';
             $document->path=$path;
         }
         if($document->save())
-        return $document;
+            return $document;
     }
 
 }

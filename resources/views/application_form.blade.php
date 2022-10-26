@@ -52,7 +52,7 @@
                                     <input style="width: 5.7rem" type="file" class="custom-file-input" id="customFile" name="file" accept="application/pdf" required>
                                 </div>
                                 <div class="col-md-9">
-                                    <input class="w-75" type="tex"  src="" alt="" placeholder="file name" name="file_name" value="{{($application ?? '' )? ($application[0]->applicationDocument->name):""}}">
+                                    <input class="w-75" type="text"  placeholder="file name" name="file_name" value="{{($application ?? '' )? ($application[0]->applicationDocument->name):""}}">
                                     <img class="desktop_item" src="{{asset('images/icons/attachment.svg')}}" alt="">
                                 </div>
                             </div> 
