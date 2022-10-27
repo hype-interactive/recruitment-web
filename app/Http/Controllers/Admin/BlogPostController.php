@@ -30,6 +30,13 @@ class BlogPostController extends Controller
 
     public function addPost(Request $request )
     {
+        $validator=Validator::make($request->all(),[
+
+            'image' => 'required|image|mimes:jpg,png,jpeg',
+        ]);
+
+        if($validator->fails()) return back()->with('msg','Entered image of invalid type. Try again');
+
         $post = new BlogPost();
         $post->title = $request->title;
         $post->caption = $request->caption;
