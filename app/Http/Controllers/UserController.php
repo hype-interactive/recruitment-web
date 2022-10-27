@@ -32,26 +32,48 @@ class UserController extends Controller
     }
     public function resetPassword(Request $request)
     {
-        // var_dump($request->old_password); exit();
-        $validator=Validator::make($request->all(),[
+        // // var_dump($request->old_password); exit();
+        // $validator = Validator::make($request->all(),[
 
-            'old_password'=> 'required|min:8',
-            'password' => 'required|min:6|regex:/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\x])(?=.*[!$#%]).*$/|confirmed',
-            'password_confirmed' => 'required| same:password'
+        //     'old_password'=> 'required|min:8',
+        //     'password' => 'required|min:6|regex:/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\x])(?=.*[!$#%]).*$/|confirmed',
+        //     'password_confirmed' => 'required| same:password'
+        // ]);
+
+        // // if($validator->fails()){
+        // //     return response()->json($validator->errors(),400);
+        // // } 
+
+        // // if ($validator->fails()) return response()->json(['response' => 'error', 'message' => 'Validation Error', 'error' => $validator->errors()]);
+
+        // // dd($request->all());
+        // if($validator->fails()) back()->with('msg','Entered invalid detail');
+
+        // $user_id = Auth::user()->id;
+        // // dd($user_id);
+        // $user = User::find($user_id);
+
+        // if(Hash::check($user->password, $request->old_password) ) return back()->with('error','Old password is Incorrect!');
+
+        // $user->password = Hash::make($request->password);
+        // if($user->update()) return back()->with('msg','Password Reset Successful !');
+
+        $validator = Validator::make($request->all(), [
+            'old_password' => 'required',
+            'password' => 'required_with:password_confirmation|string|confirmed'
         ]);
 
-        // if($validator->fails()){
-        //     return response()->json($validator->errors(),400);
-        // } 
+        if ($validator->fails()) return redirect()->back()->with('msg', 'Validation Failed');
 
-        // if ($validator->fails()) return response()->json(['response' => 'error', 'message' => 'Validation Error', 'error' => $validator->errors()]);
+        $user_id = Auth::user()->id;
+        $user = User::find($user_id);
 
-        if($validator->fails()) return back()->with('msg','Entered invalid detail');
-        $user_id=Auth::user()->id;
-        $user=User::find($user_id);
-        // if(Hash::check($user->password,$request->old_password) ) return back()->with('error','Old password is Incorrect!');
+        if(!Hash::check($request->old_password, auth()->user()->password)){
+            return redirect()->back()->with('msg', 'Your current password is incorrect');
+        };
 
-        // $user->password=Hash::make($request->password);
-        if($user->update()) return back()->with('msg','Password Reset Successful !');
+        if ($user->update(['password' => Hash::make($request->password)])) {
+            return redirect()->back()->with('msg', 'Password changed successfully');
+        } else return redirect()->back()->with('msg', 'Failed to change password');
     }
 }

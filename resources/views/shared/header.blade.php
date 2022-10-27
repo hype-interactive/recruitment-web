@@ -60,6 +60,15 @@
             </div>
                 @endguest
         </div>
+        <div class="">
+            @if (session('msg'))
+              <div class="pop-feedback" id="pop-feedback">
+                  <div class="inner-commponent">
+                      <div>{{session('msg')}}</div>
+                  </div>
+              </div>
+            @endif
+        </div>
 
       </div>
     </div>

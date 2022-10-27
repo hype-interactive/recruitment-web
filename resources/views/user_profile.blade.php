@@ -48,15 +48,15 @@
                                                     <strong>{{ $message }}</strong>
                                                 </span>
                                             @enderror
-                                            {{-- @if($errors->has('password'))
+                                            @if($errors->has('password'))
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $error->message }}</strong>
                                             </span>
-                                            @endif --}}
+                                            @endif
                                         </div>  
                                         <div>
-                                            <input id="password-confirm" type="password"  name="password_confirmation" required autocomplete="new-password" placeholder="Confirm Password">
-                                            @error('password-confirm')
+                                            <input id="password_confirmation" type="password"  name="password_confirmation" required autocomplete="new-password" placeholder="Confirm Password">
+                                            @error('password_confirmation')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>

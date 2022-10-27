@@ -78,7 +78,7 @@
         var xmlhttp = new  XMLHttpRequest();
         xmlhttp.onreadystatechange= function () {
             //check successful results
-            if(this.readyState == 4 && this.status == 200){
+            if(this.readyState == 4 && this.status == 200){ns
                 resp=JSON.parse(this.responseText);
                 // console.log(this.responseText);
                 if(resp.length == 0){

@@ -31,6 +31,9 @@ class ApplicationController extends Controller
 
     public function searchApplication(Request $request )
     {
+        $application = Application::all();
+		echo \json_encode($application);
+        
         if($request->q == "_all"){
              $application = Application::with('user')->take(20)->get();
         }
