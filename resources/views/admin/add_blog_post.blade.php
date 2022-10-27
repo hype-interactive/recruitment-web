@@ -20,7 +20,7 @@
                         <label for="exampleInputPassword1">Post Content</label>
                         <textarea  name="caption" class="form-control form-control-lg"   id="caption" onkeyup="displayText('caption','post-content')" nonvalidate></textarea>
                     </div>
-                    <input type='file' name="image" accept="image/jpg" onchange="readURL(this);" required/>
+                    <input type='file' name="image" accept=".jpg, .jpeg, .png" onchange="readURL(this);" required/>
 
                     <button type="submit" class="btn btn-orange bp-btn"> Add Post</button>
                 </form>
@@ -53,7 +53,7 @@
 </div>
 
     <script>
-             function readURL(input) {
+        function readURL(input) {
             if (input.files && input.files[0]) {
                 var reader = new FileReader();
 

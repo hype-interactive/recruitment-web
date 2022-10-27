@@ -111,9 +111,6 @@
                 <p>Our recruitment service creates a pleasant hiring experience for both job seekers and employers</p>
                 </div>
             <div class="cards row">
-                <div class="left col-sm">
-                    <img src="{{asset('images/about_left.jpg')}}" alt="">
-                </div>
                 <div class="mid col-sm">
                     <img src="{{asset('images/icons/handshake.svg')}}" alt="">
                     <h4>Find great talent</h4>
@@ -122,6 +119,10 @@
                         <button type="button" class="btn btn-orange" data-bs-toggle="modal" data-bs-target="#employerForm">Register as employer </button>
                     </a> 
                 </div>
+                <div class="left col-sm">
+                    <img src="{{asset('images/about_left.jpg')}}" alt="">
+                </div>
+                
                 <div class="right col-sm">
                     <img src="{{asset('images/icons/briefcase-frontal-view.svg')}}" alt="">
                     <h4>Find great employer</h4>

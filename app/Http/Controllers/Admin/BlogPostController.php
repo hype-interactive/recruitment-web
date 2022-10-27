@@ -33,15 +33,19 @@ class BlogPostController extends Controller
         $post = new BlogPost();
         $post->title = $request->title;
         $post->caption = $request->caption;
+
+        // dd($request->all());
+
         if($request->hasFile('image')){
-            $path=$request->image->store('public/uploaded');
-            $post->image=$path;
-            $pathToImage=Storage::path($path);
-            $optimizer=OptimizerChainFactory::create();
+            $path = $request->image->store('public/uploaded_img');
+            // dd($path);
+            $post->image = $path;
+            $pathToImage = Storage::path($path);
+            $optimizer = OptimizerChainFactory::create();
             $optimizer->optimize($pathToImage);
-            $this->convert($pathToImage,$pathToImage);
+
             // FacadesImageOptimizer::optimize($pathToImage);
-        }else{
+        } else {
             return redirect('admin/blog_posts')->with('msg','Failed to upload photo');
         }
 
@@ -56,10 +60,10 @@ class BlogPostController extends Controller
             $post->title = $request->title;
             $post->caption = $request->caption;
             if($request->hasFile('image')){
-                $path=$request->image->store('public/uploaded');
+                $path=$request->image->store('public/uploaded_img');
                 $post->image=$path;
                 $this->deleteStored($request->old_photo);
-            }else{
+            } else {
                 return redirect('admin/blog_posts')->with('msg','Failed to upload photo');
             }
         }
