@@ -256,7 +256,7 @@
                                     <b class="blog-card-title">{{Str::limit($bpost->title,80)}}</b>
                                     <div class="caption">
                                         <p>
-                                            {!! Str::limit($bpost->caption,90)!!}
+                                            {!!Str::limit($bpost->caption,90)!!}
                                         </p>
                                     </div>
                                     <div class="blog-post-footer">
