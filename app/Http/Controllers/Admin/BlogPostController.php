@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Storage;
 use Spatie\ImageOptimizer\OptimizerChainFactory;
 // use Spatie\LaravelImageOptimizer\Facades\ImageOptimizer as FacadesImageOptimizer;
 
+use Illuminate\Support\Facades\Validator;
+
 class BlogPostController extends Controller
 {
     public function show()
@@ -32,7 +34,7 @@ class BlogPostController extends Controller
     {
         $validator=Validator::make($request->all(),[
 
-            'image' => 'required|image|mimes:jpg,png,jpeg',
+            'image' => 'required|image|mimes:jpg,png,jpeg,image/jpeg,image/png',
         ]);
 
         if($validator->fails()) return back()->with('msg','Entered image of invalid type. Try again');
