@@ -11,12 +11,12 @@
 
     </head>
     <body>
-       @include('../shared.header_admin')
+       @include('shared.header_admin')
         <div class="main-body">
                 @yield('body')
         </div>
         <div class="main-footer">
-            <p>Copyright © 2010-2021 Top Talented Recruits . All rights reserved</p>
+            <p>Copyright © 2010-{{ date('Y') }} Top Talented Recruits . All rights reserved</p>
             <ul>
                 <li>Terms</li>
                 <li>AFQ</li>

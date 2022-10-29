@@ -1,4 +1,4 @@
-@extends('../layouts/master_layout')
+@extends('layouts.master_layout')
 @section('page-summary')
     <b>Blog Posts</b>
 @endsection

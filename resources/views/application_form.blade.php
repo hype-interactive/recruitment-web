@@ -3,7 +3,7 @@
 @if ($application ?? '')
     <div class="container">
         <div class="warning">
-            You have already applied !, <br> Wait for Your Application progress
+            You have already applied ! <br> Wait for your application progress
         </div>
     </div>
 @else
@@ -38,7 +38,7 @@
                             </div>
                     </div>
                     <input type="hidden" name="user_id" value={{Auth::user()->id}}>
-                    <h5 class="hd-tl">Personal Informatrion:</h5>
+                    <h5 class="hd-tl">Personal Information:</h5>
                     <button class="btn btn-orange ft-br" type="submit">Save Changes</button>
                 </form>
             </div>
@@ -52,7 +52,8 @@
                                     <input style="width: 5.7rem" type="file" class="custom-file-input" id="customFile" name="file" accept="application/pdf" required>
                                 </div>
                                 <div class="col-md-9">
-                                    <input class="w-75" type="text"  placeholder="file name" name="file_name" value="{{($application ?? '' )? ($application[0]->applicationDocument->name):""}}">
+                                    {{-- <input class="w-75" type="text"  placeholder="file name" name="file_name" value="{{($application ?? '' )? ($application[0]->applicationDocument->name):""}}"> --}}
+                                    <input class="w-75" type="text" placeholder="file name" readonly>
                                     <img class="desktop_item" src="{{asset('images/icons/attachment.svg')}}" alt="">
                                 </div>
                             </div> 

@@ -45,6 +45,8 @@ Route::post('reset_password','App\Http\Controllers\UserController@resetPassword'
 
 
 Route::post('add_category','App\Http\Controllers\Admin\JobCategoryController@addCategory')->name('admin.add_category');
+Route::post('add_region','App\Http\Controllers\Admin\RegionController@addRegion')->name('admin.add_region');
+
 Route::get('admin/job-posts','App\Http\Controllers\Admin\JobPostController@getJobPosts')->name('admin.job_posts');
 Route::post('add-job-post','App\Http\Controllers\Admin\JobPostController@addJobPost')->name('admin.add_job_post');
 Route::get('create_job_posts_panel','App\Http\Controllers\Admin\JobPostController@createJobPostPanel')->name('admin.create_job_post_panel');
