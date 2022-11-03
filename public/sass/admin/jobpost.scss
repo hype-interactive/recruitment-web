@@ -30,6 +30,30 @@
 
 
         }
+
+        .applied-users {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 6rem;
+            width: 30px;
+            height: 30px;
+            border-radius: 10px;
+            padding: 0 2px;
+            // background-color: $silver-sand;
+            .applied-users-count {
+                background-color: #ddd;
+                border-radius: 50%;
+                color: inherit !important;
+                margin-left: .15rem;
+                font-size: .75em;
+                font-weight: 500;
+            }
+            .applied-users-icon {
+                // margin-right: 0.5rem;
+                width: 60% !important;
+            }
+        }
   
  }
 
@@ -65,4 +89,12 @@
     border: 2px solid $orange;
 
 
+}
+
+// media queries
+@media (min-width: 1080px) { 
+    .add-post-button{
+        right: 2rem !important;
+        position: fixed;
+    }
 }

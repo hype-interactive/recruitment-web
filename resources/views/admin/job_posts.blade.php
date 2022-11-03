@@ -12,7 +12,12 @@
                             <img src="{{asset('images/icons/bag.svg')}}" alt="">
                         </div>
                         {{$post->jobCategory->name}}
-
+                        @if ($post->applications->count() > 0)
+                            <div class="applied-users">
+                                <img src="{{ asset('images/icons/new-user.svg') }}" class="applied-users-icon" alt="applied">
+                                <span class="badge applied-users-count">{{$post->applications->count()}}</span>
+                            </div>
+                        @endif
                     </div>
                     @if (strlen($post->title)>75)
                         <?php $title = substr($post->title, 0,75) . " .....  ...." ?>

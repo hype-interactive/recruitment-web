@@ -183,7 +183,7 @@ hr{
     width: 100%;
     padding: 2rem;
     height:550px;
-    overflow-y: scroll ;
+    overflow-y: scroll;
 }
 
 .main-footer{
@@ -610,4 +610,24 @@ button:focus{
 }
 
 
-
+// media queries
+@media (min-width: 1080px) { 
+    .main-footer{
+    
+        width: 100%;
+        padding: 1.5rem 1rem 1rem 1rem;
+        background-color: $primary-color;
+        color: whitesmoke;
+        position: fixed;
+        bottom: 0px !important;
+        @include flex-space-between;
+        font-size: small;
+        ul{
+            list-style: none;
+            li{
+                float: left;
+                margin-left: 1rem;
+            }
+        }
+    }
+}

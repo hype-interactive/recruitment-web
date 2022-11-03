@@ -18,7 +18,7 @@
             <ul>
                 <li><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
                 <li><a href="{{route('admin.job_posts')}}">Job Posts</a></li>
-                <li><a href="{{route('admin.blog_posts')}}">Blog Post</a></li>
+                <li><a href="{{route('admin.blog_posts')}}">Blog Posts</a></li>
                 @if (Auth::user()->type == "admin")
                     <li><a href="{{route('admin.manage_users')}}">User Management</a></li>    
                 @endif

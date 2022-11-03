@@ -236,9 +236,10 @@ button:focus{
 
 // job post section
 .post-banners{
-    @include margining();
+    // @include margining();
     @include flex-center;
     margin-top: 3rem;
+    margin-bottom: 5rem;
     flex-direction: column;
     h3{
         margin-bottom: 4rem;
@@ -364,7 +365,8 @@ button:focus{
         }
     }
     .mid{
-        background-color: white;
+        // background-color: white;
+        background-color: $silver-sand;
     }
     .right{
         background-color: $silver-sand;

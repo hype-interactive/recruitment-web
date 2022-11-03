@@ -7,15 +7,17 @@
                     <ul>
                         <li>
                             <img src="{{asset('images/icons/phone-white.svg')}}" alt="">
-                            +255 677 000 011 / +255 752 111 225
+                            {{-- +255 677 000 011 / +255 752 111 225 --}}
+                            <a href="tel:+255677000011">+255 677 000 011</a> / <a href="tel:+255752111225">+255 752 111 225</a>
                         </li>
                         <li>
                             <img src="{{asset('images/icons/location-white.svg')}}" alt="">
-                            5th Floor Wing A, Ohio Street, Golden Jubilee Tower, Dar es Salaam, Tanzania
+                            
+                            <a href="https://goo.gl/maps/FAJUXS2TtV6381vf6" target="_blank">5th Floor Wing A, Ohio Street, Golden Jubilee Tower, Dar es Salaam, Tanzania</a>
                         </li>
                         <li>
                             <img src="{{asset('images/icons/email-white.svg')}}" alt="">
-                            info@toptalentedrecruits.co.tz
+                            <a href="mailto:info@toptalentedrecruits.co.tz">info@toptalentedrecruits.co.tz</a>
                         </li>
                     </ul>
                 </div>

@@ -9,6 +9,10 @@ class Region extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name'
+    ];
+
     public function jobPosts()
     {
         return $this->hasMany(JobPost::class,"region_id","id");
