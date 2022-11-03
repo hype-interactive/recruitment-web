@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Application;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Log;
 
 class ApplicationController extends Controller
 {
@@ -31,24 +32,24 @@ class ApplicationController extends Controller
 
     public function searchApplication(Request $request )
     {
-        $application = Application::all();
-		echo \json_encode($application);
-        
-        if($request->q == "_all"){
-             $application = Application::with('user')->take(20)->get();
-        }
-        if($request->q == "_selected" or $request->q == "_rejected" or $request->q == "_reserved") {
-            $value = substr($request->q,1);
-            $application = Application::with('user')->where('status','Like','%'.$value.'%')->take(20)->get();
 
+  
+        if($request->q == "_all"){
+             $application = Application::with('user')->get();
+        }
+
+        if($request->q == "_selected" || $request->q == "_rejected" || $request->q == "_reserved") {
+
+            $value = substr($request->q,1);
+            $application = Application::with('user')->where('status','Like','%'.$value.'%')->get();
         }
         else{
-        // $application = Application::with('user')->where('status','LIKE','%'. $request->q.'%')->take(20)->get();
-        $application=Application::with(['user' => function($query , $request){
-            $query->where('fname','like','%'. $request->q.'%')->or_where('lname','like','%'.$request->q.'%');
-        }])->take(20)->get();
+            $application=Application::with(['user' => function($query )use($request){
+            $query->where('fname','like','%'. $request->q.'%')->orWhere('lname','like','%'.$request->q.'%');
+        }])->get();
 
         }
+
         
 		echo \json_encode($application);
 
