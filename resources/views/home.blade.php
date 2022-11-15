@@ -10,10 +10,10 @@
 
     @include('sections.services')
 
-    @include('sections.partners')
-
     @include('sections.blog_posts')
-
+    
     @include('sections.testimonials')
-
+    
+    @include('sections.partners')
+    
 @endsection
