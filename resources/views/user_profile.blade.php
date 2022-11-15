@@ -4,7 +4,7 @@
     <div class="user-profile-wrapper">
         <div class="row ">
             <div class="col-md-4">
-                <div class="avatar">
+                <div class="profile-avatar">
                     <img src="{{asset('images/icons/man-user.svg')}}" alt="">
 
                     <b>{{Auth::user()->fname}} {{Auth::user()->lname}}</b>

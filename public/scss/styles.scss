@@ -1,0 +1,15 @@
+@import 'abstracts/variables',
+        'abstracts/include-media';
+
+@import 'pages/main',
+        'pages/jobs',
+        'pages/job', 
+        'pages/about';
+
+@import 'sections/partners',
+        'sections/testimonials';
+
+@import 'admin/app_admin',
+        'admin/application',
+        'admin/jobpost',
+        'admin/post';

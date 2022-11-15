@@ -3,9 +3,10 @@
     <head>
         <title>TTR-ADMIN</title>
         <link rel="stylesheet" href="{{url('bootstrap/css/bootstrap.min.css')}}">
-        <link rel="stylesheet" href="{{url('css/admin/app_admin.css')}}">
+        {{-- <link rel="stylesheet" href="{{url('css/admin/app_admin.css')}}">
         <link rel="stylesheet" href="{{url('css/admin/jobpost.css')}}">
-        <link rel="stylesheet" href="{{url('css/admin/post.css')}}">
+        <link rel="stylesheet" href="{{url('css/admin/post.css')}}"> --}}
+        <link rel="stylesheet" href="{{ url('css/styles.css') }}">
         <!-- CSS only -->
         
 
