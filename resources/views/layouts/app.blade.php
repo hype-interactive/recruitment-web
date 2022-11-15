@@ -17,11 +17,27 @@
       <div class="modal-body employer">
             <div class="form-group">
                 <label for="exampleInputPassword1">Company Name</label>
-                <input type="text" name="name" class="form-control"  >
+                <input type="text" name="company_name" class="form-control">
             </div>
             <div class="form-group">
-                <label for="exampleInputPassword1">Company's Email</label>
-                <input type="email" name="email" class="form-control"  >
+                <label for="exampleInputPassword1">Company's Phone</label>
+                <input type="phone" name="phone" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Company's Email</label>
+              <input type="email" name="email" class="form-control"  >
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Company's Address</label>
+              <input type="text" name="address" class="form-control"  >
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Message</label>
+              <input type="text" name="message" class="form-control">
+            </div>
+            <div class="form-check">
+              <label for="exampleInputPassword1">Meeting request</label>
+              <input type="checkbox" name="meeting_request" class="form-check-input"  >
             </div>
       </div>
       <div class="modal-footer">

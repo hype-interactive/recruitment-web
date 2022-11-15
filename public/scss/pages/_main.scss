@@ -1093,6 +1093,7 @@ button:focus{
     background-color: $orange;
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;
+    z-index: 2;
 }
 
 .selected{
