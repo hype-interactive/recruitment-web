@@ -33,4 +33,13 @@
         }
     
 
+    if(!function_exists('nameFormat')){
+
+        function nameFormat(Object $object)
+        {
+            return (string) $object->fname . " " . ($object->mname != ""? $object->mname[0] : ""). " ". $object->lname;
+        }
+        
+    }
+
 ?>
