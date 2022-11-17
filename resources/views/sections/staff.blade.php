@@ -24,7 +24,8 @@
                 @else
                     @foreach ($staffs as $staff)
                         @if ($staff->is_director)
-                        <a class="col-md-4" data-bs-toggle="modal" data-bs-target="#modal{{ $staff->id }}"  id="card{{ $staff->id }}">
+                        {{-- <a class="col-md-4" data-bs-toggle="modal" data-bs-target="#modal{{ $staff->id }}"  id="card{{ $staff->id }}"> --}}
+                        <a class="col-md-4">
                             <div class="card " >
                                 <div class="card-image">
                                     <img src="{{Storage::url($staff->image)}}" class="card-img-top" alt="...">
