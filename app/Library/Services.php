@@ -66,4 +66,14 @@
                 ),
             ];
         }
+
+        public function getService(string $id) :Service
+        {
+            $services = $this->items();
+            foreach ($services as $service) {
+                if ($service->id == $id) {
+                    return $service;
+                }
+            }
+        }
     }
