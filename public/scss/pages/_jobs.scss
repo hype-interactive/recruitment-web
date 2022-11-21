@@ -28,16 +28,6 @@
       
     }
 }
-.search-box{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    img{
-        width: 1rem;
-        height: 1rem;
-        margin-right: 1rem;
-    }
-}
 .filter{
     background-color: white;
     margin-top: 1rem;
@@ -84,4 +74,115 @@
         color: #1DA1F2;
     }
 
+}
+
+.urgent-jobs {
+    background-color: white;
+    margin-top: 1rem;
+    // margin-left: .8rem;
+    padding-left: 0;
+    max-height: 500px !important;
+    overflow-y: scroll;
+    // display: none;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+
+    .urgent-job-banner{
+        margin-bottom: 2rem;
+        margin-left: .8rem;
+        min-width: fit-content !important;
+        position: relative;
+        padding:  1rem;
+        background-color: whitesmoke !important;
+        // border:1px solid $silver-sand;
+        border-bottom: 3px solid $primary-color;
+        display: flex;
+        flex-direction: row;
+
+        a{
+            text-decoration: none !important;
+        }
+        ul{
+            margin-top: 1rem;
+            list-style: none;
+            min-width: fit-content !important;
+            max-width: 450px;
+            margin-bottom: 0px !important;
+            padding-inline-start: 0px !important;
+            // @include flex-space-between;
+            // justify-content: flex-start;
+            li{
+                margin-bottom: 0px !important;
+                padding: .2rem 0;
+                width:fit-content;
+                font-size: smaller !important;
+                margin-right: 1rem;
+                @include flex-center;
+        }
+    
+        }
+        .title{
+            margin-top:0.5rem;
+            font-size: small;
+            color: black;
+        }
+        .sm-wrapper{
+            position: absolute;
+            top:1rem;
+            right: 1rem;
+    
+            p{
+                float: left;
+                width: 5rem;
+                background-color: $key-lime;
+                padding: 0.3rem 0.4rem;
+                border-radius: 20px;
+                font-size: small;
+            }
+        }
+        small{
+            font-size: smaller;
+            position: absolute;
+            bottom: 1rem;
+            right:1rem;
+            color: $silver-sand;
+        }
+        .closed{
+            color: white;
+            font-weight: 700;
+            font-size: 0.5rem;
+            background-color:#ef5350;
+            border-bottom: 1px solid $primary-color;
+            top:0;
+            right: 0;
+            padding: 3px 5px;
+            position: absolute;
+        }
+    }
+    a{
+        color: $primary-color;
+    }
+    a:hover{
+        color: #1DA1F2;
+    }
+}
+
+.urgent-jobs::-webkit-scrollbar {
+    display: none;
+}
+
+.blink {
+    animation: blink 1s steps(1, end) infinite;
+}
+
+@keyframes blink {
+0% {
+    opacity: 1;
+}
+50% {
+    opacity: 0;
+}
+100% {
+    opacity: 1;
+}
 }

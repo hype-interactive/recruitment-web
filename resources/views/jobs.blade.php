@@ -14,7 +14,7 @@
         </div>
 
         <div class="row">
-            <div class="col-md-4 filter desktop_item" >
+            <div class="col-md-3 filter desktop_item" >
                 <form action="">
                     <h6>Work Category :</h6>
                     <ul>
@@ -37,7 +37,7 @@
                     <button type="button" id="show_less" style="display: none" class="btn btn-orange btn-sm float-end mb-2" onclick="showLess('regions_list')">Show less</button>
                 </form>
             </div>
-            <div class="col-md-8  job-list">
+            <div class="col-md-6  job-list">
                 <div class="row" id="post_list">
                 @foreach ($job_posts as $post)
                     <a href="{{route('job_post',$post->id)}}">
@@ -63,6 +63,42 @@
                     @endforeach
                 </div>
                 
+            </div>
+
+            <div class="col-md-3 urgent-jobs">
+                @for ($i = 1; $i < 9; $i++)
+                    <a href="">
+                        <div class="urgent-job-banner">
+                            <div class="">
+                                <b>IT</b>
+                                <ul>
+                                    <li class="location">Kathmandu</li>
+                                    <li class="desktop_item"> Deadline; 12-12-2021</li>
+                                </ul>
+                            </div>
+                            <div class="closed blink">URGENT</div>
+                        </div>
+                    </a>
+                @endfor
+
+                @foreach ($job_posts as $post)
+                    @if ($post->is_urgent)
+                    <a href="{{route('job_post',$post->id)}}">
+                        <div class="urgent-job-banner">
+                            <div class="">
+                                <b>{{ $post->jobCategory->name }}</b>
+                                <ul>
+                                    <li class="location">{{ $post->region->name }}</li>
+                                    <li class="desktop_item"> Deadline; {{date_format(date_create($post->deadline),"d-M-Y")}}</li>
+                                </ul>
+                            </div>
+                            {{-- @if () --}}
+                                <div class="closed blink">URGENT</div>
+                            {{-- @endif --}}
+                        </div>
+                    </a>
+                    @endif
+                @endforeach
             </div>
         </div>
     </div>

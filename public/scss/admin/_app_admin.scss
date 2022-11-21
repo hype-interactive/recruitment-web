@@ -76,7 +76,7 @@ hr{
 
             }
         }
-        .banner{
+        .auth-banner{
             background-color: $silver-sand ;
             text-transform: capitalize;
             span{
@@ -156,7 +156,7 @@ hr{
     margin-right: 5px;
     margin-left: 5px;
 }
-.banner{
+.auth-banner{
     @include flex-center;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;

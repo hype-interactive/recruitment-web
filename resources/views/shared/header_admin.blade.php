@@ -10,7 +10,7 @@
                 <li></li>
                 <li></li>
                 <li>
-                    <div class="banner"><span>{{substr(Auth::user()->fname,0,1).substr(Auth::user()->lname,0,1)}}</span>{{Auth::user()->fname}}</div>
+                    <div class="auth-banner"><span>{{substr(Auth::user()->fname,0,1).substr(Auth::user()->lname,0,1)}}</span>{{Auth::user()->fname}}</div>
                 </li>
             </ul>
         </div>
