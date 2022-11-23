@@ -31,11 +31,23 @@ class CreateUsersTable extends Migration
             $table->enum('type', ["admin", "applicant", "other"]);
             $table->string('fname')->nullable();
             $table->string('lname')->nullable();
+            $table->string('mname')->nullable();
             $table->string('sname')->nullable();
 
             $table->unique(["email"], 'users_email_unique');
             $table->nullableTimestamps();
         });
+
+        DB::table('users')->insert([
+            "fname" => "root",
+            "mname" => "super",
+            "lname" => "user",
+            "sname" => "user",
+            "phone" => "0783191832",
+            "email" => "admin@admin.com",
+            "password" => bcrypt("Ttr@2022"),
+            "type" => "admin",
+        ]);
     }
 
     /**
