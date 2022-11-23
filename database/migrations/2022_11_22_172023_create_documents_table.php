@@ -17,7 +17,7 @@ class CreateDocumentsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('path');
-            $table->enum('owner', ['ttr', 'member', 'other']);
+            $table->enum('owner', ['ttr', 'admin', 'applicant', 'other']);
             $table->timestamps();
         });
     }

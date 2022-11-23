@@ -10,8 +10,23 @@ use App\Models\Application;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 
+use App\Models\Document;
+use App\Models\UserDocument;
+use App\Models\EducationRecord;
+use App\Models\ProfessionalCertificationRecord as ProfessionalRecord;
+use App\Models\ExperienceRecord;
+
+use Illuminate\Support\Facades\Log;
+use DB;
+use Carbon\Carbon;
+
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function update(Request $request)
     {
         $user = User::find($request->user_id);
@@ -32,32 +47,6 @@ class UserController extends Controller
     }
     public function resetPassword(Request $request)
     {
-        // // var_dump($request->old_password); exit();
-        // $validator = Validator::make($request->all(),[
-
-        //     'old_password'=> 'required|min:8',
-        //     'password' => 'required|min:6|regex:/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\x])(?=.*[!$#%]).*$/|confirmed',
-        //     'password_confirmed' => 'required| same:password'
-        // ]);
-
-        // // if($validator->fails()){
-        // //     return response()->json($validator->errors(),400);
-        // // } 
-
-        // // if ($validator->fails()) return response()->json(['response' => 'error', 'message' => 'Validation Error', 'error' => $validator->errors()]);
-
-        // // dd($request->all());
-        // if($validator->fails()) back()->with('msg','Entered invalid detail');
-
-        // $user_id = Auth::user()->id;
-        // // dd($user_id);
-        // $user = User::find($user_id);
-
-        // if(Hash::check($user->password, $request->old_password) ) return back()->with('error','Old password is Incorrect!');
-
-        // $user->password = Hash::make($request->password);
-        // if($user->update()) return back()->with('msg','Password Reset Successful !');
-
         $validator = Validator::make($request->all(), [
             'old_password' => 'required',
             'password' => 'required_with:password_confirmation|string|confirmed'
@@ -75,5 +64,97 @@ class UserController extends Controller
         if ($user->update(['password' => Hash::make($request->password)])) {
             return redirect()->back()->with('msg', 'Password changed successfully');
         } else return redirect()->back()->with('msg', 'Failed to change password');
+    }
+
+    // User Profile Documents to be added here
+    public function completeProfile(Request $request)
+    {
+        $user = User::find(Auth::user()->id);
+        $user->type = 'applicant';
+        
+        DB::transaction(function () use ($request, $user) {
+            
+            $user->save();
+            $user_id = $user->id;
+
+            //store education records
+            $this->createEducationRecord($user_id,$request->institution_name,$request->study_level,$request->education_start_date,$request->education_end_date,$request);
+
+            // store professional records
+            $profession = new ProfessionalRecord;
+            $profession->name=$request->certification_name;
+            // $profession->institution_name=$request->profession_institute;
+            $profession->user_id= $user_id;
+            $profession->start_date = $request->certification_start_date;
+            $profession->end_date = $request->certification_end_date;
+
+            if(!$profession->save()){
+                Log::error("Professional Record failed to be recorded ///".$request);
+            }
+            
+            // store experience records 
+            // Note job_title refers to profession name of the applicant at the area of work
+            $this->createExperienceRecord($user_id,$request->employment_company,$request->job_title,$request->experience_start_date,$request->experience_end_date,$request);
+
+            // store documents
+            if($request->hasFile('edu_certificate')) $this->createDocumentRecord($user_id,'edu_certificate',$request);
+            if($request->hasFile('prof_certificate')) $this->createDocumentRecord($user_id,'prof_certificate',$request);
+            
+        });
+
+        return redirect()->back()->with('msg','Profile completed successfully');
+    }
+
+    public function createEducationRecord($user_id, $institution_name, $study_level,$start_date, $end_date, $request)
+    {
+        $education = new EducationRecord;
+        $education->institution_name=$institution_name;
+        $education->study_level=$study_level;
+        $education->start_date=$start_date;
+        $education->end_date=$end_date;
+        $education->user_id=$user_id;
+
+        if(!$education->save()) {
+            Log::error("Education Record failed to be recorded ///".$request);
+        }
+    }
+
+    public function createExperienceRecord($user_id,$company,$profession_name,$start_date,$end_date,$request)
+    {
+        $employment= new ExperienceRecord;
+        $employment->company_name=$company;
+        $employment->profession_name=$profession_name;
+        $employment->start_date=$start_date;
+        $employment->end_date=$end_date;
+        $employment->user_id=$user_id;
+
+        if(!$employment->save()) {
+            Log::error("Employment   failed to be recorded ///".$request);
+        }
+
+    }
+
+    public function createDocumentRecord($user_id,$doc_name,$request)
+    {
+        $doc = new Document;
+        $name = $request->file($doc_name)->getClientOriginalName();
+        $doc->name = $name;
+        $doc->path = $request->file($doc_name)->storeAs('public/applicants/documents', $name);
+        $doc->owner = 'applicant';
+        if($doc->save()){
+
+            UserDocument::insert([
+                'type'=> $doc_name == "edu_certificate" ? 'educational_certificate' : 'professional_certificate',
+                'user_id' => $user_id,
+                'document_id' => $doc->id,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ]);
+        }
+        else{
+
+            Log::error("Document   failed to be recorded ///".$request);
+
+        }
     }
 }

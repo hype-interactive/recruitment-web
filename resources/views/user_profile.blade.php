@@ -153,7 +153,8 @@
                                     </li>
                                 </ul>
                                 <!-- Step Wise Form Content -->
-                                <form id="userAccountSetupForm" name="userAccountSetupForm" enctype="multipart/form-data" method="POST" action="">
+                                <form id="userAccountSetupForm" name="userAccountSetupForm" enctype="multipart/form-data" method="POST" action="{{ route('complete_user_profile') }}">
+                                    @csrf
                                     <!-- Step 1 Content -->
                                     <section id="step-1" class="form-step">
                                         <h2 class="font-normal">Educational Information</h2>
@@ -172,7 +173,7 @@
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label for="exampleFormControlInput1" class="form-label">Certificate Attachment</label>
-                                                    <input type="file" name="file" class="form-control">
+                                                    <input type="file" name="edu_certificate" class="form-control">
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -196,15 +197,19 @@
                                         <!-- Step 2 input fields -->
                                         <div class="mt-3">
                                             <div class="row">
-                                                <div class="col-md-12">
+                                                <div class="col-md-6">
                                                     <label for="exampleFormControlInput1" class="form-label">Certification Name</label>
                                                     <input type="text" name="certification_name" class="form-control">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="exampleFormControlInput1" class="form-label">Institute</label>
+                                                    <input type="text" name="profession_institute" class="form-control">
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <label for="exampleFormControlInput1" class="form-label">Certificate Attachment</label>
-                                                    <input type="file" name="file" class="form-control">
+                                                    <input type="file" name="prof_certificate" class="form-control">
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -235,17 +240,17 @@
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label for="exampleFormControlInput1" class="form-label">Profession Name/Title</label>
-                                                    <input type="text" class="form-control" name="employment_title"  >
+                                                    <input type="text" class="form-control" name="job_title"  >
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <label for="exampleFormControlInput1" class="form-label">Start Date</label>
-                                                    <input type="date" name="employment_start_date" class="form-control">
+                                                    <input type="date" name="experience_start_date" class="form-control">
                                                 </div>
                                                 <div class="col-md-6 phone-mt">
                                                     <label for="exampleFormControlInput1" class="form-label">End Date</label>
-                                                    <input type="date" name="employment_end_date" class="form-control">
+                                                    <input type="date" name="experience_end_date" class="form-control">
                                                 </div>
                                             </div>
                                         </div>
@@ -258,72 +263,7 @@
                             </div>
                         </div>
                     </div>
-                    {{-- <form id="msform" class="pt-0" action="" method="POST" enctype="multipart/form-data">
-                        @csrf
-                        
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="staticBackdropLabel">Complete your profile</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <p>Please fill in the application form. It will take a couple of minutes. </p>
-                            <div class="disclaimer">
-                                <img src="{{ asset('images/icons/lock.svg') }}" width="20px" alt="">
-                                <div>
-                                We take privacy issues seriously. You can be sure that your personal data is securely protected.
-
-                                </div>
-                            </div>
-                            <!-- progressbar -->
-                            <ul id="progressbar" style="padding-left: 0px;">
-                                <li class="active"></li>  
-                                <li></li> 
-                                <li></li>
-                                <li></li>
-                                
-                            </ul>
-                            <fieldset>
-                                
-                                <button type="button" class="next action-button my-5 px-10">Start application</button>
-                            </fieldset>
-
-                            <!-- Educational Background -->
-                            <fieldset>
-                                <div class="inner-title">1.0 EDUCATIONAL INFORMATION</div>
-                                <div class="form-body">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <label for="exampleFormControlInput1" class="form-label">Instution Name</label>
-                                            <input type="text" name="institution_name" class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label for="exampleFormControlInput1" class="form-label">Level of Study</label>
-                                            <input type="text" name="study_level" class="form-control">
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label for="exampleFormControlInput1" class="form-label">Course of Study</label>
-                                            <input type="text" name="course_of_study" class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6 ">
-                                            <label for="exampleFormControlInput1" class="form-label">Start Date</label>
-                                            <input type="date" name="education_start_date" class="form-control" >
-                                        </div>
-                                        <div class="col-md-6 phone-mt">
-                                            <label for="exampleFormControlInput1" class="form-label">End Date</label>
-                                            <input type="date" name="education_end_date" class="form-control" >
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <button type="button" class="action-button previous previous_button mt-5">Back</button> 
-                                <button type="button" class="next action-button mb-5">Continue</button>
-                            </fieldset>
-                        </div>
-                    </form> --}}
+                    
                 </div>
             </div>
         </div>

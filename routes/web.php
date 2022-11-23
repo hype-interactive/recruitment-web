@@ -41,6 +41,7 @@ Route::get('search_jobs/{str?}','App\Http\Controllers\JobPostController@searchJo
 Route::get('blog_post/{id}','App\Http\Controllers\BlogPostController@getPost')->name('blog_post');
 Route::post('update_user','App\Http\Controllers\UserController@update')->name('update_user');
 Route::get('user/{id}','App\Http\Controllers\UserController@getUser')->name('user_profile');
+Route::post('complete_user_profile','App\Http\Controllers\UserController@completeProfile')->name('complete_user_profile');
 Route::post('reset_password','App\Http\Controllers\UserController@resetPassword')->name('reset_password');
 
 
