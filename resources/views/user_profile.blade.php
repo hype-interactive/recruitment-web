@@ -98,9 +98,238 @@
             </div>
         @endif
             
+
+        <!-- Add more information Section & Modal -->
+        <div class="col-xs-8 col-xs-offset-5 col-md-12 text-center">
+            <button type="" class="btn btn-orange btn-lg" data-bs-toggle="modal" data-bs-target="#form-modal" onclick="$('#response').hide();">
+                Complete your profile
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="profile-modal">
+    <div class="modal fade" id="form-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="">
+
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Complete your profile</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="cool-form">
+                            <div id="multi-step-form-container">
+                                <!-- Form Steps / Progress Bar -->
+                                <ul class="form-stepper form-stepper-horizontal text-center mx-auto pl-0">
+                                    <!-- Step 1 -->
+                                    <li class="form-stepper-active text-center form-stepper-list" step="1">
+                                        <a class="mx-2">
+                                            <span class="form-stepper-circle">
+                                                <span>1</span>
+                                            </span>
+                                            <div class="label">Educational Information</div>
+                                        </a>
+                                    </li>
+                                    <!-- Step 2 -->
+                                    <li class="form-stepper-unfinished text-center form-stepper-list" step="2">
+                                        <a class="mx-2">
+                                            <span class="form-stepper-circle text-muted">
+                                                <span>2</span>
+                                            </span>
+                                            <div class="label text-muted">Professional Certifications</div>
+                                        </a>
+                                    </li>
+                                    <!-- Step 3 -->
+                                    <li class="form-stepper-unfinished text-center form-stepper-list" step="3">
+                                        <a class="mx-2">
+                                            <span class="form-stepper-circle text-muted">
+                                                <span>3</span>
+                                            </span>
+                                            <div class="label text-muted">Experience Background</div>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <!-- Step Wise Form Content -->
+                                <form id="userAccountSetupForm" name="userAccountSetupForm" enctype="multipart/form-data" method="POST" action="">
+                                    <!-- Step 1 Content -->
+                                    <section id="step-1" class="form-step">
+                                        <h2 class="font-normal">Educational Information</h2>
+                                        <!-- Step 1 input fields -->
+                                        <div class="mt-3">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <label for="exampleFormControlInput1" class="form-label">Instution Name</label>
+                                                    <input type="text" name="institution_name" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label for="exampleFormControlInput1" class="form-label">Level of Study</label>
+                                                    <input type="text" name="study_level" class="form-control">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="exampleFormControlInput1" class="form-label">Certificate Attachment</label>
+                                                    <input type="file" name="file" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6 ">
+                                                    <label for="exampleFormControlInput1" class="form-label">Start Date</label>
+                                                    <input type="date" name="education_start_date" class="form-control" >
+                                                </div>
+                                                <div class="col-md-6 phone-mt">
+                                                    <label for="exampleFormControlInput1" class="form-label">End Date</label>
+                                                    <input type="date" name="education_end_date" class="form-control" >
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mt-3">
+                                            <button class="button btn-navigate-form-step" type="button" step_number="2">Next</button>
+                                        </div>
+                                    </section>
+                                    <!-- Step 2 Content, default hidden on page load. -->
+                                    <section id="step-2" class="form-step d-none">
+                                        <h2 class="font-normal">Professional Certifications</h2>
+                                        <!-- Step 2 input fields -->
+                                        <div class="mt-3">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <label for="exampleFormControlInput1" class="form-label">Certification Name</label>
+                                                    <input type="text" name="certification_name" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <label for="exampleFormControlInput1" class="form-label">Certificate Attachment</label>
+                                                    <input type="file" name="file" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6 ">
+                                                    <label for="exampleFormControlInput1" class="form-label">Start Date</label>
+                                                    <input type="date" name="certification_start_date" class="form-control" >
+                                                </div>
+                                                <div class="col-md-6 phone-mt">
+                                                    <label for="exampleFormControlInput1" class="form-label">End Date</label>
+                                                    <input type="date" name="certification_end_date" class="form-control" >
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mt-3">
+                                            <button class="button btn-navigate-form-step" type="button" step_number="1">Prev</button>
+                                            <button class="button btn-navigate-form-step" type="button" step_number="3">Next</button>
+                                        </div>
+                                    </section>
+                                    <!-- Step 3 Content, default hidden on page load. -->
+                                    <section id="step-3" class="form-step d-none">
+                                        <h2 class="font-normal">Experience Background</h2>
+                                        <!-- Step 3 input fields -->
+                                        <div class="mt-3">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label for="exampleFormControlInput1" class="form-label">Company Name</label>
+                                                    <input type="text" class="form-control" name="employment_company"  >
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="exampleFormControlInput1" class="form-label">Profession Name/Title</label>
+                                                    <input type="text" class="form-control" name="employment_title"  >
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label for="exampleFormControlInput1" class="form-label">Start Date</label>
+                                                    <input type="date" name="employment_start_date" class="form-control">
+                                                </div>
+                                                <div class="col-md-6 phone-mt">
+                                                    <label for="exampleFormControlInput1" class="form-label">End Date</label>
+                                                    <input type="date" name="employment_end_date" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mt-3">
+                                            <button class="button btn-navigate-form-step" type="button" step_number="2">Prev</button>
+                                            <button class="button submit-btn btn-orange" type="submit">Save</button>
+                                        </div>
+                                    </section>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    {{-- <form id="msform" class="pt-0" action="" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Complete your profile</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Please fill in the application form. It will take a couple of minutes. </p>
+                            <div class="disclaimer">
+                                <img src="{{ asset('images/icons/lock.svg') }}" width="20px" alt="">
+                                <div>
+                                We take privacy issues seriously. You can be sure that your personal data is securely protected.
+
+                                </div>
+                            </div>
+                            <!-- progressbar -->
+                            <ul id="progressbar" style="padding-left: 0px;">
+                                <li class="active"></li>  
+                                <li></li> 
+                                <li></li>
+                                <li></li>
+                                
+                            </ul>
+                            <fieldset>
+                                
+                                <button type="button" class="next action-button my-5 px-10">Start application</button>
+                            </fieldset>
+
+                            <!-- Educational Background -->
+                            <fieldset>
+                                <div class="inner-title">1.0 EDUCATIONAL INFORMATION</div>
+                                <div class="form-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <label for="exampleFormControlInput1" class="form-label">Instution Name</label>
+                                            <input type="text" name="institution_name" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label for="exampleFormControlInput1" class="form-label">Level of Study</label>
+                                            <input type="text" name="study_level" class="form-control">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="exampleFormControlInput1" class="form-label">Course of Study</label>
+                                            <input type="text" name="course_of_study" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 ">
+                                            <label for="exampleFormControlInput1" class="form-label">Start Date</label>
+                                            <input type="date" name="education_start_date" class="form-control" >
+                                        </div>
+                                        <div class="col-md-6 phone-mt">
+                                            <label for="exampleFormControlInput1" class="form-label">End Date</label>
+                                            <input type="date" name="education_end_date" class="form-control" >
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button type="button" class="action-button previous previous_button mt-5">Back</button> 
+                                <button type="button" class="next action-button mb-5">Continue</button>
+                            </fieldset>
+                        </div>
+                    </form> --}}
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 <script>
-
+    
 </script>
 @endsection

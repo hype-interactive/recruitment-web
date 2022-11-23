@@ -52,7 +52,11 @@ console.log(winWidth);
 
 </script>
 
+{{-- Amazing Form for Profile update JS Scripts --}}
 
+<script src="/js/newform.js"></script>
+
+{{-- Owl Carousel JS Scripts --}}
 <script src="/js/carousel/owl.carousel.min.js"></script>
 <script src="/js/carousel/main.js"></script>
 </html>
