@@ -15,7 +15,7 @@ class ApplicationController extends Controller
     {
         $this->middleware('auth');
 
-    }
+    }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 
     public function showPanel($post_id)
     {

@@ -1,0 +1,15 @@
+.gallery-page-intro{
+    background-color: #fafafa;
+    background-image: url('../images/intro-gallery.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    width: 100%;
+    padding-top: 150px;
+    padding-bottom: 150px;
+
+    .page-intro-header {
+        text-align: center;
+        color: white;
+    }
+}

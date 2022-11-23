@@ -1,0 +1,46 @@
+.gallery-wrapper{
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+
+    .grid {
+        background: white;
+        margin: 0 auto;
+        .grid-sizer, .grid-item{
+            width: 33.33%;
+        }
+
+        .grid-item{
+            border: 3px solid white;
+            float: left;
+            overflow: hidden;
+            img{
+                width: 100%;
+                // object-fit: cover;
+                object-position: center;
+                z-index: -1;
+                display: block;
+                max-width: 100%;
+                transition: 2s;
+            }
+
+        }
+        .grid-item:hover{
+            img{
+                transition: 2s;
+                transform: scale(1.05);
+                z-index: 10;
+            }
+        }
+      }
+      
+      /* clear fix */
+      .grid:after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+      
+      /* ---- .grid-item ---- */
+      
+      
+}

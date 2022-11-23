@@ -5,11 +5,14 @@
 @import 'pages/main',
         'pages/jobs',
         'pages/job', 
-        'pages/about';
+        'pages/about',
+        'pages/gallery';
 
 @import 'sections/partners',
         'sections/testimonials',
-        'sections/staff';
+        'sections/staff',
+        'sections/gallery',
+        'sections/gallery_filters';
 
 @import 'components/cool_form';
 

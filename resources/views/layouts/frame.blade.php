@@ -59,5 +59,7 @@ console.log(winWidth);
 {{-- Owl Carousel JS Scripts --}}
 <script src="/js/carousel/owl.carousel.min.js"></script>
 <script src="/js/carousel/main.js"></script>
+
+@yield('extra-js')
 </html>
 

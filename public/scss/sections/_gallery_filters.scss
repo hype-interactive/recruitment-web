@@ -1,0 +1,33 @@
+.gallery-filter-wrapper{
+    .pill-wrapper{
+        margin-top: 0.8rem;
+        margin-right: 0.8rem;
+        width: fit-content;
+        font-size: 0.9rem;
+        .pill{
+            padding: 0.3rem 1.5rem;
+            color: white;
+            width: fit-content;
+            border-radius: 30px;
+            border: 1px solid color(accent-fade) ;
+            background: #2b5876;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #2b5876 0%, #4e4376 51%, #2b5876 100%);  /* Chrome 10-25, Safari 5.1-6 */
+            background-image: linear-gradient(to right, #2b5876 0%, #4e4376 51%, #2b5876 100%);
+            
+        }
+        .pill:hover{
+            background: color(primary);
+        }
+    }
+        
+        .active{
+            button{
+                background: color(accent) !important ;
+                border-color: color(secondary) !important;
+            }
+        }
+        i{
+            color: color(secondary);
+        }
+        
+}

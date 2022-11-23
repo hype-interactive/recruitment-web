@@ -21,6 +21,9 @@
             <li class="nav-item"> 
                 <a class="nav-link" href="{{route('about_us')}}">About</a>
             </li>
+            <li class="nav-item"> 
+                <a class="nav-link" href="{{route('gallery')}}">Gallery</a>
+            </li>
         </ul>
         <div class="social d-flex">
             <a href="https://www.instagram.com/toptalentedrecruits/" target="_blank" class="d-flex justify-content-center"><img class="ma-r-2" src="{{asset('images/icons/instagram.svg')}}" alt=""></a>
