@@ -20,7 +20,7 @@
             <p>Copyright © 2010-{{ date('Y') }} Top Talented Recruits . All rights reserved</p>
             <ul>
                 <li>Terms</li>
-                <li>AFQ</li>
+                <li>FAQ</li>
                 <li>About</li>
             </ul>
         </div>

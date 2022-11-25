@@ -83,6 +83,10 @@ Route::get('/admin/manage_users','App\Http\Controllers\Admin\UserController@mana
 Route::post('/admin/add_admin','App\Http\Controllers\Admin\UserController@addAdmin')->name('admin.add_admin');
 Route::post('revoke_admin','App\Http\Controllers\Admin\UserController@revoke')->name('admin.revoke_admin');
 
+// admin client management routes
+Route::get('/admin/clients','App\Http\Controllers\Admin\UserController@clientManagement')->name('admin.manage_clients');
+Route::get('/admin/clients/{id}','App\Http\Controllers\Admin\UserController@getClientDetails')->name('admin.client_details');
+
 
 
 Route::get('/auth/google/redirect', 'App\Http\Controllers\SocialAuthGoogleController@redirect')->name('auth.google_authenticate');

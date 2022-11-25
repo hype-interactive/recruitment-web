@@ -8,7 +8,10 @@
 @section('body')
 <div class="container">
     <div class="application-wrapper">
-        <div class="personal-info row">
+        <div class="personal-info">
+            <b>Application for: {{ $application->jobPost->title  }}</b>
+        </div>
+        {{-- <div class="personal-info row">
             <div class="col-md-2">
                 <div class="avatar">
                     <img src="{{asset('images/icons/man-user.svg')}}" alt="">
@@ -46,7 +49,7 @@
                     <div class="col-md-4"></div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <div class="row documents">
 
             <div class="row">

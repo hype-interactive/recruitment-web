@@ -22,6 +22,7 @@
                 @if (Auth::user()->type == "admin")
                     <li><a href="{{route('admin.manage_users')}}">User Management</a></li>    
                 @endif
+                <li><a href="{{ route('admin.manage_clients') }}">Client Management</a></li>
             </ul>
             <br>
             <hr style="margin-top: 5px ; margin-bottom:5px">
