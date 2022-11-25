@@ -3,7 +3,7 @@
 @if ($application ?? '')
     <div class="container">
         <div class="warning">
-            You have already applied ! <br> Wait for your application progress
+            You have already applied! <br> Wait for your application progress
         </div>
     </div>
 @else

@@ -9,13 +9,16 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ApplicationSubmission;
+
 class ApplicationController extends Controller
 {
     public function __construct()
     {
         $this->middleware('auth');
 
-    }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+    }                                                                                   
 
     public function showPanel($post_id)
     {
@@ -27,23 +30,27 @@ class ApplicationController extends Controller
             return view('application_form',['post'=>$post]);
         }
     }
+
     public function add(Request $request)
     {
 
         $document= app('App\Http\Controllers\ApplicationDocumentController')->add($request);
         if($document){
 
-            $user=User::find(Auth::user()->id);
+            $user = User::find(Auth::user()->id);
             $user->type="applicant";
 
-            $application= new Application();
+            $application = new Application();
             $application->user_id=$request->user_id;
             $application->job_post_id=$request->post_id;
             $application->application_document_id=$document->id;
 
-            if($application->save() && $user->update()) return back()->with('msg','You have successively submitted application');
+            if($application->save() && $user->update()){
+                Mail::to($user->email)->send(new ApplicationSubmission($user, $application->jobPost)); // send email to user informing successful application submission
+                return back()->with('msg','You have successfully submitted application');
+            } 
         }
 
-        return back()->with('msg','failed to submit application');
+        return back()->with('msg','Failed to submit application');
     }
 }

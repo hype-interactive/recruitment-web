@@ -9,6 +9,9 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
+use Illuminate\Support\Facades\Mail;
+use App\Mail\SuccessfulRegistration;
+
 class RegisterController extends Controller
 {
     /*
@@ -66,7 +69,8 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+
+        $user = User::create([
             'fname' => $data['fname'],
             'lname' => $data['lname'],
             'phone' => $data['phone'],
@@ -74,5 +78,17 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+
+        if ($user) {
+            Mail::to($data['email'])->send(new SuccessfulRegistration($data));
+            return $user;
+        }
+
+
+        if (Mail::failures()) {
+            return response()->Fail('Sorry! Please try again latter');
+        } else {
+            return response()->success('Great! Successfully send in your mail');
+        }
     }
 }

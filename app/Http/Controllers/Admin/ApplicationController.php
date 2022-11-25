@@ -8,6 +8,9 @@ use App\Models\Application;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Log;
 
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ApplicationStatus;
+
 class ApplicationController extends Controller
 {
     public function getJobPostApplications($job_post_id)
@@ -57,23 +60,33 @@ class ApplicationController extends Controller
 
     public function accept($application_id)
     {
-        $application= Application::find($application_id);
+        $application = Application::find($application_id);
         $application->status="selected";
-        if($application->update()) return back();
+        if($application->update()) {
+            Mail::to($application->user->email)->send(new ApplicationStatus($application->user, $application->status, $application->jobPost));
+            return back();
+        } 
+
     }
 
     public function reject($application_id)
     {
         $application= Application::find($application_id);
         $application->status="rejected";
-        if($application->update()) return back();
+        if($application->update()) {
+            Mail::to($application->user->email)->send(new ApplicationStatus($application->user, $application->status, $application->jobPost));
+            return back();
+        } 
     }
 
     public function reserve($application_id)
     {
         $application= Application::find($application_id);
         $application->status="reserved";
-        if($application->update()) return back();
+        if($application->update()) {
+            Mail::to($application->user->email)->send(new ApplicationStatus($application->user, $application->status, $application->jobPost));
+            return back();
+        }
     }
 
 }

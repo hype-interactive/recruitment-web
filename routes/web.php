@@ -92,3 +92,9 @@ Route::get('/auth/google/callback', 'App\Http\Controllers\SocialAuthGoogleContro
 // route to optimize images 
 
 Route::post('/photo','PhotosController@store')->middleware('optimizeImages');
+
+// tester routes
+Route::get('test', function () {
+    return view('test');
+});
+Route::post('test','App\Http\Controllers\TestController@test')->name('test');
