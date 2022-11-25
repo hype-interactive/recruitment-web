@@ -31,7 +31,8 @@ function getAlbum(str) {
 
     for (let index = 0; index < resp.length; index++) {
       
-      var $item = $("<div class='grid-item'><img src="+ resp[index].url+" /></div>");
+      // var $item = $("<div class='grid-item'><img src={{Storage::url("+ resp[index].url+")}} /></div>");
+      var $item = '<div class="grid-item"><img src={{Storage::url('+ resp[index].url +')}} /></div>';
       $grid.append(  $item)
       .masonry( 'appended', $item);
     }

@@ -1,28 +1,33 @@
 <div class="gallery-wrapper">
     <div class="grid" id="gallery" >
         <div class="grid-sizer"></div>
-        @foreach ($images as $image)
-        <div class="grid-item">
-          <img src={{ $image->url }} />
-        </div>
-        @endforeach
+          @if (count($images) > 0)
+            @foreach ($images as $image)
+            <div class="grid-item">
+              <img src={{ Storage::url($image->url) }} />
+            </div>
+            @endforeach
+
+          @else
+
+            <!-- For demo purposes -->
+            <div class="grid-item">
+              <img src={{ asset('/images/intro-gallery.jpg') }} />
+            </div>
+            <div class="grid-item">
+              <img src={{ asset('/images/man.jpg') }} />
+            </div>
+            <div class="grid-item">
+              <img src={{ asset('/images/intro-gallery.jpg') }} />
+            </div>
+            <div class="grid-item">
+              <img src={{ asset('/images/intro-gallery.jpg') }} />
+            </div>
+            <div class="grid-item">
+              <img src={{ asset('/images/intro-gallery.jpg') }} />
+            </div>
+          @endif
         
-        <!-- For demo purposes -->
-        <div class="grid-item">
-          <img src={{ asset('/images/intro-gallery.jpg') }} />
-        </div>
-        <div class="grid-item">
-          <img src={{ asset('/images/man.jpg') }} />
-        </div>
-        <div class="grid-item">
-          <img src={{ asset('/images/intro-gallery.jpg') }} />
-        </div>
-        <div class="grid-item">
-          <img src={{ asset('/images/intro-gallery.jpg') }} />
-        </div>
-        <div class="grid-item">
-          <img src={{ asset('/images/intro-gallery.jpg') }} />
-        </div>
     </div>
       @section('extra-js')
       <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>

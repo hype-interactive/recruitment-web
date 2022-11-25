@@ -87,7 +87,23 @@ Route::post('revoke_admin','App\Http\Controllers\Admin\UserController@revoke')->
 Route::get('/admin/clients','App\Http\Controllers\Admin\UserController@clientManagement')->name('admin.manage_clients');
 Route::get('/admin/clients/{id}','App\Http\Controllers\Admin\UserController@getClientDetails')->name('admin.client_details');
 
+// admin gallery/event/activities management routes
+Route::get('/admin/gallery','App\Http\Controllers\Admin\GalleryController@manage')->name('admin.manage_gallery');
 
+//album management
+Route::get('/admin/album/{id}/images', [App\Http\Controllers\Admin\GalleryController::class, 'getAlbum'])->name('admin.album.images');
+Route::get('/admin/add_album_panel','App\Http\Controllers\Admin\GalleryController@displayAddAlbumPanel')->name('admin.album.create_panel');
+Route::post('/admin/add_album','App\Http\Controllers\Admin\GalleryController@createAlbum')->name('admin.album.create');
+Route::get('/admin/edit_album_panel/{id}','App\Http\Controllers\Admin\GalleryController@displayEditAlbumPanel')->name('admin.album.edit_panel');
+Route::post('/admin/edit_album','App\Http\Controllers\Admin\GalleryController@editAlbum')->name('admin.album.edit');
+// Route::post('/admin/delete_album','App\Http\Controllers\Admin\GalleryController@deleteAlbum')->name('admin.delete_album');
+
+//image management
+Route::get('/admin/add_image_panel','App\Http\Controllers\Admin\GalleryController@displayAddImagePanel')->name('admin.image.create_panel');
+Route::post('/admin/add_image','App\Http\Controllers\Admin\GalleryController@addImage')->name('admin.image.create');
+Route::get('/admin/edit_image_panel/{id}','App\Http\Controllers\Admin\GalleryController@displayEditImagePanel')->name('admin.image.edit_panel');
+Route::post('/admin/edit_image','App\Http\Controllers\Admin\GalleryController@editImage')->name('admin.image.edit');
+// Route::post('/admin/delete_image','App\Http\Controllers\Admin\GalleryController@deleteImage')->name('admin.delete_image');
 
 Route::get('/auth/google/redirect', 'App\Http\Controllers\SocialAuthGoogleController@redirect')->name('auth.google_authenticate');
 Route::get('/auth/google/callback', 'App\Http\Controllers\SocialAuthGoogleController@callback');

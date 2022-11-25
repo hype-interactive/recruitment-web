@@ -1,0 +1,32 @@
+.admin-gallery-wrapper {
+    .gallery-intro {
+        background: white;
+        padding: 1rem;
+        border-radius: 5px;
+
+        .right {
+            float: right;
+            margin-bottom: 0;
+            a {
+                margin-top: 0;
+                margin-bottom: 2rem;
+            }
+            button, a.btn {
+                padding: 0 1.5rem !important;
+            }
+            button:hover, a.btn:hover {
+                padding: 0 1.5rem !important;
+            }
+            button:hover, a:hover {
+                background: $silver-sand;
+            }
+        }
+    }
+
+    .album-list {
+        margin-top: 2rem;
+        background: white;
+        padding: 1rem;
+        border-radius: 5px;
+    }
+}
