@@ -118,7 +118,7 @@
                 resp=JSON.parse(this.responseText);
                 // console.log(this.responseText);
                 if(resp.length == 0){
-                    var noresult_str='<div class=" nodata"><img src="/images/nodata.jpeg" alt=""><h3 class="text-danger">No result found !</h3></div>';
+                    var noresult_str='<div class="col-sm-12 nodata"><img src="/images/nodata.jpeg" alt=""><h3 class="text-danger">No result found !</h3></div>';
                     document.getElementById('post_list').innerHTML=noresult_str;
 
                 }else{

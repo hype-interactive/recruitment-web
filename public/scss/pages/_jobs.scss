@@ -5,8 +5,12 @@
     margin-bottom: 2rem;
     margin-right: 1rem;
     width: 100%;
+    
     .search-bar{
         padding: 0.7rem;
+        padding-left: 0.1rem;
+        padding-top: 0.1rem;
+        padding-bottom: 0.1rem;
         margin-top: 1rem;
         margin-bottom: 1rem;
         display: flex;
@@ -17,12 +21,14 @@
             background-color: white;
             padding: 0.5rem;
             border-radius: 5px;
+            margin-top: 1rem;
         }
         .search-box{
             width: 83% !important;
         }
         .search-button{
             width: 15% !important;
+            height: fit-content !important;
             background-color: $orange;
         }
       
@@ -30,7 +36,6 @@
 }
 .filter{
     background-color: white;
-    margin-top: 1rem;
     padding-left: 0;
     h5{
         text-align: center;
@@ -78,8 +83,6 @@
 
 .urgent-jobs {
     background-color: white;
-    margin-top: 1rem;
-    // margin-left: .8rem;
     padding-left: 0;
     max-height: 500px !important;
     overflow-y: scroll;

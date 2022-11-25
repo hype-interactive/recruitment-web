@@ -14,7 +14,7 @@
                 <div class="owl-carousel testimonials-slider owl-theme">
                     <div>
                         <div class="card text-center">
-                            <img class="card-img-top" src="{{ asset('images/avatar.jpg') }}" alt="tester">
+                            <img class="card-img-top" src="{{ asset('images/icons/man-user.svg') }}" alt="tester">
                             <div class="card-body">
                                 <h5>
                                     Patrick Mamsery
@@ -27,7 +27,7 @@
                     </div>
                     <div>
                         <div class="card text-center">
-                            <img class="card-img-top" src="{{ asset('images/avatar.jpg') }}" alt="tester">
+                            <img class="card-img-top" src="{{ asset('images/icons/man-user.svg') }}" alt="tester">
                             <div class="card-body">
                                 <h5>
                                     Yudathadei Mdamu
@@ -40,7 +40,7 @@
                     </div>
                     <div>
                         <div class="card text-center">
-                            <img class="card-img-top" src="{{ asset('images/avatar.jpg') }}" alt="tester">
+                            <img class="card-img-top" src="{{ asset('images/icons/man-user.svg') }}" alt="tester">
                             <div class="card-body">
                                 <h5>
                                     Hellena Nyamweru

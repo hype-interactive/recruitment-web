@@ -911,6 +911,13 @@ button:focus{
         background-color: rgb(238, 249, 253);
     }
 
+    textarea{
+        border: none ;
+        border-bottom: 1px solid $primary-color !important;
+        margin-bottom: 1rem;
+        background-color: rgb(238, 249, 253);
+    }
+
     label{
         font-weight: 400;
         font-size: small;
@@ -1202,6 +1209,8 @@ button:focus{
     justify-content: center;
     margin: 2rem;
     padding: 1rem;
+    z-index: 2 !important;
+    max-width: 500px !important;
     img{
         width: 5rem;
         margin-right: 2rem;
@@ -1348,6 +1357,11 @@ button:focus{
     }
     .auth-wrapper{
         margin: 1rem;
+    }
+
+    .nodata {
+
+        max-width: 450px !important;
     }
     //media query end
  }

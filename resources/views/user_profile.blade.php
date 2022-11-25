@@ -73,8 +73,16 @@
             </driv>
 
         </div>
+
+        <!-- Add more information Section & Modal -->
+        <div class="col-xs-8 col-xs-offset-5 col-md-12 text-center">
+            <button type="" class="btn btn-orange btn-lg" data-bs-toggle="modal" data-bs-target="#form-modal" onclick="$('#response').hide();">
+                Complete your profile
+            </button>
+        </div>
+
         @if ($applications ?? '')
-            <div class="row ">
+            <div class="row">
                 @foreach ($applications as $application)
                     <div class="col-md-6 ma-t-2 ">
                         <div class="profile-card">
@@ -98,13 +106,6 @@
             </div>
         @endif
             
-
-        <!-- Add more information Section & Modal -->
-        <div class="col-xs-8 col-xs-offset-5 col-md-12 text-center">
-            <button type="" class="btn btn-orange btn-lg" data-bs-toggle="modal" data-bs-target="#form-modal" onclick="$('#response').hide();">
-                Complete your profile
-            </button>
-        </div>
     </div>
 </div>
 
@@ -157,16 +158,16 @@
                                     @csrf
                                     <!-- Step 1 Content -->
                                     <section id="step-1" class="form-step">
-                                        <h2 class="font-normal">Educational Information</h2>
+                                        <h2 class="font-normal fs">Educational Information</h2>
                                         <!-- Step 1 input fields -->
                                         <div class="mt-3">
-                                            <div class="row">
+                                            <div class="row mb-2">
                                                 <div class="col-md-12">
                                                     <label for="exampleFormControlInput1" class="form-label">Instution Name</label>
                                                     <input type="text" name="institution_name" class="form-control">
                                                 </div>
                                             </div>
-                                            <div class="row">
+                                            <div class="row mb-2">
                                                 <div class="col-md-6">
                                                     <label for="exampleFormControlInput1" class="form-label">Level of Study</label>
                                                     <input type="text" name="study_level" class="form-control">
@@ -176,7 +177,7 @@
                                                     <input type="file" name="edu_certificate" class="form-control">
                                                 </div>
                                             </div>
-                                            <div class="row">
+                                            <div class="row mb-2">
                                                 <div class="col-md-6 ">
                                                     <label for="exampleFormControlInput1" class="form-label">Start Date</label>
                                                     <input type="date" name="education_start_date" class="form-control" >
@@ -193,10 +194,10 @@
                                     </section>
                                     <!-- Step 2 Content, default hidden on page load. -->
                                     <section id="step-2" class="form-step d-none">
-                                        <h2 class="font-normal">Professional Certifications</h2>
+                                        <h2 class="font-normal fs">Professional Certifications</h2>
                                         <!-- Step 2 input fields -->
                                         <div class="mt-3">
-                                            <div class="row">
+                                            <div class="row mb-2">
                                                 <div class="col-md-6">
                                                     <label for="exampleFormControlInput1" class="form-label">Certification Name</label>
                                                     <input type="text" name="certification_name" class="form-control">
@@ -206,13 +207,13 @@
                                                     <input type="text" name="profession_institute" class="form-control">
                                                 </div>
                                             </div>
-                                            <div class="row">
+                                            <div class="row mb-2">
                                                 <div class="col-md-12">
                                                     <label for="exampleFormControlInput1" class="form-label">Certificate Attachment</label>
                                                     <input type="file" name="prof_certificate" class="form-control">
                                                 </div>
                                             </div>
-                                            <div class="row">
+                                            <div class="row mb-2">
                                                 <div class="col-md-6 ">
                                                     <label for="exampleFormControlInput1" class="form-label">Start Date</label>
                                                     <input type="date" name="certification_start_date" class="form-control" >
@@ -230,10 +231,10 @@
                                     </section>
                                     <!-- Step 3 Content, default hidden on page load. -->
                                     <section id="step-3" class="form-step d-none">
-                                        <h2 class="font-normal">Experience Background</h2>
+                                        <h2 class="font-normal fs">Experience Background</h2>
                                         <!-- Step 3 input fields -->
                                         <div class="mt-3">
-                                            <div class="row">
+                                            <div class="row mb-2">
                                                 <div class="col-md-6">
                                                     <label for="exampleFormControlInput1" class="form-label">Company Name</label>
                                                     <input type="text" class="form-control" name="employment_company"  >
@@ -243,7 +244,7 @@
                                                     <input type="text" class="form-control" name="job_title"  >
                                                 </div>
                                             </div>
-                                            <div class="row">
+                                            <div class="row mb-2">
                                                 <div class="col-md-6">
                                                     <label for="exampleFormControlInput1" class="form-label">Start Date</label>
                                                     <input type="date" name="experience_start_date" class="form-control">
