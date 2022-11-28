@@ -23,7 +23,7 @@
                     @endfor
                 @else
                     @foreach ($staffs as $staff)
-                        @if ($staff->is_director)
+                        {{-- @if ($staff->is_director) --}}
                             <a class="col-md-4">
                                 <div class="card " >
                                     <div class="card-image">
@@ -35,7 +35,7 @@
                                     </div>
                                 </div>
                             </a>
-                        @endif
+                        {{-- @endif --}}
                     @endforeach
                 @endif
             </div>

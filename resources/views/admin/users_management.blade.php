@@ -45,8 +45,17 @@
       <form action="{{route('admin.add_admin')}}" method="POST">
         @csrf
       <div class="modal-body">
-        <div class="form-row">
-          <input class="form-control" type="text" name="email"  placeholder="Email" required>
+        <div class="form-row mb-2">
+          <input class="form-control" type="text" name="fname"  placeholder="First Name" required>
+        </div>
+        <div class="form-row mb-2">
+          <input class="form-control" type="text" name="lname"  placeholder="Last Name" required>
+        </div>
+        <div class="form-row mb-2">
+          <input class="form-control" type="email" name="email"  placeholder="Email" required>
+        </div>
+        <div class="form-row mb-2">
+          <input class="form-control" type="phone" name="phone"  placeholder="Phone Number: 0......" required>
         </div>
       </div>
       <div class="modal-footer">

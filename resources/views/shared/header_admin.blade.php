@@ -23,7 +23,7 @@
                     <li><a href="{{route('admin.manage_users')}}">User Management</a></li>    
                 @endif
                 <li><a href="{{ route('admin.manage_clients') }}">Client Management</a></li>
-                <li><a href="">Team</a></li>
+                <li><a href="{{ route('admin.manage_staff') }}">Team</a></li>
                 <li><a href="{{ route('admin.manage_gallery') }}">Gallery</a></li>
             </ul>
             <br>

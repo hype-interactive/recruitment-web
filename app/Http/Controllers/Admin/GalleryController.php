@@ -46,15 +46,28 @@ class GalleryController extends Controller
         $album = Album::find($id);
 
         if ($album) {
+            // dd($album);
             return view('admin.edit_album', ['album' => $album]);
         } else {
             return redirect()->back()->with('msg', 'Album not found!');
         }
     }
 
-    public function editAlbum()
+    public function editAlbum(Request $request)
     {
-        return view('admin.edit_album');
+        $validator = Validator::make($request->all(), [
+            'album_name' => 'required',
+            'album_description' => 'required',
+            'visibility' => 'required',
+        ]);
+
+        $album = Album::find($request->album_id);
+        $album->name = $request->album_name;
+        $album->description = $request->album_description;
+        $album->visibility = $request->visibility ? 1 : 0;
+        $album->save();
+
+        return redirect()->route('admin.manage_gallery')->with('msg', 'Album updated successfully.');
     }
 
     public function getAlbum($id)
@@ -115,8 +128,29 @@ class GalleryController extends Controller
         }
     }
 
-    public function editImage()
+    public function editImage(Request $request)
     {
-        return view('admin.edit_image');
+        $validator = Validator::make($request->all(), [
+            'album_id' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        $image = Image::find($request->image_id);
+        $image->album = $request->album_id;
+        $image->caption = $request->caption;
+        
+        if($request->hasFile('image')){
+            $path = $request->image->store('public/uploaded_img');
+            $image->url = $path;
+            $pathToImage = Storage::path($path);
+            $optimizer = OptimizerChainFactory::create();
+            $optimizer->optimize($pathToImage);
+        } else {
+            return redirect()->back()->with('msg','Failed to upload photo');
+        }
+
+        $image->save();
+
+        return redirect()->back()->with('msg', 'Image edited successfully.');
     }
 }

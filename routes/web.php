@@ -108,6 +108,17 @@ Route::post('/admin/edit_image','App\Http\Controllers\Admin\GalleryController@ed
 Route::get('/auth/google/redirect', 'App\Http\Controllers\SocialAuthGoogleController@redirect')->name('auth.google_authenticate');
 Route::get('/auth/google/callback', 'App\Http\Controllers\SocialAuthGoogleController@callback');
 
+// staff management
+Route::get('/admin/staff','App\Http\Controllers\Admin\StaffController@manage')->name('admin.manage_staff');
+Route::get('/admin/add_staff_panel','App\Http\Controllers\Admin\StaffController@displayAddStaffPanel')->name('admin.staff.create_panel');
+Route::post('/admin/add_staff','App\Http\Controllers\Admin\StaffController@addStaff')->name('admin.staff.create');
+Route::get('/admin/edit_staff_panel/{id}','App\Http\Controllers\Admin\StaffController@displayEditStaffPanel')->name('admin.staff.edit_panel');
+Route::post('/admin/edit_staff','App\Http\Controllers\Admin\StaffController@editStaff')->name('admin.staff.edit');
+// Route::post('/admin/delete_image','App\Http\Controllers\Admin\StaffController@deleteImage')->name('admin.delete_image');
+
+Route::get('/auth/google/redirect', 'App\Http\Controllers\SocialAuthGoogleController@redirect')->name('auth.google_authenticate');
+Route::get('/auth/google/callback', 'App\Http\Controllers\SocialAuthGoogleController@callback');
+
 
 // route to optimize images 
 

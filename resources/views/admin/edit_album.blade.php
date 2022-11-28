@@ -15,6 +15,7 @@
             </div>
         </div>
         <div class="album-list">
+            <input type="hidden" name="album_id" value="{{ $album->id }}">
                 <div class="row mb-2">
                     <div class="col-md-6">
                         <label for="albumName">Name</label>
