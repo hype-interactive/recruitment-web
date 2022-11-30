@@ -71,6 +71,7 @@ class UserController extends Controller
     {
         $user = User::find(Auth::user()->id);
         $user->type = 'applicant';
+        $user->date_of_birth = $request->date_of_birth ? $request->date_of_birth : NULL;
         
         DB::transaction(function () use ($request, $user) {
             

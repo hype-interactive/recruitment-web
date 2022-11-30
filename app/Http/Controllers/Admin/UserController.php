@@ -7,13 +7,30 @@ use Illuminate\Http\Request;
 use App\Models\User;
 
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Log;
+use App\Mail\AdminCreated;
+
 class UserController extends Controller
 {
+    public function __construct(Type $var = null)
+    {
+        $this->middleware('auth');
+    }
+
+    public function adminProfile($id)
+    {
+        $user = User::find($id);
+        return view('admin.profile', compact('user'));
+    }
+
     public function countSignupsMonthly($month)
     {
         $users=User::where('created_at','like',$month.'%')->get();
         return count($users);
     }
+
     public function countUsers()
     {
         $users = User::all();
@@ -42,9 +59,20 @@ class UserController extends Controller
         // $user=User::where('email','=',$request->email)->first();
         // $user->type="admin";
         $user = User::where('fname', $request->fname)->where('lname', $request->lname)->where('email', $request->email)->first();
+        // dd($user);
         if ($user) {
             $user->type = "admin";
-            if($user->update()) return redirect()->back()->with('success', 'Admin added successfully');
+            if($user->update()){
+                Mail::to($user->email)->send(new AdminCreated($user, "Your own current password"));
+
+                if (Mail::failures()) {
+                    Log::error('Failed to send email to ' . $user->email);
+                } else {
+                    Log::info('Email sent to ' . $user->email);
+                }
+
+                return redirect()->back()->with('success', 'Admin added successfully');
+            }
         } else {
             $user = new User();
             $user->fname = $request->fname;
@@ -53,8 +81,18 @@ class UserController extends Controller
             $user->phone = $request->phone;
             $user->password = Hash::make($request->email);
             $user->type = "admin";
-            // $user->save();
-            if($user->save()) return back()->with('msg','Admin created successfully');
+
+            if($user->save()) {
+                Mail::to($user->email)->send(new AdminCreated($user, $user->email));
+
+                if (Mail::failures()) {
+                    Log::error('Failed to send email to ' . $user->email);
+                } else {
+                    Log::info('Email sent to ' . $user->email);
+                }
+
+                return back()->with('msg','Admin created successfully');
+            }
         }
     }
 

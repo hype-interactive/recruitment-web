@@ -254,6 +254,23 @@
                                                     <input type="date" name="experience_end_date" class="form-control">
                                                 </div>
                                             </div>
+                                            <div class="row mt-4 d-flex align-items-center">
+                                                <div class="col-md-6">
+                                                    <h6>Addional Information (Optional)</h6>
+                                                    <label for="exampleFormControlInput1" class="form-label">Date of Birth (Optional)</label>
+                                                    <input type="date" name="date_of_birth" class="form-control" aria-describedby="dobHelper">
+                                                    <div id="dobHelper" class="form-text">We take your birthdate for purely statistical reasons and will not share it with other sources without your consent.</div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="checkbox" name="privacy_consent" class="form-check-input" id="privacy_checkout" aria-describedby="privacy">
+                                                    <label for="privacy_checkout" class="form-check-label">
+                                                        I consent to Privacy Policy at <a href="">Terms and Conditions</a>
+                                                    </label>
+                                                    <div class="form-text" id="privacy">
+                                                        Check this box to agree to privacy policy and terms of use. We will not share your information with any third party without your consent.
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="mt-3">
                                             <button class="button btn-navigate-form-step" type="button" step_number="2">Prev</button>

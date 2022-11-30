@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Validator;
 
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SuccessfulRegistration;
+use Illuminate\Support\Facades\Log;
 
 class RegisterController extends Controller
 {
@@ -86,9 +87,9 @@ class RegisterController extends Controller
 
 
         if (Mail::failures()) {
-            return response()->Fail('Sorry! Please try again latter');
+            Log::error('Failed to send email to ' . $data['email']);
         } else {
-            return response()->success('Great! Successfully send in your mail');
+            Log::info('Email sent to ' . $data['email']);
         }
     }
 }

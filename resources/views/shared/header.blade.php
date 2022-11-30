@@ -42,10 +42,11 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-left dp-restyle" aria-labelledby="navbarDropdown">
                     <span>User : <b>{{ Auth::user()->fname }}</b></span>
-                        <a class="dropdown-item" href="{{route('user_profile',Auth::user()->id)}}">
+                    @if (Auth::user()->type != "admin")
+                        <a class="dropdown-item" href="{{route('user_profile', Auth::user()->id)}}">
                             My Profile
                         </a>
-                    @if (Auth::user()->type == "admin")
+                    @else
                         <a class="dropdown-item" href="{{route('admin.dashboard')}}">
                             Dashboard
                         </a>

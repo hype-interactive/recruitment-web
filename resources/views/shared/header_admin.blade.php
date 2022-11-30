@@ -10,7 +10,30 @@
                 <li></li>
                 <li></li>
                 <li>
-                    <div class="auth-banner"><span>{{substr(Auth::user()->fname,0,1).substr(Auth::user()->lname,0,1)}}</span>{{Auth::user()->fname}}</div>
+                    <div class="dropdown dropstart">
+                        <a class="navbarDropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <div class="auth-banner">
+                                <span>
+                                    {{substr(Auth::user()->fname,0,1).substr(Auth::user()->lname,0,1)}}
+                                </span>{{Auth::user()->fname}}
+                            </div>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-left dp-restyle">
+                            <a href="{{ route('admin_user_profile', Auth::user()->id) }}" class="dropdown-item">
+                                Profile
+                            </a>
+                            <a 
+                                href="{{ route('logout') }}" 
+                                class="dropdown-item"
+                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                            >
+                                Logout
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </div>
+                    </div>
                 </li>
             </ul>
         </div>

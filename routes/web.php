@@ -49,6 +49,7 @@ Route::post('reset_password','App\Http\Controllers\UserController@resetPassword'
 
 
 // admin routes
+Route::get('admin/user/{id}','App\Http\Controllers\Admin\UserController@adminProfile')->name('admin_user_profile');
 
 
 Route::post('add_category','App\Http\Controllers\Admin\JobCategoryController@addCategory')->name('admin.add_category');
