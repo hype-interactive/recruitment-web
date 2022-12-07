@@ -66,39 +66,32 @@
             </div>
 
             <div class="col-md-3 urgent-jobs">
-                @for ($i = 1; $i < 9; $i++)
-                    <a href="">
-                        <div class="urgent-job-banner">
-                            <div class="">
-                                <b>IT</b>
-                                <ul>
-                                    <li class="location">Kathmandu</li>
-                                    <li class="desktop_item"> Deadline; 12-12-2021</li>
-                                </ul>
-                            </div>
-                            <div class="closed blink">URGENT</div>
-                        </div>
-                    </a>
-                @endfor
+                {{-- Urgent Job Posts --}}
 
-                @foreach ($job_posts as $post)
-                    @if ($post->is_urgent)
-                    <a href="{{route('job_post',$post->id)}}">
-                        <div class="urgent-job-banner">
-                            <div class="">
-                                <b>{{ $post->jobCategory->name }}</b>
-                                <ul>
-                                    <li class="location">{{ $post->region->name }}</li>
-                                    <li class="desktop_item"> Deadline; {{date_format(date_create($post->deadline),"d-M-Y")}}</li>
-                                </ul>
+                @if (count($urgent_posts) > 0)
+                    @foreach ($job_posts as $post)
+                        @if ($post->is_urgent)
+                        <a href="{{route('job_post',$post->id)}}">
+                            <div class="urgent-job-banner">
+                                <div class="">
+                                    <b>{{ $post->jobCategory->name }}</b>
+                                    <ul>
+                                        <li class="location">{{ $post->region->name }}</li>
+                                        <li class="desktop_item"> Deadline; {{date_format(date_create($post->deadline),"d-M-Y")}}</li>
+                                    </ul>
+                                </div>
+                                {{-- @if () --}}
+                                    <div class="closed blink">URGENT</div>
+                                {{-- @endif --}}
                             </div>
-                            {{-- @if () --}}
-                                <div class="closed blink">URGENT</div>
-                            {{-- @endif --}}
-                        </div>
-                    </a>
-                    @endif
-                @endforeach
+                        </a>
+                        @endif
+                    @endforeach
+                @else
+                    <h5 class="text-center mt-2">No Urgent Posts</h5>
+                @endif
+
+                
             </div>
         </div>
     </div>
