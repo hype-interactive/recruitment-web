@@ -76,12 +76,19 @@ class GalleryController extends Controller
         return view('admin.album', ['album' => $album]);
     }
 
-    public function deleteAlbum($id)
+    public function deleteAlbum(Request $request)
     {
-        $album = Album::find($id);
-        $album->delete();
-
-        return redirect()->back()->with('success', 'Album deleted successfully.');
+        $album = Album::find($request->album_id);
+        if ($album) {
+            foreach ($album->images as $image) {
+                Storage::delete($image->url);
+                $image->delete();
+            }
+            $album->delete();
+            return redirect()->back()->with('msg', 'Album deleted successfully.');
+        } else {
+            return redirect()->back()->with('msg', 'Album not found!');
+        }
     }
 
     public function displayAddImagePanel()
@@ -118,7 +125,8 @@ class GalleryController extends Controller
 
     public function displayEditImagePanel($id)
     {
-        $image = Image::find($id);
+        $image = Image::with('album')->find($id);
+        // dd($image->toArray()['album']['name']);
         $albums = Album::all();
 
         if ($image) {
@@ -131,11 +139,15 @@ class GalleryController extends Controller
     public function editImage(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'album_id' => 'required',
+            'album_id' => 'required|exists:albums,id',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        $image = Image::find($request->image_id);
+        if(!$validator) return back()->with('msg', 'Validation failed.');
+
+        // dd($request->album_id);
+        $image = Image::findOrFail($request->image_id);
+        // dd($image);
         $image->album = $request->album_id;
         $image->caption = $request->caption;
         
@@ -149,8 +161,20 @@ class GalleryController extends Controller
             return redirect()->back()->with('msg','Failed to upload photo');
         }
 
-        $image->save();
+        $image->update();
 
-        return redirect()->back()->with('msg', 'Image edited successfully.');
+        return redirect()->route('admin.album.images', $request->album_id)->with('msg', 'Image edited successfully.');
+    }
+
+    public function deleteImage(Request $request)
+    {
+        $image = Image::find($request->image_id);
+        
+        if($image) {
+            $image->delete();
+            return redirect()->back()->with('msg', 'Image deleted successfully.');
+        } else {
+            return redirect()->back()->with('msg', 'Image not found!');
+        }
     }
 }

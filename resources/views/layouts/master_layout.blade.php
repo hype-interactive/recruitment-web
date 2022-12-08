@@ -34,9 +34,10 @@
             {$('#pop-feedback').hide();
             },5000);
             
-
+            
             $('.modal_btn').click(function(){
                 $('#data_id').val($(this).data('bs-id'));
+                // console.log(document.getElementsByClassName('modal_btn'));
             });
         });
     </script>

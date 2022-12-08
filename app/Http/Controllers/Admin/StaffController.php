@@ -12,6 +12,11 @@ use App\Models\Staff;
 
 class StaffController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function manage()
     {
         $staffs = Staff::all();
@@ -112,5 +117,18 @@ class StaffController extends Controller
         $staff->save();
 
         return redirect()->route('admin.manage_staff')->with('msg', 'Staff edited successfully.');
+    }
+
+    public function deleteStaff(Request $request)
+    {
+        // dd($request->all());
+        $staff = Staff::find($request->staff_id);
+
+        if ($staff) {
+            $staff->delete();
+            return redirect()->back()->with('msg', 'Staff deleted successfully.');
+        } else {
+            return redirect()->back()->with('msg', 'Staff not found!');
+        }
     }
 }

@@ -50,6 +50,13 @@
                             <label for="exampleFormControlTextarea1">Enter job description</label>
                             <textarea style="height: fit-content" class="form-control" name="description" id="exampleFormControlTextarea1" >{{$post->description}}</textarea>
                           </div>
+                          <div class="form-check mt-3">
+                            <label for="exampleInputPassword1">Urgent</label>
+                            <input class="form-check-input" type="checkbox" name="is_urgent" id="" aria-describedby="urgentHelp">
+                            <div class="form-text" id="urgentHelp">
+                              <small>Check if this job post is urgent</small>
+                            </div>
+                          </div>
                     </div>
                     <input type="hidden" name="job_post_id" value="{{$post->id}}">
                     {{ csrf_field() }}

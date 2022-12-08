@@ -68,7 +68,7 @@ class JobPostController extends Controller
         $job_post->description = $request->description;
         $job_post->job_category_id = $request->category;
         $job_post->region_id = $request->region;
-        $job_post->is_urgent = $request->is_request ? 1 : 0;
+        $job_post->is_urgent = $request->is_urgent ? 1 : 0;
 
         if($job_post->save()) return redirect('/admin/job-posts')->with("msg","Job post added successfully");
 
@@ -89,7 +89,8 @@ class JobPostController extends Controller
         $job_post->type= $request->type;
         $job_post->description = $request->description;
         $job_post->job_category_id = $request->job_category_id == "" ? $job_post->job_category_id : $request->job_category_id;
-        $job_post->region_id = $request->region; 
+        $job_post->region_id = $request->region;
+        $job_post->is_urgent = $request->is_urgent ? 1 : 0; 
 
         if($job_post->update()) return redirect(route('admin.job_posts'))->with('msg','Post updated successfully!');
 
