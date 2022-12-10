@@ -30,7 +30,10 @@
                         <div class="row mb-2">
                             <div class="">
                                 <label for="image">Image</label>
-                                <input type="file" class="form-control" name="image" id="image" onchange="readURL(this);" required>
+                                <input type="file" class="form-control" name="image" id="image" onchange="readURL(this);" aria-describedby="imageHelp">
+                            </div>
+                            <div class="form-text" id="imageHelp">
+                                <small id="imageHelp">Select an image to upload. Leave empty if it is the same image displayed</small>
                             </div>
                         </div>
                         <div class="row mb-2">

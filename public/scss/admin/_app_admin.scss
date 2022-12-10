@@ -266,6 +266,7 @@ hr{
 
 .add-job-post-form{
     margin: 0.5rem 1rem  5rem 1rem;
+    position: relative;
         label{
             font-weight: 400 !important;
         }
@@ -275,7 +276,7 @@ hr{
        .br-btn{
             position: absolute;
             bottom: .5rem;
-            right: 2rem;
+            right: -1rem !important;
             float: right !important;
             background-color: $primary-color;
             margin-right: 1rem;

@@ -78,7 +78,7 @@
             <div class="modal-footer">
             <form action="{{route('admin.delete_image')}}" method="post">
                 @csrf
-                <input type="hidden" name="image_id" id="image_id">
+                <input type="hidden" name="image_id" id="album_image_id">
                 <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
                 <button type="submit" class="btn btn-primary btn-sm btn-danger">Confirm</button>
             </form>
@@ -93,7 +93,7 @@
     $(document).ready(function () {   
 
         $('.delete-image').click(function(){
-            $('#image_id').val($(this).data('id'));
+            $('#album_image_id').val($(this).data('bs-id'));
         });
     });
 </script>

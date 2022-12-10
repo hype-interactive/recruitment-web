@@ -27,7 +27,7 @@ Route::get('gallery', [App\Http\Controllers\GalleryController::class, 'index'])-
 Route::get('search_images/{q?}', [App\Http\Controllers\GalleryController::class, 'search']);
 
 // Subscription to listed services
-Route::post('subscribe_to_service', 'App\Http\Controllers\SubscriptionController@subscribe')->name('subscribe');
+Route::post('subscribe_to_service', 'App\Http\Controllers\ServiceSubscriptionController@subscribe')->name('subscribe');
 
 
 

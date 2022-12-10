@@ -106,7 +106,7 @@ class GalleryController extends Controller
 
         $image = new Image();
         $image->album = $request->album_id;
-        $image->caption = $request->caption;
+        $image->caption = $request->caption ? $request->caption : null;
         
         if($request->hasFile('image')){
             $path = $request->image->store('public/uploaded_img');
@@ -140,7 +140,7 @@ class GalleryController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'album_id' => 'required|exists:albums,id',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         if(!$validator) return back()->with('msg', 'Validation failed.');
@@ -149,7 +149,7 @@ class GalleryController extends Controller
         $image = Image::findOrFail($request->image_id);
         // dd($image);
         $image->album = $request->album_id;
-        $image->caption = $request->caption;
+        $image->caption = $request->caption ? $request->caption : NULL;
         
         if($request->hasFile('image')){
             $path = $request->image->store('public/uploaded_img');
@@ -158,7 +158,8 @@ class GalleryController extends Controller
             $optimizer = OptimizerChainFactory::create();
             $optimizer->optimize($pathToImage);
         } else {
-            return redirect()->back()->with('msg','Failed to upload photo');
+            
+            // return redirect()->back()->with('msg','Failed to upload photo');
         }
 
         $image->update();

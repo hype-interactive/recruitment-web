@@ -42,7 +42,7 @@
                                     <td class="text-center">
                                         <a href="{{ route('admin.image.edit_panel', $image->id) }}">View</a>
                                         <a
-                                            class="delete-image"
+                                            class="delete-image text-danger"
                                             data-bs-toggle="modal"
                                             data-bs-target="#deleteImage"
                                             data-bs-image_id="{{ $image->id }}"
@@ -85,7 +85,7 @@
     $(document).ready(function () {   
 
         $('.delete-image').click(function(){
-            $('#image_id').val($(this).data('image_id'));
+            $('#image_id').val($(this).data('bs-image_id'));
         });
     });
 </script>

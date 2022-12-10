@@ -31,7 +31,7 @@
                             <td>{{$album->created_at}}</td>
                             <td class="text-center">
                                 <a href="{{ route('admin.album.edit_panel', $album->id) }}">View</a>
-                                <a class="delete-album" data-bs-toggle="modal" data-bs-target="#deleteAlbum" data-bs-album_id="{{ $album->id }}">Delete</a>
+                                <a class="delete-album text-danger" data-bs-toggle="modal" data-bs-target="#deleteAlbum" data-bs-album_id="{{ $album->id }}">Delete</a>
                             </td>
                         </tr>
                     @endforeach
@@ -65,7 +65,7 @@
 <script>
     $(document).ready(function () {   
         $('.delete-album').click(function(){
-            $('#album_id').val($(this).data('album_id'));
+            $('#album_id').val($(this).data('bs-album_id'));
             console.log(document.getElementsByClassName('delete-album'));
             // console.log(document.getElementById('album_id').value);
         });

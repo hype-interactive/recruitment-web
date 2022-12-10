@@ -32,7 +32,7 @@
                             <td>{{$staff->lname}}</td>
                             <td class="text-center">
                                 <a href="{{ route('admin.staff.edit_panel', $staff->id) }}">View</a>
-                                <a href="javascript:void(0)" class="delete-staff" data-bs-toggle="modal" data-bs-target="#deleteStaff" data-bs-staff_id="{{ $staff->id }}">Delete</a>
+                                <a class="delete-staff text-danger" data-bs-toggle="modal" data-bs-target="#deleteStaff" data-bs-staff_id="{{ $staff->id }}">Delete</a>
                             </td>
                         </tr>
                     @endforeach
@@ -68,9 +68,9 @@
 @section('scripts')
 <script>
     $(document).ready(function () {   
-
+        console.log($(this).data('staff_id'))
         $('.delete-staff').click(function(){
-            $('#staff_id').val($(this).data('staff_id'));
+            $('#staff_id').val($(this).data('bs-staff_id'));
         });
     });
 </script>
