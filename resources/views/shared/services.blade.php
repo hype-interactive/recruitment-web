@@ -64,8 +64,7 @@
                                             <div class="card-body px-2 py-2">
                                                 <div class="col-md-12">
                                                     <input class="form-control" name="email" type="email" placeholder="Enter your email here" autocomplete="old-email">
-                                                    <textarea name="message" class="form-control mt-2" cols="30" rows="3" placeholder="Short Message (Optional)">
-                                                    </textarea>
+                                                    <textarea name="message" class="form-control mt-2" cols="30" rows="3" placeholder="Short Message (Optional)"></textarea>
                                                 </div>
                                             </div>
                                             <div class="text-end">
