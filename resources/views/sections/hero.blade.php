@@ -1,63 +1,49 @@
-<div class="landing-wrapper" >
-
-    <div id="carouselExampleCaptions" class="carousel slide w-100" data-bs-ride="carousel" >
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
-      </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="{{asset('images/recruitment.png')}}" class="d-block w-40" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h3>Recruitment Services</h3>
-            <p>Hiring the right person in the right place at the right time can save your business</p>
-            <a href="{{route('services')}}">
-              <button class="btn btn-orange">Read More</button>
-           </a>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="{{asset('images/workpermit.png')}}" class="d-block w-40" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h3>Permit Consultancy</h3>
-            <p>We provide a full range of immigration and labour solutions to help get people to their desired job in Tanzania</p>
-              <a href="{{route('services')}}">
-                  <button class="btn btn-orange">Read More</button>
-              </a>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="{{asset('images/training.png')}}" class="d-block  w-40" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h3>Training Services</h3>
-            <p>Our experience in developing customized training solutions to meet busines needs and our learner-centered training approach ensures that learned skils become behaviours</p>
-            <a href="{{route('services')}}">
-              <button class="btn btn-orange">Read More</button>
-            </a>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="{{asset('images/man_sourcing.png')}}" class="d-block w-40" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h3>Outsourcing and Consulting services</h3>
-            <p>We offer the ability for our clients to outsource some of their non-core departments enabling  them to concentrate on their core competencies.</p>
-            <a href="{{route('services')}}">
-              <button class="btn btn-orange">Read More</button>
-            </a>
-          </div>
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"  data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"  data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+<div class="landing-wrapper">
+  <div class="row">
+    <div class="col-md-5 glass">
+      
+      
     </div>
+    <div class="col-md-7">
+      <div class="body">
+        <h1>Top Talented Recruits</h1>
+        <h3>Duis tempor ex irure esse Lorem quis.</h3>
+        <div class="d-flex justify-content-center">
+          <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+          <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_aw4rtjls.json" background="transparent"  speed="1"  style="width: 380px; height: 380px;" loop  autoplay></lottie-player>
+        </div>
+      </div>
 
-  <div class="blur"></div>
+      {{-- <div class="mw">
+        <h1 class="ml10">
+            <span class="text-wrapper">
+                <span class="letters">Top Talented Recruits</span>
+            </span>
+        </h1>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+        <script>
+            // Wrap every letter in a span
+            var textWrapper = document.querySelector('.ml10 .letters');
+            textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+            anime.timeline({
+                    loop: true
+                })
+                .add({
+                    targets: '.ml10 .letter',
+                    rotateY: [-90, 0],
+                    duration: 1300,
+                    delay: (el, i) => 45 * i
+                }).add({
+                    targets: '.ml10',
+                    opacity: 0,
+                    duration: 1000,
+                    easing: "easeOutExpo",
+                    delay: 1000
+                });
+        </script>
+    </div> --}}
+    </div>
+  </div>
+    
 </div>
