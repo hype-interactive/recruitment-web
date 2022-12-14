@@ -8,6 +8,7 @@
 
     <title>TopTalented Recruits</title>
     
+ 
     <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.min.css')}}">
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
     
@@ -15,9 +16,9 @@
     <link rel="stylesheet" href="/css/carousel/owl.carousel.min.css">
     <link rel="stylesheet" href="/css/carousel/owl.theme.default.min.css">
     <link rel="stylesheet" href="/css/carousel/style.css">
-
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
 
@@ -26,13 +27,20 @@
 </body>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+<script src="https://kit.fontawesome.com/68b4c1056b.js" crossorigin="anonymous"></script> 
+
 <script>
  $(document).ready(function () {
-
         setTimeout(function () {
             $('#pop-feedback').hide('slow');
         },5000);
-     
+        $('.statistic-counter').counterUp({
+                delay: 10,
+                time: 2000
+            });
+    
  });
 
 

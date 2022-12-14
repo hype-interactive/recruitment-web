@@ -1,0 +1,37 @@
+.counter-wrapper {
+    width: 90%;
+    position: absolute;
+    bottom: 7rem;
+    .counter-box {
+        /* From https://css.glass */
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+        /* From https://css.glass */
+        background: rgba(22, 47, 85, 0.32);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(9px);
+        -webkit-backdrop-filter: blur(9px);
+        border-top: 3px solid #1373e5;
+        padding: 1rem;
+        text-align: center;
+        -webkit-transform: none;
+        -webkit-transform-style: none;
+        transition: 2s;
+        
+        h2 {
+            font-weight: 900;
+        }
+
+    }
+    .counter-box:hover{
+       
+        -webkit-transform: perspective(400px) rotateX(60deg);
+        -webkit-transform-style: preserve-3d;
+        transition: 2s;
+
+    }
+    h5{
+        text-align: center;
+        font-weight: 600;
+    }
+}

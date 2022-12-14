@@ -184,12 +184,11 @@ button:focus{
         object-position: center;
 .glass{
     /* From https://css.glass */
-background: rgba(255, 255, 255, 0.18);
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(1.9px);
--webkit-backdrop-filter: blur(1.9px);
-height: 90vh;
-.cta{}
+        background: rgba(255, 255, 255, 0.28);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(2.9px);
+        -webkit-backdrop-filter: blur(2.9px);
+        height: 90vh;
 }
 .body{
     padding-top: 5rem;
@@ -198,11 +197,9 @@ height: 90vh;
     justify-items: center;
     text-align: center;
 
-
-
     h1{
         font-weight: 900;
-                    font-size: 4em;
+        font-size: 4.5em;
     }
 }
 
@@ -824,9 +821,24 @@ margin-bottom: 3rem;
     bottom: 1rem;
     right: 1rem;
 }
+.btn{
+    font-weight: 500;
+    padding: 0.5rem 2rem;
+
+    i{
+        margin-left: 1rem;
+    }
+}
 .btn-orange{
     background-color: $orange;
     color: $primary-color;
+
+}
+.btn-green{
+    background-color: #25D366;
+    color: $primary-color;
+    margin-right: 3rem;
+
 }
 button:focus{
     outline: 0;
