@@ -41,7 +41,14 @@
                                     </td>
                                     <td class="text-center">
                                         <a href="{{ route('admin.image.edit_panel', $image->id) }}">View</a>
-                                        <a href="">Delete</a>
+                                        <a
+                                            class="delete-image text-danger"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#deleteImage"
+                                            data-bs-image_id="{{ $image->id }}"
+                                        >
+                                            Delete
+                                        </a>
                                     </td>
                                 </div>
                             </tr>
@@ -52,4 +59,34 @@
         </div>
     </div>
 </div>
+
+<!-- Delete Modal -->
+<div class="modal fade" id="deleteImage" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h6 class="modal-title text-danger" id="exampleModalLabel1">Are you sure you want to delete this image?</h6>
+            </div>
+            <div class="modal-footer">
+            <form action="{{route('admin.delete_image')}}" method="post">
+                @csrf
+                <input type="hidden" name="image_id" id="image_id">
+                <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary btn-sm btn-danger">Confirm</button>
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
+
+@section('scripts')
+<script>
+    $(document).ready(function () {   
+
+        $('.delete-image').click(function(){
+            $('#image_id').val($(this).data('bs-image_id'));
+        });
+    });
+</script>
 @endsection

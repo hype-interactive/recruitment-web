@@ -51,7 +51,7 @@ class UserController extends Controller
     public function manage()
     {
         $users = User::where('type','=','admin')->orWhere('type','=','root')->get();
-    return view('admin.users_management' ,['users'=>$users]);
+        return view('admin.users_management' ,['users'=>$users]);
     }
 
     public function addAdmin(Request $request)
@@ -102,20 +102,20 @@ class UserController extends Controller
         $user=User::find($request->post_id);
         $user->type ="other";
         
-        if($user->update()) return back()->with('msg','Admin Revoked !');
+        if($user->update()) return back()->with('msg', 'Admin Revoked!');
 
     }
 
     // Client Management
     public function clientManagement()
     {
-        $users = User::where('type','=','applicant')->orWhere('type', '=', 'other')->get();
+        $users = User::with('subscriptions')->where('type','=','applicant')->orWhere('type', '=', 'other')->get();
         return view('admin.client_management',['users'=>$users]);
     }
 
     public function getClientDetails($id)
     {
-        $user = User::find($id);
+        $user = User::with('subscriptions')->find($id);
         return view('admin.client_details',['user'=>$user]);
     }
 }

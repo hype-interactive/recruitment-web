@@ -265,7 +265,8 @@ hr{
 // }
 
 .add-job-post-form{
-    margin: 0.5rem 1rem ;
+    margin: 0.5rem 1rem  5rem 1rem;
+    position: relative;
         label{
             font-weight: 400 !important;
         }
@@ -273,13 +274,13 @@ hr{
       .form-row{margin-bottom: 0.8rem;}
 
        .br-btn{
-           position: absolute;
-           bottom: 6rem;
-           right: 2rem;
-           float: right !important;
-           background-color: $primary-color;
-           margin-right: 1rem;
-           border: 1px solid whitesmoke;
+            position: absolute;
+            bottom: .5rem;
+            right: -1rem !important;
+            float: right !important;
+            background-color: $primary-color;
+            margin-right: 1rem;
+            border: 1px solid whitesmoke;
        }
 
        .tox{height: 280px !important;}

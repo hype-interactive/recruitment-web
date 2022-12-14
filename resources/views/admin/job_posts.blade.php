@@ -8,7 +8,7 @@
             <div class="col-md-3">
                 <div class="card">
                     <div class="admin-card-header">
-                        <div class="category-icon">
+                        <div class="category-icon {{ $post->is_urgent ? 'bg-warning blink' : '' }}">
                             <img src="{{asset('images/icons/bag.svg')}}" alt="">
                         </div>
                         {{$post->jobCategory->name}}

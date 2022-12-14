@@ -62,6 +62,13 @@
                     <label for="exampleFormControlTextarea1">Enter job description</label>
                     <textarea rows="7" class="form-control" name="description" id="exampleFormControlTextarea1" required></textarea>
                   </div>
+                  <div class="form-check mt-3">
+                    <label for="exampleInputPassword1">Urgent</label>
+                    <input class="form-check-input" type="checkbox" name="is_urgent" id="" aria-describedby="urgentHelp">
+                    <div class="form-text" id="urgentHelp">
+                      <small>Check if this job post is urgent</small>
+                    </div>
+                  </div>
             </div>
             <button type="submit" class="btn  br-btn btn-primary">Add Post</button>
           </form>

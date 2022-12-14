@@ -29,11 +29,19 @@ class JobPostController extends Controller
         
         }
         //get regions tagged from post only
-        
+
+        // get job posts tagged as urgent only
+        $urgent_posts = JobPost::where('is_urgent', 1)->whereDate('deadline','>=', date('Y-m-d'))->latest()->get();
+        // dd($urgent_posts);
         $regions= Region::all();
 
         $industries=JobCategory::all();
-        return view('jobs',['regions'=>$regions,'industries'=>$industries,'job_posts'=>$job_posts]);
+        return view('jobs', [
+            'regions'=>$regions,
+            'industries'=>$industries,
+            'job_posts'=>$job_posts,
+            'urgent_posts'=>$urgent_posts,
+        ]);
     }
     public function getJobPost($job_post_id)
     {
