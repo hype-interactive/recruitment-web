@@ -17,7 +17,7 @@
                     <div class="row mb-2">
                         <div class="col-md-6">
                             <label for="albumName">Album</label>
-                            <select name="album_id" id="albumName" class="form-select">
+                            <select name="album_id" id="albumName" class="form-select" required>
                                 @foreach ($albums as $album)
                                     <option value="{{ $album->id }}">{{ $album->name }}</option>
                                 @endforeach
@@ -27,13 +27,13 @@
                     <div class="row mb-2">
                         <div class="col-md-6">
                             <label for="image">Image</label>
-                            <input type="file" class="form-control" name="image" id="image">
+                            <input type="file" class="form-control" name="image" id="image" required>
                         </div>
                     </div>
                     <div class="row mb-2">
                         <div class="col-md-6">
                             <label for="caption">Description</label>
-                            <textarea name="caption" id="caption" cols="12" rows="4" class="form-control"></textarea>
+                            <textarea name="caption" id="caption" cols="12" rows="4" class="form-control" required></textarea>
                         </div>
                     </div>
                     <div class="row mb-2">

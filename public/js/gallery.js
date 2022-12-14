@@ -27,11 +27,17 @@ if (str.length==0) {
   xmlhttp.onreadystatechange=function() {
   if (this.readyState==4 && this.status==200) {
     resp = JSON.parse(this.responseText).results;
+
+
     console.log(resp);
 
+
   for (let index = 0; index < resp.length; index++) {
+
+    var url = resp[index].url;
+
     
-    var $item = $("<div class='grid-item'><img src="+ resp[index].url+" /></div>");
+    var $item = $("<div class='grid-item'><img src="+ url.replace("public","storage")+ " /></div>");
     $grid.append(  $item)
     .masonry( 'appended', $item);
   }
@@ -60,3 +66,8 @@ if (str.length==0) {
 
 
 }
+
+// http://127.0.0.1:8000/storage/uploaded_img/4zU1Kzm6MN0mxKUysVbAsi1c2sbp7s1hNvbwgMYe.png
+// http://127.0.0.1:8000/public/uploaded_img/4zU1Kzm6MN0mxKUysVbAsi1c2sbp7s1hNvbwgMYe.png
+
+// window.location.hostname+
