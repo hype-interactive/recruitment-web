@@ -12,7 +12,7 @@
                         <img src="{{asset('images/icons/recruitment.svg')}}" alt="">
                     </div>
                     <div class="col-md-10 tile-content">
-                        <b>Recruitment Services</b>
+                        <b>Staff Recruitment Services</b>
                         <small>We match candidates to job vacancies, working with companies directly to help fill their roles. Their consultants' source new opportunities, edit and optimise CVs, and even provide pointers to help candidates prepare for interviews.</small>
                         
                     </div>
@@ -97,7 +97,18 @@
                     </div>
                 </div>
             </div>
+            <div class="col-md-6 services-tile">
+                <div class="row">
+                    <div class="col-md-2 tile-icon">
+                        <img src="{{asset('images/icons/cv.svg')}}" alt="">
+                    </div>
+                    <div class="col-md-10 tile-content">
+                        <b>Products and Services Activations</b>
 
+                        <small>Top Talented always deploys high end skills in carrying out tasked assignment. With this product we make sure branding and visibility is at 100% standard.</small>
+                    </div>
+                </div>
+            </div>
             
         </div>
     </div>

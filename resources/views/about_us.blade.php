@@ -28,7 +28,7 @@
                     effective.
 
                     We imply an integrated team approach and
-                    our full-service /one stop" source philosophy is
+                    our "full-service /one stop" source philosophy is
                     what makes us unique.
                 </p>
             </div>
@@ -42,13 +42,13 @@
             <div class="col-md-6 mb-3">
                 <h5 class="bolded">OUR VISION</h5>
                 To set standard of excellence among
-                human resources company in Tanzania.
+                human resources companies in Tanzania.
             </div>
             <div class="col-md-6 mb-3">
                 <h5 class="bolded">OUR MISSION</h5>
-                Operating innovative huma resources cosulting
-                firm which will ofefer better human resources
-                proudcts that are corectly priced to meet our
+                Operating innovative human resources consulting
+                firm which will offer better human resources
+                proudcts that are correctly priced to meet our
                 customers needs and deliver profitability to our
                 clients.
             </div>

@@ -9,42 +9,87 @@
         <div class="my-slider">
             <div class="tile-wrapper">
                 <div class="logo-tile">
-                    <img src="/images/necta-logo.png" alt="necta-logo">
+                    <img src="/images/partners/suvacor.png" alt="suvacor-logo">
                 </div>
             </div>
             <div class="tile-wrapper">
                 <div class="logo-tile">
-                    <img src="/images/bot.png" alt="bot-logo">
+                    <img src="/images/partners/crown.png" alt="crown-logo">
                 </div>
             </div>
             <div class="tile-wrapper">
                 <div class="logo-tile">
-                    <img src="/images/ppf.png" alt="ppf-logo">
+                    <img src="/images/partners/superlock.png" alt="superlock-logo">
                 </div>
             </div>
             <div class="tile-wrapper">
                 <div class="logo-tile">
-                    <img src="/images/nhc.png" alt="nhc-logo">
+                    <img src="/images/partners/raha.png" alt="raha-logo">
                 </div>
             </div>
             <div class="tile-wrapper">
                 <div class="logo-tile">
-                    <img src="/images/nida.png" alt="nida-logo">
+                    <img src="/images/partners/kamal.png" alt="kamal-logo">
                 </div>
             </div>
             <div class="tile-wrapper">
                 <div class="logo-tile">
-                    <img src="/images/tanesco.png" alt="tanesco-logo">
+                    <img src="/images/partners/kitik.png" alt="kitik-logo">
                 </div>
             </div>
             <div class="tile-wrapper">
                 <div class="logo-tile">
-                    <img src="/images/arm.png" alt="arm-logo" style="object-fit:contain">
+                    <img src="/images/partners/milembe.png" alt="milembe-logo" style="object-fit:contain">
                 </div>
             </div>
             <div class="tile-wrapper">
                 <div class="logo-tile">
-                    <img src="/images/udsm.png" alt="udsm-logo">
+                    <img src="/images/partners/vita.png" alt="vita-logo">
+                </div>
+            </div>
+            <div class="tile-wrapper">
+                <div class="logo-tile">
+                    <img src="/images/partners/bankabclogo.png" alt="bancabc-logo">
+                </div>
+            </div>
+            <div class="tile-wrapper">
+                <div class="logo-tile">
+                    <img src="/images/partners/uba.png" alt="uba-logo">
+                </div>
+            </div>
+            <div class="tile-wrapper">
+                <div class="logo-tile">
+                    <img src="/images/partners/asa.png" alt="asa-logo">
+                </div>
+            </div>
+            <div class="tile-wrapper">
+                <div class="logo-tile">
+                    <img src="/images/partners/zanlink.png" alt="zanlink-logo">
+                </div>
+            </div>
+            <div class="tile-wrapper">
+                <div class="logo-tile">
+                    <img src="/images/partners/mars.png" alt="mars-logo">
+                </div>
+            </div>
+            <div class="tile-wrapper">
+                <div class="logo-tile">
+                    <img src="/images/partners/graphica.png" alt="graphica-logo">
+                </div>
+            </div>
+            <div class="tile-wrapper">
+                <div class="logo-tile">
+                    <img src="/images/partners/wlink.png" alt="wlink-logo">
+                </div>
+            </div>
+            <div class="tile-wrapper">
+                <div class="logo-tile">
+                    <img src="/images/partners/stalco.png" alt="stalco-logo">
+                </div>
+            </div>
+            <div class="tile-wrapper">
+                <div class="logo-tile">
+                    <img src="/images/partners/medmac.png" alt="medmac-logo">
                 </div>
             </div>
         </div>
