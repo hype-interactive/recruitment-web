@@ -1,6 +1,6 @@
 <?php
     $_ = new App\Library\Services;
-    $services = array_slice($_->items(),0,7);
+    $services = array_slice($_->items(),0,8);
 ?>
 
 <div class="container">

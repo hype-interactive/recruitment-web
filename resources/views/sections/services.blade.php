@@ -26,8 +26,8 @@
                     <div class="col-md-10 tile-content">
                         <b>Work Permit and Residential Licence Services</b>
                         <small>
-                            We help you in getting official documents giving a foreigner permision to take a job and live in a country.
-                            </small>
+                            Top talented Recruits has the experience and flexibility to ensure that our clients receive the highest caliber of immigration services and labour.
+                        </small>
                         
                     </div>
                 </div>
@@ -51,7 +51,7 @@
                     </div>
                     <div class="col-md-10 tile-content">
                         <b>Manpower outsourcing and management</b>
-                        <small>TTR offers the ability for clients to outsource some of their non-core departments enabling them to concentrate on their core competencies.</small>
+                        <small>We endeavour to ensure that we lessen the day to day activities related with the supervision and management of staff to allow organizations to focus on their core and strategic objectives for maximum ROI.</small>
                         
                     </div>
                 </div>
@@ -77,9 +77,9 @@
                         <img src="{{asset('images/icons/performance.svg')}}" alt="">
                     </div>
                     <div class="col-md-10 tile-content">
-                        <b>Performance Management & Appraisals</b>
+                        <b>Board Room Facilities</b>
 
-                        <small>Performance management is the proces of identifying, measuring, managing, and developing the performance of the human resources in an organization.</small>
+                        <small>From business and board meetings to interviews, business presentations, seminars and workshops your room will be configured according to your needs and event.</small>
                         
                     </div>
                 </div>
@@ -87,12 +87,14 @@
             <div class="col-md-6 services-tile">
                 <div class="row">
                     <div class="col-md-2 tile-icon">
-                        <img src="{{asset('images/icons/cv.svg')}}" alt="">
+                        <img src="{{asset('images/icons/grad.svg')}}" alt="">
                     </div>
                     <div class="col-md-10 tile-content">
-                        <b>CV Writing Services</b>
+                        <b>Graduate Search & Training</b>
 
-                        <small>We help job-seekers to improve the quality of their resumes so they stand out from other candidates.</small>
+                        <small>
+                            Our specialty. With our ability to leverage off our marketing penetration and our vast network of contacts in Tanzania, we are able to source the best talent for your organization.
+                        </small>
                         
                     </div>
                 </div>
