@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container animated-bt">
     <div class="blog-post">
         <div class="ttr-section-header">
             <h2>From our expert blog</h2>

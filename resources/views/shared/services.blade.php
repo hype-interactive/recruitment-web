@@ -3,7 +3,7 @@
     $services = array_slice($_->items(),0,8);
 ?>
 
-<div class="container">
+<div class="container animated-bt">
 
     <div class="services-wrapper">
         <div class="ttr-section-header">

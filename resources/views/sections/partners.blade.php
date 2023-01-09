@@ -1,4 +1,4 @@
-<div class="partners-wrapper">
+<div class="partners-wrapper animated-bt">
     <div class="ttr-section-header">
         <h2>Our Partners</h2>
         <p>Meet our partners</p>
