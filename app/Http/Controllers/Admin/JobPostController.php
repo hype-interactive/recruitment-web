@@ -19,14 +19,13 @@ class JobPostController extends Controller
       protected $applications;
       protected $users;
 
-     public function __construct(ApplicationController $applications,UserController $users)
-     {
-         $this->middleware('auth');
-         $this->middleware('admin');
-         $this->applications = $applications;
-         $this->users = $users;
-
-     }
+    public function __construct(ApplicationController $applications,UserController $users)
+    {
+        $this->middleware('auth');
+        $this->middleware('admin');
+        $this->applications = $applications;
+        $this->users = $users;
+    }
 
     public function show()
     {

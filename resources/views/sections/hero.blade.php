@@ -11,8 +11,8 @@
               <div class="d-flex justify-content-center mt-5">
                 <a 
                   class="btn btn-green" 
-                  href="https://wa.me/255629034542?text=Hello%20Patrick,%20This%20is%20a%20test%20run"
-                  {{-- href="https://wa.me/255767422717?text=Hello%20Top%20Talented%20Recruits,$20I%20need%20to%20know%20more%20about%20you." --}}
+                  {{-- href="https://wa.me/255629034542?text=Hello%20Patrick,%20This%20is%20a%20test%20run" --}}
+                  href="https://wa.me/255767422717?text=Hello%20Top%20Talented%20Recruits,$20I%20need%20to%20know%20more%20about%20you."
                   target="_blank"
                 >
                   Join Group 
