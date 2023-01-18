@@ -1,0 +1,24 @@
+#w-btn {
+    display: none; /* Hidden by default */
+    border-radius: 50% !important;
+    width: 50px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    background-color: #25D366;
+    color: $primary-color;
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 10px; /* Some padding */
+    
+    i {
+        padding: 0 !important;
+        margin: 0 !important;
+        font-size: 27px;
+    }
+}

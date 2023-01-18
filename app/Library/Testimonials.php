@@ -57,7 +57,7 @@
                 ),
                 new Testimonial(
                     "t6",
-                    "images/icons/man-user.svg",
+                    "images/partners/suvacor.png",
                     "Client",
                     "Halima",
                     "HR Manager - Suvacor",
@@ -65,7 +65,7 @@
                 ),
                 new Testimonial(
                     "t7",
-                    "images/icons/man-user.svg",
+                    "images/partners/kamal.png",
                     "Client",
                     "Elizabeth",
                     "HR Manager - Kamal",
@@ -97,7 +97,7 @@
                 ),
                 new Testimonial(
                     "t11",
-                    "images/icons/man-user.svg",
+                    "images/partners/bankabclogo.png",
                     "Client",
                     "Kindo",
                     "HR Manager Banc ABC",
@@ -105,7 +105,7 @@
                 ),
                 new Testimonial(
                     "t12",
-                    "images/icons/man-user.svg",
+                    "images/partners/raha.png",
                     "Client",
                     "Dorina",
                     "HR Manager Raha",

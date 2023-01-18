@@ -52,7 +52,7 @@
                                     <img class="card-img-top" src="{{ asset($testimonial->image) }}" alt="tester">
                                     <div class="card-body">
                                         <h5>
-                                            {{ $testimonial->name }}
+                                            {{-- {{ $testimonial->name }} --}}
                                             <br>
                                             <span>{{ $testimonial->title }}</span>
                                         </h5>

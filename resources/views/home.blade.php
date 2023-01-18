@@ -15,5 +15,7 @@
     @include('sections.testimonials')
     
     @include('sections.partners')
+
+    @include('sections.whatsapp_button')
     
 @endsection

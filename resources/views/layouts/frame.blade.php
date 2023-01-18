@@ -47,11 +47,21 @@
     
  });
 
+// functions to display whatsapp button on scroll
+$(window).scroll(function() {
+    var scroll = $(window).scrollTop();
+    if (scroll >= 100) {
+        $("#w-btn").css("display", "block");
+    } else {
+        $("#w-btn").css("display", "none");
+    }
+});
+
 
 
 // function to change carousel properties from slide to non-slide
 var winWidth = $(window).width();
-console.log(winWidth);
+// console.log(winWidth);
 
   if(winWidth > 768){
     $('#carouselExampleCaptions').attr('data-bs-ride', "carousel");
