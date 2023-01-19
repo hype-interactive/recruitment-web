@@ -61,7 +61,7 @@
                     "Client",
                     "Halima",
                     "HR Manager - Suvacor",
-                    "Really helped me get the personnel that were required"
+                    "The necessary personnel were obtained with the assistance that was provided, and it was determined to be effective in achieving that goal."
                 ),
                 new Testimonial(
                     "t7",
@@ -69,31 +69,31 @@
                     "Client",
                     "Elizabeth",
                     "HR Manager - Kamal",
-                    "Recruitment made easier!! Much thanks to TTR"
+                    "TTR's assistance made the recruitment process easier and efficient. They are appreciated for the support and guidance provided."
                 ),
-                new Testimonial(
-                    "t8",
-                    "images/icons/man-user.svg",
-                    "Client",
-                    "Farida",
-                    "HR & Admin Manager",
-                    "A team is built better with people with mismatching yet collaborative skills. TTR makes this possible!"
-                ),
-                new Testimonial(
-                    "t9",
-                    "images/icons/man-user.svg",
-                    "Client",
-                    "Muumba",
-                    "HR Manager",
-                    "Sometimes it is not only about building inhouse talents, but outsourcing is... TTR steps in most beautifully!!"
-                ),
+                // new Testimonial(
+                //     "t8",
+                //     "images/icons/man-user.svg",
+                //     "Client",
+                //     "Farida",
+                //     "HR & Admin Manager",
+                //     "TTR enables the building of teams with a diverse set of skills that complement and collaborate effectively. This leads to a stronger and better team."
+                // ),
+                // new Testimonial(
+                //     "t9",
+                //     "images/icons/man-user.svg",
+                //     "Client",
+                //     "Muumba",
+                //     "HR Manager",
+                //     "TTR expertly balances in-house and outsourced talent, building strong and adaptable teams. Their skills in this area are valuable."
+                // ),
                 new Testimonial(
                     "t10",
-                    "images/icons/man-user.svg",
+                    "images/partners/regency.png",
                     "Client",
                     "Said",
                     "General Manager - Regency Hotel",
-                    "A much helpful tool to manage outsourcing clients and able people"
+                    "A helpful tool for managing outsourcing clients and identifying qualified individuals exist, making the process more efficient and effective."
                 ),
                 new Testimonial(
                     "t11",
@@ -101,7 +101,7 @@
                     "Client",
                     "Kindo",
                     "HR Manager Banc ABC",
-                    "You never know when you need a comprehensive background check for your new recruits. Turn to TTR to rest your mind!!"
+                    "A comprehensive background check for new recruits can be done to ensure that they are reliable and trustworthy, providing peace of mind for employers."
                 ),
                 new Testimonial(
                     "t12",
@@ -109,7 +109,7 @@
                     "Client",
                     "Dorina",
                     "HR Manager Raha",
-                    "Very exquisite piece of technology. It has a very high promising value in the economic world!"
+                    "Advanced technology that holds great potential to bring value to the economic world exists, it is an exquisite piece of technology that can bring great benefits."
                 ),
             ];
         }

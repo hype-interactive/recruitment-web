@@ -49,13 +49,11 @@
                         @if ($testimonial->type === "Client")
                             <div>
                                 <div class="card text-center testimonial-card">
-                                    <img class="card-img-top" src="{{ asset($testimonial->image) }}" alt="tester">
+                                    <div class="card-img-top">
+                                        <img  src="{{ asset($testimonial->image) }}" alt="tester">
+                                    </div>
                                     <div class="card-body">
-                                        <h5>
-                                            {{-- {{ $testimonial->name }} --}}
-                                            <br>
-                                            <span>{{ $testimonial->title }}</span>
-                                        </h5>
+                                        
                                         <p class="card-text">{{ $testimonial->quote }}</p>
                                     </div>
                                 </div>
