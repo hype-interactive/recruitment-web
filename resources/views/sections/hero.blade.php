@@ -22,9 +22,9 @@
           </div>
           </div>
         </div>
-        <div class="col-md-5 glass">
+        <div class="col-md-5 glass hide-phone">
           <div class="container">
-            <div class="d-flex justify-content-center mt-3">
+            <div class="d-flex justify-content-center mt-5">
               <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
               <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_aw4rtjls.json"
                   background="transparent" speed="1" style="width: 390px; height: 390px;" loop autoplay>
