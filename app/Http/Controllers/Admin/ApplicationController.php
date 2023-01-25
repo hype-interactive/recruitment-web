@@ -63,7 +63,12 @@ class ApplicationController extends Controller
         $application = Application::find($application_id);
         $application->status="selected";
         if($application->update()) {
-            Mail::to($application->user->email)->send(new ApplicationStatus($application->user, $application->status, $application->jobPost));
+            try {
+                Mail::to($application->user->email)->send(new ApplicationStatus($application->user, $application->status, $application->jobPost));
+
+            } catch (\Throwable $th) {
+                Log::error($th->getMessage());
+            }
             return back();
         } 
 
@@ -74,7 +79,11 @@ class ApplicationController extends Controller
         $application= Application::find($application_id);
         $application->status="rejected";
         if($application->update()) {
-            Mail::to($application->user->email)->send(new ApplicationStatus($application->user, $application->status, $application->jobPost));
+            try {
+                Mail::to($application->user->email)->send(new ApplicationStatus($application->user, $application->status, $application->jobPost));
+            } catch (\Throwable $th) {
+                throw $th;
+            }
             return back();
         } 
     }
@@ -84,7 +93,11 @@ class ApplicationController extends Controller
         $application= Application::find($application_id);
         $application->status="reserved";
         if($application->update()) {
-            Mail::to($application->user->email)->send(new ApplicationStatus($application->user, $application->status, $application->jobPost));
+            try {
+                Mail::to($application->user->email)->send(new ApplicationStatus($application->user, $application->status, $application->jobPost));
+            } catch (\Throwable $th) {
+                throw $th;
+            }
             return back();
         }
     }

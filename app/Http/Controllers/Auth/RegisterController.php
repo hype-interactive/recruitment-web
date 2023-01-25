@@ -81,7 +81,11 @@ class RegisterController extends Controller
         ]);
 
         if ($user) {
-            Mail::to($data['email'])->send(new SuccessfulRegistration($data));
+            try {
+                Mail::to($data['email'])->send(new SuccessfulRegistration($data));
+            } catch (\Throwable $th) {
+                throw $th;
+            }
             return $user;
         }
 

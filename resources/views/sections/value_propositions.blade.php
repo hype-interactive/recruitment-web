@@ -13,7 +13,7 @@
                     <button type="button" class="btn btn-orange" data-bs-toggle="modal" data-bs-target="#employerForm">Register as employer </button>
                 </a> 
             </div>
-            <div class="left col-sm">
+            <div class="left col-sm hide-tablet">
                 <img src="{{asset('images/about_left.jpg')}}" alt="">
             </div>
             

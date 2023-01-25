@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Mail;
 
 use App\Mail\SuccessfulRegistration;
 use App\Mail\BirthdayReminder;
+use Illuminate\Support\Facades\Log;
 
 class TestController extends Controller
 {
@@ -20,6 +21,11 @@ class TestController extends Controller
         $email = $user->email;
         // dd($email);
         // Mail::to($data['email'])->send(new SuccessfulRegistration($data));
-        if (Mail::to($email)->send(new BirthdayReminder($email))) return back();
+        try {
+            if (Mail::to($email)->send(new BirthdayReminder($email))) return back();
+
+        } catch (\Throwable $th) {
+            Log::error($th->getMessage());
+        }
     }
 }

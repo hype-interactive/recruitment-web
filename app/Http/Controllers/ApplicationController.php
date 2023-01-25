@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\DB;
 
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ApplicationSubmission;
+use Illuminate\Support\Facades\Log;
 
 class ApplicationController extends Controller
 {
@@ -46,7 +47,12 @@ class ApplicationController extends Controller
             $application->application_document_id=$document->id;
 
             if($application->save() && $user->update()){
-                Mail::to($user->email)->send(new ApplicationSubmission($user, $application->jobPost)); // send email to user informing successful application submission
+                try {
+                    Mail::to($user->email)->send(new ApplicationSubmission($user, $application->jobPost)); // send email to user informing successful application submission
+
+                } catch (\Throwable $th) {
+                    Log::error($th->getMessage());
+                }
                 return back()->with('msg','You have successfully submitted application');
             } 
         }

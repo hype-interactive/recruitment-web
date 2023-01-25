@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Mail\BirthdayReminder;
 use Illuminate\Support\Facades\Mail;
 use App;
+use Illuminate\Support\Facades\Log;
 
 class SendBirthdayReminderEmail extends Command
 {
@@ -48,9 +49,14 @@ class SendBirthdayReminderEmail extends Command
         foreach($users as $user)
         {
             $email = $user->email;
-            Mail::to($email)->send(new BirthdayReminder($user));
+            try {
+                Mail::to($email)->send(new BirthdayReminder($user));
 
-            if (Mail::failures()) $this->error('Email failed to send to ' . $email);
+                if (Mail::failures()) $this->error('Email failed to send to ' . $email);
+            } catch (\Throwable $th) {
+                Log::error("Error sending birthday reminder email to $email: " . $th->getMessage());
+            }
+        
             $i++; 
         }
 

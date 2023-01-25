@@ -14,7 +14,7 @@ use App\Mail\AdminCreated;
 
 class UserController extends Controller
 {
-    public function __construct(Type $var = null)
+    public function __construct()
     {
         $this->middleware('auth');
     }
@@ -63,14 +63,16 @@ class UserController extends Controller
         if ($user) {
             $user->type = "admin";
             if($user->update()){
-                Mail::to($user->email)->send(new AdminCreated($user, "Your own current password"));
+                try {
+                    Mail::to($user->email)->send(new AdminCreated($user, "Your own current password"));
 
                 if (Mail::failures()) {
                     Log::error('Failed to send email to ' . $user->email);
                 } else {
                     Log::info('Email sent to ' . $user->email);
                 }
-
+                } catch (\Throwable $th) {
+                }
                 return redirect()->back()->with('success', 'Admin added successfully');
             }
         } else {
@@ -83,13 +85,18 @@ class UserController extends Controller
             $user->type = "admin";
 
             if($user->save()) {
-                Mail::to($user->email)->send(new AdminCreated($user, $user->email));
+                try {
+                    Mail::to($user->email)->send(new AdminCreated($user, $user->email));
 
                 if (Mail::failures()) {
                     Log::error('Failed to send email to ' . $user->email);
                 } else {
                     Log::info('Email sent to ' . $user->email);
                 }
+                } catch (\Throwable $th) {
+                    throw $th;
+                }
+                
 
                 return back()->with('msg','Admin created successfully');
             }

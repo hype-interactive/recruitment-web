@@ -129,4 +129,5 @@ Route::post('/photo','PhotosController@store')->middleware('optimizeImages');
 Route::get('test', function () {
     return view('test');
 });
+
 Route::post('test','App\Http\Controllers\TestController@test')->name('test');

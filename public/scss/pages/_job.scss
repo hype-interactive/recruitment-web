@@ -35,3 +35,26 @@
     height: 1.3rem;
     margin-right: 1rem;
 }
+
+
+@include media('<phone'){
+    .job-card{
+        padding:0.5rem ;
+        .job-header{
+            .title{
+                margin-bottom: 1rem;
+            }
+            .col-md-4{
+                margin-bottom: 1rem;
+            }
+        }
+        .body{
+            padding: 1rem;
+            button{
+                right: 1rem;
+                bottom:1rem;
+            }
+            .description-panel{
+                padding: 0.5rem;}
+    }
+}}

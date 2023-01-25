@@ -3,3 +3,15 @@
         display: none;
     }
 }
+.phone-only{
+    @include media('>phone') {
+        display: none;
+    }
+
+}
+
+.hide-tablet{
+    @include media('>phone','<=tablet') {
+        display: none;
+    }
+}

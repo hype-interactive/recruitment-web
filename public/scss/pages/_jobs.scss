@@ -84,7 +84,7 @@
 .urgent-jobs {
     background-color: white;
     padding-left: 0;
-    max-height: 500px !important;
+    max-height: 600px !important;
     overflow-y: scroll;
     // display: none;
     -ms-overflow-style: none;  /* IE and Edge */
@@ -188,4 +188,12 @@
 100% {
     opacity: 1;
 }
+}
+
+// media queries for tablets 
+@include media('>phone','<=tablet') {
+    .urgent-jobs{
+        width: 50% !important;
+        max-height: 100% !important;
+    }
 }

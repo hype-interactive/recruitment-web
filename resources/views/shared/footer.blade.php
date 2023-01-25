@@ -8,7 +8,10 @@
                         <li>
                             <img src="{{asset('images/icons/phone-white.svg')}}" alt="">
                             {{-- +255 677 000 011 / +255 752 111 225 --}}
-                            <a href="tel:+255677000011">+255 677 000 011</a> / <a href="tel:+255767422717">+255 767 422 717</a>
+                            <div>
+                                <div><a href="tel:+255677000011">+255 677 000 011</a></div>
+                                <div><a href="tel:+255767422717">+255 767 422 717</a></div>
+                            </div>
                         </li>
                         <li>
                             <img src="{{asset('images/icons/location-white.svg')}}" alt="">
