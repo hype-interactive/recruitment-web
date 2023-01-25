@@ -16,8 +16,13 @@ class ApplicationDocumentController extends Controller
             $name = $file->getClientOriginalName();
             $extension = $file->getClientOriginalExtension();
 
-            $name = preg_replace('/\s+|-/', '_', $name);
-            $path=$request->file('file')->storeAs('public/uploaded_doc', $name);
+            // $name = preg_replace('/\s+|-/', '_', $name);
+
+            // error persists here so changed to name of uploader with time stamp
+            $user_name = auth()->user()->fname;
+            $name = $user_name.'_'.'CV'.'_'.time().'.'.$extension;
+
+            $path = $request->file('file')->storeAs('public/uploaded_doc', $name);
 
             $document= new ApplicationDocument();
             $document->name=$name;

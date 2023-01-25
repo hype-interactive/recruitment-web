@@ -139,8 +139,14 @@ class UserController extends Controller
     {
         $doc = new Document;
         $name = $request->file($doc_name)->getClientOriginalName();
-        $name = preg_replace('/\s+|-/', '_', $name);
-        
+        $extension = $file->getClientOriginalExtension();
+
+        // $name = preg_replace('/\s+|-/', '_', $name);
+
+        // error persists here so changed to name of uploader with time stamp
+        $user_name = auth()->user()->fname;
+        $name = $user_name.'_'.time().'.'.$extension;
+
         $doc->name = $name;
         $doc->path = $request->file($doc_name)->storeAs('public/applicants/documents', $name);
         $doc->owner = 'applicant';
