@@ -139,6 +139,8 @@ class UserController extends Controller
     {
         $doc = new Document;
         $name = $request->file($doc_name)->getClientOriginalName();
+        $name = preg_replace('/\s+|-/', '_', $name);
+        
         $doc->name = $name;
         $doc->path = $request->file($doc_name)->storeAs('public/applicants/documents', $name);
         $doc->owner = 'applicant';
